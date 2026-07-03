@@ -7,23 +7,17 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "db:push": "prisma db push",
-    "db:generate": "prisma generate",
-    "db:seed": "node prisma/seed.js",
-    "db:studio": "prisma studio"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@element-plus/nuxt": "^1.0.10",
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/sitemap": "^6.1.0",
-    "@prisma/client": "^5.22.0",
     "element-plus": "^2.8.8",
     "nuxt": "^3.14.159"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.2",
-    "prisma": "^5.22.0",
     "vue": "latest",
     "vue-router": "latest"
   }

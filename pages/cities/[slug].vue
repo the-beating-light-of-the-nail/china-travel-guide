@@ -4,20 +4,16 @@ const route = useRoute()
 const { public: pub } = useRuntimeConfig()
 const slug = route.params.slug as string
 
-// 获取城市详情（SSR）
-const { data: city } = await useFetch(`/api/cities/${slug}`, {
-  // 找不到城市时抛出 404
-  onResponseError() {
-    throw createError({ statusCode: 404, statusMessage: 'City not found', fatal: true })
-  },
-})
+// 静态数据：按 slug 查询城市详情（构建时注入，无需运行时数据库）
+import { getCityBySlug } from '~/data/travel-data'
+const city = getCityBySlug(slug)
 
 // 城市不存在则 404
-if (!city.value) {
+if (!city) {
   throw createError({ statusCode: 404, statusMessage: 'City not found', fatal: true })
 }
 
-const c = computed(() => city.value!)
+const c = computed(() => city!)
 
 // 城市标签列表
 const cityTags = computed(() => {

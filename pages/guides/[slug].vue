@@ -4,15 +4,16 @@ const route = useRoute()
 const { public: pub } = useRuntimeConfig()
 const slug = route.params.slug as string
 
-// 获取文章详情（SSR）
-const { data: guide } = await useFetch(`/api/guides/${slug}`)
+// 静态数据：按 slug 查询攻略文章（构建时注入，无需运行时数据库）
+import { getGuideBySlug } from '~/data/travel-data'
+const guide = getGuideBySlug(slug)
 
 // 文章不存在则 404
-if (!guide.value) {
+if (!guide) {
   throw createError({ statusCode: 404, statusMessage: 'Guide not found', fatal: true })
 }
 
-const g = computed(() => guide.value!)
+const g = computed(() => guide!)
 
 // 文章发布日期（用于 JSON-LD）
 const datePublished = computed(() => {

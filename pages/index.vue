@@ -2,13 +2,10 @@
 // 首页 - 英雄区搜索、热门目的地、攻略分类、精选攻略
 const { public: pub } = useRuntimeConfig()
 
-// 获取城市列表（SSR）
-const { data: cities } = await useFetch('/api/cities')
-
-// 获取精选攻略（SSR）
-const { data: featuredGuides } = await useFetch('/api/guides', {
-  query: { featured: 'true' },
-})
+// 静态数据：城市列表与精选攻略（构建时注入，无需运行时数据库）
+import { getCities, getFeaturedGuides } from '~/data/travel-data'
+const cities = getCities()
+const featuredGuides = getFeaturedGuides()
 
 // 攻略分类配置
 const categories = [

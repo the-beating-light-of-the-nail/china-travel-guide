@@ -36,14 +36,14 @@ export default defineNuxtConfig({
   // 运行时配置 - 提供给前端使用
   runtimeConfig: {
     public: {
-      siteUrl: 'https://china-travel-guide.example.com',
+      siteUrl: 'https://travelchina-mu.vercel.app',
       siteName: 'China Travel Guide',
     },
   },
 
   // 站点配置（供 sitemap 模块使用）
   site: {
-    url: 'https://china-travel-guide.example.com',
+    url: 'https://travelchina-mu.vercel.app',
   },
 
   // 应用级 head 配置（默认 SEO）
@@ -60,8 +60,39 @@ export default defineNuxtConfig({
         { property: 'og:site_name', content: 'China Travel Guide' },
       ],
       link: [
+        // 现代浏览器使用 SVG 矢量图标
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        // 兜底 favicon.ico，避免浏览器请求触发 404/500
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', href: '/favicon.svg' },
       ],
+    },
+  },
+
+  // 静态预渲染配置（SSG）
+  // 配合 nuxt generate，在构建时把所有页面预渲染为静态 HTML
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      // 显式声明需要预渲染的路由，确保所有城市与攻略页面都被生成
+      routes: [
+        '/',
+        '/about',
+        '/cities/chengdu',
+        '/cities/xian',
+        '/cities/beijing',
+        '/guides/xian-3-day-classic-route',
+        '/guides/beijing-off-the-beaten-path',
+        '/guides/chengdu-food-guide',
+        '/guides/first-trip-to-china-guide',
+        '/guides/best-time-to-visit-china',
+        '/robots.txt',
+        '/sitemap.xml',
+        '/favicon.ico',
+        '/favicon.svg',
+      ],
+      // 忽略构建期间的非致命错误（例如 sitemap 间接产生的告警）
+      failOnError: false,
     },
   },
 
