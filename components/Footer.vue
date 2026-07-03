@@ -1,22 +1,29 @@
 <script setup lang="ts">
 // 页脚组件 - 品牌信息、热门目的地、旅行服务、关于我们
-// 热门目的地
+const { t } = useI18n()
+const localePath = useLocalePath()
+
+// 热门目的地（slug 用于路由，名称走翻译 key）
 const destinations = [
-  { name: 'Xi\'an Guide', slug: 'xian' },
-  { name: 'Beijing Guide', slug: 'beijing' },
-  { name: 'Chengdu Guide', slug: 'chengdu' },
+  { slug: 'xian' },
+  { slug: 'beijing' },
+  { slug: 'chengdu' },
 ]
 
-// 旅行服务
-const services = ['Custom Itineraries', 'Hotel Booking', 'Ticket Info', 'Local Guides']
+// 城市名称映射（用于页脚目的地显示，按当前语言取）
+import { getCities } from '~/data/travel-data'
+const allCities = getCities()
+const { locale } = useI18n()
+function cityName(slug: string) {
+  const c = allCities.find(c => c.slug === slug)
+  return c ? `${c.name[locale.value]} ${t('footer.guideSuffix')}` : slug
+}
 
-// 关于我们
-const aboutLinks = [
-  { name: 'About Us', to: '/about' },
-  { name: 'Contact', to: '/about' },
-  { name: 'Contributors', to: '/about' },
-  { name: 'Privacy Policy', to: '/about' },
-]
+// 旅行服务 key 列表
+const serviceKeys = ['custom', 'hotel', 'ticket', 'guide'] as const
+
+// 关于我们 key 列表
+const aboutLinkKeys = ['about', 'contact', 'contributors', 'privacy'] as const
 
 // 当前年份
 const currentYear = new Date().getFullYear()
@@ -29,25 +36,23 @@ const currentYear = new Date().getFullYear()
       <!-- 品牌介绍 -->
       <div class="col-span-2 md:col-span-1">
         <div class="footer-logo text-[22px] font-bold text-white mb-3.5 tracking-wider">
-          China<span class="text-accent">Travel</span>
+          {{ t('brand.name') }}<span class="text-accent">{{ t('brand.highlight') }}</span>
         </div>
         <p class="text-sm leading-relaxed">
-          Your trusted companion for exploring China. We gather real travel experiences
-          from popular cities and hidden gems, providing practical and reliable guidance
-          for every traveler visiting the wonders of China.
+          {{ t('footer.desc') }}
         </p>
       </div>
 
       <!-- 热门目的地 -->
       <div>
-        <h4 class="text-white mb-4.5 text-base font-medium">Top Destinations</h4>
+        <h4 class="text-white mb-4.5 text-base font-medium">{{ t('footer.topDestinations') }}</h4>
         <ul class="list-none space-y-2.5">
           <li v-for="dest in destinations" :key="dest.slug">
             <NuxtLink
-              :to="`/cities/${dest.slug}`"
+              :to="localePath(`/cities/${dest.slug}`)"
               class="text-sm transition-colors duration-300 hover:text-white"
             >
-              {{ dest.name }}
+              {{ cityName(dest.slug) }}
             </NuxtLink>
           </li>
         </ul>
@@ -55,28 +60,28 @@ const currentYear = new Date().getFullYear()
 
       <!-- 旅行服务 -->
       <div>
-        <h4 class="text-white mb-4.5 text-base font-medium">Travel Services</h4>
+        <h4 class="text-white mb-4.5 text-base font-medium">{{ t('footer.travelServices') }}</h4>
         <ul class="list-none space-y-2.5">
           <li
-            v-for="service in services"
-            :key="service"
+            v-for="key in serviceKeys"
+            :key="key"
             class="text-sm transition-colors duration-300 hover:text-white"
           >
-            {{ service }}
+            {{ t(`footer.services.${key}`) }}
           </li>
         </ul>
       </div>
 
       <!-- 关于我们 -->
       <div>
-        <h4 class="text-white mb-4.5 text-base font-medium">About Us</h4>
+        <h4 class="text-white mb-4.5 text-base font-medium">{{ t('footer.aboutUs') }}</h4>
         <ul class="list-none space-y-2.5">
-          <li v-for="(link, idx) in aboutLinks" :key="idx">
+          <li v-for="key in aboutLinkKeys" :key="key">
             <NuxtLink
-              :to="link.to"
+              :to="localePath('/about')"
               class="text-sm transition-colors duration-300 hover:text-white"
             >
-              {{ link.name }}
+              {{ t(`footer.links.${key}`) }}
             </NuxtLink>
           </li>
         </ul>
@@ -85,7 +90,7 @@ const currentYear = new Date().getFullYear()
 
     <!-- 版权信息 -->
     <div class="copyright text-center pt-6 border-t border-footer-border text-[13px]">
-      © {{ currentYear }} China Travel Guide | Crafting unforgettable journeys across China
+      {{ t('footer.copyright', { year: currentYear }) }}
     </div>
   </footer>
 </template>

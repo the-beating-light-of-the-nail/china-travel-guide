@@ -1,0 +1,110 @@
+{
+  "brand": {
+    "name": "China",
+    "highlight": "Travel"
+  },
+  "nav": {
+    "home": "Home",
+    "destinations": "Destinations",
+    "guides": "Guides",
+    "about": "About"
+  },
+  "search": {
+    "placeholder": "Search cities...",
+    "heroPlaceholder": "Where do you want to go? e.g. Beijing, Xi'an, Chengdu...",
+    "button": "Search"
+  },
+  "home": {
+    "heroTitle": "Discover the Wonders of China",
+    "heroSubtitle": "Explore ancient capitals, vibrant cities, and breathtaking landscapes",
+    "destinationsTitle": "Popular Destinations",
+    "destinationsSubtitle": "Handpicked cities · In-depth guides · All-in-one travel companion",
+    "categoriesTitle": "Browse by Category",
+    "categoriesSubtitle": "Find the perfect trip for your travel style",
+    "guidesTitle": "Featured Guides",
+    "guidesSubtitle": "Real traveler stories · Practical trip-planning tips"
+  },
+  "categories": {
+    "history": { "title": "History & Culture", "desc": "Ancient capitals and timeless heritage" },
+    "nature": { "title": "Nature & Scenery", "desc": "Mountains, rivers and hidden gems" },
+    "food": { "title": "Food & Cuisine", "desc": "Authentic flavors and street food" },
+    "family": { "title": "Family Travel", "desc": "Fun and educational for all ages" },
+    "romantic": { "title": "Romantic Getaways", "desc": "Sweet spots and off-the-grid retreats" },
+    "budget": { "title": "Budget Backpacking", "desc": "Money-saving tips and hostels" }
+  },
+  "city": {
+    "overviewTitle": "City Overview",
+    "atAGlance": "{name} at a Glance",
+    "attractionsTitle": "Must-Visit Attractions",
+    "attractionsSubtitle": "Explore the icons of {name}",
+    "cuisineTitle": "Local Cuisine",
+    "cuisineSubtitle": "Taste the flavors of {name}",
+    "itineraryTitle": "Suggested Itinerary",
+    "itinerarySubtitle": "Make the most of your {name} trip",
+    "tipsTitle": "Travel Tips",
+    "tipsSubtitle": "Practical info for a smoother trip",
+    "home": "Home",
+    "day": "Day",
+    "statDuration": "Recommended Duration",
+    "statSeason": "Best Season",
+    "statHistory": "History"
+  },
+  "regions": {
+    "Southwest China": "Southwest China",
+    "Northwest China": "Northwest China",
+    "North China": "North China"
+  },
+  "guide": {
+    "backToGuides": "← Back to Guides",
+    "moreGuides": "More Guides"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Your trusted English-language companion for exploring the wonders of China",
+    "missionTitle": "Our Mission",
+    "offerTitle": "What We Offer",
+    "offerSubtitle": "Everything you need for an unforgettable China journey",
+    "ctaTitle": "Ready to Explore China?",
+    "ctaSubtitle": "Start planning your journey today with our curated city guides.",
+    "ctaButton": "Browse Destinations",
+    "missionP1": "China Travel Guide was created with one goal in mind: to make the wonders of China accessible and approachable for international travelers. China is a vast and fascinating country with over 5,000 years of history, but navigating it as a first-time visitor can feel daunting.",
+    "missionP2": "We bring together authentic travel experiences from popular cities like Beijing, Xi'an, and Chengdu, as well as hidden gems off the beaten path. Every guide is written in clear English by travelers who have walked the streets, tasted the food, and immersed themselves in the culture.",
+    "missionP3": "From the Terracotta Warriors and the Great Wall to fiery Sichuan hot pot and adorable giant pandas, we want to help you plan the perfect China adventure — with practical tips, honest recommendations, and the warmth of local insight.",
+    "f1Title": "In-Depth City Guides",
+    "f1Desc": "Detailed guides for every major destination, covering attractions, food, itineraries, and tips.",
+    "f2Title": "Real Traveler Stories",
+    "f2Desc": "Authentic experiences and practical advice shared by travelers who have been there.",
+    "f3Title": "Local Cuisine Maps",
+    "f3Desc": "From street food to time-honored brands, discover the true flavors of each city.",
+    "f4Title": "Ready-Made Itineraries",
+    "f4Desc": "Day-by-day travel plans you can follow directly, perfect for first-time visitors.",
+    "f5Title": "Practical Tips",
+    "f5Desc": "Transport, accommodation, and cultural tips to make your trip smooth and worry-free.",
+    "f6Title": "Made for the World",
+    "f6Desc": "Written in clear English with international tourists in mind, bridging cultures."
+  },
+  "footer": {
+    "desc": "Your trusted companion for exploring China. We gather real travel experiences from popular cities and hidden gems, providing practical and reliable guidance for every traveler visiting the wonders of China.",
+    "topDestinations": "Top Destinations",
+    "travelServices": "Travel Services",
+    "aboutUs": "About Us",
+    "services": {
+      "custom": "Custom Itineraries",
+      "hotel": "Hotel Booking",
+      "ticket": "Ticket Info",
+      "guide": "Local Guides"
+    },
+    "links": {
+      "about": "About Us",
+      "contact": "Contact",
+      "contributors": "Contributors",
+      "privacy": "Privacy Policy"
+    },
+    "copyright": "© {year} China Travel Guide | Crafting unforgettable journeys across China",
+    "guideSuffix": "Guide"
+  },
+  "language": {
+    "switch": "中文",
+    "label": "Language"
+  }
+}

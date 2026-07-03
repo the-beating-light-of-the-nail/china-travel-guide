@@ -12,6 +12,7 @@
   "dependencies": {
     "@element-plus/nuxt": "^1.0.10",
     "@nuxt/image": "^1.8.1",
+    "@nuxtjs/i18n": "^10.4.0",
     "@nuxtjs/sitemap": "^6.1.0",
     "element-plus": "^2.8.8",
     "nuxt": "^3.14.159"

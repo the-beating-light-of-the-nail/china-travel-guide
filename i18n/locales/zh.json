@@ -1,0 +1,110 @@
+{
+  "brand": {
+    "name": "华夏",
+    "highlight": "行旅"
+  },
+  "nav": {
+    "home": "首页",
+    "destinations": "目的地",
+    "guides": "攻略游记",
+    "about": "关于我们"
+  },
+  "search": {
+    "placeholder": "搜索城市 / 景点 / 攻略",
+    "heroPlaceholder": "你想去哪里？例如：西安、北京、成都...",
+    "button": "搜索攻略"
+  },
+  "home": {
+    "heroTitle": "大美中国 尽在脚下",
+    "heroSubtitle": "探索九百六十万平方公里的山川与人文",
+    "destinationsTitle": "热门目的地",
+    "destinationsSubtitle": "精选城市 · 深度攻略 · 一站式出行指南",
+    "categoriesTitle": "攻略分类",
+    "categoriesSubtitle": "按你的旅行方式，找到最适合的玩法",
+    "guidesTitle": "精选攻略",
+    "guidesSubtitle": "真实旅行者分享 · 超实用出行干货"
+  },
+  "categories": {
+    "history": { "title": "历史文化", "desc": "古迹名城 · 人文底蕴" },
+    "nature": { "title": "自然风光", "desc": "山川湖海 · 秘境探索" },
+    "food": { "title": "美食探店", "desc": "地道风味 · 街头小吃" },
+    "family": { "title": "亲子出游", "desc": "寓教于乐 · 轻松出行" },
+    "romantic": { "title": "浪漫情侣", "desc": "甜蜜打卡 · 小众秘境" },
+    "budget": { "title": "背包穷游", "desc": "省钱攻略 · 青年旅舍" }
+  },
+  "city": {
+    "overviewTitle": "城市印象",
+    "atAGlance": "{name}概览",
+    "attractionsTitle": "必游景点",
+    "attractionsSubtitle": "打卡{name}地标，解锁巴蜀风情",
+    "cuisineTitle": "地道美食",
+    "cuisineSubtitle": "舌尖上的{name}，麻辣鲜香样样俱全",
+    "itineraryTitle": "经典行程",
+    "itinerarySubtitle": "轻松不赶路，玩转{name}精华",
+    "tipsTitle": "出行贴士",
+    "tipsSubtitle": "实用信息，让旅途更省心",
+    "home": "首页",
+    "day": "第",
+    "statDuration": "建议游玩时长",
+    "statSeason": "最佳季节",
+    "statHistory": "历史"
+  },
+  "regions": {
+    "Southwest China": "西南地区",
+    "Northwest China": "西北地区",
+    "North China": "华北地区"
+  },
+  "guide": {
+    "backToGuides": "← 返回攻略列表",
+    "moreGuides": "更多攻略"
+  },
+  "about": {
+    "title": "关于我们",
+    "subtitle": "专注中国本土旅游攻略，为国际旅行者提供实用、靠谱、有温度的出行参考",
+    "missionTitle": "我们的使命",
+    "offerTitle": "我们的特色",
+    "offerSubtitle": "为您提供一段难忘的中国之旅所需的一切",
+    "ctaTitle": "准备好探索中国了吗？",
+    "ctaSubtitle": "从我们精选的城市攻略开始，规划您的旅程。",
+    "ctaButton": "浏览目的地",
+    "missionP1": "中国旅游攻略的创立初衷只有一个：让国际旅行者也能轻松、便捷地领略中国的精彩。中国是一片拥有五千多年历史的广袤而迷人的国土，但对初次到访的旅行者来说，独自探索难免会有所顾虑。",
+    "missionP2": "我们汇聚来自北京、西安、成都等热门城市以及小众秘境的真实出行经验。每一篇攻略都由真正走过那些街巷、品尝过那些美食、沉浸于当地文化的旅行者用清晰的英文撰写。",
+    "missionP3": "从兵马俑、长城，到火辣的四川火锅和萌态十足的大熊猫，我们希望用实用的贴士、真诚的推荐和温暖的本地洞察，助您规划一段完美的中国之旅。",
+    "f1Title": "深度城市攻略",
+    "f1Desc": "覆盖每个主要目的地的详尽攻略，涵盖景点、美食、行程与贴士。",
+    "f2Title": "真实旅行者故事",
+    "f2Desc": "由亲历者分享的 authentic 体验与实用建议。",
+    "f3Title": "本地美食地图",
+    "f3Desc": "从街边小吃到百年老字号，发现每座城市最真实的味道。",
+    "f4Title": "现成行程方案",
+    "f4Desc": "可直接照着走的逐日行程，初次出行者也能轻松上手。",
+    "f5Title": "实用贴士",
+    "f5Desc": "交通、住宿与文化贴士，让旅途顺畅无忧。",
+    "f6Title": "面向世界",
+    "f6Desc": "以清晰的英文撰写，专为国际游客量身打造，连接中外文化。"
+  },
+  "footer": {
+    "desc": "专注中国本土旅游攻略，汇聚全国热门城市与小众目的地的真实出行经验，为每一位旅行者提供实用、靠谱、有温度的旅行参考。",
+    "topDestinations": "热门目的地",
+    "travelServices": "旅行服务",
+    "aboutUs": "关于我们",
+    "services": {
+      "custom": "行程定制",
+      "hotel": "酒店预订",
+      "ticket": "门票查询",
+      "guide": "当地向导"
+    },
+    "links": {
+      "about": "网站介绍",
+      "contact": "联系我们",
+      "contributors": "投稿合作",
+      "privacy": "隐私政策"
+    },
+    "copyright": "© {year} 华夏行旅 - 中国旅游攻略平台 | 用心记录每一段旅途",
+    "guideSuffix": "攻略"
+  },
+  "language": {
+    "switch": "EN",
+    "label": "语言"
+  }
+}
