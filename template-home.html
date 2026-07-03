@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华夏行旅 - 中国旅游攻略总览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        /* 顶部导航 */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            padding: 0 8%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c5c4e;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #c0392b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2c5c4e;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f0f0f0;
+            border-radius: 20px;
+            padding: 6px 16px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 180px;
+            font-size: 14px;
+        }
+
+        /* 英雄区 */
+        .hero {
+            height: 520px;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                        url("https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1600") center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 6px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.92;
+            margin-bottom: 32px;
+            letter-spacing: 2px;
+        }
+
+        .hero-search {
+            display: flex;
+            background: #fff;
+            border-radius: 50px;
+            padding: 6px;
+            width: 560px;
+            max-width: 90%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-search input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            border-radius: 50px;
+        }
+
+        .hero-search button {
+            background: #c0392b;
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: background 0.3s;
+        }
+
+        .hero-search button:hover {
+            background: #a93226;
+        }
+
+        /* 通用区块 */
+        .section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .section-title .subtitle {
+            color: #888;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* 热门目的地 */
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .city-card {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            height: 320px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .city-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .city-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .city-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .city-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 20px 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+            color: #fff;
+        }
+
+        .city-overlay h3 {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .city-overlay p {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        .city-tag {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #c0392b;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* 攻略分类 */
+        .category-section {
+            background: #fff;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .category-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 12px;
+            background: #f8f9fa;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .category-item:hover {
+            background: #2c5c4e;
+            color: #fff;
+            transform: translateY(-4px);
+        }
+
+        .category-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .category-item h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .category-item span {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .category-item:hover span {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 精选攻略 */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .guide-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .guide-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .guide-content {
+            padding: 20px;
+        }
+
+        .guide-content .label {
+            display: inline-block;
+            background: #e8f4f0;
+            color: #2c5c4e;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .guide-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #222;
+        }
+
+        .guide-content p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 14px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .guide-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #1f2933;
+            color: #9aa5b1;
+            padding: 50px 8% 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .footer-col li:hover {
+            color: #fff;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+
+        .footer-logo span {
+            color: #c0392b;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #323f4b;
+            font-size: 13px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 36px; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <nav class="navbar">
+        <div class="logo">华夏<span>行旅</span></div>
+        <ul class="nav-links">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">目的地</a></li>
+            <li><a href="#">攻略游记</a></li>
+            <li><a href="#">美食地图</a></li>
+            <li><a href="#">行程规划</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="搜索城市 / 景点 / 攻略">
+        </div>
+    </nav>
+
+    <!-- 英雄横幅区 -->
+    <section class="hero">
+        <h1>大美中国 尽在脚下</h1>
+        <p>探索九百六十万平方公里的山川与人文</p>
+        <div class="hero-search">
+            <input type="text" placeholder="你想去哪里？例如：西安、北京、成都...">
+            <button>搜索攻略</button>
+        </div>
+    </section>
+
+    <!-- 热门目的地 -->
+    <section class="section">
+        <div class="section-title">
+            <h2>热门目的地</h2>
+            <div class="subtitle">精选城市 · 深度攻略 · 一站式出行指南</div>
+        </div>
+        <div class="city-grid">
+            <!-- 西安 -->
+            <div class="city-card">
+                <div class="city-tag">历史古都</div>
+                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600" alt="西安">
+                <div class="city-overlay">
+                    <h3>西安</h3>
+                    <p>十三朝古都 · 兵马俑 · 回民街美食</p>
+                </div>
+            </div>
+            <!-- 北京 -->
+            <div class="city-card">
+                <div class="city-tag">首都风范</div>
+                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600" alt="北京">
+                <div class="city-overlay">
+                    <h3>北京</h3>
+                    <p>故宫长城 · 胡同烟火 · 皇家园林</p>
+                </div>
+            </div>
+            <!-- 成都 -->
+            <div class="city-card">
+                <div class="city-tag">休闲天府</div>
+                <img src="https://images.unsplash.com/photo-1590103513924-6be5415868c7?w=600" alt="成都">
+                <div class="city-overlay">
+                    <h3>成都</h3>
+                    <p>熊猫基地 · 火锅串串 · 慢生活</p>
+                </div>
+            </div>
+            <!-- 杭州 -->
+            <div class="city-card">
+                <div class="city-tag">江南水乡</div>
+                <img src="https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?w=600" alt="杭州">
+                <div class="city-overlay">
+                    <h3>杭州</h3>
+                    <p>西湖美景 · 宋韵文化 · 龙井茶香</p>
+                </div>
+            </div>
+            <!-- 丽江 -->
+            <div class="city-card">
+                <div class="city-tag">风情云南</div>
+                <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=600" alt="丽江">
+                <div class="city-overlay">
+                    <h3>丽江</h3>
+                    <p>古城夜色 · 玉龙雪山 · 泸沽湖</p>
+                </div>
+            </div>
+            <!-- 三亚 -->
+            <div class="city-card">
+                <div class="city-tag">热带海滨</div>
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600" alt="三亚">
+                <div class="city-overlay">
+                    <h3>三亚</h3>
+                    <p>碧海蓝天 · 椰林沙滩 · 度假天堂</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 攻略分类 -->
+    <section class="section category-section">
+        <div class="section-title">
+            <h2>攻略分类</h2>
+            <div class="subtitle">按你的旅行方式，找到最适合的玩法</div>
+        </div>
+        <div class="category-grid">
+            <div class="category-item">
+                <div class="category-icon">🏯</div>
+                <h4>历史文化</h4>
+                <span>古迹名城 · 人文底蕴</span>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">🏔️</div>
+                <h4>自然风光</h4>
+                <span>山川湖海 · 秘境探索</span>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">🍜</div>
+                <h4>美食探店</h4>
+                <span>地道风味 · 街头小吃</span>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">👨‍👩‍👧</div>
+                <h4>亲子出游</h4>
+                <span>寓教于乐 · 轻松出行</span>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">💑</div>
+                <h4>浪漫情侣</h4>
+                <span>甜蜜打卡 · 小众秘境</span>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">🎒</div>
+                <h4>背包穷游</h4>
+                <span>省钱攻略 · 青年旅舍</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 精选攻略推荐 -->
+    <section class="section">
+        <div class="section-title">
+            <h2>精选攻略</h2>
+            <div class="subtitle">真实旅行者分享 · 超实用出行干货</div>
+        </div>
+        <div class="guide-grid">
+            <div class="guide-card">
+                <img src="https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=600" alt="">
+                <div class="guide-content">
+                    <span class="label">3天2晚</span>
+                    <h3>西安三日经典路线：兵马俑+城墙+回民街全攻略</h3>
+                    <p>第一次去西安怎么玩？这条路线涵盖必去景点、地道美食和交通避坑指南，新手直接照着走就行。</p>
+                    <div class="guide-meta">
+                        <span>📖 阅读 2.3w</span>
+                        <span>⏱️ 发布于 3天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="guide-card">
+                <img src="https://images.unsplash.com/photo-1584646098378-0874589d76b1?w=600" alt="">
+                <div class="guide-content">
+                    <span class="label">5天4晚</span>
+                    <h3>北京深度游：避开人潮的小众玩法清单</h3>
+                    <p>不止故宫长城，带你走进老北京胡同、小众博物馆和本地人常去的美食街区。</p>
+                    <div class="guide-meta">
+                        <span>📖 阅读 1.8w</span>
+                        <span>⏱️ 发布于 1周前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="guide-card">
+                <img src="https://images.unsplash.com/photo-1555217851-6141535bd773?w=600" alt="">
+                <div class="guide-content">
+                    <span class="label">美食地图</span>
+                    <h3>成都美食全指南：从街边摊到老字号一网打尽</h3>
+                    <p>火锅、串串、担担面、兔头……本地人私藏的20家宝藏店铺，照着吃不踩雷。</p>
+                    <div class="guide-meta">
+                        <span>📖 阅读 3.1w</span>
+                        <span>⏱️ 发布于 5天前</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">华夏<span>行旅</span></div>
+                <p class="footer-desc">
+                    专注中国本土旅游攻略，汇聚全国热门城市与小众目的地的真实出行经验，
+                    为每一位旅行者提供实用、靠谱、有温度的旅行参考。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>热门目的地</h4>
+                <ul>
+                    <li>西安攻略</li>
+                    <li>北京攻略</li>
+                    <li>成都攻略</li>
+                    <li>杭州攻略</li>
+                    <li>重庆攻略</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>旅行服务</h4>
+                <ul>
+                    <li>行程定制</li>
+                    <li>酒店预订</li>
+                    <li>门票查询</li>
+                    <li>当地向导</li>
+                    <li>结伴同行</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li>网站介绍</li>
+                    <li>联系我们</li>
+                    <li>投稿合作</li>
+                    <li>隐私政策</li>
+                    <li>用户协议</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 华夏行旅 - 中国旅游攻略平台 | 用心记录每一段旅途
+        </div>
+    </footer>
+
+</body>
+</html>

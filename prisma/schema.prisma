@@ -1,0 +1,123 @@
+// Prisma 数据模型 - 中国旅游攻略网站
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// 城市模型
+model City {
+  id          Int           @id @default(autoincrement())
+  name        String
+  slug        String        @unique
+  description String
+  heroImage   String
+  tagline     String
+  tags        String
+  region      String
+  intro       String
+  history     String
+  bestSeason  String
+  duration    String
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  attractions Attraction[]
+  foods       Food[]
+  itineraries Itinerary[]
+  tips        Tip[]
+}
+
+// 景点模型
+model Attraction {
+  id          Int    @id @default(autoincrement())
+  name        String
+  cityId      Int
+  description String
+  image       String
+  location    String
+  duration    String
+  ticket      String
+  highlight   String
+  sortOrder   Int    @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  city        City   @relation(fields: [cityId], references: [id], onDelete: Cascade)
+}
+
+// 美食模型
+model Food {
+  id          Int    @id @default(autoincrement())
+  name        String
+  cityId      Int
+  description String
+  image       String
+  highlight   String
+  sortOrder   Int    @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  city        City   @relation(fields: [cityId], references: [id], onDelete: Cascade)
+}
+
+// 行程模型
+model Itinerary {
+  id        Int             @id @default(autoincrement())
+  cityId    Int
+  dayNumber Int
+  title     String
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  city      City            @relation(fields: [cityId], references: [id], onDelete: Cascade)
+  items     ItineraryItem[]
+}
+
+// 行程条目模型
+model ItineraryItem {
+  id            Int        @id @default(autoincrement())
+  itineraryId   Int
+  timeSlot      String
+  content       String
+  sortOrder     Int        @default(0)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  itinerary     Itinerary  @relation(fields: [itineraryId], references: [id], onDelete: Cascade)
+}
+
+// 攻略文章模型
+model Guide {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String
+  image       String
+  label       String
+  readTime    String
+  views       String
+  publishedAt String
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 实用贴士模型
+model Tip {
+  id        Int      @id @default(autoincrement())
+  cityId    Int
+  icon      String
+  title     String
+  items     String
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  city      City     @relation(fields: [cityId], references: [id], onDelete: Cascade)
+}

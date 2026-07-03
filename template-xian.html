@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西安旅游攻略 | 千年古都 · 盛世长安</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ancient-red': '#8B2323',
+                        'ancient-gold': '#C9A961',
+                        'ancient-brown': '#5D4037',
+                        'wall-gray': '#8D7B68',
+                        'light-cream': '#F5F0E6',
+                    },
+                    fontFamily: {
+                        'serif': ['"Noto Serif SC"', 'SimSun', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            }
+            .bg-pattern {
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a961' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(139, 35, 35, 0.15);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light-cream bg-pattern font-serif text-ancient-brown">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex items-center">
+                    <span class="text-ancient-gold text-2xl md:text-3xl font-bold tracking-wider">长安·游记</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#attractions" class="text-white hover:text-ancient-gold transition-colors">必游景点</a>
+                    <a href="#food" class="text-white hover:text-ancient-gold transition-colors">美食地图</a>
+                    <a href="#itinerary" class="text-white hover:text-ancient-gold transition-colors">行程推荐</a>
+                    <a href="#transport" class="text-white hover:text-ancient-gold transition-colors">交通指南</a>
+                    <a href="#tips" class="text-white hover:text-ancient-gold transition-colors">实用贴士</a>
+                </div>
+                <button id="menuBtn" class="md:hidden text-white text-2xl">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-ancient-brown/95 backdrop-blur-sm">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#attractions" class="block text-white hover:text-ancient-gold py-2">必游景点</a>
+                <a href="#food" class="block text-white hover:text-ancient-gold py-2">美食地图</a>
+                <a href="#itinerary" class="block text-white hover:text-ancient-gold py-2">行程推荐</a>
+                <a href="#transport" class="block text-white hover:text-ancient-gold py-2">交通指南</a>
+                <a href="#tips" class="block text-white hover:text-ancient-gold py-2">实用贴士</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="relative h-screen min-h-[600px] overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/id/1036/1920/1080" alt="西安古城墙夜景" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
+        </div>
+        <div class="relative h-full flex flex-col justify-center items-center text-center px-4">
+            <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-bold text-white text-shadow mb-6 tracking-widest">
+                西 安
+            </h1>
+            <p class="text-[clamp(1rem,3vw,1.5rem)] text-ancient-gold text-shadow mb-2 tracking-[0.3em]">
+                千 年 古 都 · 盛 世 长 安
+            </p>
+            <p class="text-white/80 max-w-2xl text-shadow mt-8 text-lg leading-relaxed">
+                十三朝古都的风华岁月，兵马俑的磅礴气势，回民街的烟火人间<br>
+                一座城，半部中华史
+            </p>
+            <a href="#attractions" class="mt-12 px-8 py-3 border-2 border-ancient-gold text-ancient-gold hover:bg-ancient-gold hover:text-white transition-all duration-300 tracking-widest">
+                开启旅程
+            </a>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white animate-bounce">
+            <i class="fa fa-angle-down text-3xl"></i>
+        </div>
+    </header>
+
+    <!-- 景点推荐 -->
+    <section id="attractions" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-ancient-gold tracking-[0.5em] text-sm">MUST VISIT</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4 text-ancient-brown">必游景点</h2>
+                <div class="w-24 h-1 bg-ancient-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 兵马俑 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://picsum.photos/id/1074/800/600" alt="秦始皇兵马俑" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-2xl font-bold text-ancient-red">秦始皇兵马俑</h3>
+                            <span class="bg-ancient-gold/20 text-ancient-brown px-3 py-1 text-sm rounded-full">5A景区</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            世界第八大奇迹，秦始皇陵的陪葬坑，出土了数以千计的真人大小陶俑。每一尊兵马俑面容各异，栩栩如生，震撼人心。
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 space-x-4">
+                            <span><i class="fa fa-map-marker mr-1 text-ancient-red"></i>临潼区</span>
+                            <span><i class="fa fa-clock-o mr-1 text-ancient-red"></i>3-4小时</span>
+                            <span><i class="fa fa-ticket mr-1 text-ancient-red"></i>¥120</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 古城墙 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://picsum.photos/id/1040/800/600" alt="西安古城墙" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-2xl font-bold text-ancient-red">西安古城墙</h3>
+                            <span class="bg-ancient-gold/20 text-ancient-brown px-3 py-1 text-sm rounded-full">地标</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            中国现存规模最大、保存最完整的古代城垣。可以租一辆自行车骑行城墙之上，俯瞰西安老城风光，傍晚景色尤佳。
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 space-x-4">
+                            <span><i class="fa fa-map-marker mr-1 text-ancient-red"></i>市中心</span>
+                            <span><i class="fa fa-clock-o mr-1 text-ancient-red"></i>2-3小时</span>
+                            <span><i class="fa fa-ticket mr-1 text-ancient-red"></i>¥54</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 大雁塔 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://picsum.photos/id/1041/800/600" alt="大雁塔" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-2xl font-bold text-ancient-red">大雁塔·大慈恩寺</h3>
+                            <span class="bg-ancient-gold/20 text-ancient-brown px-3 py-1 text-sm rounded-full">佛教圣地</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            玄奘法师主持修建，唐代长安的标志性建筑。北广场有亚洲最大的音乐喷泉，夜晚灯光璀璨，是西安必看夜景之一。
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 space-x-4">
+                            <span><i class="fa fa-map-marker mr-1 text-ancient-red"></i>雁塔区</span>
+                            <span><i class="fa fa-clock-o mr-1 text-ancient-red"></i>2小时</span>
+                            <span><i class="fa fa-ticket mr-1 text-ancient-red"></i>¥40</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 华清宫 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://picsum.photos/id/1039/800/600" alt="华清宫" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-2xl font-bold text-ancient-red">华清宫</h3>
+                            <span class="bg-ancient-gold/20 text-ancient-brown px-3 py-1 text-sm rounded-full">皇家园林</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            唐玄宗与杨贵妃的爱情圣地，因骊山温泉而闻名。《长恨歌》实景演出震撼人心，以骊山为幕，光影演绎千年绝恋。
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 space-x-4">
+                            <span><i class="fa fa-map-marker mr-1 text-ancient-red"></i>临潼区</span>
+                            <span><i class="fa fa-clock-o mr-1 text-ancient-red"></i>2-3小时</span>
+                            <span><i class="fa fa-ticket mr-1 text-ancient-red"></i>¥120</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 回民街 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://picsum.photos/id/1080/800/600" alt="回民街" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-2xl font-bold text-ancient-red">回民街</h3>
+                            <span class="bg-ancient-gold/20 text-ancient-brown px-3 py-1 text-sm rounded-full">美食天堂</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            西安最著名的美食街区，青石铺路，绿树成荫。两旁遍布清真小吃店，肉夹馍、羊肉泡馍、甑糕应有尽有，烟火气十足。
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 space-x-4">
+                            <span><i class="fa fa-map-marker mr-1 text-ancient-red"></i>莲湖区</span>
+                            <span><i class="fa fa-clock-o mr-1 text-ancient-red"></i>2-3小时</span>
+                            <span><i class="fa fa-ticket mr-1 text-ancient-red"></i>免费</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 陕西历史博物馆 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://picsum.photos/id/1068/800/600" alt="陕西历史博物馆" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-2xl font-bold text-ancient-red">陕西历史博物馆</h3>
+                            <span class="bg-ancient-gold/20 text-ancient-brown px-3 py-1 text-sm rounded-full">文博</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            "给我一天，还你万年"。馆藏文物37万余件，从远古人类到鸦片战争，时间跨度长达一百多万年，需提前预约。
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 space-x-4">
+                            <span><i class="fa fa-map-marker mr-1 text-ancient-red"></i>雁塔区</span>
+                            <span><i class="fa fa-clock-o mr-1 text-ancient-red"></i>3-4小时</span>
+                            <span><i class="fa fa-ticket mr-1 text-ancient-red"></i>免费</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 美食攻略 -->
+    <section id="food" class="py-20 px-4 bg-ancient-brown/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-ancient-gold tracking-[0.5em] text-sm">XI'AN CUISINE</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4 text-ancient-brown">美食地图</h2>
+                <div class="w-24 h-1 bg-ancient-gold mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
+                    西安美食融合了西北的豪迈与古都的精致，面食文化源远流长，每一口都是千年的味道
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-3xl font-bold text-ancient-red mb-4">羊肉泡馍</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        西安美食的代表之作，古称"羊羹"。将烙饼掰成黄豆大小，配以浓郁的羊肉汤煮制，加入粉丝、葱花、糖蒜。
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        吃泡馍讲究"蚕食"，从一个方向慢慢吃，不要翻搅。配上糖蒜和辣酱，汤浓肉烂，馍筋道入味，暖胃又暖心。
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center">
+                            <i class="fa fa-star text-ancient-gold mr-1"></i>
+                            <span class="text-sm">推荐：老孙家、同盛祥</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-money text-ancient-gold mr-1"></i>
+                            <span class="text-sm">人均 ¥30-50</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 rounded-lg overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/1080/800/600" alt="羊肉泡馍" class="w-full h-80 object-cover">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/1069/800/600" alt="肉夹馍" class="w-full h-80 object-cover">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-ancient-red mb-4">腊汁肉夹馍</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "中式汉堡"的鼻祖，白吉馍外酥里嫩，腊汁肉肥而不腻。馍香肉酥，回味无穷，是西安人最日常的美味。
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        正宗的肉夹馍只用腊汁肉，不加青椒香菜。老潼关肉夹馍则是千层酥饼，口感更为酥脆，各有千秋。
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center">
+                            <i class="fa fa-star text-ancient-gold mr-1"></i>
+                            <span class="text-sm">推荐：秦豫肉夹馍、樊记</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-money text-ancient-gold mr-1"></i>
+                            <span class="text-sm">人均 ¥10-15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+                <div class="bg-white rounded-lg p-5 text-center shadow-md card-hover">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-ancient-red/10 rounded-full flex items-center justify-center">
+                        <i class="fa fa-cutlery text-2xl text-ancient-red"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">biangbiang面</h4>
+                    <p class="text-sm text-gray-600">宽如裤带，油泼辣子香</p>
+                </div>
+                <div class="bg-white rounded-lg p-5 text-center shadow-md card-hover">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-ancient-red/10 rounded-full flex items-center justify-center">
+                        <i class="fa fa-cutlery text-2xl text-ancient-red"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">甑糕</h4>
+                    <p class="text-sm text-gray-600">糯米红枣，香甜软糯</p>
+                </div>
+                <div class="bg-white rounded-lg p-5 text-center shadow-md card-hover">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-ancient-red/10 rounded-full flex items-center justify-center">
+                        <i class="fa fa-cutlery text-2xl text-ancient-red"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">凉皮</h4>
+                    <p class="text-sm text-gray-600">秦镇米皮，酸辣开胃</p>
+                </div>
+                <div class="bg-white rounded-lg p-5 text-center shadow-md card-hover">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-ancient-red/10 rounded-full flex items-center justify-center">
+                        <i class="fa fa-cutlery text-2xl text-ancient-red"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">柿子饼</h4>
+                    <p class="text-sm text-gray-600">黄桂柿子，外酥里甜</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行程推荐 -->
+    <section id="itinerary" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-ancient-gold tracking-[0.5em] text-sm">ITINERARY</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4 text-ancient-brown">经典行程</h2>
+                <div class="w-24 h-1 bg-ancient-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Day 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-ancient-red text-white py-4 px-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold">第一天</h3>
+                            <span class="bg-white/20 px-3 py-1 rounded-full text-sm">市区东线</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-5">
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">上午</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">陕西历史博物馆</h4>
+                                <p class="text-sm text-gray-600 mt-1">提前3天预约，感受周秦汉唐盛世风华</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">中午</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">大雁塔周边</h4>
+                                <p class="text-sm text-gray-600 mt-1">大慈恩寺登塔，北广场音乐喷泉</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">下午</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">古城墙骑行</h4>
+                                <p class="text-sm text-gray-600 mt-1">永宁门登城，骑行一圈约13.7公里</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">晚上</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">钟鼓楼 + 回民街</h4>
+                                <p class="text-sm text-gray-600 mt-1">夜景绝美，品尝西安特色小吃</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-ancient-red text-white py-4 px-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold">第二天</h3>
+                            <span class="bg-white/20 px-3 py-1 rounded-full text-sm">临潼线</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-5">
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">上午</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">秦始皇兵马俑</h4>
+                                <p class="text-sm text-gray-600 mt-1">1、2、3号坑 + 铜车马展厅，建议请讲解</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">中午</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">临潼午餐</h4>
+                                <p class="text-sm text-gray-600 mt-1">品尝临潼大盘鸡、油泼面</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">下午</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">华清宫</h4>
+                                <p class="text-sm text-gray-600 mt-1">唐代皇家温泉，骊山兵谏亭</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">晚上</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">《长恨歌》演出</h4>
+                                <p class="text-sm text-gray-600 mt-1">实景历史舞剧，强烈推荐中A区</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-ancient-red text-white py-4 px-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold">第三天</h3>
+                            <span class="bg-white/20 px-3 py-1 rounded-full text-sm">人文休闲</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-5">
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">上午</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">碑林博物馆</h4>
+                                <p class="text-sm text-gray-600 mt-1">书法艺术宝库，颜柳欧赵俱全</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">中午</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">永兴坊</h4>
+                                <p class="text-sm text-gray-600 mt-1">陕西各地美食汇聚，摔碗酒体验</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">下午</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">小雁塔 + 荐福寺</h4>
+                                <p class="text-sm text-gray-600 mt-1">西安博物院，清幽人少体验佳</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 text-sm text-ancient-gold font-medium">晚上</div>
+                            <div>
+                                <h4 class="font-bold text-ancient-brown">大唐不夜城</h4>
+                                <p class="text-sm text-gray-600 mt-1">盛唐天街，不倒翁小姐姐表演</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 交通指南 -->
+    <section id="transport" class="py-20 px-4 bg-ancient-brown/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-ancient-gold tracking-[0.5em] text-sm">TRANSPORTATION</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4 text-ancient-brown">交通指南</h2>
+                <div class="w-24 h-1 bg-ancient-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg p-6 shadow-md card-hover">
+                    <div class="w-14 h-14 bg-ancient-red/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-plane text-2xl text-ancient-red"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">飞机</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                        西安咸阳国际机场，距市区约47公里。可乘坐机场大巴、地铁14号线或出租车前往市区。
+                    </p>
+                    <p class="text-sm text-ancient-gold font-medium">
+                        <i class="fa fa-clock-o mr-1"></i> 机场到市区约1小时
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md card-hover">
+                    <div class="w-14 h-14 bg-ancient-red/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-train text-2xl text-ancient-red"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">高铁</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                        西安北站是主要高铁站，地铁2号线、4号线直达市区。西安站也有部分普速列车停靠。
+                    </p>
+                    <p class="text-sm text-ancient-gold font-medium">
+                        <i class="fa fa-subway mr-1"></i> 地铁2号线贯穿南北
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md card-hover">
+                    <div class="w-14 h-14 bg-ancient-red/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-subway text-2xl text-ancient-red"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">地铁</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                        已开通8条线路，覆盖主要景点。可使用支付宝/微信乘车码，或办理长安通。
+                    </p>
+                    <p class="text-sm text-ancient-gold font-medium">
+                        <i class="fa fa-credit-card mr-1"></i> 起步价2元
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md card-hover">
+                    <div class="w-14 h-14 bg-ancient-red/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-bus text-2xl text-ancient-red"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">公交</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                        公交线路密集，票价2元。去临潼可在火车站乘坐游5（306路），注意辨别正规车辆。
+                    </p>
+                    <p class="text-sm text-ancient-gold font-medium">
+                        <i class="fa fa-map-marker mr-1"></i> 游5直达兵马俑
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实用贴士 -->
+    <section id="tips" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-ancient-gold tracking-[0.5em] text-sm">TRAVEL TIPS</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4 text-ancient-brown">实用贴士</h2>
+                <div class="w-24 h-1 bg-ancient-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-ancient-red mb-6 flex items-center">
+                        <i class="fa fa-lightbulb-o mr-3"></i>最佳旅行时间
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>3-5月（春季）：</strong>气候宜人，春暖花开，适合户外活动</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>9-11月（秋季）：</strong>天高气爽，秋意渐浓，是最佳旅游季节</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>夏季：</strong>炎热干燥，注意防晒补水，适合室内景点</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>冬季：</strong>寒冷干燥，游客较少，是错峰出行好时机</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-ancient-red mb-6 flex items-center">
+                        <i class="fa fa-exclamation-circle mr-3"></i>注意事项
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-ancient-gold mt-1 mr-3"></i>
+                            <span>陕西历史博物馆需提前3天在官方公众号预约，免费但一票难求</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-ancient-gold mt-1 mr-3"></i>
+                            <span>兵马俑建议请讲解员，否则只能看到"泥人"，历史感大打折扣</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-ancient-gold mt-1 mr-3"></i>
+                            <span>西安饮食偏咸辣，口味清淡的朋友可以提前告知少盐少辣</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-ancient-gold mt-1 mr-3"></i>
+                            <span>火车站周边拉客的黑车黑导较多，务必乘坐正规交通工具</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-ancient-red mb-6 flex items-center">
+                        <i class="fa fa-bed mr-3"></i>住宿推荐
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>钟鼓楼/回民街附近：</strong>交通便利，美食众多，适合首次来西安</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>大雁塔附近：</strong>环境较好，夜景优美，中高档酒店集中</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>永宁门附近：</strong>城墙脚下，地铁交汇，出行方便</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>小寨商圈：</strong>年轻人聚集地，购物餐饮丰富，性价比高</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-ancient-red mb-6 flex items-center">
+                        <i class="fa fa-shopping-bag mr-3"></i>伴手礼推荐
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-gift text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>德懋恭水晶饼：</strong>西安传统糕点，酥皮甜馅，百年老字号</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-gift text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>兵马俑文创：</strong>各种Q版兵马俑摆件、书签，独具西安特色</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-gift text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>琼锅糖：</strong>富平特产，芝麻香浓郁，香甜酥脆不粘牙</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-gift text-ancient-gold mt-1 mr-3"></i>
+                            <span><strong>柿子饼/石榴：</strong>临潼特产，应季购买最佳，风味独特</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-ancient-brown text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-ancient-gold mb-4">长安·游记</h3>
+                    <p class="text-white/70 leading-relaxed">
+                        一座长安城，半部中华史。<br>
+                        愿你在这座千年古都，找到属于自己的盛唐记忆。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">快速导航</h4>
+                    <div class="grid grid-cols-2 gap-2 text-white/70">
+                        <a href="#attractions" class="hover:text-ancient-gold transition-colors">必游景点</a>
+                        <a href="#food" class="hover:text-ancient-gold transition-colors">美食地图</a>
+                        <a href="#itinerary" class="hover:text-ancient-gold transition-colors">行程推荐</a>
+                        <a href="#transport" class="hover:text-ancient-gold transition-colors">交通指南</a>
+                        <a href="#tips" class="hover:text-ancient-gold transition-colors">实用贴士</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">温馨提示</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">
+                        出行前请查询最新的景区开放时间和预约政策，<br>
+                        合理安排行程，祝您旅途愉快！
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-6 text-center text-white/50 text-sm">
+                <p>© 2024 西安旅游攻略 | 千年古都 · 盛世长安</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-ancient-red text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-ancient-gold z-50">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-ancient-brown/95', 'backdrop-blur-sm', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                navbar.classList.remove('bg-ancient-brown/95', 'backdrop-blur-sm', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        // 移动端菜单
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 点击菜单项关闭移动端菜单
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 返回顶部
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
