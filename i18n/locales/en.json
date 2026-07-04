@@ -1,53 +1,53 @@
 {
   "brand": {
-    "name": "China",
-    "highlight": "Travel"
+    "name": "Middle Kingdom",
+    "highlight": "Wanderlust"
   },
   "nav": {
     "home": "Home",
     "destinations": "Destinations",
-    "guides": "Guides",
+    "guides": "Travel Guides",
     "about": "About"
   },
   "search": {
-    "placeholder": "Search cities...",
-    "heroPlaceholder": "Where do you want to go? e.g. Beijing, Xi'an, Chengdu...",
-    "button": "Search"
+    "placeholder": "Search cities, attractions, guides...",
+    "heroPlaceholder": "Where to? Try Beijing, Xi'an, or Chengdu...",
+    "button": "Find Guides"
   },
   "home": {
-    "heroTitle": "Discover the Wonders of China",
-    "heroSubtitle": "Explore ancient capitals, vibrant cities, and breathtaking landscapes",
-    "destinationsTitle": "Popular Destinations",
-    "destinationsSubtitle": "Handpicked cities · In-depth guides · All-in-one travel companion",
-    "categoriesTitle": "Browse by Category",
-    "categoriesSubtitle": "Find the perfect trip for your travel style",
+    "heroTitle": "Discover China Beyond the Postcards",
+    "heroSubtitle": "Ancient capitals, fiery cuisine, and landscapes that take your breath away",
+    "destinationsTitle": "Top Destinations",
+    "destinationsSubtitle": "Handpicked cities · Deep-dive guides · Everything you need to know",
+    "categoriesTitle": "Travel Styles",
+    "categoriesSubtitle": "Find your vibe — from history buff to foodie to backpacker",
     "guidesTitle": "Featured Guides",
-    "guidesSubtitle": "Real traveler stories · Practical trip-planning tips"
+    "guidesSubtitle": "On-the-ground stories · Honest advice · Trip-tested itineraries"
   },
   "categories": {
-    "history": { "title": "History & Culture", "desc": "Ancient capitals and timeless heritage" },
-    "nature": { "title": "Nature & Scenery", "desc": "Mountains, rivers and hidden gems" },
-    "food": { "title": "Food & Cuisine", "desc": "Authentic flavors and street food" },
-    "family": { "title": "Family Travel", "desc": "Fun and educational for all ages" },
-    "romantic": { "title": "Romantic Getaways", "desc": "Sweet spots and off-the-grid retreats" },
-    "budget": { "title": "Budget Backpacking", "desc": "Money-saving tips and hostels" }
+    "history": { "title": "History & Culture", "desc": "Ancient capitals and millennia-old heritage" },
+    "nature": { "title": "Nature & Outdoors", "desc": "Mountains, rivers, and hidden gems off the grid" },
+    "food": { "title": "Food & Drink", "desc": "Street food stalls and time-honored favorites" },
+    "family": { "title": "Family Travel", "desc": "Fun, easy, and educational for all ages" },
+    "romantic": { "title": "Romantic Getaways", "desc": "Sweet spots and quiet retreats for two" },
+    "budget": { "title": "Budget Backpacking", "desc": "Save money, meet people, see more" }
   },
   "city": {
     "overviewTitle": "City Overview",
     "atAGlance": "{name} at a Glance",
-    "attractionsTitle": "Must-Visit Attractions",
-    "attractionsSubtitle": "Explore the icons of {name}",
-    "cuisineTitle": "Local Cuisine",
-    "cuisineSubtitle": "Taste the flavors of {name}",
+    "attractionsTitle": "Can't-Miss Attractions",
+    "attractionsSubtitle": "The icons and hidden corners that define {name}",
+    "cuisineTitle": "Local Food Scene",
+    "cuisineSubtitle": "What to eat and where to find it in {name}",
     "itineraryTitle": "Suggested Itinerary",
-    "itinerarySubtitle": "Make the most of your {name} trip",
-    "tipsTitle": "Travel Tips",
-    "tipsSubtitle": "Practical info for a smoother trip",
+    "itinerarySubtitle": "Make the most of your time in {name}",
+    "tipsTitle": "Practical Tips",
+    "tipsSubtitle": "Stuff to know before you go",
     "home": "Home",
     "day": "Day",
-    "statDuration": "Recommended Duration",
-    "statSeason": "Best Season",
-    "statHistory": "History"
+    "statDuration": "Recommended Stay",
+    "statSeason": "Best Time to Visit",
+    "statHistory": "Years of History"
   },
   "regions": {
     "Southwest China": "Southwest China",
@@ -55,39 +55,39 @@
     "North China": "North China"
   },
   "guide": {
-    "backToGuides": "← Back to Guides",
+    "backToGuides": "← Back to All Guides",
     "moreGuides": "More Guides"
   },
   "about": {
-    "title": "About Us",
-    "subtitle": "Your trusted English-language companion for exploring the wonders of China",
-    "missionTitle": "Our Mission",
-    "offerTitle": "What We Offer",
-    "offerSubtitle": "Everything you need for an unforgettable China journey",
-    "ctaTitle": "Ready to Explore China?",
-    "ctaSubtitle": "Start planning your journey today with our curated city guides.",
+    "title": "About This Site",
+    "subtitle": "Your go-to English resource for travel in China — written by people who actually live here",
+    "missionTitle": "Why We Started This",
+    "offerTitle": "What You'll Find Here",
+    "offerSubtitle": "Everything you need for a smooth, unforgettable China trip",
+    "ctaTitle": "Ready to Start Planning?",
+    "ctaSubtitle": "Dive into our city guides and build an itinerary that fits your style.",
     "ctaButton": "Browse Destinations",
-    "missionP1": "China Travel Guide was created with one goal in mind: to make the wonders of China accessible and approachable for international travelers. China is a vast and fascinating country with over 5,000 years of history, but navigating it as a first-time visitor can feel daunting.",
-    "missionP2": "We bring together authentic travel experiences from popular cities like Beijing, Xi'an, and Chengdu, as well as hidden gems off the beaten path. Every guide is written in clear English by travelers who have walked the streets, tasted the food, and immersed themselves in the culture.",
-    "missionP3": "From the Terracotta Warriors and the Great Wall to fiery Sichuan hot pot and adorable giant pandas, we want to help you plan the perfect China adventure — with practical tips, honest recommendations, and the warmth of local insight.",
-    "f1Title": "In-Depth City Guides",
-    "f1Desc": "Detailed guides for every major destination, covering attractions, food, itineraries, and tips.",
+    "missionP1": "China is enormous. It's also endlessly fascinating — 5,000 years of history, dozens of cuisines, and landscapes that stretch from tropical islands to snow-capped mountains. But for first-time visitors, figuring out how to navigate it all can feel overwhelming.",
+    "missionP2": "That's where we come in. We're a team of travel writers and long-term residents based across China — from Beijing to Chengdu to Xi'an and beyond. Every guide is written from firsthand experience: we've walked the streets, eaten the food, gotten lost, and figured out the shortcuts so you don't have to.",
+    "missionP3": "Whether you're here for the Terracotta Warriors, a Sichuan hot pot adventure, or a quiet moment with the pandas, we want to help you plan a trip that's authentic, stress-free, and uniquely yours.",
+    "f1Title": "Deep City Guides",
+    "f1Desc": "Comprehensive guides for every major destination — attractions, food, itineraries, and local intel.",
     "f2Title": "Real Traveler Stories",
-    "f2Desc": "Authentic experiences and practical advice shared by travelers who have been there.",
-    "f3Title": "Local Cuisine Maps",
-    "f3Desc": "From street food to time-honored brands, discover the true flavors of each city.",
-    "f4Title": "Ready-Made Itineraries",
-    "f4Desc": "Day-by-day travel plans you can follow directly, perfect for first-time visitors.",
-    "f5Title": "Practical Tips",
-    "f5Desc": "Transport, accommodation, and cultural tips to make your trip smooth and worry-free.",
-    "f6Title": "Made for the World",
-    "f6Desc": "Written in clear English with international tourists in mind, bridging cultures."
+    "f2Desc": "Honest accounts and practical tips from people who've actually been there.",
+    "f3Title": "Local Food Maps",
+    "f3Desc": "From street-side stalls to century-old restaurants — the real flavors of each city.",
+    "f4Title": "Done-for-You Itineraries",
+    "f4Desc": "Day-by-day plans you can follow directly, even if it's your first time in China.",
+    "f5Title": "Practical Know-How",
+    "f5Desc": "Transport, accommodation, and cultural tips to keep your trip running smoothly.",
+    "f6Title": "Written for Travelers Like You",
+    "f6Desc": "Clear, conversational English with the context you need — no insider assumptions."
   },
   "footer": {
-    "desc": "Your trusted companion for exploring China. We gather real travel experiences from popular cities and hidden gems, providing practical and reliable guidance for every traveler visiting the wonders of China.",
+    "desc": "Your trusted English-language guide to travel in China. We share on-the-ground experience from popular cities and hidden corners alike, so you can travel with confidence.",
     "topDestinations": "Top Destinations",
-    "travelServices": "Travel Services",
-    "aboutUs": "About Us",
+    "travelServices": "Travel Tools",
+    "aboutUs": "About",
     "services": {
       "custom": "Custom Itineraries",
       "hotel": "Hotel Booking",
@@ -96,11 +96,11 @@
     },
     "links": {
       "about": "About Us",
-      "contact": "Contact",
-      "contributors": "Contributors",
+      "contact": "Get in Touch",
+      "contributors": "Write for Us",
       "privacy": "Privacy Policy"
     },
-    "copyright": "© {year} China Travel Guide | Crafting unforgettable journeys across China",
+    "copyright": "© {year} Middle Kingdom Wanderlust | Travel guides for the curious explorer",
     "guideSuffix": "Guide"
   },
   "language": {
