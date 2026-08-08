@@ -8,6 +8,10 @@ dist
 # 依赖
 node_modules
 
+# Python 虚拟环境（PDF 提取等本地工具链）
+.venv
+__pycache__
+
 # 日志
 logs
 *.log
@@ -26,3 +30,6 @@ npm-debug.log*
 # 数据库
 prisma/*.db
 prisma/*.db-journal
+
+# 旅游资料文件夹（本地素材，不纳入版本控制）
+全国旅游攻略\ 国内穷游自驾游旅行地图电子版周边游线路美食指南/
