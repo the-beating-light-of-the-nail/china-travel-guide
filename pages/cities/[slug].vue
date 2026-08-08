@@ -101,40 +101,46 @@ useHead({
 
     <!-- 城市印象 -->
     <section class="py-[70px] px-4 sm:px-[8%] bg-white">
-      <div class="section-title">
-        <h2>{{ t('city.overviewTitle') }}</h2>
-        <div class="subtitle">{{ c.tagline[locale] }}</div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-[50px] items-center">
+      <GuideSection
+        zh="城市印象"
+        en="At a Glance"
+        :subtitle="c.tagline[locale]"
+      />
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         <!-- 文字介绍 -->
-        <div>
-          <h3 class="text-2xl text-brand mb-5 font-semibold">
-            {{ t('city.atAGlance', { name: c.name[locale] }) }}
-          </h3>
-          <p class="text-gray-600 mb-4 text-justify text-[15px] leading-relaxed">
+        <div class="lg:col-span-2">
+          <p class="text-gray-600 text-[15px] leading-loose text-justify">
             {{ c.intro[locale] }}
           </p>
-          <!-- 统计数据 -->
-          <div class="grid grid-cols-3 gap-5 mt-[30px] text-center">
-            <div v-for="stat in stats" :key="stat.label" class="stat-item">
-              <h4 class="text-lg text-accent mb-1 font-bold">{{ stat.value }}</h4>
-              <span class="text-[13px] text-gray-500">{{ stat.label }}</span>
-            </div>
-          </div>
         </div>
         <!-- 城市图片 -->
         <div class="rounded-[14px] overflow-hidden shadow-xl">
-          <img :src="c.heroImage" :alt="c.name[locale]" class="w-full h-[380px] object-cover">
+          <img :src="c.heroImage" :alt="c.name[locale]" class="w-full h-[300px] object-cover">
         </div>
       </div>
+      <!-- 关键信息盒：关键词 / 建议天数 / 最佳季节 / 城市底蕴 -->
+      <div class="mt-10">
+        <InfoPanel :city="c" />
+      </div>
+    </section>
+
+    <!-- 亮点图廊 -->
+    <section v-if="c.gallery && c.gallery.length" class="py-[70px] px-4 sm:px-[8%]">
+      <GuideSection
+        zh="亮点"
+        en="Highlights"
+        :subtitle="locale === 'zh' ? c.name[locale] + '精选瞬间' : 'Best moments in ' + c.name[locale]"
+      />
+      <GalleryStrip :images="c.gallery" :alt="c.name[locale]" />
     </section>
 
     <!-- 必游景点 -->
     <section class="py-[70px] px-4 sm:px-[8%]">
-      <div class="section-title">
-        <h2>{{ t('city.attractionsTitle') }}</h2>
-        <div class="subtitle">{{ t('city.attractionsSubtitle', { name: c.name[locale] }) }}</div>
-      </div>
+      <GuideSection
+        zh="必游景点"
+        en="Attractions"
+        :subtitle="t('city.attractionsSubtitle', { name: c.name[locale] })"
+      />
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <AttractionCard
           v-for="attraction in c.attractions"
@@ -146,10 +152,11 @@ useHead({
 
     <!-- 地道美食 -->
     <section class="py-[70px] px-4 sm:px-[8%] bg-white">
-      <div class="section-title">
-        <h2>{{ t('city.cuisineTitle') }}</h2>
-        <div class="subtitle">{{ t('city.cuisineSubtitle', { name: c.name[locale] }) }}</div>
-      </div>
+      <GuideSection
+        zh="地道美食"
+        en="Local Flavors"
+        :subtitle="t('city.cuisineSubtitle', { name: c.name[locale] })"
+      />
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <FoodCard
           v-for="food in c.foods"
@@ -161,10 +168,11 @@ useHead({
 
     <!-- 推荐行程 -->
     <section class="py-[70px] px-4 sm:px-[8%]">
-      <div class="section-title">
-        <h2>{{ t('city.itineraryTitle') }}</h2>
-        <div class="subtitle">{{ t('city.itinerarySubtitle', { name: c.name[locale] }) }}</div>
-      </div>
+      <GuideSection
+        zh="推荐行程"
+        en="Itinerary"
+        :subtitle="t('city.itinerarySubtitle', { name: c.name[locale] })"
+      />
       <div class="max-w-[900px] mx-auto">
         <ItineraryBlock
           v-for="it in c.itineraries"
@@ -176,10 +184,11 @@ useHead({
 
     <!-- 出行贴士 -->
     <section class="py-[70px] px-4 sm:px-[8%] bg-white">
-      <div class="section-title">
-        <h2>{{ t('city.tipsTitle') }}</h2>
-        <div class="subtitle">{{ t('city.tipsSubtitle') }}</div>
-      </div>
+      <GuideSection
+        zh="出行贴士"
+        en="Travel Tips"
+        :subtitle="t('city.tipsSubtitle')"
+      />
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <TipCard
           v-for="tip in c.tips"

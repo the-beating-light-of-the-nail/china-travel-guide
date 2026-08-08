@@ -74,6 +74,7 @@ export interface City {
   history: L
   bestSeason: L
   duration: L
+  gallery: string[]
   attractions: Attraction[]
   foods: Food[]
   itineraries: Itinerary[]
@@ -116,7 +117,7 @@ const rawCities = [
     region: { en: 'Southwest China', zh: '中国西南' },
     tagline: { en: 'Where the pace slows down and life tastes better', zh: '一座来了就不想走的城市' },
     tags: { en: 'Pandas,Spicy Food,Teahouse Culture,Slow Pace', zh: '熊猫故乡,美食天堂,古巷茶馆,慢享生活' },
-    heroImage: 'https://images.unsplash.com/photo-1590103513924-6be5415868c7?w=1600',
+    heroImage: '/images/cities/chengdu/chengdu_p01_03.png',
     description: {
       en: 'Capital of Sichuan and the cradle of the ancient Shu civilization, Chengdu has been called the \'Land of Abundance\' for over 2,000 years — the only Chinese city whose site and name have stayed unchanged since it was founded. Locals call a good life \'bashi\' (巴适) — comfortable, easy, just right — and you\'ll feel it the moment you sink into a bamboo chair with a cup of jasmine tea. Beyond giant pandas and the numbing fire of Sichuan hot pot, Chengdu is the gateway to the snow peaks of Tibet and the fairy-tale waters of Jiuzhaigou.',
       zh: '四川省省会，古蜀文明发祥地，自古被誉为“天府之国”，是中国唯一一座自建城以来城址与名称从未更改的城市。成都人爱说“巴适”——舒服、合适，这正是这座慢节奏之城的灵魂。茶馆、川菜、火锅、熊猫，以及作为九寨沟、稻城亚丁的最佳中转地，构成了成都最迷人的底色。',
@@ -144,7 +145,7 @@ const rawCities = [
     region: { en: 'Northwest China', zh: '中国西北' },
     tagline: { en: 'Walk 3,000 years of history in one city', zh: '十三朝古都 · 盛世长安' },
     tags: { en: 'Terracotta Warriors,Ancient City Wall,Tang Dynasty,Silk Road', zh: '历史古都,兵马俑,古城墙,盛唐文化' },
-    heroImage: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600',
+    heroImage: '/images/cities/xian/xian_p01_03.png',
     description: {
       en: 'Xi\'an — anciently known as Chang\'an — was the imperial capital of 13 dynasties and the eastern starting point of the Silk Road. Home to the Terracotta Army, a massive intact Ming-era city wall, and the bustling Muslim Quarter, it\'s a city where 3,000 years of history still feels vividly alive.',
       zh: '滚滚红尘帝王都，悠悠岁月百姓城。西安，古称长安，先后有十三朝在此建都，是丝绸之路的起点，也是举世闻名的秦始皇兵马俑的故乡。一座西安城，半部中华史。',
@@ -169,7 +170,7 @@ const rawCities = [
     region: { en: 'North China', zh: '中国北方' },
     tagline: { en: 'Where emperors once ruled and the Great Wall meets the sky', zh: '首都风范 · 皇城帝都' },
     tags: { en: 'Forbidden City,Great Wall,Hutongs,Peking Duck,Imperial Capital', zh: '故宫,长城,胡同,烤鸭,皇城根' },
-    heroImage: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1600',
+    heroImage: '/images/cities/beijing/beijing_p01_04.png',
     description: {
       en: 'China\'s capital — a city of imperial palaces, the Great Wall, centuries-old hutongs, and a food scene that goes far beyond Peking duck. Three thousand years of history and six dynasties have left their mark on every corner.',
       zh: '北京，中国的首都。三千年的建城史，六朝古都，荟萃了自元明清以来的中华文化。故宫的红墙、长城的雄关、胡同的烟火气，共同构成了一座包容万象、海纳百川的城市。',
@@ -195,7 +196,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
   chengdu: [
     {
       name: { en: 'Chengdu Research Base of Giant Panda Breeding', zh: '成都大熊猫繁育研究基地' },
-      image: 'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=800',
+      image: '/images/cities/chengdu/chengdu_p03_11.jpeg',
       location: { en: 'Chenghua District (No. 1375 Panda Avenue)', zh: '成华区外北熊猫大道1375号' },
       duration: { en: '3–4 hours', zh: '游玩3-4小时' },
       ticket: { en: '¥58 (about $8)', zh: '¥58' },
@@ -207,7 +208,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Kuanzhai Alleys', zh: '宽窄巷子' },
-      image: 'https://images.unsplash.com/photo-1528164344705-47542687000d?w=800',
+      image: '/images/cities/chengdu/chengdu_p05_19.jpeg',
       location: { en: 'Qingyang District (between Tongren Road and Changshun Street)', zh: '青羊区同仁路以东长顺街以西' },
       duration: { en: '3–4 hours', zh: '游玩3-4小时' },
       ticket: { en: 'Free', zh: '免费开放' },
@@ -219,7 +220,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Jinli Ancient Street', zh: '锦里古街' },
-      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800',
+      image: '/images/cities/chengdu/chengdu_p05_17.jpeg',
       location: { en: 'Wuhou District (beside Wuhou Shrine)', zh: '武侯祠大街231号附1号' },
       duration: { en: '2 hours', zh: '游玩2小时' },
       ticket: { en: 'Free', zh: '免费' },
@@ -231,7 +232,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Wuhou Shrine', zh: '武侯祠' },
-      image: 'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=800',
+      image: '/images/cities/chengdu/chengdu_p17_44.jpeg',
       location: { en: 'Wuhou District (No. 231 Wuhouci Street)', zh: '武侯区武侯祠大街231号' },
       duration: { en: '2 hours', zh: '游玩2小时' },
       ticket: { en: '¥60 (about $8), students half price', zh: '¥60（学生半价）' },
@@ -243,7 +244,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Du Fu Thatched Cottage', zh: '杜甫草堂' },
-      image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800',
+      image: '/images/cities/chengdu/chengdu_p03_13.jpeg',
       location: { en: 'Qingyang District (No. 37 Qinghua Road)', zh: '青羊区青华路37号' },
       duration: { en: '2 hours', zh: '游玩2小时' },
       ticket: { en: '¥60 (about $8), students half price', zh: '¥60（学生半价）' },
@@ -255,7 +256,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Dujiangyan Irrigation System', zh: '都江堰水利工程' },
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      image: '/images/cities/chengdu/chengdu_p13_33.jpeg',
       location: { en: 'Dujiangyan City (about 76 km / 47 mi from downtown)', zh: '都江堰市灌口镇（距成都市区约76公里）' },
       duration: { en: '3–4 hours', zh: '游玩3-4小时' },
       ticket: { en: '¥90 (about $12), students ¥45', zh: '¥90（学生半价）' },
@@ -267,7 +268,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Mount Qingcheng', zh: '青城山' },
-      image: 'https://picsum.photos/seed/chengdu-a6/800/600',
+      image: '/images/cities/chengdu/chengdu_p14_36.jpeg',
       location: { en: 'Dujiangyan City (about 83 km / 52 mi from downtown)', zh: '都江堰市西南青城山镇（距成都市区约83公里）' },
       duration: { en: '1 day', zh: '建议1天' },
       ticket: { en: 'Front mountain ¥90 / Back mountain ¥20', zh: '前山90元，后山20元' },
@@ -279,7 +280,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Chunxi Road', zh: '春熙路' },
-      image: 'https://picsum.photos/seed/chengdu-a7/800/600',
+      image: '/images/cities/chengdu/chengdu_p03_14.jpeg',
       location: { en: 'Jinjiang District', zh: '锦江区春熙路' },
       duration: { en: '3 hours', zh: '游玩3小时' },
       ticket: { en: 'Free', zh: '免费' },
@@ -293,7 +294,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
   xian: [
     {
       name: { en: 'Terracotta Army Museum', zh: '秦始皇兵马俑博物馆' },
-      image: 'https://picsum.photos/id/1074/800/600',
+      image: '/images/cities/xian/xian_p06_20.jpeg',
       location: { en: 'Lintong District (about 1-1.5 hrs from downtown)', zh: '临潼区秦陵路（距市区约1-1.5小时车程）' },
       duration: { en: '3-4 hours', zh: '3-4小时' },
       ticket: {
@@ -308,7 +309,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Xi\'an Ancient City Wall', zh: '西安古城墙' },
-      image: 'https://picsum.photos/id/1040/800/600',
+      image: '/images/cities/xian/xian_p03_11.jpeg',
       location: { en: 'City center (19 access points; South Gate is best)', zh: '市中心，共19个登城点，以南门（永宁门）为最佳' },
       duration: { en: '2-3 hours', zh: '2-3小时' },
       ticket: { en: '¥54 (¥27 students)', zh: '¥54，学生票¥27' },
@@ -320,7 +321,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Big Wild Goose Pagoda & Da Ci\'en Temple', zh: '大雁塔·大慈恩寺' },
-      image: 'https://picsum.photos/id/1041/800/600',
+      image: '/images/cities/xian/xian_p06_22.jpeg',
       location: { en: 'Yanta District (south of downtown)', zh: '雁塔区雁引路西端' },
       duration: { en: '2-3 hours', zh: '2-3小时' },
       ticket: { en: 'Da Ci\'en Temple ¥50; pagoda climb another ¥50', zh: '大慈恩寺¥50，登塔另收¥50' },
@@ -332,7 +333,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Huaqing Palace (Huaqing Pool)', zh: '华清宫（华清池）' },
-      image: 'https://picsum.photos/id/1039/800/600',
+      image: '/images/cities/xian/xian_p07_24.jpeg',
       location: {
         en: 'Lintong District, at the foot of Mount Li (near the Terracotta Army)',
         zh: '临潼区骊山脚下北麓',
@@ -347,7 +348,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Muslim Quarter (Huimin Jie)', zh: '回民街' },
-      image: 'https://picsum.photos/id/1080/800/600',
+      image: '/images/cities/xian/xian_p03_14.jpeg',
       location: { en: 'Lianhu District, behind the Drum Tower', zh: '莲湖区西大街1号钟鼓楼广场（鼓楼北侧）' },
       duration: { en: '2-3 hours (best in the evening)', zh: '2-3小时（傍晚最佳）' },
       ticket: { en: 'Free to wander', zh: '免费' },
@@ -359,7 +360,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Shaanxi History Museum', zh: '陕西历史博物馆' },
-      image: 'https://picsum.photos/id/1068/800/600',
+      image: '/images/cities/xian/xian_p03_12.jpeg',
       location: { en: 'Yanta District, 91 Xiaozhai East Road', zh: '雁塔区小寨东路91号' },
       duration: { en: '3-4 hours (half a day ideal)', zh: '3-4小时（建议半天）' },
       ticket: {
@@ -374,7 +375,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Bell Tower & Drum Tower', zh: '钟楼、鼓楼' },
-      image: 'https://picsum.photos/seed/xian-a6/800/600',
+      image: '/images/cities/xian/xian_p13_46.jpeg',
       location: { en: 'City center, at the junction of the four main avenues', zh: '市中心，东西南北四条大街交汇处' },
       duration: { en: '1-1.5 hours', zh: '1-1.5小时' },
       ticket: { en: '¥35 each, or ¥50 combo ticket', zh: '钟楼/鼓楼各¥35，联票¥50' },
@@ -406,7 +407,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
   beijing: [
     {
       name: { en: 'The Forbidden City', zh: '故宫博物院' },
-      image: 'https://images.unsplash.com/photo-1584432810607-4b9c2e6d8c4c?w=800',
+      image: '/images/cities/beijing/beijing_p03_15.jpeg',
       location: { en: 'Dongcheng District, No.4 Jingshan Front Street', zh: '东城区景山前街4号' },
       duration: { en: '3-4 hours (central axis)', zh: '走中轴线约3小时' },
       ticket: { en: 'Peak ¥60 / off-peak ¥40 (students ¥20)', zh: '旺季60元，淡季40元，学生票20元' },
@@ -418,7 +419,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Great Wall at Badaling', zh: '八达岭长城' },
-      image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+      image: '/images/cities/beijing/beijing_p03_14.jpeg',
       location: { en: 'Yanqing District (1.5 hrs north)', zh: '延庆区' },
       duration: { en: 'Full-day trip', zh: '建议一日游' },
       ticket: { en: '¥45', zh: '45元' },
@@ -442,7 +443,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Summer Palace', zh: '颐和园' },
-      image: 'https://images.unsplash.com/photo-1584646098378-0874589d76b1?w=800',
+      image: '/images/cities/beijing/beijing_p05_18.jpeg',
       location: { en: 'Haidian District, No.19 Xinjian Gongmen Road', zh: '海淀区新建宫门路19号' },
       duration: { en: '3-4 hours', zh: '3-4小时' },
       ticket: { en: 'Peak ¥30 (combo ¥60) / off-peak ¥20 (combo ¥50)', zh: '旺季30元（联票60元），淡季20元（联票50元）' },
@@ -466,7 +467,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Nanluoguxiang Hutongs', zh: '南锣鼓巷' },
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800',
+      image: '/images/cities/beijing/beijing_p03_12.jpeg',
       location: { en: 'Dongcheng District', zh: '东城区' },
       duration: { en: '2-3 hours', zh: '2-3小时' },
       ticket: { en: 'Free to wander', zh: '免费' },
@@ -490,7 +491,7 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: '798 Art District', zh: '798艺术区' },
-      image: 'https://picsum.photos/seed/beijing-a7/800/600',
+      image: '/images/cities/beijing/beijing_p03_11.jpeg',
       location: { en: 'Chaoyang District, No.4 Jiuxianqiao Road', zh: '朝阳区酒仙桥路4号' },
       duration: { en: '3-4 hours', zh: '3-4小时' },
       ticket: { en: 'Free entry (some exhibitions extra)', zh: '免费（部分展览另收费）' },
@@ -508,7 +509,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
   chengdu: [
     {
       name: { en: 'Sichuan Beef Tallow Hot Pot', zh: '牛油火锅' },
-      image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800',
+      image: '/images/cities/chengdu/chengdu_p07_23.jpeg',
       highlight: { en: 'The soul of Chengdu food', zh: '成都美食灵魂' },
       description: {
         en: 'The signature numbing-spicy "mala" flavor of Sichuan, simmering with beef tallow, Sichuan peppercorns, and dried chilies — the most famous dish to come out of this UNESCO City of Gastronomy. Try the classic "nine-grid" red pot (jiugongge) so each ingredient has its own compartment, and dip everything in a sesame oil and garlic bowl to cool the heat. Order the trio of beef tripe, duck intestine, and yellow throat. Not a spice fan? Go for the yuanyang half-and-half pot. Local favorites: Shu Jiuxiang, Huangcheng Laoma, Pang Ma Lan Huoguo.',
@@ -571,18 +572,45 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Intestine Glass Noodles (Feichang Fen)', zh: '肥肠粉' },
-      image: 'https://picsum.photos/seed/chengdu-f7/800/600',
+      image: '/images/cities/chengdu/chengdu_p08_27.jpeg',
       highlight: { en: 'The line from a Chengdu movie: don\'t leave without a bowl', zh: '“没吃过肥肠粉，就不算到过成都”' },
       description: {
         en: 'Sweet-potato glass noodles in a rich broth of pork intestines and bones, topped with tender braised intestines, chili oil, and Sichuan peppercorn — the dish the movie A Good Rain Knows called essential: "if you haven\'t eaten intestine noodles, you haven\'t been to Chengdu." The noodles are springy, the broth deeply savory, and the recipe morphs easily into sour-spicy noodles or beef noodles. Try Gan Ji or Bai Jia Feichang Fen for the classic bowl, or follow locals to a hole-in-the-wall "fly restaurant."',
         zh: '成都“重口味”小吃的代表：上等红薯粉下到用肥肠、猪骨头及多种佐料熬制的高汤里，配上软烂入味的肥肠、干红辣椒和花椒，粉丝细腻弹滑、锅汤浓香。电影《好雨时节》里有句台词——“如果你没吃过肥肠粉，就不算到过成都”。推荐甘记肥肠粉、白家肥肠粉，或去菜市场边的“苍蝇馆子”寻味。',
       },
     },
+    {
+      name: { en: 'Bobo Chicken (Cold Skewers)', zh: '钵钵鸡' },
+      image: '/images/cities/chengdu/chengdu_p07_24.jpeg',
+      highlight: { en: 'Leshan-born spicy cold skewers', zh: '乐山名吃 · 麻辣冷吃串串' },
+      description: {
+        en: 'Cold skewers steeped in a fragrant, numbing chili-and-sesame oil broth and served from a clay bowl (boban) — a Leshan-born Sichuan classic. Tender boneless chicken and vegetables on sticks, intensely aromatic and refreshing cold.',
+        zh: '以陶钵盛装、麻辣红油与藤椒浸泡的冷吃串串，去骨鸡块与各式食材串签入味，麻香浓郁、冷吃更爽，是源自乐山的川味名吃。',
+      },
+    },
+    {
+      name: { en: 'San Da Pao (Three Cannons)', zh: '三大炮' },
+      image: '/images/cities/chengdu/chengdu_p08_25.jpeg',
+      highlight: { en: 'A theatrical sticky-rice dessert', zh: '摔出来的甜糯小吃' },
+      description: {
+        en: 'A theatrical Chengdu dessert — sticky-rice balls slammed onto a brass plate (three loud \'bangs\') so they bounce into roasted soybean-and-sesame powder, then bathed in brown-sugar syrup. Chewy, sweet, and half the fun is watching it made.',
+        zh: '糯米团摔向铜盘发出\'砰砰砰\'三声而得名，裹上黄豆粉与芝麻、淋上红糖浆，软糯香甜，制作过程极具观赏性。',
+      },
+    },
+    {
+      name: { en: 'Tangyou Guozi (Syrup Fritters)', zh: '糖油果子' },
+      image: '/images/cities/chengdu/chengdu_p08_26.jpeg',
+      highlight: { en: 'Glossy caramel-glazed fritters', zh: '金红油亮的街头甜串' },
+      description: {
+        en: 'Skewered glutinous-rice fritters glazed in caramelized brown sugar and rolled in sesame seeds — glossy red-gold, shatteringly crisp outside and pleasantly chewy within. A beloved Chengdu street sweet.',
+        zh: '糯米粉团油炸后裹上红糖熬制的糖稀、撒上白芝麻，色泽金红、外脆内糯，是成都街头经典的甜口小吃。',
+      },
+    },
   ],
   xian: [
     {
       name: { en: 'Mutton Paomo', zh: '牛羊肉泡馍' },
-      image: 'https://picsum.photos/id/1080/800/600',
+      image: '/images/cities/xian/xian_p09_27.jpeg',
       highlight: { en: 'The signature Xi\'an dish — a Shaanxi icon', zh: '西安美食总代表 · 陕西名食' },
       description: {
         en: 'Xi\'an\'s most iconic dish, and arguably the \'grand representative\' of all Shaanxi food. A hearty soup of tender lamb and glass noodles, served with a flatbread (mo) that you tear into tiny pieces yourself — the smaller the pieces, the better the flavor. Once you\'ve torn the bread, hand the bowl back to be cooked with the meat and broth. Eat it with pickled garlic and chili sauce on the side, then sip a small bowl of rich stock to finish. Visitors love Lao Sun Jia; locals swear by Lao Mi Jia Da Yu Paomo.',
@@ -591,7 +619,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Roujiamo (Chinese Hamburger)', zh: '腊汁肉夹馍' },
-      image: 'https://picsum.photos/id/1069/800/600',
+      image: '/images/cities/xian/xian_p10_37.jpeg',
       highlight: { en: 'The \'world\'s first hamburger\'', zh: '起源于战国 · \'中式汉堡\'鼻祖' },
       description: {
         en: 'Often called \'the world\'s first hamburger\', roujiamo dates back to the Warring States period — the real deal is just two things: lazhi (slow-braised spiced pork) and baiji mo (a crisp, chewy baked flatbread). The pork is fatty and lean together, stewed until it melts in the mouth, with plenty of savory juices. No lettuce, no sauce, no additions — just bread and meat, each bringing out the best in the other. The classic Xi\'an spot is Fan Ji on Zhuba Shi Street (around ¥12 a piece).',
@@ -600,7 +628,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Biangbiang Noodles', zh: 'biáng biáng面' },
-      image: 'https://picsum.photos/id/1059/800/600',
+      image: '/images/cities/xian/xian_p10_39.jpeg',
       highlight: { en: 'Belt-wide hand-pulled noodles doused in chili oil', zh: '陕西十大怪之一 · 面条像裤带' },
       description: {
         en: 'The signature noodle of Shaanxi — hand-pulled wheat noodles as wide and thick as a belt (one of the \'Ten Shaanxi Quirks\' — \'noodles like a trouser belt\'). The dough is slapped against the board with a \'biang biang\' sound, giving the dish its name. Topped with chili powder, garlic, and scallions, then drenched in sizzling hot oil until the bowl glows red. Hearty, spicy, slippery, and chewy. The character \'biáng\' itself is so complex it has its own folk rhyme to remember how to write it.',
@@ -609,7 +637,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Zenggao (Steamed Glutinous Rice Cake)', zh: '甑糕' },
-      image: 'https://picsum.photos/id/1073/800/600',
+      image: '/images/cities/xian/xian_p09_28.jpeg',
       highlight: {
         en: 'Soft, sticky rice-and-red-date cake, a Xi\'an breakfast staple',
         zh: '糯米红枣 · 软糯香甜的街头早餐',
@@ -621,7 +649,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Liangpi (Cold Rice Noodles)', zh: '西安凉皮' },
-      image: 'https://picsum.photos/id/1067/800/600',
+      image: '/images/cities/xian/xian_p09_30.jpeg',
       highlight: { en: 'Cool, tangy, spicy — the heart of a \'Guanzhong Combo\'', zh: '酸辣爽口 · \'关中套餐\'主角' },
       description: {
         en: 'One of Shaanxi\'s most famous snacks. Thin sheets of cold rice noodles dressed with vinegar, chili oil, cucumber, and bean sprouts — tangy, spicy, and refreshing. There are three main styles: Qinzhen rice liangpi, Hanzhong hot liangpi, and Qishan hand-rolled liangpi. The halal sesame-paste version (majiang liangpi) is a Muslim-Quarter specialty, slicked with rich sesame sauce and chili. The classic \'Guanzhong Combo\' is a bowl of liangpi, a roujiamo, and a bottle of Bingfeng soda or a bowl of eight-treasure porridge — the perfect summer lunch.',
@@ -642,7 +670,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Meatball Hulatang (Spicy Soup)', zh: '肉丸胡辣汤' },
-      image: 'https://picsum.photos/seed/xian-f6/800/600',
+      image: '/images/cities/xian/xian_p10_34.jpeg',
       highlight: { en: 'Xi\'an locals\' #1 breakfast — a halal spicy soup', zh: '西安人早餐的第一选择 · 清真' },
       description: {
         en: 'The quintessential Xi\'an breakfast — a thick, peppery halal soup of beef meatballs, potato, cabbage, and carrot, finished with sesame oil and chili oil. Locals crumble a tuotuo mo (flatbread) into the broth and eat it spoonful by spoonful, the warm five-spice beef flavor waking them up better than any coffee. Every morning, lane-side shops fill with early risers slurping down a bowl with a mo to start the day. It\'s the most authentic taste of everyday Xi\'an.',
@@ -651,7 +679,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Hulutou (Pork Intestine Paomo)', zh: '葫芦头泡馍' },
-      image: 'https://picsum.photos/seed/xian-f7/800/600',
+      image: '/images/cities/xian/xian_p09_32.jpeg',
       highlight: { en: 'A famous Xi\'an snack with a Tang-dynasty origin story', zh: '陕西省著名风味小吃 · 非清真' },
       description: {
         en: 'A celebrated Xi\'an street snack (non-halal) dating back to the Song dynasty. The curious name \'hulutou\' — \'gourd head\' — comes from a Tang-dynasty legend: the physician Sun Simiao left a medicinal gourd at a pork-intestine shop to season the offal, transforming its flavor; the grateful owner hung the gourd above the door and named the dish after it. Like paomo, you tear a flatbread into the rich, milky-white broth, but here it\'s served with tender, clean-tasting pork intestine. Chun Fa Sheng on Nan Yuan Men is the most famous old shop — silky, fatty, fragrant, with no off-flavor at all.',
@@ -662,7 +690,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
   beijing: [
     {
       name: { en: 'Peking Roast Duck', zh: '北京烤鸭' },
-      image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?w=800',
+      image: '/images/cities/beijing/beijing_p03_13.jpeg',
       highlight: { en: 'Beijing\'s world-famous signature dish', zh: '具有世界声誉的北京名菜' },
       description: {
         en: 'Beijing\'s most famous dish — a top-grade Beijing duck roasted over fruit-wood charcoal until the skin is glossy red and the meat rich but never greasy. The name brands are Quanjude (hanging-oven style, since 1864), Bianyifang (the older roasting-oven style), and Dadong, the modern favorite. Carved by a master tableside and served with thin pancakes, scallion, cucumber, and sweet bean sauce.',
@@ -680,7 +708,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Zhajiangmian (Fried Sauce Noodles)', zh: '炸酱面' },
-      image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800',
+      image: '/images/cities/beijing/beijing_p09_26.jpeg',
       highlight: { en: 'Beijing\'s signature noodle dish', zh: '北京富有特色的家常面食' },
       description: {
         en: 'Beijing\'s signature noodle dish. The sauce is pork cubes and scallion ginger simmered in yellow soybean paste (huangjiang) or sweet bean paste until deeply savory. Piled high with shredded cucumber, toon leaves, bean sprouts, green and yellow soybeans for crunch. Mix it all together and eat hot — or order the \'crossed-water\' cold version for summer. Head to Haiwanju, Jingweizhai, or Siwei Minfu for a proper bowl.',
@@ -698,7 +726,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Baodu (Crisp Tripe)', zh: '爆肚' },
-      image: 'https://picsum.photos/seed/beijing-f4/800/600',
+      image: '/images/cities/beijing/beijing_p11_27.jpeg',
       highlight: { en: 'Crisp, fresh, never greasy — pairs with baijiu', zh: '又脆又鲜的京城名小吃' },
       description: {
         en: 'A beloved Beijing snack of paper-thin beef or sheep tripe dunked for seconds in boiling water until crisp and fresh, never oily — locals even swear it soothes the stomach. Always pair it with a couple of ounces of baijiu and two sesame flatbreads fresh from the oven, a small feast in itself. For the real thing, head to Baodu Feng on Qianmen\'s Menkuang Hutong (Langfang Er-tiao No. 56).',
@@ -725,7 +753,7 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
     },
     {
       name: { en: 'Tanghulu (Candied Hawthorn)', zh: '糖葫芦' },
-      image: 'https://images.unsplash.com/photo-1606788075953-b2284bc6e6c1?w=800',
+      image: '/images/cities/beijing/beijing_p13_31.jpeg',
       highlight: { en: 'The iconic Beijing street snack', zh: '男女老少都爱的传统小吃' },
       description: {
         en: 'Skewers of hawthorn berries dipped in molten rock sugar that cools into a glossy, crackling shell — the perfect sweet-tart crunch. The classic Beijing street snack, sold from roadside stalls year-round but best in winter when the sugar sets crisp and the haws are at their tart peak. The traditional hawthorn version remains the classic.',
@@ -1304,6 +1332,30 @@ const rawTips: Record<string, Omit<Tip, 'id' | 'sortOrder'>[]> = {
   ],
 }
 
+// 亮点图廊数据（每城若干张实景图，源自攻略 PDF）
+const rawGalleries: Record<string, string[]> = {
+  chengdu: [
+    '/images/cities/chengdu/chengdu_p02_05.jpeg',
+    '/images/cities/chengdu/chengdu_p03_12.jpeg',
+    '/images/cities/chengdu/chengdu_p04_16.jpeg',
+    '/images/cities/chengdu/chengdu_p07_22.jpeg',
+    '/images/cities/chengdu/chengdu_p16_38.jpeg',
+  ],
+  xian: [
+    '/images/cities/xian/xian_p15_50.jpeg',
+    '/images/cities/xian/xian_p12_44.jpeg',
+    '/images/cities/xian/xian_p02_05.jpeg',
+    '/images/cities/xian/xian_p03_13.jpeg',
+    '/images/cities/xian/xian_p05_18.jpeg',
+  ],
+  beijing: [
+    '/images/cities/beijing/beijing_p04_17.jpeg',
+    '/images/cities/beijing/beijing_p07_23.jpeg',
+    '/images/cities/beijing/beijing_p08_24.jpeg',
+    '/images/cities/beijing/beijing_p08_25.jpeg',
+  ],
+}
+
 // 攻略文章数据
 const rawGuides: Omit<Guide, 'id'>[] = [
   {
@@ -1476,6 +1528,7 @@ function buildCities(): City[] {
       history: raw.history,
       bestSeason: raw.bestSeason,
       duration: raw.duration,
+      gallery: rawGalleries[slug] || [],
       attractions,
       foods,
       itineraries,
