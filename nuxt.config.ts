@@ -87,6 +87,27 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/favicon.svg' },
       ],
+      // Google 标签 (gtag.js) - Google Analytics
+      // 通过 app.head 自动注入到所有页面 <head> 中；SSG 预渲染时会被写入每个静态 HTML
+      script: [
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-5V6YWGXS3Y',
+          async: true,
+          tagPosition: 'head',
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5V6YWGXS3Y');`,
+          tagPosition: 'head',
+        },
+        // 广告展示脚本（CPM 广告网络）
+        {
+          src: 'https://pl30745593.effectivecpmnetwork.com/25/a4/4a/25a44a68bd636adeeef5dcc144a01c8f.js',
+          tagPosition: 'head',
+        },
+      ],
     },
   },
 
