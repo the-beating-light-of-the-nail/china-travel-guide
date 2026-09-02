@@ -41,7 +41,7 @@ useHead({
           '@type': 'Organization',
           name: 'With My Eyes',
           url: pub.siteUrl,
-          description: 'An English-language travel guide platform dedicated to helping international tourists explore China.',
+          description: 'A hand-picked window into the real China — vlogs, guides and photos from Chinese platforms that English search never reaches.',
         },
       }),
     },
