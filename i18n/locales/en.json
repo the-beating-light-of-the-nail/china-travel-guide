@@ -36,7 +36,10 @@
     "viewAllGuides": "View all guides →",
     "guidesTitle": "Featured Guides",
     "guidesSubtitle": "On-the-ground stories · Honest advice · Trip-tested itineraries",
-    "vlogCount": "{n} vlogs"
+    "vlogCount": "{n} vlogs",
+    "seoTitle": "With My Eyes — Hand-picked China travel from Chinese platforms",
+    "seoDescription": "Handpicked vlogs, guides & local services for foreign travelers in China. Destinations, street food, high-speed rail and local partners.",
+    "seoOgDescription": "Handpicked vlogs, guides & local services. Plan your real China trip."
   },
   "categories": {
     "history": { "title": "History & Culture", "desc": "Ancient capitals and millennia-old heritage" },
@@ -62,6 +65,8 @@
     "statDuration": "Recommended Stay",
     "statSeason": "Best Time to Visit",
     "statHistory": "Years of History",
+    "statKeywords": "Keywords",
+    "statHeritage": "Heritage",
     "tabOverview": "Overview",
     "tabVlogs": "Vlogs",
     "tabGuides": "Guides",

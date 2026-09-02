@@ -36,7 +36,10 @@
     "viewAllGuides": "查看全部攻略 →",
     "guidesTitle": "精选攻略",
     "guidesSubtitle": "在地故事 · 诚实建议 · 实测行程",
-    "vlogCount": "{n} 条视频"
+    "vlogCount": "{n} 条视频",
+    "seoTitle": "带上我的眼睛 - 精选中文平台的中国旅行导航",
+    "seoDescription": "为国际旅行者精选的中国旅行 Vlog、外部攻略与本地服务商，覆盖北京、西安、成都等热门目的地。",
+    "seoOgDescription": "精选 Vlog、攻略与本地服务，助你规划真实的中国之旅。"
   },
   "categories": {
     "history": { "title": "历史文化", "desc": "古迹名城 · 人文底蕴" },
@@ -62,6 +65,8 @@
     "statDuration": "建议游玩时长",
     "statSeason": "最佳季节",
     "statHistory": "历史",
+    "statKeywords": "关键词",
+    "statHeritage": "城市底蕴",
     "tabOverview": "总览",
     "tabVlogs": "视频",
     "tabGuides": "攻略",

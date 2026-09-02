@@ -15,6 +15,8 @@
 // ---------------------------------------------------------------
 
 import type { L } from './travel-data'
+import { mergeLanguagePack, fillLocaleFallbacks } from './localize'
+import { contentPacks } from './translations'
 
 // ===== 类型定义 =====
 
@@ -955,6 +957,18 @@ const vlogs: Vlog[] = rawVlogs.map(v => ({ ...v, id: ++_vlogId }))
 const externalGuides: ExternalGuide[] = rawExternalGuides.map(g => ({ ...g, id: ++_guideId }))
 const photos: Photo[] = rawPhotos.map(p => ({ ...p, id: ++_photoId }))
 const services: PartnerService[] = rawServices.map(s => ({ ...s, id: ++_serviceId }))
+
+// 合并各语言翻译包（数组按索引对齐），并为缺失语言填充英文兜底
+for (const [lang, pack] of Object.entries(contentPacks)) {
+  vlogs.forEach((v, i) => mergeLanguagePack(v, pack.vlogs?.[i], lang, `vlogs[${i}]`))
+  externalGuides.forEach((g, i) => mergeLanguagePack(g, pack.externalGuides?.[i], lang, `externalGuides[${i}]`))
+  photos.forEach((p, i) => mergeLanguagePack(p, pack.photos?.[i], lang, `photos[${i}]`))
+  services.forEach((s, i) => mergeLanguagePack(s, pack.services?.[i], lang, `services[${i}]`))
+}
+fillLocaleFallbacks(vlogs)
+fillLocaleFallbacks(externalGuides)
+fillLocaleFallbacks(photos)
+fillLocaleFallbacks(services)
 
 // 全部 Vlog
 export function getVlogs(): Vlog[] {

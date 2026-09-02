@@ -64,7 +64,7 @@ useHead({
     { property: 'og:description', content: c.value.description[locale.value] },
     { property: 'og:type', content: 'article' },
     { property: 'og:image', content: c.value.heroImage },
-    { property: 'og:locale', content: locale.value === 'zh' ? 'zh_CN' : 'en_US' },
+    { property: 'og:locale', content: ogLocale(locale.value) },
   ],
   script: [
     // 旅游目的地结构化数据 JSON-LD

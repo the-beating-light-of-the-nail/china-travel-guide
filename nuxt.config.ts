@@ -1,4 +1,36 @@
 // Nuxt 配置文件
+// 支持的语言列表（顺序即语言切换器中的展示顺序）
+// P0 英语（默认）/ P1 韩语·日语 / P2 泰语 / P3 德法西意
+const i18nLocales = [
+  { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+  { code: 'zh', language: 'zh-CN', name: '中文', file: 'zh.json' },
+  { code: 'ko', language: 'ko-KR', name: '한국어', file: 'ko.json' },
+  { code: 'ja', language: 'ja-JP', name: '日本語', file: 'ja.json' },
+  { code: 'th', language: 'th-TH', name: 'ไทย', file: 'th.json' },
+  { code: 'de', language: 'de-DE', name: 'Deutsch', file: 'de.json' },
+  { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr.json' },
+  { code: 'es', language: 'es-ES', name: 'Español', file: 'es.json' },
+  { code: 'it', language: 'it-IT', name: 'Italiano', file: 'it.json' },
+]
+
+// 需要预渲染的页面路径（不含语言前缀），与语言列表做笛卡尔积
+const prerenderPages = [
+  '',
+  '/about',
+  '/vlogs',
+  '/guides',
+  '/photos',
+  '/services',
+  '/cities/chengdu',
+  '/cities/xian',
+  '/cities/beijing',
+  '/guides/xian-3-day-classic-route',
+  '/guides/beijing-off-the-beaten-path',
+  '/guides/chengdu-food-guide',
+  '/guides/first-trip-to-china-guide',
+  '/guides/best-time-to-visit-china',
+]
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -49,23 +81,21 @@ export default defineNuxtConfig({
 
   // 国际化（i18n）配置
   // ---------------------------------------------------------------
-  // 策略 prefix：所有路由带语言前缀，例如 /en/...、/zh/...
-  // 默认语言为 en，可选 en、zh
+  // 策略 prefix：所有路由带语言前缀，例如 /en/...、/ko/...
+  // 默认语言为 en，共 9 种语言（面向主要入境客源国）
   // 关闭浏览器语言自动检测，优先用户显式选择
   // 开启 SEO，自动注入 hreflang 与 og:locale 等标签
+  // lazy：语言包按需分包加载，避免 9 个语言全量打进首屏
   // ---------------------------------------------------------------
   i18n: {
     strategy: 'prefix',
     defaultLocale: 'en',
-    locales: [
-      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
-      { code: 'zh', language: 'zh-CN', name: '中文', file: 'zh.json' },
-    ],
+    locales: i18nLocales,
     langDir: 'locales',
-    lazy: false,
+    lazy: true,
     differentDomains: false,
     detectBrowserLanguage: false,
-    baseUrl: 'https://chinatravel.world',
+    baseUrl: 'https://travelchina-mu.vercel.app',
   },
 
   // 应用级 head 配置（默认 SEO，各页面会按语言覆盖）
@@ -81,10 +111,10 @@ export default defineNuxtConfig({
         { property: 'og:site_name', content: 'With My Eyes' },
       ],
       link: [
-        // Inter 字体（英文标题/正文），中文回退系统字体
+        // Inter 字体（拉丁语系标题/正文），CJK/泰文回退 Noto Sans（按 unicode-range 按需加载）与系统字体
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+Thai:wght@400;500;700&display=swap' },
         // 现代浏览器使用 SVG 矢量图标
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         // 兜底 favicon.ico，避免浏览器请求触发 404/500
@@ -133,43 +163,14 @@ gtag('config', 'G-5V6YWGXS3Y');`,
 
   // 静态预渲染配置（SSG）
   // 配合 nuxt generate，在构建时把所有页面预渲染为静态 HTML
-  // i18n prefix 策略下，每种语言都生成一套完整页面
+  // i18n prefix 策略下，每种语言都生成一套完整页面（语言 × 页面笛卡尔积）
   nitro: {
     prerender: {
       crawlLinks: true,
-      // 显式声明需要预渲染的路由，确保两种语言的所有城市与攻略页面都被生成
+      // 显式声明需要预渲染的路由，确保所有语言的所有城市与攻略页面都被生成
       routes: [
         '/',
-        '/en',
-        '/en/',
-        '/en/about',
-        '/en/vlogs',
-        '/en/guides',
-        '/en/photos',
-        '/en/services',
-        '/en/cities/chengdu',
-        '/en/cities/xian',
-        '/en/cities/beijing',
-        '/en/guides/xian-3-day-classic-route',
-        '/en/guides/beijing-off-the-beaten-path',
-        '/en/guides/chengdu-food-guide',
-        '/en/guides/first-trip-to-china-guide',
-        '/en/guides/best-time-to-visit-china',
-        '/zh',
-        '/zh/',
-        '/zh/about',
-        '/zh/vlogs',
-        '/zh/guides',
-        '/zh/photos',
-        '/zh/services',
-        '/zh/cities/chengdu',
-        '/zh/cities/xian',
-        '/zh/cities/beijing',
-        '/zh/guides/xian-3-day-classic-route',
-        '/zh/guides/beijing-off-the-beaten-path',
-        '/zh/guides/chengdu-food-guide',
-        '/zh/guides/first-trip-to-china-guide',
-        '/zh/guides/best-time-to-visit-china',
+        ...i18nLocales.flatMap(l => prerenderPages.map(p => `/${l.code}${p}`)),
         '/robots.txt',
         '/sitemap.xml',
         '/favicon.ico',

@@ -1,0 +1,238 @@
+{
+  "brand": {
+    "name": "위드 마이",
+    "highlight": "아이즈",
+    "tagline": "중국 플랫폼에서 직접 골라 온 중국 여행",
+    "full": "With My Eyes"
+  },
+  "nav": {
+    "home": "홈",
+    "destinations": "여행지",
+    "vlogs": "브이로그",
+    "guides": "가이드",
+    "photos": "사진",
+    "services": "현지 서비스",
+    "about": "소개"
+  },
+  "search": {
+    "placeholder": "도시, 주제 또는 크리에이터 검색...",
+    "heroPlaceholder": "도시, 주제 또는 크리에이터 검색...",
+    "button": "검색"
+  },
+  "home": {
+    "heroTitle": "내 눈으로 보는 중국",
+    "heroSubtitle": "외국인이 절대 볼 수 없는 중국 플랫폼 속, 엄선된 브이로그·가이드·사진",
+    "quickCity": "청두",
+    "quickRail": "고속철도",
+    "quickFood": "길거리 음식",
+    "destinationsTitle": "인기 여행지",
+    "destinationsSubtitle": "엄선된 도시 · 큐레이션 영상과 가이드 · 현지 서비스",
+    "vlogsTitle": "추천 브이로그",
+    "vlogsSubtitle": "빌리빌리와 유튜브의 여행 영상, 한 편 한 편 직접 골라 담았습니다",
+    "viewAllVlogs": "전체 영상 보기 →",
+    "momentsTitle": "여행의 순간",
+    "momentsSubtitle": "진짜 여행자들의 진짜 순간",
+    "viewAllPhotos": "갤러리 둘러보기 →",
+    "viewAllGuides": "전체 가이드 보기 →",
+    "guidesTitle": "추천 가이드",
+    "guidesSubtitle": "현장의 이야기 · 솔직한 조언 · 실전 검증 일정",
+    "vlogCount": "영상 {n}편",
+    "seoTitle": "With My Eyes — 중국 플랫폼에서 골라 온 중국 여행 큐레이션",
+    "seoDescription": "중국을 여행하는 외국인을 위한 엄선 브이로그, 가이드, 현지 서비스. 베이징·시안·청두 등 인기 여행지의 길거리 음식, 고속철도, 현지 파트너까지.",
+    "seoOgDescription": "엄선된 브이로그·가이드·현지 서비스로 진짜 중국 여행을 계획하세요."
+  },
+  "categories": {
+    "history": { "title": "역사와 문화", "desc": "고도와 천년의 유산" },
+    "nature": { "title": "자연과 아웃도어", "desc": "산, 강, 그리고 숨은 명소" },
+    "food": { "title": "먹거리", "desc": "노점과 원조 맛집" },
+    "family": { "title": "가족 여행", "desc": "모든 연령이 즐거운 쉬운 일정" },
+    "romantic": { "title": "로맨틱 여행", "desc": "둘만의 달콤한 명소와 조용한 휴식" },
+    "budget": { "title": "배낭여행", "desc": "아끼고, 만나고, 더 보기" }
+  },
+  "city": {
+    "overviewTitle": "도시 인상",
+    "atAGlance": "{name} 한눈에 보기",
+    "attractionsTitle": "놓칠 수 없는 명소",
+    "attractionsSubtitle": "{name}을 정의하는 랜드마크와 숨은 구석",
+    "cuisineTitle": "현지 미식",
+    "cuisineSubtitle": "{name}에서 뭘 먹고 어디서 먹을까",
+    "itineraryTitle": "추천 일정",
+    "itinerarySubtitle": "{name}에서 시간을 알차게",
+    "tipsTitle": "실전 팁",
+    "tipsSubtitle": "떠나기 전 알아둘 것들",
+    "home": "홈",
+    "day": "DAY",
+    "statDuration": "추천 체류",
+    "statSeason": "베스트 시즌",
+    "statHistory": "역사",
+    "statKeywords": "키워드",
+    "statHeritage": "도시 저력",
+    "tabOverview": "개요",
+    "tabVlogs": "영상",
+    "tabGuides": "가이드",
+    "tabPhotos": "사진",
+    "tabServices": "현지 서비스",
+    "saveTrip": "일정에 저장",
+    "saved": "저장됨",
+    "vlogsSectionTitle": "필수 시청 영상",
+    "vlogsSectionSubtitle": "진짜 여행자들이 찍은 {name} 영상 엄선",
+    "guidesSectionTitle": "큐레이션 가이드",
+    "guidesSectionSubtitle": "웹에서 엄선한 {name} 관련 자료",
+    "photosSectionTitle": "{name}의 순간",
+    "partnersSectionTitle": "현지 파트너",
+    "partnersSectionSubtitle": "{name}의 인증 가이드·기사·서비스",
+    "relatedTitle": "다른 여행지",
+    "readOriginal": "전문 읽기 →"
+  },
+  "regions": {
+    "Southwest China": "중국 서남부",
+    "Northwest China": "중국 서북부",
+    "North China": "중국 북부"
+  },
+  "vlogs": {
+    "pageTitle": "중국 여행 브이로그",
+    "pageSubtitle": "빌리빌리, 유튜브 등에서 엄선한 영상 — 솔직한 코멘트와 함께",
+    "allPlatforms": "전체 플랫폼",
+    "allTopics": "전체 주제",
+    "allCities": "전체 도시",
+    "sortBy": "정렬",
+    "sortLatest": "최신순",
+    "sortViews": "조회순",
+    "sortPicks": "에디터 픽",
+    "trending": "지금 인기",
+    "filterByCity": "도시별 필터",
+    "watch": "보기",
+    "loadMore": "더 보기",
+    "noResults": "조건에 맞는 영상이 없어요. 필터를 초기화해 보세요.",
+    "platforms": {
+      "youtube": "YouTube",
+      "bilibili": "빌리빌리"
+    },
+    "topics": {
+      "food": "먹거리",
+      "transport": "교통",
+      "culture": "문화",
+      "nature": "자연"
+    }
+  },
+  "guidesHub": {
+    "pageTitle": "중국 여행 가이드",
+    "pageSubtitle": "블로거, 커뮤니티, 현지인이 추천한 자료 모음",
+    "searchPlaceholder": "가이드 검색...",
+    "recentlyAdded": "최근 수집",
+    "readOriginal": "원문 보기 →",
+    "allCategories": "전체",
+    "noResults": "검색에 맞는 가이드가 없어요.",
+    "categories": {
+      "visa": "비자",
+      "transport": "교통",
+      "food": "먹거리",
+      "accommodation": "숙소",
+      "itinerary": "일정",
+      "budget": "예산",
+      "safety": "안전",
+      "apps": "앱"
+    },
+    "ourGuidesTitle": "자체 심층 가이드",
+    "ourGuidesSubtitle": "현지 팀이 직접 쓰고 계속 업데이트합니다"
+  },
+  "photos": {
+    "pageTitle": "프레임 속의 중국",
+    "pageSubtitle": "진짜 여행자들의 진짜 순간",
+    "allCategories": "전체",
+    "viewSource": "출처 보기",
+    "loadMore": "더 보기",
+    "byLabel": "촬영",
+    "categories": {
+      "landscape": "풍경",
+      "city": "도시",
+      "food": "먹거리",
+      "people": "사람",
+      "transport": "교통",
+      "hiddenGems": "숨은 명소"
+    }
+  },
+  "services": {
+    "pageTitle": "현지 파트너",
+    "pageSubtitle": "인증된 가이드, 기사, 여행사로 중국 여행을 안전하게",
+    "searchPlaceholder": "도시 또는 서비스 유형 검색...",
+    "allCities": "전체 도시",
+    "allTypes": "전체 유형",
+    "allLanguages": "전체 언어",
+    "listLabel": "리스트",
+    "gridLabel": "그리드",
+    "verified": "인증 파트너",
+    "reviews": "리뷰 {n}건",
+    "contact": "연락",
+    "viewProfile": "프로필 보기",
+    "sendInquiry": "문의 보내기",
+    "formName": "이름",
+    "formEmail": "이메일",
+    "formDates": "여행 날짜",
+    "formMessage": "문의 내용",
+    "submit": "이메일로 보내기",
+    "servicesIncluded": "제공 서비스",
+    "noResults": "조건에 맞는 파트너가 없어요.",
+    "types": {
+      "driver": "전용 기사",
+      "guide": "투어 가이드",
+      "photographer": "여행 사진가",
+      "agency": "여행사"
+    }
+  },
+  "guide": {
+    "backToGuides": "← 가이드 목록으로",
+    "moreGuides": "더 많은 가이드"
+  },
+  "about": {
+    "title": "이 사이트 소개",
+    "subtitle": "당신은 중국을 보고 싶지만, 중국 인터넷은 당신을 들여보내 주지 않죠. 제가 들어가서 남의 눈을 꺼내 옵니다.",
+    "brandStoryTitle": "왜 'With My Eyes'인가?",
+    "brandStory": "이름은 《삼체》의 작가 류츠신의 단편 《그녀의 눈을 빌려》에서 따왔습니다. 여행자가 빌린 눈을 가지고 다니며 먼 곳의 누군가가 세상을 볼 수 있게 해주는 이야기죠. 우리는 단어 하나만 바꿨습니다. 분명히 말해두면, 이 눈은 제 것이 아닙니다. 핀란드 가족의 눈은 그들 것이고, 화산 plank-walk 영상은 그 너머의 것입니다. 저는 눈의 중간상인일 뿐 — 당신이 들어갈 수 없는 곳에서 눈을 수집하고, 검수하고, 진열합니다. 이름의 '나의'는 노점상이 외치는 그 '나의'입니다. '내 눈을 가져가라'는 말은 '내 물건을 가져가라'는 뜻이죠.",
+    "missionTitle": "당신과 세계 사이에 가로막힌 것",
+    "offerTitle": "여기 뭐가 있나",
+    "offerSubtitle": "알고리즘 없음. 모두 사람이 직접 골랐습니다.",
+    "ctaTitle": "먼저 눈 한 쌍 빌려 볼까요?",
+    "ctaSubtitle": "화면 너머 진짜 중국을 보세요 — 정말 오게 되는 날에도 길은 그대로 남아 있을 테니까.",
+    "ctaButton": "여행지 둘러보기",
+    "missionP1": "한 곳을 보고 싶어진 적은 오늘처럼 어려운 적이 없었습니다. 정보가 없어서가 아니라, 너무 많고, 너무 가짜이고, 너무 시끄러워서입니다. 검색엔진은 10년 전 가이드북과 광고성 리스트를 내주고, 소셜 피드는 알고리즘이 보여주고 싶은 것만 보여줍니다. AI는 하루에 1만 편의 '직접 가 본 후기'를 만들어 냅니다. 벽은 언어와 플랫폼에서 끝나지 않습니다. 알고리즘 역시 벽입니다. 그 벽들 뒤에는 한 사람이 결코 다 훑을 수 없는 영상의 홍수가 있습니다.",
+    "missionP2": "설령 모든 벽을 넘는다 해도 두 가지가 발목을 잡습니다. 돈과 용기죠. 항공권은 싸지 않고 비자는 복불복 같습니다. 낯선 언어, 결제에 대한 소문, 그리고 조용한 물음 — 저기는 안전한가? 호기심과 두려움은 함께 자랍니다. 지구 중심에 갇힌 소녀처럼: 보고 싶지 않은 게 아니라, 나갈 수 없었던 겁니다. 보고 싶어도 못 보는 것, 두꺼운 암반 너머로 바라보는 것 — 그게 우리 모두의 평범한 상태입니다.",
+    "missionP3": "그래서 이 사이트는 딱 한 가지 일을 합니다: 중간상 노릇이죠. 저는 벽 안쪽에 삽니다. 당신을 위해 벽을 넘고, 알고리즘과 경쟁하고, 홍수 같은 영상에서 당신의 시간을 받을 만한 눈들 — 핀란드 가족의, 버스 아저씨의, plank-walk 그 형의 — 을 골라 검수하고 진열합니다. 그리고 지갑과 용기가 준비되는 날, 직접 보러 가세요. 그 전까지는: 눈 몇 쌍 빌려서, 지금 있는 곳에서 보세요.",
+    "f1Title": "큐레이션 브이로그",
+    "f1Desc": "빌리빌리와 유튜브에서 직접 고른 영상 이야기, 솔직한 코멘트와 함께.",
+    "f2Title": "진짜 여행자 가이드",
+    "f2Desc": "블로거, 커뮤니티, 현지인의 최고 글을 주제별로 정리.",
+    "f3Title": "깊이 있는 도시 페이지",
+    "f3Desc": "주요 여행지의 명소, 미식, 일정, 팁 총정리.",
+    "f4Title": "현지 파트너",
+    "f4Desc": "실제 예약 가능한 인증 기사, 가이드, 사진가.",
+    "f5Title": "실전 노하우",
+    "f5Desc": "비자, 교통, 결제, 앱 가이드로 여행을 매끄럽게.",
+    "f6Title": "당신 같은 여행자를 위한 글",
+    "f6Desc": "필요한 맥락까지 담은 명확한 문장 — 내부자 전제는 없습니다."
+  },
+  "footer": {
+    "desc": "중국을 여행하는 외국인을 위한 엄선 브이로그, 가이드, 현지 서비스. 현지에 사는 큐레이터가 골라 안심하고 떠날 수 있게 합니다.",
+    "topDestinations": "여행지",
+    "explore": "탐색",
+    "aboutUs": "소개",
+    "exploreLinks": {
+      "vlogs": "여행 브이로그",
+      "guides": "가이드",
+      "photos": "사진 갤러리",
+      "services": "현지 파트너"
+    },
+    "links": {
+      "about": "사이트 소개",
+      "contact": "연락하기",
+      "contributors": "글쓰기 참여",
+      "privacy": "개인정보 처리방침"
+    },
+    "copyright": "© {year} With My Eyes | 중국 플랫폼에서 골라 온 중국 여행 큐레이션",
+    "guideSuffix": "가이드"
+  },
+  "language": {
+    "switch": "English",
+    "label": "언어"
+  }
+}

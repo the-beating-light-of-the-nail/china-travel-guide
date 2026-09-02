@@ -1,4 +1,4 @@
-// 静态内容数据模块（双语：英文 / 中文）
+// 静态内容数据模块（多语言：en / zh 随内容维护，其余语言由 data/translations/ 翻译包提供）
 // ---------------------------------------------------------------
 // 该文件是网站的"单一数据源"，所有内容均在此处维护。
 // 替代原先的 Prisma + SQLite 方案，因为 SQLite 的本地文件数据库
@@ -9,13 +9,14 @@
 // 中文内容源自 template-chengdu.html / template-xian.html / template-home.html
 // ---------------------------------------------------------------
 
-// ===== 类型定义 =====
+import { mergeLanguagePack, fillLocaleFallbacks } from './localize'
+import type { L } from './localize'
+import { contentPacks } from './translations'
 
-// 本地化文本：同时包含英文与中文
-export interface L {
-  en: string
-  zh: string
-}
+// 向后兼容：hub-data.ts 等仍从此处导入 L 类型
+export type { L } from './localize'
+
+// ===== 类型定义 =====
 
 export interface Attraction {
   id: number
@@ -1545,6 +1546,19 @@ function buildGuides(): Guide[] {
 // 模块级单例数据
 const cities: City[] = buildCities()
 const guides: Guide[] = buildGuides()
+
+// 合并各语言翻译包（ko/ja/th/de/fr/es/it...），再为缺失语言填充英文兜底，
+// 保证页面代码 l[locale] 在任何语言下都有值
+for (const [lang, pack] of Object.entries(contentPacks)) {
+  for (const city of cities) {
+    mergeLanguagePack(city, pack.cities?.[city.slug], lang, `cities.${city.slug}`)
+  }
+  for (const guide of guides) {
+    mergeLanguagePack(guide, pack.guides?.[guide.slug], lang, `guides.${guide.slug}`)
+  }
+}
+fillLocaleFallbacks(cities)
+fillLocaleFallbacks(guides)
 
 // ===== 访问函数（供页面在构建时直接调用） =====
 

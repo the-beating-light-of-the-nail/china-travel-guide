@@ -25,7 +25,7 @@ useHead({
     { property: 'og:title', content: t('about.title') },
     { property: 'og:description', content: t('about.subtitle') },
     { property: 'og:type', content: 'website' },
-    { property: 'og:locale', content: locale.value === 'zh' ? 'zh_CN' : 'en_US' },
+    { property: 'og:locale', content: ogLocale(locale.value) },
   ],
   script: [
     // 组织结构化数据 JSON-LD
@@ -36,7 +36,7 @@ useHead({
         '@type': 'AboutPage',
         name: t('about.title'),
         url: `${pub.siteUrl}/${locale.value}/about`,
-        inLanguage: locale.value === 'zh' ? 'zh-CN' : 'en-US',
+        inLanguage: isoLocale(locale.value),
         mainEntity: {
           '@type': 'Organization',
           name: 'With My Eyes',

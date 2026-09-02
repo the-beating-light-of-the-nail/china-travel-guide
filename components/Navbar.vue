@@ -6,10 +6,15 @@ const { t, locale, locales } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 
-// 所有可用语言
-const availableLocales = computed(() =>
-  (locales.value as Array<{ code: string }>).filter(l => l.code !== locale.value)
+// 所有可用语言（含 code 与展示名 name，顺序即下拉展示顺序）
+const allLocales = computed(() => locales.value as Array<{ code: string; name?: string }>)
+const availableLocales = computed(() => allLocales.value.filter(l => l.code !== locale.value))
+const currentLocaleName = computed(
+  () => allLocales.value.find(l => l.code === locale.value)?.name || locale.value,
 )
+
+// 语言下拉展开状态
+const langOpen = ref(false)
 
 // 导航链接配置（key 用于读取翻译文案）
 const navLinks = [
@@ -35,10 +40,12 @@ function handleSearch() {
   }
 }
 
-// 判断当前链接是否激活
+// 判断当前链接是否激活（去掉任意语言前缀后比较）
+const localePrefixRe = computed(
+  () => new RegExp(`^/(${allLocales.value.map(l => l.code).join('|')})(?=/|$)`),
+)
 function isActive(to: string) {
-  // 去掉语言前缀后比较
-  const path = route.path.replace(/^\/(en|zh)(?=\/|$)/, '') || '/'
+  const path = route.path.replace(localePrefixRe.value, '') || '/'
   if (to === '/') return path === '/'
   if (to.startsWith('/#')) return false
   return path === to || path.startsWith(`${to}/`)
@@ -80,16 +87,34 @@ function isActive(to: string) {
         >
       </div>
 
-      <!-- 语言切换按钮 -->
-      <NuxtLink
-        v-for="l in availableLocales"
-        :key="l.code"
-        :to="switchLocalePath(l.code)"
-        class="flex-shrink-0 px-3 py-1.5 rounded-full border border-slate-600 text-slate-300 text-sm font-medium hover:bg-brand hover:border-brand hover:text-white transition-colors"
-        :title="t('language.label')"
-      >
-        {{ l.code === 'en' ? 'EN' : '中' }}
-      </NuxtLink>
+      <!-- 语言切换下拉 -->
+      <div class="relative">
+        <button
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-600 text-slate-300 text-sm font-medium hover:bg-brand hover:border-brand hover:text-white transition-colors"
+          :title="t('language.label')"
+          @click="langOpen = !langOpen"
+        >
+          <span class="text-base leading-none">🌐</span>
+          <span>{{ currentLocaleName }}</span>
+          <span class="text-[10px] leading-none transition-transform" :class="langOpen ? 'rotate-180' : ''">▼</span>
+        </button>
+        <!-- 点击遮罩关闭下拉 -->
+        <div v-if="langOpen" class="fixed inset-0 z-40 cursor-default" @click="langOpen = false" />
+        <div
+          v-if="langOpen"
+          class="absolute right-0 top-[calc(100%+8px)] z-50 min-w-[150px] py-1.5 rounded-xl border border-slate-700 bg-slate-900/98 backdrop-blur-md shadow-xl shadow-black/40"
+        >
+          <NuxtLink
+            v-for="l in availableLocales"
+            :key="l.code"
+            :to="switchLocalePath(l.code)"
+            class="flex items-center gap-2 px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 transition-colors whitespace-nowrap"
+            @click="langOpen = false"
+          >
+            {{ l.name || l.code }}
+          </NuxtLink>
+        </div>
+      </div>
     </div>
 
     <!-- 移动端：搜索 + 菜单按钮 -->
@@ -113,7 +138,7 @@ function isActive(to: string) {
     <!-- 移动端下拉菜单 -->
     <div
       v-if="menuOpen"
-      class="lg:hidden absolute top-[70px] left-0 right-0 bg-slate-900/98 backdrop-blur-md border-b border-slate-800 px-6 py-4"
+      class="lg:hidden absolute top-[70px] left-0 right-0 bg-slate-900/98 backdrop-blur-md border-b border-slate-800 px-6 py-4 z-50"
     >
       <ul class="list-none space-y-3">
         <li v-for="link in navLinks" :key="link.key">
@@ -125,14 +150,16 @@ function isActive(to: string) {
             {{ t(link.key) }}
           </NuxtLink>
         </li>
-        <li class="pt-2 border-t border-slate-800">
+        <li class="pt-3 border-t border-slate-800">
+          <div class="text-xs text-slate-500 mb-2">{{ t('language.label') }}</div>
           <NuxtLink
             v-for="l in availableLocales"
             :key="l.code"
             :to="switchLocalePath(l.code)"
-            class="inline-block mr-3 text-[15px] text-brand-light py-1"
+            class="inline-block mr-3 mb-1 text-[15px] text-brand-light py-1"
+            @click="menuOpen = false"
           >
-            {{ l.code === 'en' ? 'EN' : '中' }}
+            {{ l.name || l.code }}
           </NuxtLink>
         </li>
       </ul>

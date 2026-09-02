@@ -35,28 +35,22 @@ const heroImage = 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?
 // SEO 元信息（含 hreflang）
 const i18nHead = useLocaleHead()
 useHead({
-  title: locale.value === 'zh'
-    ? '带上我的眼睛 - 精选中文平台的中国旅行导航'
-    : 'With My Eyes — Hand-picked China travel from Chinese platforms',
+  title: t('home.seoTitle'),
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
   link: [...(i18nHead.value.link || [])],
   meta: [
     {
       name: 'description',
-      content: locale.value === 'zh'
-        ? '为国际旅行者精选的中国旅行 Vlog、外部攻略与本地服务商，覆盖北京、西安、成都等热门目的地。'
-        : 'Handpicked vlogs, guides & local services for foreign travelers in China. Destinations, street food, high-speed rail and local partners.',
+      content: t('home.seoDescription'),
     },
     { property: 'og:title', content: t('home.heroTitle') },
     {
       property: 'og:description',
-      content: locale.value === 'zh'
-        ? '精选 Vlog、攻略与本地服务，助你规划真实的中国之旅。'
-        : 'Handpicked vlogs, guides & local services. Plan your real China trip.',
+      content: t('home.seoOgDescription'),
     },
     { property: 'og:type', content: 'website' },
     { property: 'og:image', content: heroImage },
-    { property: 'og:locale', content: i18nHead.value.meta?.find((m: any) => m.property === 'og:locale')?.content || (locale.value === 'zh' ? 'zh_CN' : 'en_US') },
+    { property: 'og:locale', content: i18nHead.value.meta?.find((m: any) => m.property === 'og:locale')?.content || (ogLocale(locale.value)) },
   ],
   // 网站结构化数据 JSON-LD
   script: [

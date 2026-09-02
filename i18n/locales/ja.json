@@ -1,0 +1,238 @@
+{
+  "brand": {
+    "name": "ウィズ・マイ",
+    "highlight": "アイズ",
+    "tagline": "中国プラットフォームから厳選した中国旅行ガイド",
+    "full": "With My Eyes"
+  },
+  "nav": {
+    "home": "ホーム",
+    "destinations": "目的地",
+    "vlogs": "Vlog",
+    "guides": "ガイド",
+    "photos": "写真",
+    "services": "現地サービス",
+    "about": "About"
+  },
+  "search": {
+    "placeholder": "都市・テーマ・クリエイターを検索…",
+    "heroPlaceholder": "都市・テーマ・クリエイターを検索…",
+    "button": "検索"
+  },
+  "home": {
+    "heroTitle": "私の目で見る、本当の中国",
+    "heroSubtitle": "外国人が絶対に見つけられない中国プラットフォームの中から、厳選したVlog・ガイド・写真",
+    "quickCity": "成都",
+    "quickRail": "高速鉄道",
+    "quickFood": "屋台グルメ",
+    "destinationsTitle": "人気の目的地",
+    "destinationsSubtitle": "厳選都市 · キュレーション動画とガイド · 現地サービス",
+    "vlogsTitle": "おすすめVlog",
+    "vlogsSubtitle": "BilibiliとYouTubeから、一本ずつ手で選んだ旅の動画",
+    "viewAllVlogs": "すべての動画を見る →",
+    "momentsTitle": "旅の瞬間",
+    "momentsSubtitle": "本物の旅人の本物の一瞬",
+    "viewAllPhotos": "ギャラリーを見る →",
+    "viewAllGuides": "すべてのガイドを見る →",
+    "guidesTitle": "おすすめガイド",
+    "guidesSubtitle": "現場の声 · 正直なアドバイス · 体験済みモデルコース",
+    "vlogCount": "動画{n}本",
+    "seoTitle": "With My Eyes — 中国プラットフォームから厳選した中国旅行ガイド",
+    "seoDescription": "中国を訪れる外国人旅行者のための厳選Vlog・ガイド・現地サービス。北京・西安・成都など人気都市の屋台グルメ、高速鉄道、現地パートナーまで。",
+    "seoOgDescription": "厳選Vlog・ガイド・現地サービスで、本当の中国旅を計画しよう。"
+  },
+  "categories": {
+    "history": { "title": "歴史と文化", "desc": "古都と千年の遺産" },
+    "nature": { "title": "自然とアウトドア", "desc": "山、川、そして秘境" },
+    "food": { "title": "グルメ", "desc": "屋台と老舗の味" },
+    "family": { "title": "家族旅行", "desc": "全年齢で楽しくラクラク" },
+    "romantic": { "title": "ロマンチック", "desc": "二人だけの甘いスポットと静かな隠れ家" },
+    "budget": { "title": "バックパック旅行", "desc": "節約して、出会って、もっと見る" }
+  },
+  "city": {
+    "overviewTitle": "街の印象",
+    "atAGlance": "{name}がひと目でわかる",
+    "attractionsTitle": "外せない観光地",
+    "attractionsSubtitle": "{name}を象徴するランドマークと隠れた名所",
+    "cuisineTitle": "ご当地グルメ",
+    "cuisineSubtitle": "{name}で何を食べ、どこで食べるか",
+    "itineraryTitle": "おすすめモデルコース",
+    "itinerarySubtitle": "{name}での時間を余すところなく",
+    "tipsTitle": "実用ヒント",
+    "tipsSubtitle": "出発前に知っておきたいこと",
+    "home": "ホーム",
+    "day": "日目",
+    "statDuration": "おすすめ滞在日数",
+    "statSeason": "ベストシーズン",
+    "statHistory": "歴史",
+    "statKeywords": "キーワード",
+    "statHeritage": "街の底力",
+    "tabOverview": "概要",
+    "tabVlogs": "動画",
+    "tabGuides": "ガイド",
+    "tabPhotos": "写真",
+    "tabServices": "現地サービス",
+    "saveTrip": "旅に保存",
+    "saved": "保存済み",
+    "vlogsSectionTitle": "必見のVlog",
+    "vlogsSectionSubtitle": "本物の旅人が撮った{name}動画を厳選",
+    "guidesSectionTitle": "セレクションガイド",
+    "guidesSectionSubtitle": "ウェブから集めた{name}のおすすめリソース",
+    "photosSectionTitle": "{name}の瞬間",
+    "partnersSectionTitle": "現地パートナー",
+    "partnersSectionSubtitle": "{name}の認定ガイド・ドライバー・サービス",
+    "relatedTitle": "他の目的地",
+    "readOriginal": "全文を読む →"
+  },
+  "regions": {
+    "Southwest China": "中国南西部",
+    "Northwest China": "中国北西部",
+    "North China": "中国北部"
+  },
+  "vlogs": {
+    "pageTitle": "中国旅行Vlog",
+    "pageSubtitle": "Bilibili・YouTubeなどから厳選 —— 正直なコメント付き",
+    "allPlatforms": "すべてのプラットフォーム",
+    "allTopics": "すべてのテーマ",
+    "allCities": "すべての都市",
+    "sortBy": "並び替え",
+    "sortLatest": "新着",
+    "sortViews": "再生数順",
+    "sortPicks": "編集部のおすすめ",
+    "trending": "今話題",
+    "filterByCity": "都市で絞り込み",
+    "watch": "視聴",
+    "loadMore": "もっと見る",
+    "noResults": "条件に合う動画がありません。フィルターを解除してみてください。",
+    "platforms": {
+      "youtube": "YouTube",
+      "bilibili": "Bilibili"
+    },
+    "topics": {
+      "food": "グルメ",
+      "transport": "交通",
+      "culture": "文化",
+      "nature": "自然"
+    }
+  },
+  "guidesHub": {
+    "pageTitle": "中国旅行ガイド",
+    "pageSubtitle": "ブロガー・フォーラム・現地人から厳選したリソース",
+    "searchPlaceholder": "ガイドを検索…",
+    "recentlyAdded": "最近の追加",
+    "readOriginal": "原文を読む →",
+    "allCategories": "すべて",
+    "noResults": "検索に一致するガイドがありません。",
+    "categories": {
+      "visa": "ビザ",
+      "transport": "交通",
+      "food": "グルメ",
+      "accommodation": "宿泊",
+      "itinerary": "行程",
+      "budget": "予算",
+      "safety": "安全",
+      "apps": "アプリ"
+    },
+    "ourGuidesTitle": "オリジナル詳細ガイド",
+    "ourGuidesSubtitle": "現地チームが執筆、随時アップデート"
+  },
+  "photos": {
+    "pageTitle": "フレームの中の中国",
+    "pageSubtitle": "本物の旅人の本物の瞬間",
+    "allCategories": "すべて",
+    "viewSource": "出典を見る",
+    "loadMore": "もっと見る",
+    "byLabel": "撮影",
+    "categories": {
+      "landscape": "風景",
+      "city": "街",
+      "food": "グルメ",
+      "people": "人",
+      "transport": "交通",
+      "hiddenGems": "隠れた名所"
+    }
+  },
+  "services": {
+    "pageTitle": "現地パートナー",
+    "pageSubtitle": "認証済みのガイド・ドライバー・旅行代理店が中国旅をサポート",
+    "searchPlaceholder": "都市やサービスタイプで検索…",
+    "allCities": "すべての都市",
+    "allTypes": "すべてのタイプ",
+    "allLanguages": "すべての言語",
+    "listLabel": "リスト",
+    "gridLabel": "グリッド",
+    "verified": "認定パートナー",
+    "reviews": "レビュー{n}件",
+    "contact": "連絡",
+    "viewProfile": "プロフィール",
+    "sendInquiry": "問い合わせる",
+    "formName": "お名前",
+    "formEmail": "メールアドレス",
+    "formDates": "旅行日程",
+    "formMessage": "ご要望",
+    "submit": "メールで送信",
+    "servicesIncluded": "サービス内容",
+    "noResults": "条件に合うパートナーがいません。",
+    "types": {
+      "driver": "専属ドライバー",
+      "guide": "ツアーガイド",
+      "photographer": "旅撮りカメラマン",
+      "agency": "旅行代理店"
+    }
+  },
+  "guide": {
+    "backToGuides": "← ガイド一覧へ",
+    "moreGuides": "他のガイド"
+  },
+  "about": {
+    "title": "このサイトについて",
+    "subtitle": "あなたは中国を見たい。でも中国のインターネットは入れてくれない。私が代わりに入って、誰かの目を運んできます。",
+    "brandStoryTitle": "なぜ「With My Eyes」？",
+    "brandStory": "名前は《三体》の著者・劉慈欣の短編「彼女の瞳を借りて」へのオマージュ。物語では、旅人が借りた一対の「目」を携え、遠くにいる誰かが世界を見られるようにします。私たちは一語だけ変えました。はっきりさせておくと、この目は私のものではありません。フィンランド人家族の目は彼らのもの、華山の桟道の映像はあの男性のもの。私は目の仲買人にすぎません——あなたが入れない場所から集め、品質を見極め、棚に並べる。名前の「私の」は、屋台の店主が叫ぶ「私の」です。「私の目をどうぞ」は「私の商品をどうぞ」という意味なのです。",
+    "missionTitle": "あなたと世界の間にあるもの",
+    "offerTitle": "実際に何があるか",
+    "offerSubtitle": "アルゴリズムなし。すべて人間が選んでいます。",
+    "ctaTitle": "まず一対の目を借りてみますか？",
+    "ctaSubtitle": "画面越しに本当の中国を見る——いつか本当に来たくなった時、道は変わらずそこにあります。",
+    "ctaButton": "目的地を見る",
+    "missionP1": "場所を見たい、と思ったことは今日ほど難しいことはありません。情報がないからではなく、情報が多すぎて、偽すぎて、うるさすぎるからです。検索エンジンは十年前のガイドブックと広告つきランキングを出し、SNSのフィードはアルゴリズムが見せたいものだけを見せます。AIは一日に一万本の「実際に行ってみた」を作れます。壁は言語やプラットフォームにとどまりません——アルゴリズムも壁です。その向こうには、人間には範いきれない動画の洪水があります。",
+    "missionP2": "たとえすべての壁を越えても、まだ二つのものがあなたを止めます。お金と、度胸です。航空券は安くない。ビザはくじ引きみたい。知らない言語、決済の噂、そして小さな問い——あちらは安全なのか？好奇心と恐怖は一緒に育ちます。地球の中心に閉じ込められた少女のように：見たくないのではなく、出られなかっただけ。見たくても見られない、厚い岩盤越しに月を眺める——それが普通の人間の状態なのです。",
+    "missionP3": "だからこのサイトは一つのシンプルなことをします：仲買業です。私は壁のこちら側に住んでいる。あなたのために壁を越え、アルゴリズムと競り合い、洪水の中からあなたの時間に値するいくつかの目——フィンランド家族の、バスのお兄さんの、桟道のあの人の——を選び、検品し、並べます。そして財布と度胸が整った時、自分の目で見に行ってください。それまでは：いくつかの目を借りて、今いる場所から見てください。",
+    "f1Title": "キュレーションVlog",
+    "f1Desc": "BilibiliとYouTubeから一本ずつ選んだ動画に、正直なコメントを添えて。",
+    "f2Title": "本物の旅人のガイド",
+    "f2Desc": "ブロガー・フォーラム・現地人のベスト記事をテーマ別に整理。",
+    "f3Title": "深い都市ページ",
+    "f3Desc": "主要目的地の観光地・グルメ・モデルコース・ヒントを完全網羅。",
+    "f4Title": "現地パートナー",
+    "f4Desc": "実際に予約できる認証済みドライバー・ガイド・カメラマン。",
+    "f5Title": "実用ノウハウ",
+    "f5Desc": "ビザ・交通・決済・アプリのガイドで旅を快適に。",
+    "f6Title": "あなたのような旅人のために",
+    "f6Desc": "必要な文脈を備えた明快な文章 — 内部情報の前提はありません。"
+  },
+  "footer": {
+    "desc": "中国を訪れる外国人旅行者のための厳選Vlog・ガイド・現地サービス。現地在住のキュレーターが選ぶから、安心して旅立てます。",
+    "topDestinations": "目的地",
+    "explore": "探索",
+    "aboutUs": "About",
+    "exploreLinks": {
+      "vlogs": "旅のVlog",
+      "guides": "ガイド",
+      "photos": "フォトギャラリー",
+      "services": "現地パートナー"
+    },
+    "links": {
+      "about": "サイト紹介",
+      "contact": "お問い合わせ",
+      "contributors": "寄稿について",
+      "privacy": "プライバシーポリシー"
+    },
+    "copyright": "© {year} With My Eyes | 中国プラットフォームから厳選した中国旅行ガイド",
+    "guideSuffix": "ガイド"
+  },
+  "language": {
+    "switch": "English",
+    "label": "言語"
+  }
+}

@@ -52,7 +52,7 @@ useHead({
     { property: 'og:title', content: t('guidesHub.pageTitle') },
     { property: 'og:description', content: t('guidesHub.pageSubtitle') },
     { property: 'og:type', content: 'website' },
-    { property: 'og:locale', content: locale.value === 'zh' ? 'zh_CN' : 'en_US' },
+    { property: 'og:locale', content: ogLocale(locale.value) },
   ],
   script: [
     {
@@ -63,7 +63,7 @@ useHead({
         name: t('guidesHub.pageTitle'),
         description: t('guidesHub.pageSubtitle'),
         url: `${pub.siteUrl}/${locale.value}/guides`,
-        inLanguage: locale.value === 'zh' ? 'zh-CN' : 'en-US',
+        inLanguage: isoLocale(locale.value),
       }),
     },
   ],

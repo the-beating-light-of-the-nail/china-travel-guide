@@ -1,0 +1,238 @@
+{
+  "brand": {
+    "name": "With My",
+    "highlight": "Eyes",
+    "tagline": "Il meglio della Cina, scelto a mano dalle piattaforme cinesi",
+    "full": "With My Eyes"
+  },
+  "nav": {
+    "home": "Home",
+    "destinations": "Destinazioni",
+    "vlogs": "Vlog",
+    "guides": "Guide",
+    "photos": "Foto",
+    "services": "Servizi",
+    "about": "Chi siamo"
+  },
+  "search": {
+    "placeholder": "Cerca città, tema o vlogger...",
+    "heroPlaceholder": "Cerca città, tema o vlogger...",
+    "button": "Cerca"
+  },
+  "home": {
+    "heroTitle": "Vedi la Cina con i miei occhi",
+    "heroSubtitle": "Vlog, guide e foto scelti a mano da piattaforme cinesi che gli stranieri non vedranno mai",
+    "quickCity": "Chengdu",
+    "quickRail": "Alta velocità",
+    "quickFood": "Street food",
+    "destinationsTitle": "Destinazioni popolari",
+    "destinationsSubtitle": "Città scelte · Vlog e guide curati · Servizi locali",
+    "vlogsTitle": "Vlog in evidenza",
+    "vlogsSubtitle": "Racconti video da Bilibili e YouTube, scelti uno a uno",
+    "viewAllVlogs": "Vedi tutti i vlog →",
+    "momentsTitle": "Momenti di viaggio",
+    "momentsSubtitle": "Momenti veri di viaggiatori veri",
+    "viewAllPhotos": "Esplora la galleria →",
+    "viewAllGuides": "Vedi tutte le guide →",
+    "guidesTitle": "Guide in evidenza",
+    "guidesSubtitle": "Storie dal territorio · Consigli onesti · Itinerari provati sul campo",
+    "vlogCount": "{n} vlog",
+    "seoTitle": "With My Eyes — Viaggiare in Cina, scelto a mano dalle piattaforme cinesi",
+    "seoDescription": "Vlog, guide e servizi locali scelti per chi viaggia in Cina. Destinazioni, street food, treni ad alta velocità e partner locali.",
+    "seoOgDescription": "Vlog, guide e servizi locali scelti a mano. Pianifica il tuo vero viaggio in Cina."
+  },
+  "categories": {
+    "history": { "title": "Storia e Cultura", "desc": "Antiche capitali ed eredità millenarie" },
+    "nature": { "title": "Natura e Outdoor", "desc": "Montagne, fiumi e angoli fuori dai radar" },
+    "food": { "title": "Cibo e Bevande", "desc": "Bancarelle di strada e classiche storiche" },
+    "family": { "title": "Viaggi in famiglia", "desc": "Divertente, semplice e istruttivo per tutte le età" },
+    "romantic": { "title": "Fughe romantiche", "desc": "Angoli dolci e rifugi tranquilli per due" },
+    "budget": { "title": "Zaino in spalla", "desc": "Risparmia, incontra, vedi di più" }
+  },
+  "city": {
+    "overviewTitle": "Ritratto della città",
+    "atAGlance": "{name} in breve",
+    "attractionsTitle": "Imperdibili",
+    "attractionsSubtitle": "Le icone e gli angoli nascosti che definiscono {name}",
+    "cuisineTitle": "Scena gastronomica locale",
+    "cuisineSubtitle": "Cosa mangiare a {name} e dove trovarlo",
+    "itineraryTitle": "Itinerario consigliato",
+    "itinerarySubtitle": "Sfrutta al meglio il tuo tempo a {name}",
+    "tipsTitle": "Consigli pratici",
+    "tipsSubtitle": "Da sapere prima di partire",
+    "home": "Home",
+    "day": "Giorno",
+    "statDuration": "Soggiorno consigliato",
+    "statSeason": "Periodo migliore",
+    "statHistory": "Anni di storia",
+    "statKeywords": "Parole chiave",
+    "statHeritage": "Eredità",
+    "tabOverview": "Panoramica",
+    "tabVlogs": "Vlog",
+    "tabGuides": "Guide",
+    "tabPhotos": "Foto",
+    "tabServices": "Servizi locali",
+    "saveTrip": "Salva nel viaggio",
+    "saved": "Salvato",
+    "vlogsSectionTitle": "Vlog da non perdere",
+    "vlogsSectionSubtitle": "Video su {name} scelti tra veri viaggiatori",
+    "guidesSectionTitle": "Guide curate",
+    "guidesSectionSubtitle": "Risorse selezionate su {name} da tutto il web",
+    "photosSectionTitle": "Momenti di {name}",
+    "partnersSectionTitle": "Partner locali",
+    "partnersSectionSubtitle": "Guide, autisti e servizi verificati a {name}",
+    "relatedTitle": "Altre destinazioni",
+    "readOriginal": "Leggi la guida completa →"
+  },
+  "regions": {
+    "Southwest China": "Sudovest della Cina",
+    "Northwest China": "Nordovest della Cina",
+    "North China": "Nord della Cina"
+  },
+  "vlogs": {
+    "pageTitle": "Vlog di viaggio in Cina",
+    "pageSubtitle": "Vlog scelti da Bilibili, YouTube e oltre — con le nostre note sincere",
+    "allPlatforms": "Tutte le piattaforme",
+    "allTopics": "Tutti i temi",
+    "allCities": "Tutte le città",
+    "sortBy": "Ordina per",
+    "sortLatest": "Più recenti",
+    "sortViews": "Più visti",
+    "sortPicks": "Scelti dalla redazione",
+    "trending": "Di tendenza",
+    "filterByCity": "Filtra per città",
+    "watch": "Guarda",
+    "loadMore": "Carica altri",
+    "noResults": "Nessun vlog corrisponde ai filtri. Prova a rimuoverne alcuni.",
+    "platforms": {
+      "youtube": "YouTube",
+      "bilibili": "Bilibili"
+    },
+    "topics": {
+      "food": "Cibo",
+      "transport": "Trasporti",
+      "culture": "Cultura",
+      "nature": "Natura"
+    }
+  },
+  "guidesHub": {
+    "pageTitle": "Guide di viaggio in Cina",
+    "pageSubtitle": "Risorse scelte da blogger, forum e gente del posto",
+    "searchPlaceholder": "Cerca guide...",
+    "recentlyAdded": "Aggiunte di recente",
+    "readOriginal": "Leggi l'originale →",
+    "allCategories": "Tutte",
+    "noResults": "Nessuna guida corrisponde alla ricerca.",
+    "categories": {
+      "visa": "Visto",
+      "transport": "Trasporti",
+      "food": "Cibo",
+      "accommodation": "Alloggio",
+      "itinerary": "Itinerario",
+      "budget": "Budget",
+      "safety": "Sicurezza",
+      "apps": "App"
+    },
+    "ourGuidesTitle": "Guide approfondite originali",
+    "ourGuidesSubtitle": "Scritte dal nostro team sul posto, aggiornate di continuo"
+  },
+  "photos": {
+    "pageTitle": "La Cina in scatti",
+    "pageSubtitle": "Momenti veri di viaggiatori veri",
+    "allCategories": "Tutte",
+    "viewSource": "Vedi la fonte",
+    "loadMore": "Carica altri",
+    "byLabel": "di",
+    "categories": {
+      "landscape": "Paesaggi",
+      "city": "Città",
+      "food": "Cibo",
+      "people": "Persone",
+      "transport": "Trasporti",
+      "hiddenGems": "Gioie nascoste"
+    }
+  },
+  "services": {
+    "pageTitle": "Partner locali",
+    "pageSubtitle": "Guide, autisti e agenzie verificati per il tuo viaggio in Cina",
+    "searchPlaceholder": "Cerca città o tipo di servizio...",
+    "allCities": "Tutte le città",
+    "allTypes": "Tutti i tipi",
+    "allLanguages": "Tutte le lingue",
+    "listLabel": "Elenco",
+    "gridLabel": "Griglia",
+    "verified": "Partner verificato",
+    "reviews": "{n} recensioni",
+    "contact": "Contatti",
+    "viewProfile": "Vedi profilo",
+    "sendInquiry": "Invia richiesta",
+    "formName": "Nome",
+    "formEmail": "Email",
+    "formDates": "Date del viaggio",
+    "formMessage": "Messaggio",
+    "submit": "Invia via email",
+    "servicesIncluded": "Servizi",
+    "noResults": "Nessun partner corrisponde ai filtri.",
+    "types": {
+      "driver": "Autista privato",
+      "guide": "Guida turistica",
+      "photographer": "Fotografo di viaggio",
+      "agency": "Agenzia"
+    }
+  },
+  "guide": {
+    "backToGuides": "← Torna alle guide",
+    "moreGuides": "Altre guide"
+  },
+  "about": {
+    "title": "Su questo sito",
+    "subtitle": "Vuoi vedere la Cina. Ma internet cinese non ti fa entrare. Io entro e ti porto fuori gli occhi degli altri.",
+    "brandStoryTitle": "Perché «With My Eyes»?",
+    "brandStory": "Il nome è un omaggio al racconto di Liu Cixin «Con i suoi occhi» (带上她的眼睛), l'autore de Il problema dei tre corpi: una viaggiatrice porta con sé un paio di occhi in prestito, perché qualcuno lontano possa vedere il mondo. Noi abbiamo cambiato una parola. E chiariamo: questi occhi non sono miei. Quelli della famiglia finlandese sono loro; il POV della passerella appartiene al ragazzo sul monte Hua. Io sono solo un intermediario di occhi — li raccolgo da posti in cui non puoi entrare, controllo la merce e la metto sullo scaffale. Il «my» del nome è il «mio» del venditore ambulante: «prendi i miei occhi» vuol dire «prendi la mia merce».",
+    "missionTitle": "Cosa si frappone tra te e il mondo",
+    "offerTitle": "Cosa trovi davvero qui",
+    "offerSubtitle": "Niente algoritmi. Tutto scelto da un essere umano.",
+    "ctaTitle": "Prestare prima un paio di occhi?",
+    "ctaSubtitle": "Guarda la Cina vera attraverso lo schermo — e quando finalmente arriverai, le strade saranno ancora lì.",
+    "ctaButton": "Sfoglia le destinazioni",
+    "missionP1": "Voglia di vedere un posto: mai difficile come oggi — non per mancanza d'informazioni, ma perché ce ne sono troppe, troppo false, troppo rumorose. I motori di ricerca ti servono guide di dieci anni fa e classifiche pagate. I social mostrano solo ciò che l'algoritmo vuole. L'IA oggi genera diecimila «guide vissute in prima persona» al giorno. E i muri non si fermano a lingua e piattaforme: anche l'algoritmo è un muro. Dietro: un'inondazione di video che nessun essere umano potrebbe setacciare da solo.",
+    "missionP2": "Anche scalando tutti i muri, due cose ti fermerebbero: i soldi e il coraggio. I voli non sono economici. I visti sembrano una lotteria. La lingua sconosciuta, le voci sui pagamenti, la domanda silenziosa — là è sicuro? Curiosità e paura crescono insieme. Come la ragazza intrappolata al centro della Terra: non è che non volesse vedere. Non poteva uscire. Voler vedere attraverso strati di roccia — questa è la condizione umana ordinaria.",
+    "missionP3": "Così questo sito fa una sola cosa semplice: fa da intermediario. Io vivo da questa parte dei muri. Li scalo per te, rilancio contro gli algoritmi e tiro fuori dall'inondazione i pochi paia di occhi che valgono il tuo tempo — quelli della famiglia finlandese, dell'autista dell'autobus, del ragazzo sulla passerella — ispezionati, verificati, sullo scaffale. E quando portafoglio e coraggio saranno pronti, vai a vedere di persona. Fino ad allora: prendi in prestito qualche occhio. Guarda da dove sei.",
+    "f1Title": "Vlog curati",
+    "f1Desc": "Racconti video scelti uno a uno da Bilibili e YouTube, con note sincere.",
+    "f2Title": "Guide di veri viaggiatori",
+    "f2Desc": "I migliori articoli di blogger, forum e locali, organizzati per tema.",
+    "f3Title": "Pagine città in profondità",
+    "f3Desc": "Attrazioni, cibo, itinerari e consigli per ogni grande destinazione.",
+    "f4Title": "Partner locali",
+    "f4Desc": "Autisti, guide e fotografi verificati che puoi davvero prenotare.",
+    "f5Title": "Saper fare pratico",
+    "f5Desc": "Guide su visto, trasporti, pagamenti e app per un viaggio senza intoppi.",
+    "f6Title": "Scritto per viaggiatori come te",
+    "f6Desc": "Inglese chiaro e discorsivo con il contesto che serve — senza presunte da insider."
+  },
+  "footer": {
+    "desc": "Vlog, guide e servizi locali scelti per chi viaggia in Cina. Curato da chi vive qui, perché tu parta sereno.",
+    "topDestinations": "Destinazioni",
+    "explore": "Esplora",
+    "aboutUs": "Chi siamo",
+    "exploreLinks": {
+      "vlogs": "Vlog di viaggio",
+      "guides": "Guide",
+      "photos": "Galleria foto",
+      "services": "Partner locali"
+    },
+    "links": {
+      "about": "Chi siamo",
+      "contact": "Contattaci",
+      "contributors": "Scrivi per noi",
+      "privacy": "Privacy"
+    },
+    "copyright": "© {year} With My Eyes | Il meglio della Cina, scelto dalle piattaforme cinesi",
+    "guideSuffix": "Guida"
+  },
+  "language": {
+    "switch": "English",
+    "label": "Lingua"
+  }
+}

@@ -7,7 +7,7 @@ const props = defineProps<{
   city: City
 }>()
 
-const { locale } = useI18n()
+const { t, locale } = useI18n()
 
 const cells = computed(() => {
   const c = props.city
@@ -16,22 +16,22 @@ const cells = computed(() => {
   return [
     {
       icon: '🏷️',
-      label: l === 'zh' ? '关键词' : 'Keywords',
+      label: t('city.statKeywords'),
       value: keywords.slice(0, 4).join(' · '),
     },
     {
       icon: '🗓️',
-      label: l === 'zh' ? '建议天数' : 'Duration',
+      label: t('city.statDuration'),
       value: c.duration[l],
     },
     {
       icon: '🌸',
-      label: l === 'zh' ? '最佳季节' : 'Best Season',
+      label: t('city.statSeason'),
       value: c.bestSeason[l],
     },
     {
       icon: '🏛️',
-      label: l === 'zh' ? '城市底蕴' : 'Heritage',
+      label: t('city.statHeritage'),
       value: c.history[l],
     },
   ]

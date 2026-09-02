@@ -88,7 +88,7 @@ useHead({
     { property: 'og:title', content: t('photos.pageTitle') },
     { property: 'og:description', content: t('photos.pageSubtitle') },
     { property: 'og:type', content: 'website' },
-    { property: 'og:locale', content: locale.value === 'zh' ? 'zh_CN' : 'en_US' },
+    { property: 'og:locale', content: ogLocale(locale.value) },
     { property: 'og:image', content: `${pub.siteUrl}${allPhotos[0]?.image || ''}` },
   ],
   script: [
@@ -100,7 +100,7 @@ useHead({
         name: t('photos.pageTitle'),
         description: t('photos.pageSubtitle'),
         url: `${pub.siteUrl}/${locale.value}/photos`,
-        inLanguage: locale.value === 'zh' ? 'zh-CN' : 'en-US',
+        inLanguage: isoLocale(locale.value),
       }),
     },
   ],

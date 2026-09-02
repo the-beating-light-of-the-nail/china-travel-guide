@@ -94,7 +94,7 @@ useHead({
     { property: 'og:title', content: t('vlogs.pageTitle') },
     { property: 'og:description', content: t('vlogs.pageSubtitle') },
     { property: 'og:type', content: 'website' },
-    { property: 'og:locale', content: locale.value === 'zh' ? 'zh_CN' : 'en_US' },
+    { property: 'og:locale', content: ogLocale(locale.value) },
     { property: 'og:image', content: `${pub.siteUrl}${allVlogs[0]?.thumbnail || ''}` },
   ],
   script: [
@@ -106,7 +106,7 @@ useHead({
         name: t('vlogs.pageTitle'),
         description: t('vlogs.pageSubtitle'),
         url: `${pub.siteUrl}/${locale.value}/vlogs`,
-        inLanguage: locale.value === 'zh' ? 'zh-CN' : 'en-US',
+        inLanguage: isoLocale(locale.value),
       }),
     },
   ],
