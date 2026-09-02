@@ -37,14 +37,14 @@ export default defineNuxtConfig({
   // 运行时配置 - 提供给前端使用
   runtimeConfig: {
     public: {
-      siteUrl: 'https://travelchina-mu.vercel.app',
+      siteUrl: 'https://chinatravel.world',
       siteName: 'ChinaTravelHub',
     },
   },
 
   // 站点配置（供 sitemap 模块使用）
   site: {
-    url: 'https://travelchina-mu.vercel.app',
+    url: 'https://chinatravel.world',
   },
 
   // 国际化（i18n）配置
@@ -65,7 +65,7 @@ export default defineNuxtConfig({
     lazy: false,
     differentDomains: false,
     detectBrowserLanguage: false,
-    baseUrl: 'https://travelchina-mu.vercel.app',
+    baseUrl: 'https://chinatravel.world',
   },
 
   // 应用级 head 配置（默认 SEO，各页面会按语言覆盖）
