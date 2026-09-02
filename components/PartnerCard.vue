@@ -35,7 +35,7 @@ const form = reactive({ name: '', email: '', dates: '', message: '' })
 
 // 通过 mailto 发送咨询（无需后端）
 function sendInquiry() {
-  const subject = encodeURIComponent(`[With Her Eyes] ${props.service.name}`)
+  const subject = encodeURIComponent(`[With My Eyes] ${props.service.name}`)
   const body = encodeURIComponent(
     `${form.name} / ${form.email}\n${form.dates}\n\n${form.message}`
   )

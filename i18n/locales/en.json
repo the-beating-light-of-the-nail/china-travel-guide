@@ -1,9 +1,9 @@
 {
   "brand": {
-    "name": "With Her",
+    "name": "With My",
     "highlight": "Eyes",
     "tagline": "Hand-picked China travel from Chinese platforms",
-    "full": "With Her Eyes"
+    "full": "With My Eyes"
   },
   "nav": {
     "home": "Home",
@@ -20,7 +20,7 @@
     "button": "Search"
   },
   "home": {
-    "heroTitle": "See China Through a Hundred Local Eyes",
+    "heroTitle": "See China Through My Eyes",
     "heroSubtitle": "Hand-picked vlogs, guides & photos from Chinese platforms most foreigners never see",
     "quickCity": "Chengdu",
     "quickRail": "High-Speed Rail",
@@ -182,8 +182,8 @@
   "about": {
     "title": "About This Site",
     "subtitle": "Your go-to English resource for travel in China — written and curated by people who actually live here",
-    "brandStoryTitle": "Why 'With Her Eyes'?",
-    "brandStory": "The name comes from Liu Cixin's short story 'With Her Eyes' (带上她的眼睛), by the author of The Three-Body Problem. In the story, a traveler carries a pair of borrowed 'eyes' so that someone far away can see the world through them. That's exactly what this site does: we collect the eyes — the lenses, the viewpoints — of real travelers on Chinese platforms like Bilibili, and hand them to you, so you can see a China that English search engines never reach.",
+    "brandStoryTitle": "Why 'With My Eyes'?",
+    "brandStory": "The name nods to Liu Cixin's short story 'With Her Eyes' (带上她的眼睛), by the author of The Three-Body Problem — a traveler carries a borrowed pair of eyes so that someone far away can see the world. We changed one word: these are MY eyes. Every vlog, guide and photo on this site is something I have watched, read and judged myself — a hundred pairs of local eyes, lent to you for your trip, to see the China that English search engines never reach.",
     "missionTitle": "Why We Started This",
     "offerTitle": "What You'll Find Here",
     "offerSubtitle": "Everything you need for a smooth, unforgettable China trip",
@@ -223,7 +223,7 @@
       "contributors": "Write for Us",
       "privacy": "Privacy Policy"
     },
-    "copyright": "© {year} With Her Eyes | Hand-picked China travel from Chinese platforms",
+    "copyright": "© {year} With My Eyes | Hand-picked China travel from Chinese platforms",
     "guideSuffix": "Guide"
   },
   "language": {

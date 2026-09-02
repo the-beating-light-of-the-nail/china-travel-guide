@@ -36,8 +36,8 @@ const heroImage = 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?
 const i18nHead = useLocaleHead()
 useHead({
   title: locale.value === 'zh'
-    ? '带上她的眼睛 - 精选中文平台的中国旅行导航'
-    : 'With Her Eyes — Hand-picked China travel from Chinese platforms',
+    ? '带上我的眼睛 - 精选中文平台的中国旅行导航'
+    : 'With My Eyes — Hand-picked China travel from Chinese platforms',
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
   link: [...(i18nHead.value.link || [])],
   meta: [
@@ -65,7 +65,7 @@ useHead({
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'With Her Eyes',
+        name: 'With My Eyes',
         url: pub.siteUrl,
         description: 'Handpicked vlogs, guides & local services for travelers in China.',
         potentialAction: {

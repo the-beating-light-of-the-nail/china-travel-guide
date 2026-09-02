@@ -39,7 +39,7 @@ useHead({
         inLanguage: locale.value === 'zh' ? 'zh-CN' : 'en-US',
         mainEntity: {
           '@type': 'Organization',
-          name: 'With Her Eyes',
+          name: 'With My Eyes',
           url: pub.siteUrl,
           description: 'An English-language travel guide platform dedicated to helping international tourists explore China.',
         },
