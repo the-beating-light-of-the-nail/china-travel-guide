@@ -106,6 +106,15 @@ gtag('js', new Date());
 gtag('config', 'G-5V6YWGXS3Y');`,
           tagPosition: 'head',
         },
+        // Microsoft Clarity - 行为分析（热力图/会话回放）
+        {
+          innerHTML: `(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "ybt0nnb490");`,
+          tagPosition: 'head',
+        },
         // 广告展示脚本（CPM 广告网络）
         {
           src: 'https://pl30745593.effectivecpmnetwork.com/25/a4/4a/25a44a68bd636adeeef5dcc144a01c8f.js',
