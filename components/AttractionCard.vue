@@ -13,9 +13,9 @@ const isPlaceholder = computed(() => !props.attraction.image || props.attraction
 
 <template>
   <!-- 景点卡片 -->
-  <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover cursor-pointer flex flex-col">
+  <div class="card-dark overflow-hidden card-hover cursor-pointer flex flex-col">
     <!-- 图片区 -->
-    <div class="h-[200px] overflow-hidden bg-gray-100">
+    <div class="h-[200px] overflow-hidden bg-slate-700">
       <img
         v-if="!isPlaceholder"
         :src="attraction.image"
@@ -33,7 +33,7 @@ const isPlaceholder = computed(() => !props.attraction.image || props.attraction
     <!-- 内容区 -->
     <div class="p-5 flex-1 flex flex-col">
       <!-- 标题 -->
-      <h3 class="text-lg text-gray-900 mb-2 font-semibold">{{ attraction.name[locale] }}</h3>
+      <h3 class="text-lg text-slate-50 mb-2 font-semibold">{{ attraction.name[locale] }}</h3>
 
       <!-- 亮点 -->
       <div class="text-accent text-[13px] mb-2.5 font-medium flex items-center gap-1">
@@ -42,12 +42,12 @@ const isPlaceholder = computed(() => !props.attraction.image || props.attraction
       </div>
 
       <!-- 描述（两行截断） -->
-      <p class="text-sm text-gray-500 leading-relaxed line-clamp-2 flex-1">
+      <p class="text-sm text-slate-400 leading-relaxed line-clamp-2 flex-1">
         {{ attraction.description[locale] }}
       </p>
 
       <!-- 元信息 -->
-      <div class="flex justify-between items-center mt-3.5 pt-3.5 border-t border-gray-100 text-xs text-gray-400">
+      <div class="flex justify-between items-center mt-3.5 pt-3.5 border-t border-slate-700 text-xs text-slate-500">
         <span>📍 {{ attraction.location[locale] }}</span>
         <span>⏱️ {{ attraction.duration[locale] }}</span>
         <span>🎫 {{ attraction.ticket[locale] }}</span>

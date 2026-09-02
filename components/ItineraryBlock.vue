@@ -11,7 +11,7 @@ const { locale, t } = useI18n()
 
 <template>
   <!-- 单日行程区块 -->
-  <div class="bg-white rounded-xl p-6 sm:p-[30px] mb-6 shadow-md border-l-4 border-brand">
+  <div class="card-dark p-6 sm:p-[30px] mb-6 border-l-4 border-l-brand">
     <!-- 天数标题 -->
     <h3 class="text-xl text-brand mb-4 flex items-center gap-2.5">
       <span class="bg-brand text-white text-[13px] px-3 py-0.5 rounded font-normal">
@@ -25,8 +25,8 @@ const { locale, t } = useI18n()
       <li
         v-for="(item, idx) in itinerary.items"
         :key="idx"
-        class="py-2.5 text-[15px] text-gray-700 flex gap-3"
-        :class="{ 'border-b border-dashed border-gray-200': idx < itinerary.items.length - 1 }"
+        class="py-2.5 text-[15px] text-slate-200 flex gap-3"
+        :class="{ 'border-b border-dashed border-slate-700': idx < itinerary.items.length - 1 }"
       >
         <span class="text-accent font-medium min-w-[60px]">{{ item.timeSlot[locale] }}</span>
         <span>{{ item.content[locale] }}</span>

@@ -14,7 +14,7 @@ defineProps<{
     <div
       v-for="(img, i) in images"
       :key="i"
-      class="overflow-hidden rounded-lg shadow-sm aspect-[4/3] bg-gray-100"
+      class="overflow-hidden rounded-lg border border-slate-800 aspect-[4/3] bg-slate-800"
       :class="{ 'col-span-2 row-span-2 aspect-auto md:aspect-auto': i === 0 && images.length > 4 }"
     >
       <img

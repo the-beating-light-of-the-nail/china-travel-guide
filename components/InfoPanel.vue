@@ -39,18 +39,18 @@ const cells = computed(() => {
 </script>
 
 <template>
-  <div class="rounded-xl border border-gray-200 bg-gray-50/70 overflow-hidden">
-    <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-gray-200">
+  <div class="rounded-xl border border-slate-700 bg-slate-800/60 overflow-hidden">
+    <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-slate-700">
       <div
         v-for="cell in cells"
         :key="cell.label"
         class="p-5"
       >
-        <div class="text-xs text-gray-400 mb-1.5 flex items-center gap-1.5">
+        <div class="text-xs text-slate-500 mb-1.5 flex items-center gap-1.5">
           <span>{{ cell.icon }}</span>
           <span class="tracking-wide uppercase">{{ cell.label }}</span>
         </div>
-        <div class="text-[15px] font-semibold text-gray-800 leading-snug">{{ cell.value }}</div>
+        <div class="text-[15px] font-semibold text-slate-100 leading-snug">{{ cell.value }}</div>
       </div>
     </div>
   </div>

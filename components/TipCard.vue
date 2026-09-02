@@ -27,7 +27,7 @@ const itemlist = computed(() => {
 
 <template>
   <!-- 贴士卡片 -->
-  <div class="bg-white rounded-xl p-6 sm:p-[26px] shadow-md">
+  <div class="card-dark p-6 sm:p-[26px]">
     <!-- 标题 -->
     <h4 class="text-brand mb-3.5 text-[17px] flex items-center gap-2 font-semibold">
       <span>{{ icon }}</span>
@@ -39,7 +39,7 @@ const itemlist = computed(() => {
       <li
         v-for="(item, idx) in itemlist"
         :key="idx"
-        class="text-sm text-gray-600 py-1.5 pl-4 relative"
+        class="text-sm text-slate-300 py-1.5 pl-4 relative"
       >
         <span class="absolute left-0 text-accent">•</span>
         <span>{{ item }}</span>

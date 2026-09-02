@@ -1,28 +1,40 @@
 {
   "brand": {
-    "name": "Middle Kingdom",
-    "highlight": "Wanderlust"
+    "name": "ChinaTravel",
+    "highlight": "Hub"
   },
   "nav": {
     "home": "Home",
     "destinations": "Destinations",
-    "guides": "Travel Guides",
+    "vlogs": "Vlogs",
+    "guides": "Guides",
+    "photos": "Photos",
+    "services": "Services",
     "about": "About"
   },
   "search": {
-    "placeholder": "Search cities, attractions, guides...",
-    "heroPlaceholder": "Where to? Try Beijing, Xi'an, or Chengdu...",
-    "button": "Find Guides"
+    "placeholder": "Search city, topic or vlogger...",
+    "heroPlaceholder": "Search city, topic or vlogger...",
+    "button": "Search"
   },
   "home": {
-    "heroTitle": "Discover China Beyond the Postcards",
-    "heroSubtitle": "Ancient capitals, fiery cuisine, and landscapes that take your breath away",
-    "destinationsTitle": "Top Destinations",
-    "destinationsSubtitle": "Handpicked cities · Deep-dive guides · Everything you need to know",
-    "categoriesTitle": "Travel Styles",
-    "categoriesSubtitle": "Find your vibe — from history buff to foodie to backpacker",
+    "heroTitle": "Discover Real China, Curated by Real Travelers",
+    "heroSubtitle": "Handpicked vlogs, guides & local services for foreign travelers",
+    "quickCity": "Chengdu",
+    "quickRail": "High-Speed Rail",
+    "quickFood": "Street Food",
+    "destinationsTitle": "Popular Destinations",
+    "destinationsSubtitle": "Handpicked cities · Curated vlogs & guides · Local services",
+    "vlogsTitle": "Featured Vlogs",
+    "vlogsSubtitle": "Video stories from Bilibili & YouTube, picked by hand",
+    "viewAllVlogs": "View all vlogs →",
+    "momentsTitle": "Travel Moments",
+    "momentsSubtitle": "Real moments from real travelers",
+    "viewAllPhotos": "Explore the gallery →",
+    "viewAllGuides": "View all guides →",
     "guidesTitle": "Featured Guides",
-    "guidesSubtitle": "On-the-ground stories · Honest advice · Trip-tested itineraries"
+    "guidesSubtitle": "On-the-ground stories · Honest advice · Trip-tested itineraries",
+    "vlogCount": "{n} vlogs"
   },
   "categories": {
     "history": { "title": "History & Culture", "desc": "Ancient capitals and millennia-old heritage" },
@@ -47,12 +59,119 @@
     "day": "Day",
     "statDuration": "Recommended Stay",
     "statSeason": "Best Time to Visit",
-    "statHistory": "Years of History"
+    "statHistory": "Years of History",
+    "tabOverview": "Overview",
+    "tabVlogs": "Vlogs",
+    "tabGuides": "Guides",
+    "tabPhotos": "Photos",
+    "tabServices": "Local Services",
+    "saveTrip": "Save to My Trip",
+    "saved": "Saved",
+    "vlogsSectionTitle": "Must-Watch Vlogs",
+    "vlogsSectionSubtitle": "Handpicked {name} videos from real travelers",
+    "guidesSectionTitle": "Curated Guides",
+    "guidesSectionSubtitle": "Handpicked resources about {name} from around the web",
+    "photosSectionTitle": "{name} Moments",
+    "partnersSectionTitle": "Local Partners",
+    "partnersSectionSubtitle": "Verified guides, drivers & services in {name}",
+    "relatedTitle": "More Destinations",
+    "readOriginal": "Read Full Guide →"
   },
   "regions": {
     "Southwest China": "Southwest China",
     "Northwest China": "Northwest China",
     "North China": "North China"
+  },
+  "vlogs": {
+    "pageTitle": "China Travel Vlogs",
+    "pageSubtitle": "Handpicked vlogs from Bilibili, YouTube and beyond — with our honest notes",
+    "allPlatforms": "All Platforms",
+    "allTopics": "All Topics",
+    "allCities": "All Cities",
+    "sortBy": "Sort by",
+    "sortLatest": "Latest",
+    "sortViews": "Most Viewed",
+    "sortPicks": "Editor's Picks",
+    "trending": "Trending Now",
+    "filterByCity": "Filter by City",
+    "watch": "Watch",
+    "loadMore": "Load More",
+    "noResults": "No vlogs match your filters. Try clearing some.",
+    "platforms": {
+      "youtube": "YouTube",
+      "bilibili": "Bilibili"
+    },
+    "topics": {
+      "food": "Food",
+      "transport": "Transport",
+      "culture": "Culture",
+      "nature": "Nature"
+    }
+  },
+  "guidesHub": {
+    "pageTitle": "China Travel Guides",
+    "pageSubtitle": "Handpicked resources from bloggers, forums, and locals",
+    "searchPlaceholder": "Search guides...",
+    "recentlyAdded": "Recently Added",
+    "readOriginal": "Read Original →",
+    "allCategories": "All",
+    "noResults": "No guides match your search.",
+    "categories": {
+      "visa": "Visa",
+      "transport": "Transport",
+      "food": "Food",
+      "accommodation": "Accommodation",
+      "itinerary": "Itinerary",
+      "budget": "Budget",
+      "safety": "Safety",
+      "apps": "Apps"
+    },
+    "ourGuidesTitle": "Original In-Depth Guides",
+    "ourGuidesSubtitle": "Written by our on-the-ground team, updated regularly"
+  },
+  "photos": {
+    "pageTitle": "China in Frames",
+    "pageSubtitle": "Real moments from real travelers",
+    "allCategories": "All",
+    "viewSource": "View Source",
+    "loadMore": "Load More",
+    "byLabel": "by",
+    "categories": {
+      "landscape": "Landscapes",
+      "city": "City",
+      "food": "Food",
+      "people": "People",
+      "transport": "Transport",
+      "hiddenGems": "Hidden Gems"
+    }
+  },
+  "services": {
+    "pageTitle": "Local Partners",
+    "pageSubtitle": "Verified guides, drivers, and agencies for your China trip",
+    "searchPlaceholder": "Search city or service type...",
+    "allCities": "All Cities",
+    "allTypes": "All Types",
+    "allLanguages": "All Languages",
+    "listLabel": "List",
+    "gridLabel": "Grid",
+    "verified": "Verified Partner",
+    "reviews": "{n} reviews",
+    "contact": "Contact",
+    "viewProfile": "View Profile",
+    "sendInquiry": "Send Inquiry",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formDates": "Travel Dates",
+    "formMessage": "Message",
+    "submit": "Send via Email",
+    "servicesIncluded": "Services",
+    "noResults": "No partners match your filters.",
+    "types": {
+      "driver": "Private Driver",
+      "guide": "Tour Guide",
+      "photographer": "Photographer",
+      "agency": "Agency"
+    }
   },
   "guide": {
     "backToGuides": "← Back to All Guides",
@@ -60,39 +179,39 @@
   },
   "about": {
     "title": "About This Site",
-    "subtitle": "Your go-to English resource for travel in China — written by people who actually live here",
+    "subtitle": "Your go-to English resource for travel in China — written and curated by people who actually live here",
     "missionTitle": "Why We Started This",
     "offerTitle": "What You'll Find Here",
     "offerSubtitle": "Everything you need for a smooth, unforgettable China trip",
     "ctaTitle": "Ready to Start Planning?",
-    "ctaSubtitle": "Dive into our city guides and build an itinerary that fits your style.",
+    "ctaSubtitle": "Dive into our curated vlogs, guides and city pages to build an itinerary that fits your style.",
     "ctaButton": "Browse Destinations",
     "missionP1": "China is enormous. It's also endlessly fascinating — 5,000 years of history, dozens of cuisines, and landscapes that stretch from tropical islands to snow-capped mountains. But for first-time visitors, figuring out how to navigate it all can feel overwhelming.",
-    "missionP2": "That's where we come in. We're a team of travel writers and long-term residents based across China — from Beijing to Chengdu to Xi'an and beyond. Every guide is written from firsthand experience: we've walked the streets, eaten the food, gotten lost, and figured out the shortcuts so you don't have to.",
+    "missionP2": "That's where we come in. We're a team of travel writers and long-term residents based across China — from Beijing to Chengdu to Xi'an and beyond. Instead of another generic guide, we curate the best of what's out there: vlogs from real travelers, articles that actually work, and local partners we'd recommend to a friend.",
     "missionP3": "Whether you're here for the Terracotta Warriors, a Sichuan hot pot adventure, or a quiet moment with the pandas, we want to help you plan a trip that's authentic, stress-free, and uniquely yours.",
-    "f1Title": "Deep City Guides",
-    "f1Desc": "Comprehensive guides for every major destination — attractions, food, itineraries, and local intel.",
-    "f2Title": "Real Traveler Stories",
-    "f2Desc": "Honest accounts and practical tips from people who've actually been there.",
-    "f3Title": "Local Food Maps",
-    "f3Desc": "From street-side stalls to century-old restaurants — the real flavors of each city.",
-    "f4Title": "Done-for-You Itineraries",
-    "f4Desc": "Day-by-day plans you can follow directly, even if it's your first time in China.",
+    "f1Title": "Curated Vlogs",
+    "f1Desc": "Handpicked video stories from Bilibili and YouTube, each with our honest notes.",
+    "f2Title": "Real Traveler Guides",
+    "f2Desc": "The best articles from bloggers, forums and locals — organized by topic.",
+    "f3Title": "Deep City Pages",
+    "f3Desc": "Attractions, food, itineraries and tips for every major destination.",
+    "f4Title": "Local Partners",
+    "f4Desc": "Verified drivers, guides and photographers you can actually book.",
     "f5Title": "Practical Know-How",
-    "f5Desc": "Transport, accommodation, and cultural tips to keep your trip running smoothly.",
+    "f5Desc": "Visa, transport, payment and app guides to keep your trip running smoothly.",
     "f6Title": "Written for Travelers Like You",
     "f6Desc": "Clear, conversational English with the context you need — no insider assumptions."
   },
   "footer": {
-    "desc": "Your trusted English-language guide to travel in China. We share on-the-ground experience from popular cities and hidden corners alike, so you can travel with confidence.",
-    "topDestinations": "Top Destinations",
-    "travelServices": "Travel Tools",
+    "desc": "Handpicked vlogs, guides & local services for foreign travelers in China. Curated by people who live here, so you can travel with confidence.",
+    "topDestinations": "Destinations",
+    "explore": "Explore",
     "aboutUs": "About",
-    "services": {
-      "custom": "Custom Itineraries",
-      "hotel": "Hotel Booking",
-      "ticket": "Ticket Info",
-      "guide": "Local Guides"
+    "exploreLinks": {
+      "vlogs": "Travel Vlogs",
+      "guides": "Guides",
+      "photos": "Photo Gallery",
+      "services": "Local Partners"
     },
     "links": {
       "about": "About Us",
@@ -100,7 +219,7 @@
       "contributors": "Write for Us",
       "privacy": "Privacy Policy"
     },
-    "copyright": "© {year} Middle Kingdom Wanderlust | Travel guides for the curious explorer",
+    "copyright": "© {year} ChinaTravelHub | Curated China travel for real explorers",
     "guideSuffix": "Guide"
   },
   "language": {

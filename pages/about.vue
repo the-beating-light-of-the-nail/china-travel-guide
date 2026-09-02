@@ -63,10 +63,10 @@ useHead({
     </section>
 
     <!-- 项目介绍 -->
-    <section class="py-[70px] px-4 sm:px-[8%] bg-white">
+    <section class="py-[70px] px-4 sm:px-[5%]">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{{ t('about.missionTitle') }}</h2>
-        <div class="space-y-5 text-gray-600 text-[16px] leading-relaxed text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-6">{{ t('about.missionTitle') }}</h2>
+        <div class="space-y-5 text-slate-300 text-[16px] leading-relaxed text-left">
           <p>{{ t('about.missionP1') }}</p>
           <p>{{ t('about.missionP2') }}</p>
           <p>{{ t('about.missionP3') }}</p>
@@ -75,7 +75,7 @@ useHead({
     </section>
 
     <!-- 特色介绍 -->
-    <section class="py-[70px] px-4 sm:px-[8%]">
+    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-800">
       <div class="section-title">
         <h2>{{ t('about.offerTitle') }}</h2>
         <div class="subtitle">{{ t('about.offerSubtitle') }}</div>
@@ -84,11 +84,11 @@ useHead({
         <div
           v-for="feature in features"
           :key="feature.titleKey"
-          class="bg-white rounded-xl p-6 shadow-md text-center card-hover"
+          class="card-dark p-6 text-center card-hover"
         >
           <div class="text-4xl mb-3">{{ feature.icon }}</div>
-          <h3 class="text-lg font-semibold text-brand mb-2">{{ t(`about.${feature.titleKey}`) }}</h3>
-          <p class="text-sm text-gray-500 leading-relaxed">{{ t(`about.${feature.descKey}`) }}</p>
+          <h3 class="text-lg font-semibold text-brand-light mb-2">{{ t(`about.${feature.titleKey}`) }}</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">{{ t(`about.${feature.descKey}`) }}</p>
         </div>
       </div>
     </section>

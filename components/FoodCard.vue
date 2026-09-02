@@ -13,9 +13,9 @@ const isPlaceholder = computed(() => !props.food.image || props.food.image.inclu
 
 <template>
   <!-- 美食卡片 -->
-  <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover cursor-pointer flex flex-col">
+  <div class="card-dark overflow-hidden card-hover cursor-pointer flex flex-col">
     <!-- 图片区 -->
-    <div class="h-[200px] overflow-hidden bg-gray-100">
+    <div class="h-[200px] overflow-hidden bg-slate-700">
       <img
         v-if="!isPlaceholder"
         :src="food.image"
@@ -33,7 +33,7 @@ const isPlaceholder = computed(() => !props.food.image || props.food.image.inclu
     <!-- 内容区 -->
     <div class="p-5 flex-1 flex flex-col">
       <!-- 标题 -->
-      <h3 class="text-lg text-gray-900 mb-2 font-semibold">{{ food.name[locale] }}</h3>
+      <h3 class="text-lg text-slate-50 mb-2 font-semibold">{{ food.name[locale] }}</h3>
 
       <!-- 亮点 -->
       <div class="text-accent text-[13px] mb-2.5 font-medium">
@@ -41,7 +41,7 @@ const isPlaceholder = computed(() => !props.food.image || props.food.image.inclu
       </div>
 
       <!-- 描述（两行截断） -->
-      <p class="text-sm text-gray-500 leading-relaxed line-clamp-2 flex-1">
+      <p class="text-sm text-slate-400 leading-relaxed line-clamp-2 flex-1">
         {{ food.description[locale] }}
       </p>
     </div>

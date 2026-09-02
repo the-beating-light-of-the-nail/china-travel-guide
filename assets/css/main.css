@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 全局基础样式 */
+/* 全局基础样式（深色主题 #0f172a） */
 @layer base {
   body {
-    @apply text-gray-800 antialiased;
-    background-color: #f8f9fa;
+    @apply text-slate-50 antialiased;
+    background-color: #0f172a;
     line-height: 1.6;
+  }
+
+  ::selection {
+    @apply bg-brand/40 text-white;
   }
 }
 
@@ -24,11 +28,36 @@
   }
 
   .section-title h2 {
-    @apply text-3xl md:text-4xl font-bold text-gray-900 mb-2;
+    @apply text-3xl md:text-4xl font-bold text-slate-50 mb-2;
   }
 
   .section-title .subtitle {
-    @apply text-gray-500 text-sm tracking-wide;
+    @apply text-slate-400 text-sm tracking-wide;
+  }
+
+  /* 深色卡片：slate-800 底 + subtle 边框，hover 边框提亮 */
+  .card-dark {
+    @apply bg-slate-800 border border-slate-700 rounded-xl transition-all duration-300 hover:border-slate-500;
+  }
+
+  /* 主按钮 */
+  .btn-primary {
+    @apply bg-brand hover:bg-brand-dark text-white px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer;
+  }
+
+  /* 次按钮 */
+  .btn-secondary {
+    @apply border border-slate-600 hover:border-slate-400 text-slate-200 px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer;
+  }
+
+  /* 标签 */
+  .chip {
+    @apply bg-slate-700/50 text-brand text-xs px-2 py-1 rounded-full;
+  }
+
+  /* 深色输入框 */
+  .input-dark {
+    @apply bg-slate-800 border border-slate-600 focus:border-brand rounded-lg text-slate-100 placeholder-slate-500 outline-none transition-colors;
   }
 
   /* 卡片悬停效果 */
@@ -37,10 +66,10 @@
   }
 
   .card-hover:hover {
-    @apply -translate-y-2 shadow-xl;
+    @apply -translate-y-1 shadow-xl shadow-black/40;
   }
 
-  /* 文本截断（两行） */
+  /* 文本截断（两行/三行） */
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -62,13 +91,45 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   }
 
-  /* 纹理背景（西安古城主题） */
-  .bg-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a961' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* 瀑布流（CSS columns 实现，无需 JS 库） */
+  .masonry {
+    @apply columns-1 sm:columns-2 lg:columns-4 gap-4;
+  }
+
+  .masonry-item {
+    @apply break-inside-avoid mb-4;
   }
 }
 
 /* 平滑滚动 */
 html {
   scroll-behavior: smooth;
+}
+
+/* 深色滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* 横向滚动区（首页精选 Vlog）隐藏滚动条 */
+.scroll-x-no-bar {
+  scrollbar-width: none;
+}
+
+.scroll-x-no-bar::-webkit-scrollbar {
+  display: none;
 }

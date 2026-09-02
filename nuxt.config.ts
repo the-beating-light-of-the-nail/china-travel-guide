@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: 'https://travelchina-mu.vercel.app',
-      siteName: 'China Travel Guide',
+      siteName: 'ChinaTravelHub',
     },
   },
 
@@ -73,14 +73,18 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'China Travel Guide - Explore the Wonders of China',
+      title: 'ChinaTravelHub - Discover Real China, Curated by Real Travelers',
       meta: [
-        { name: 'description', content: 'Discover China with in-depth travel guides for top cities including Beijing, Xi\'an, and Chengdu. Attractions, food, itineraries, and practical tips.' },
-        { name: 'keywords', content: 'China travel, China guide, Beijing, Xi\'an, Chengdu, China attractions, China food, China itinerary' },
+        { name: 'description', content: 'Handpicked vlogs, guides & local services for foreign travelers in China. Destinations, street food, high-speed rail and local partners.' },
+        { name: 'keywords', content: 'China travel, China travel vlog, China travel guide, Beijing, Xi\'an, Chengdu, China high-speed rail, China street food, China local guide' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:site_name', content: 'China Travel Guide' },
+        { property: 'og:site_name', content: 'ChinaTravelHub' },
       ],
       link: [
+        // Inter 字体（英文标题/正文），中文回退系统字体
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap' },
         // 现代浏览器使用 SVG 矢量图标
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         // 兜底 favicon.ico，避免浏览器请求触发 404/500
@@ -130,6 +134,10 @@ gtag('config', 'G-5V6YWGXS3Y');`,
         '/en',
         '/en/',
         '/en/about',
+        '/en/vlogs',
+        '/en/guides',
+        '/en/photos',
+        '/en/services',
         '/en/cities/chengdu',
         '/en/cities/xian',
         '/en/cities/beijing',
@@ -141,6 +149,10 @@ gtag('config', 'G-5V6YWGXS3Y');`,
         '/zh',
         '/zh/',
         '/zh/about',
+        '/zh/vlogs',
+        '/zh/guides',
+        '/zh/photos',
+        '/zh/services',
         '/zh/cities/chengdu',
         '/zh/cities/xian',
         '/zh/cities/beijing',

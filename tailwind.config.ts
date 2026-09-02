@@ -1,6 +1,9 @@
 import type { Config } from 'tailwindcss'
 
-// Tailwind CSS 配置 - 中国旅游攻略主题
+// Tailwind CSS 配置 - ChinaTravelHub 深色设计系统
+// 色板对齐设计系统规范：
+//   背景 slate-900(#0f172a) / 卡片 slate-800(#1e293b) / 边框 slate-700(#334155)
+//   主强调 #3b82f6（蓝）/ 次强调 #10b981（绿，Verified/Success）
 export default <Partial<Config>>{
   content: [
     './components/**/*.{vue,js,ts}',
@@ -13,33 +16,31 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       colors: {
-        // 品牌主色 - 沉稳绿色
+        // 主强调色 - 蓝（按钮、链接、标签）
         brand: {
-          DEFAULT: '#2c5c4e',
-          light: '#3a7563',
-          dark: '#1f4236',
+          DEFAULT: '#3b82f6',
+          light: '#60a5fa',
+          dark: '#2563eb',
         },
-        // 强调色 - 中国红
+        // 次强调色 - 绿（Verified、Success 状态）
         accent: {
-          DEFAULT: '#c0392b',
-          light: '#d9534f',
-          dark: '#a93226',
+          DEFAULT: '#10b981',
+          light: '#34d399',
+          dark: '#059669',
         },
-        // 西安古城主题色（城市详情页使用）
-        ancient: {
-          red: '#8B2323',
-          gold: '#C9A961',
-          brown: '#5D4037',
-          wall: '#8D7B68',
-          cream: '#F5F0E6',
+        // 深色页面底色
+        base: {
+          DEFAULT: '#0f172a',
+          raised: '#1e293b',
+          border: '#334155',
         },
         footer: {
-          DEFAULT: '#1f2933',
-          border: '#323f4b',
+          DEFAULT: '#020617',
+          border: '#1e293b',
         },
       },
       fontFamily: {
-        sans: ['"PingFang SC"', '"Microsoft YaHei"', 'system-ui', 'sans-serif'],
+        sans: ['Inter', '"PingFang SC"', '"Microsoft YaHei"', 'system-ui', 'sans-serif'],
         serif: ['"Noto Serif SC"', 'SimSun', 'serif'],
       },
       maxWidth: {

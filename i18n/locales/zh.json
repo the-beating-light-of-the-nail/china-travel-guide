@@ -1,28 +1,40 @@
 {
   "brand": {
-    "name": "华夏",
-    "highlight": "行旅"
+    "name": "中国旅行",
+    "highlight": "导航站"
   },
   "nav": {
     "home": "首页",
     "destinations": "目的地",
-    "guides": "攻略游记",
+    "vlogs": "旅行视频",
+    "guides": "攻略导航",
+    "photos": "图片墙",
+    "services": "本地服务",
     "about": "关于我们"
   },
   "search": {
-    "placeholder": "搜索城市 / 景点 / 攻略",
-    "heroPlaceholder": "你想去哪里？例如：西安、北京、成都...",
-    "button": "搜索攻略"
+    "placeholder": "搜索城市、话题或博主...",
+    "heroPlaceholder": "搜索城市、话题或博主...",
+    "button": "搜索"
   },
   "home": {
-    "heroTitle": "大美中国 尽在脚下",
-    "heroSubtitle": "探索九百六十万平方公里的山川与人文",
+    "heroTitle": "发现真实的中国，由真实旅行者为你策展",
+    "heroSubtitle": "为国际旅行者精选的 Vlog、攻略与本地服务",
+    "quickCity": "成都",
+    "quickRail": "高铁出行",
+    "quickFood": "街头美食",
     "destinationsTitle": "热门目的地",
-    "destinationsSubtitle": "精选城市 · 深度攻略 · 一站式出行指南",
-    "categoriesTitle": "攻略分类",
-    "categoriesSubtitle": "按你的旅行方式，找到最适合的玩法",
+    "destinationsSubtitle": "精选城市 · 策展视频与攻略 · 本地服务",
+    "vlogsTitle": "精选 Vlog",
+    "vlogsSubtitle": "来自 Bilibili 与 YouTube 的旅行影像，逐条人工挑选",
+    "viewAllVlogs": "查看全部视频 →",
+    "momentsTitle": "旅行瞬间",
+    "momentsSubtitle": "来自真实旅行者的镜头",
+    "viewAllPhotos": "进入图片墙 →",
+    "viewAllGuides": "查看全部攻略 →",
     "guidesTitle": "精选攻略",
-    "guidesSubtitle": "真实旅行者分享 · 超实用出行干货"
+    "guidesSubtitle": "在地故事 · 诚实建议 · 实测行程",
+    "vlogCount": "{n} 条视频"
   },
   "categories": {
     "history": { "title": "历史文化", "desc": "古迹名城 · 人文底蕴" },
@@ -36,9 +48,9 @@
     "overviewTitle": "城市印象",
     "atAGlance": "{name}概览",
     "attractionsTitle": "必游景点",
-    "attractionsSubtitle": "打卡{name}地标，解锁巴蜀风情",
+    "attractionsSubtitle": "打卡{name}地标，解锁城市精华",
     "cuisineTitle": "地道美食",
-    "cuisineSubtitle": "舌尖上的{name}，麻辣鲜香样样俱全",
+    "cuisineSubtitle": "舌尖上的{name}，地道风味样样俱全",
     "itineraryTitle": "经典行程",
     "itinerarySubtitle": "轻松不赶路，玩转{name}精华",
     "tipsTitle": "出行贴士",
@@ -47,52 +59,159 @@
     "day": "第",
     "statDuration": "建议游玩时长",
     "statSeason": "最佳季节",
-    "statHistory": "历史"
+    "statHistory": "历史",
+    "tabOverview": "总览",
+    "tabVlogs": "视频",
+    "tabGuides": "攻略",
+    "tabPhotos": "图片",
+    "tabServices": "本地服务",
+    "saveTrip": "收藏此目的地",
+    "saved": "已收藏",
+    "vlogsSectionTitle": "必看视频",
+    "vlogsSectionSubtitle": "真实旅行者镜头下的{name}",
+    "guidesSectionTitle": "精选攻略导航",
+    "guidesSectionSubtitle": "全网关于{name}的精选攻略与资源",
+    "photosSectionTitle": "{name}瞬间",
+    "partnersSectionTitle": "本地合作伙伴",
+    "partnersSectionSubtitle": "{name}认证向导、司机与本地服务",
+    "relatedTitle": "更多目的地",
+    "readOriginal": "阅读全文 →"
   },
   "regions": {
     "Southwest China": "西南地区",
     "Northwest China": "西北地区",
     "North China": "华北地区"
   },
+  "vlogs": {
+    "pageTitle": "中国旅行视频",
+    "pageSubtitle": "精选 Bilibili、YouTube 旅行视频，附我们的真实点评",
+    "allPlatforms": "全部平台",
+    "allTopics": "全部主题",
+    "allCities": "全部城市",
+    "sortBy": "排序",
+    "sortLatest": "最新",
+    "sortViews": "播放最多",
+    "sortPicks": "编辑推荐",
+    "trending": "正在热门",
+    "filterByCity": "按城市筛选",
+    "watch": "观看",
+    "loadMore": "加载更多",
+    "noResults": "没有符合条件的视频，试试清除筛选。",
+    "platforms": {
+      "youtube": "YouTube",
+      "bilibili": "Bilibili"
+    },
+    "topics": {
+      "food": "美食",
+      "transport": "交通",
+      "culture": "文化",
+      "nature": "自然"
+    }
+  },
+  "guidesHub": {
+    "pageTitle": "中国旅行攻略",
+    "pageSubtitle": "来自博客、论坛与本地人的精选资源",
+    "searchPlaceholder": "搜索攻略...",
+    "recentlyAdded": "最新收录",
+    "readOriginal": "阅读原文 →",
+    "allCategories": "全部",
+    "noResults": "没有符合搜索的攻略。",
+    "categories": {
+      "visa": "签证",
+      "transport": "交通",
+      "food": "美食",
+      "accommodation": "住宿",
+      "itinerary": "行程",
+      "budget": "预算",
+      "safety": "安全",
+      "apps": "应用"
+    },
+    "ourGuidesTitle": "站内原创深度攻略",
+    "ourGuidesSubtitle": "由我们的在地团队撰写，持续更新"
+  },
+  "photos": {
+    "pageTitle": "镜头里的中国",
+    "pageSubtitle": "来自真实旅行者的瞬间",
+    "allCategories": "全部",
+    "viewSource": "查看来源",
+    "loadMore": "加载更多",
+    "byLabel": "拍摄",
+    "categories": {
+      "landscape": "风景",
+      "city": "城市",
+      "food": "美食",
+      "people": "人文",
+      "transport": "交通",
+      "hiddenGems": "秘境"
+    }
+  },
+  "services": {
+    "pageTitle": "本地合作伙伴",
+    "pageSubtitle": "经过核验的向导、司机与旅行社，为你的中国之行保驾护航",
+    "searchPlaceholder": "搜索城市或服务类型...",
+    "allCities": "全部城市",
+    "allTypes": "全部类型",
+    "allLanguages": "全部语言",
+    "listLabel": "列表",
+    "gridLabel": "网格",
+    "verified": "认证服务商",
+    "reviews": "{n} 条评价",
+    "contact": "联系",
+    "viewProfile": "查看详情",
+    "sendInquiry": "发送咨询",
+    "formName": "姓名",
+    "formEmail": "邮箱",
+    "formDates": "出行日期",
+    "formMessage": "需求描述",
+    "submit": "通过邮件发送",
+    "servicesIncluded": "服务项目",
+    "noResults": "没有符合条件的服务商。",
+    "types": {
+      "driver": "包车司机",
+      "guide": "持证导游",
+      "photographer": "旅拍摄影师",
+      "agency": "旅行社"
+    }
+  },
   "guide": {
-    "backToGuides": "← 返回攻略列表",
+    "backToGuides": "← 返回攻略导航",
     "moreGuides": "更多攻略"
   },
   "about": {
     "title": "关于我们",
-    "subtitle": "专注中国本土旅游攻略，为国际旅行者提供实用、靠谱、有温度的出行参考",
+    "subtitle": "专注中国本土旅游内容策展，为国际旅行者提供实用、靠谱、有温度的出行参考",
     "missionTitle": "我们的使命",
     "offerTitle": "我们的特色",
-    "offerSubtitle": "为您提供一段难忘的中国之旅所需的一切",
+    "offerSubtitle": "为您提供一段难忘中国之旅所需的一切",
     "ctaTitle": "准备好探索中国了吗？",
-    "ctaSubtitle": "从我们精选的城市攻略开始，规划您的旅程。",
+    "ctaSubtitle": "从精选视频、攻略导航与城市页面开始，规划属于你的旅程。",
     "ctaButton": "浏览目的地",
-    "missionP1": "中国旅游攻略的创立初衷只有一个：让国际旅行者也能轻松、便捷地领略中国的精彩。中国是一片拥有五千多年历史的广袤而迷人的国土，但对初次到访的旅行者来说，独自探索难免会有所顾虑。",
-    "missionP2": "我们汇聚来自北京、西安、成都等热门城市以及小众秘境的真实出行经验。每一篇攻略都由真正走过那些街巷、品尝过那些美食、沉浸于当地文化的旅行者用清晰的英文撰写。",
+    "missionP1": "中国是一片拥有五千多年历史的广袤而迷人的国土，但对初次到访的旅行者来说，独自探索难免会有所顾虑。",
+    "missionP2": "我们汇聚来自北京、西安、成都等热门城市以及小众秘境的真实出行经验：人工挑选最好的旅行视频、真正有用的攻略文章，以及敢推荐给朋友的本地服务商。",
     "missionP3": "从兵马俑、长城，到火辣的四川火锅和萌态十足的大熊猫，我们希望用实用的贴士、真诚的推荐和温暖的本地洞察，助您规划一段完美的中国之旅。",
-    "f1Title": "深度城市攻略",
-    "f1Desc": "覆盖每个主要目的地的详尽攻略，涵盖景点、美食、行程与贴士。",
-    "f2Title": "真实旅行者故事",
-    "f2Desc": "由亲历者分享的 authentic 体验与实用建议。",
-    "f3Title": "本地美食地图",
-    "f3Desc": "从街边小吃到百年老字号，发现每座城市最真实的味道。",
-    "f4Title": "现成行程方案",
-    "f4Desc": "可直接照着走的逐日行程，初次出行者也能轻松上手。",
-    "f5Title": "实用贴士",
-    "f5Desc": "交通、住宿与文化贴士，让旅途顺畅无忧。",
+    "f1Title": "策展旅行视频",
+    "f1Desc": "逐条人工挑选的 Bilibili / YouTube 视频档案，附真实点评。",
+    "f2Title": "真实旅行者攻略",
+    "f2Desc": "来自博客、论坛与本地人的最佳文章，按主题整理。",
+    "f3Title": "深度城市页面",
+    "f3Desc": "覆盖主要目的地的景点、美食、行程与贴士。",
+    "f4Title": "本地合作伙伴",
+    "f4Desc": "经过核验、可实际预订的司机、向导与摄影师。",
+    "f5Title": "实用出行干货",
+    "f5Desc": "签证、交通、支付与应用指南，让旅途顺畅无忧。",
     "f6Title": "面向世界",
     "f6Desc": "以清晰的英文撰写，专为国际游客量身打造，连接中外文化。"
   },
   "footer": {
-    "desc": "专注中国本土旅游攻略，汇聚全国热门城市与小众目的地的真实出行经验，为每一位旅行者提供实用、靠谱、有温度的旅行参考。",
-    "topDestinations": "热门目的地",
-    "travelServices": "旅行服务",
-    "aboutUs": "关于我们",
-    "services": {
-      "custom": "行程定制",
-      "hotel": "酒店预订",
-      "ticket": "门票查询",
-      "guide": "当地向导"
+    "desc": "为国际旅行者精选的中国旅行 Vlog、攻略与本地服务。由在地团队人工策展，让你放心出发。",
+    "topDestinations": "目的地",
+    "explore": "探索",
+    "aboutUs": "关于",
+    "exploreLinks": {
+      "vlogs": "旅行视频",
+      "guides": "攻略导航",
+      "photos": "图片墙",
+      "services": "本地服务"
     },
     "links": {
       "about": "网站介绍",
@@ -100,7 +219,7 @@
       "contributors": "投稿合作",
       "privacy": "隐私政策"
     },
-    "copyright": "© {year} 华夏行旅 - 中国旅游攻略平台 | 用心记录每一段旅途",
+    "copyright": "© {year} 中国旅行导航站 | 为真实旅行者策展的中国之旅",
     "guideSuffix": "攻略"
   },
   "language": {
