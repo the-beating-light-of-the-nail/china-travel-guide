@@ -40,9 +40,10 @@ const currentYear = new Date().getFullYear()
     <div class="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-10 mb-8">
       <!-- 品牌介绍 -->
       <div class="col-span-2 md:col-span-1">
-        <div class="footer-logo text-[22px] font-bold text-white mb-3.5 tracking-wide">
+        <div class="footer-logo text-[22px] font-bold text-white mb-1.5 tracking-wide">
           {{ t('brand.name') }}<span class="text-brand">{{ t('brand.highlight') }}</span>
         </div>
+        <p class="text-xs text-slate-500 mb-3.5">{{ t('brand.tagline') }}</p>
         <p class="text-sm leading-relaxed">
           {{ t('footer.desc') }}
         </p>

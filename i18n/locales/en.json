@@ -1,7 +1,9 @@
 {
   "brand": {
-    "name": "ChinaTravel",
-    "highlight": "Hub"
+    "name": "With Her",
+    "highlight": "Eyes",
+    "tagline": "Hand-picked China travel from Chinese platforms",
+    "full": "With Her Eyes"
   },
   "nav": {
     "home": "Home",
@@ -18,8 +20,8 @@
     "button": "Search"
   },
   "home": {
-    "heroTitle": "Discover Real China, Curated by Real Travelers",
-    "heroSubtitle": "Handpicked vlogs, guides & local services for foreign travelers",
+    "heroTitle": "See China Through a Hundred Local Eyes",
+    "heroSubtitle": "Hand-picked vlogs, guides & photos from Chinese platforms most foreigners never see",
     "quickCity": "Chengdu",
     "quickRail": "High-Speed Rail",
     "quickFood": "Street Food",
@@ -180,6 +182,8 @@
   "about": {
     "title": "About This Site",
     "subtitle": "Your go-to English resource for travel in China — written and curated by people who actually live here",
+    "brandStoryTitle": "Why 'With Her Eyes'?",
+    "brandStory": "The name comes from Liu Cixin's short story 'With Her Eyes' (带上她的眼睛), by the author of The Three-Body Problem. In the story, a traveler carries a pair of borrowed 'eyes' so that someone far away can see the world through them. That's exactly what this site does: we collect the eyes — the lenses, the viewpoints — of real travelers on Chinese platforms like Bilibili, and hand them to you, so you can see a China that English search engines never reach.",
     "missionTitle": "Why We Started This",
     "offerTitle": "What You'll Find Here",
     "offerSubtitle": "Everything you need for a smooth, unforgettable China trip",
@@ -219,7 +223,7 @@
       "contributors": "Write for Us",
       "privacy": "Privacy Policy"
     },
-    "copyright": "© {year} ChinaTravelHub | Curated China travel for real explorers",
+    "copyright": "© {year} With Her Eyes | Hand-picked China travel from Chinese platforms",
     "guideSuffix": "Guide"
   },
   "language": {

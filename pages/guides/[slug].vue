@@ -51,11 +51,11 @@ useHead({
         image: g.value.image,
         author: {
           '@type': 'Organization',
-          name: 'ChinaTravelHub',
+          name: 'With Her Eyes',
         },
         publisher: {
           '@type': 'Organization',
-          name: 'ChinaTravelHub',
+          name: 'With Her Eyes',
         },
         datePublished: datePublished.value,
         inLanguage: locale.value === 'zh' ? 'zh-CN' : 'en-US',

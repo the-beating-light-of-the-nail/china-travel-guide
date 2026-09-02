@@ -54,7 +54,7 @@ function cityName(slug: string): string {
 // SEO 元信息（含 hreflang）
 const i18nHead = useLocaleHead()
 useHead({
-  title: `${t('services.pageTitle')} | ChinaTravelHub`,
+  title: `${t('services.pageTitle')} | ${t('brand.full')}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
   link: [...(i18nHead.value.link || [])],
   meta: [

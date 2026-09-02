@@ -1,7 +1,9 @@
 {
   "brand": {
-    "name": "中国旅行",
-    "highlight": "导航站"
+    "name": "带上她的",
+    "highlight": "眼睛",
+    "tagline": "精选中文平台的中国旅行导航",
+    "full": "带上她的眼睛"
   },
   "nav": {
     "home": "首页",
@@ -18,8 +20,8 @@
     "button": "搜索"
   },
   "home": {
-    "heroTitle": "发现真实的中国，由真实旅行者为你策展",
-    "heroSubtitle": "为国际旅行者精选的 Vlog、攻略与本地服务",
+    "heroTitle": "借别人的眼睛，看真的中国",
+    "heroSubtitle": "精选中文平台的旅行 vlog、攻略与照片——外国游客自己搜不到的中国",
     "quickCity": "成都",
     "quickRail": "高铁出行",
     "quickFood": "街头美食",
@@ -180,6 +182,8 @@
   "about": {
     "title": "关于我们",
     "subtitle": "专注中国本土旅游内容策展，为国际旅行者提供实用、靠谱、有温度的出行参考",
+    "brandStoryTitle": "为什么叫「带上她的眼睛」？",
+    "brandStory": "名字来自刘慈欣的同名小说（《三体》作者）。故事里，旅行者带上一副借来的「眼睛」，让远方的人透过它看见世界。这个站做的事一模一样：我们把 B站 等中文平台上真实旅行者的「眼睛」收集起来，交到外国游客手里——让他们看到英文搜索引擎永远搜不到的中国。",
     "missionTitle": "我们的使命",
     "offerTitle": "我们的特色",
     "offerSubtitle": "为您提供一段难忘中国之旅所需的一切",
@@ -219,7 +223,7 @@
       "contributors": "投稿合作",
       "privacy": "隐私政策"
     },
-    "copyright": "© {year} 中国旅行导航站 | 为真实旅行者策展的中国之旅",
+    "copyright": "© {year} 带上她的眼睛 | 精选中文平台的中国旅行导航",
     "guideSuffix": "攻略"
   },
   "language": {

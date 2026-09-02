@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 
-// Tailwind CSS 配置 - ChinaTravelHub 深色设计系统
+// Tailwind CSS 配置 - With Her Eyes 深色设计系统
 // 色板对齐设计系统规范：
 //   背景 slate-900(#0f172a) / 卡片 slate-800(#1e293b) / 边框 slate-700(#334155)
 //   主强调 #3b82f6（蓝）/ 次强调 #10b981（绿，Verified/Success）

@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: 'https://chinatravel.world',
-      siteName: 'ChinaTravelHub',
+      siteName: 'With Her Eyes',
     },
   },
 
@@ -73,12 +73,12 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'ChinaTravelHub - Discover Real China, Curated by Real Travelers',
+      title: 'With Her Eyes — Hand-picked China travel from Chinese platforms',
       meta: [
         { name: 'description', content: 'Handpicked vlogs, guides & local services for foreign travelers in China. Destinations, street food, high-speed rail and local partners.' },
         { name: 'keywords', content: 'China travel, China travel vlog, China travel guide, Beijing, Xi\'an, Chengdu, China high-speed rail, China street food, China local guide' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:site_name', content: 'ChinaTravelHub' },
+        { property: 'og:site_name', content: 'With Her Eyes' },
       ],
       link: [
         // Inter 字体（英文标题/正文），中文回退系统字体

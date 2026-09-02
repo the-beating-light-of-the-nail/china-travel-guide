@@ -17,7 +17,7 @@ const features = [
 // SEO 元信息（含 hreflang）
 const i18nHead = useLocaleHead()
 useHead({
-  title: `${t('about.title')} | China Travel Guide`,
+  title: `${t('about.title')} | ${t('brand.full')}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
   link: [...(i18nHead.value.link || [])],
   meta: [
@@ -39,7 +39,7 @@ useHead({
         inLanguage: locale.value === 'zh' ? 'zh-CN' : 'en-US',
         mainEntity: {
           '@type': 'Organization',
-          name: 'China Travel Guide',
+          name: 'With Her Eyes',
           url: pub.siteUrl,
           description: 'An English-language travel guide platform dedicated to helping international tourists explore China.',
         },
@@ -60,6 +60,14 @@ useHead({
       <p class="text-lg opacity-90 max-w-2xl tracking-wide leading-relaxed">
         {{ t('about.subtitle') }}
       </p>
+    </section>
+
+    <!-- 品牌故事：名字来源 -->
+    <section class="py-[60px] px-4 sm:px-[5%] border-t border-slate-800">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-50 mb-5">{{ t('about.brandStoryTitle') }}</h2>
+        <p class="text-slate-300 text-[16px] leading-relaxed">{{ t('about.brandStory') }}</p>
+      </div>
     </section>
 
     <!-- 项目介绍 -->

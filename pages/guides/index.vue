@@ -44,7 +44,7 @@ function selectCategory(cat: string) {
 // SEO 元信息（含 hreflang）
 const i18nHead = useLocaleHead()
 useHead({
-  title: `${t('guidesHub.pageTitle')} | ChinaTravelHub`,
+  title: `${t('guidesHub.pageTitle')} | ${t('brand.full')}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
   link: [...(i18nHead.value.link || [])],
   meta: [
