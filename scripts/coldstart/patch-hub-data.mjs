@@ -1,101 +1,30 @@
-// ChinaTravelHub 聚合内容数据（双语：英文 / 中文）
-// ---------------------------------------------------------------
-// 与 travel-data.ts（原创城市/攻略内容）互补，存放四类"策展聚合"内容：
-//   1. Vlog         —— 精选旅行视频（外链 Bilibili / YouTube）
-//   2. ExternalGuide —— 外部攻略导航（博客 / 论坛 / 官方指南）
-//   3. Photo        —— 图片瀑布流（站内图库资源）
-//   4. PartnerService —— 本地服务商目录（司机 / 向导 / 摄影 / 旅行社）
-//
-// ✅ 冷启动数据（2026-09-02 采集）：
+// 一次性补丁：把 hub-data.ts 的占位 Vlog / 外部攻略替换为冷启动真实数据
+// 用法：node scripts/coldstart/patch-hub-data.mjs（重复执行会报错退出，防止二次覆盖）
+import fs from 'node:fs'
+
+const FILE = 'data/hub-data.ts'
+let src = fs.readFileSync(FILE, 'utf-8')
+
+if (src.includes('BV1kh411K77k')) {
+  console.error('已替换过（检测到真实 BV 号），跳过')
+  process.exit(1)
+}
+
+// ---------- 1) 头部占位说明 → 数据来源说明 ----------
+const OLD_HEADER = `// ⚠️ 占位说明：externalUrl 目前指向平台的搜索结果页（可正常访问），
+//    上线前请逐条替换为你人工挑选的真实视频/文章链接；
+//    PartnerService.contactEmail 为占位邮箱，需替换为真实联系方式。`
+const NEW_HEADER = `// ✅ 冷启动数据（2026-09-02 采集）：
 //    Vlog —— 全部为真实视频。B站数据经公开 API 抓取（scripts/coldstart/bili-search.mjs），
 //            播放量/时长/日期为抓取当日快照，会随时间漂移，可重跑脚本刷新；
 //            review 为基于视频标题与简介的初稿推荐语，建议人工逐条复核。
 //    ExternalGuide —— 均为真实可访问的文章/页面（独立博客 / Wikivoyage / 社区 / 官方资源）。
-//    ⚠️ PartnerService.contactEmail 仍为占位邮箱（partner@example.com），需人工接洽后替换。
-// ---------------------------------------------------------------
+//    ⚠️ PartnerService.contactEmail 仍为占位邮箱（partner@example.com），需人工接洽后替换。`
+if (!src.includes(OLD_HEADER)) throw new Error('header block not found')
+src = src.replace(OLD_HEADER, NEW_HEADER)
 
-import type { L } from './travel-data'
-
-// ===== 类型定义 =====
-
-export type VlogPlatform = 'youtube' | 'bilibili'
-export type VlogTopic = 'food' | 'transport' | 'culture' | 'nature'
-
-export interface Vlog {
-  id: number
-  title: L
-  vloggerName: string
-  platform: VlogPlatform
-  externalUrl: string
-  thumbnail: string
-  duration: string
-  views: L
-  review: L
-  tags: L
-  citySlug: string
-  topic: VlogTopic
-  featured: boolean
-  publishedAt: L
-}
-
-export type GuideCategory =
-  | 'visa'
-  | 'transport'
-  | 'food'
-  | 'accommodation'
-  | 'itinerary'
-  | 'budget'
-  | 'safety'
-  | 'apps'
-
-export interface ExternalGuide {
-  id: number
-  title: L
-  sourceName: string
-  externalUrl: string
-  summary: L
-  category: GuideCategory
-  language: 'en' | 'cn'
-  readTime: L
-  tags: L
-  citySlug?: string
-}
-
-export type PhotoCategory = 'landscape' | 'city' | 'food' | 'people' | 'transport' | 'hiddenGems'
-
-export interface Photo {
-  id: number
-  image: string
-  location: L
-  photographer: string
-  description: L
-  tags: L
-  category: PhotoCategory
-  citySlug: string
-  sourceUrl?: string
-}
-
-export type ServiceType = 'driver' | 'guide' | 'photographer' | 'agency'
-
-export interface PartnerService {
-  id: number
-  name: string
-  type: ServiceType
-  cities: string[]
-  languages: string[]
-  rating: number
-  reviewCount: number
-  intro: L
-  services: L
-  tags: L
-  priceRange: L
-  isVerified: boolean
-  contactEmail: string
-}
-
-// ===== Vlog 数据 =====
-
-// ===== Vlog 数据 =====
+// ---------- 2) rawVlogs 替换 ----------
+const newVlogs = `// ===== Vlog 数据 =====
 // 2026-09-02 冷启动采集：B站 wbi 签名搜索 + 视频详情 API，封面下载至 /public/images/vlogs/
 // 条目按发布时间升序排列（页面 latest 排序 = 数组倒序）；views 为采集日快照
 
@@ -127,7 +56,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     duration: '7:38',
     views: { en: '4.8M views', zh: '482万播放' },
     review: {
-      en: 'Biangbiang noodles, paomo, cold skins — a complete checklist of Xi’an carb classics compressed into 8 minutes. Just order what he orders.',
+      en: 'Biangbiang noodles, paomo, cold skins — a complete checklist of Xi\u2019an carb classics compressed into 8 minutes. Just order what he orders.',
       zh: 'biangbiang面、羊肉泡馍、凉皮一站集齐，8分钟看完西安主食清单，照着点就行。482万播放。',
     },
     tags: { en: '#Xian #Noodles', zh: '#西安 #面食' },
@@ -191,7 +120,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     publishedAt: { en: 'Nov 2023', zh: '2023年11月' },
   },
   {
-    title: { en: 'A Kazakh Family Lands in Xi’an on the New Visa-Free Policy', zh: '第一批免签哈国游客落地西安' },
+    title: { en: 'A Kazakh Family Lands in Xi\u2019an on the New Visa-Free Policy', zh: '第一批免签哈国游客落地西安' },
     vloggerName: '娜塔莎一家',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1MG411S7Mc',
@@ -217,7 +146,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     duration: '8:32',
     views: { en: '1.3M views', zh: '128万播放' },
     review: {
-      en: 'Several "terracotta warrior" venues compete for your ticket money in Xi’an. This compares the real pits with the imitators — watch before you book anything.',
+      en: 'Several "terracotta warrior" venues compete for your ticket money in Xi\u2019an. This compares the real pits with the imitators — watch before you book anything.',
       zh: '西安不止一个"兵马俑"展馆，游客常买错票。这条对比正版俑坑和仿展馆的区别，出发前必看的防坑指南。',
     },
     tags: { en: '#Xian #TerracottaWarriors', zh: '#西安 #兵马俑' },
@@ -353,7 +282,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     publishedAt: { en: 'Jun 2025', zh: '2025年6月' },
   },
   {
-    title: { en: 'A Day as a Tang Dynasty Girl in Xi’an', zh: '穿越千年：体验唐朝少女的一天' },
+    title: { en: 'A Day as a Tang Dynasty Girl in Xi\u2019an', zh: '穿越千年：体验唐朝少女的一天' },
     vloggerName: '抖个姬灵',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1jahmzdE6X',
@@ -408,9 +337,15 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
   },
 ]
 
-// ===== 外部攻略数据 =====
+`
 
-const rawExternalGuides: Omit<ExternalGuide, 'id'>[] = [
+const vlogsStart = src.indexOf('const rawVlogs')
+const vlogsEnd = src.indexOf('// ===== 外部攻略数据 =====')
+if (vlogsStart < 0 || vlogsEnd < 0 || vlogsStart > vlogsEnd) throw new Error('rawVlogs block not found')
+src = src.slice(0, vlogsStart) + newVlogs + src.slice(vlogsEnd)
+
+// ---------- 3) rawExternalGuides 替换 ----------
+const newGuides = `const rawExternalGuides: Omit<ExternalGuide, 'id'>[] = [
   {
     title: { en: 'China Visa Policy: The Complete Overview', zh: '中国签证政策全景解读' },
     sourceName: 'Wikipedia',
@@ -519,7 +454,7 @@ const rawExternalGuides: Omit<ExternalGuide, 'id'>[] = [
     citySlug: 'chengdu',
   },
   {
-    title: { en: 'Wikivoyage: Xi’an', zh: '维基旅行：西安' },
+    title: { en: 'Wikivoyage: Xi\u2019an', zh: '维基旅行：西安' },
     sourceName: 'Wikivoyage',
     externalUrl: 'https://en.wikivoyage.org/wiki/Xi%27an',
     summary: {
@@ -628,380 +563,12 @@ const rawExternalGuides: Omit<ExternalGuide, 'id'>[] = [
   },
 ]
 
-// ===== 图片瀑布流数据 =====
-// 图片复用站内城市图库（public/images/cities/...）。
-// category/location 目前为按城市语境的合理默认值，可随时精修。
+`
 
-const rawPhotos: Omit<Photo, 'id'>[] = [
-  // —— 成都 ——
-  {
-    image: '/images/cities/chengdu/chengdu_p02_05.jpeg',
-    location: { en: 'Chengdu, Sichuan', zh: '四川 · 成都' },
-    photographer: '',
-    description: { en: 'Bamboo chairs, gaiwan tea and a slow afternoon.', zh: '竹椅盖碗茶，慢下来的下午。' },
-    tags: { en: '#Chengdu #Teahouse', zh: '#成都 #茶馆' },
-    category: 'people',
-    citySlug: 'chengdu',
-  },
-  {
-    image: '/images/cities/chengdu/chengdu_p03_11.jpeg',
-    location: { en: 'Panda Base, Chengdu', zh: '成都 · 熊猫基地' },
-    photographer: '',
-    description: { en: 'Breakfast bamboo session at the panda base.', zh: '熊猫基地的早餐竹子时间。' },
-    tags: { en: '#Chengdu #Pandas', zh: '#成都 #大熊猫' },
-    category: 'nature',
-    citySlug: 'chengdu',
-  },
-  {
-    image: '/images/cities/chengdu/chengdu_p03_12.jpeg',
-    location: { en: 'Chengdu, Sichuan', zh: '四川 · 成都' },
-    photographer: '',
-    description: { en: 'Snack alley after dark.', zh: '入夜后的小吃巷。' },
-    tags: { en: '#Chengdu #StreetFood', zh: '#成都 #街头美食' },
-    category: 'food',
-    citySlug: 'chengdu',
-  },
-  {
-    image: '/images/cities/chengdu/chengdu_p04_16.jpeg',
-    location: { en: 'Sichuan Basin', zh: '四川盆地' },
-    photographer: '',
-    description: { en: 'Green beyond the city grid.', zh: '城市之外的绿意。' },
-    tags: { en: '#Chengdu #Nature', zh: '#成都 #自然' },
-    category: 'landscape',
-    citySlug: 'chengdu',
-  },
-  {
-    image: '/images/cities/chengdu/chengdu_p05_19.jpeg',
-    location: { en: 'Kuanzhai Alleys, Chengdu', zh: '成都 · 宽窄巷子' },
-    photographer: '',
-    description: { en: 'Qing-era alleys, best early morning.', zh: '清代老巷，清晨最出片。' },
-    tags: { en: '#Chengdu #OldTown', zh: '#成都 #老街' },
-    category: 'city',
-    citySlug: 'chengdu',
-  },
-  {
-    image: '/images/cities/chengdu/chengdu_p16_38.jpeg',
-    location: { en: 'Chengdu, Sichuan', zh: '四川 · 成都' },
-    photographer: '',
-    description: { en: 'Chili oil meets everything.', zh: '红油浇一切。' },
-    tags: { en: '#Chengdu #SichuanFood', zh: '#成都 #川菜' },
-    category: 'food',
-    citySlug: 'chengdu',
-  },
-  // —— 西安 ——
-  {
-    image: '/images/cities/xian/xian_p02_05.jpeg',
-    location: { en: 'Xi\'an, Shaanxi', zh: '陕西 · 西安' },
-    photographer: '',
-    description: { en: 'Ancient capital, evening light.', zh: '古都暮色。' },
-    tags: { en: '#Xian #OldCity', zh: '#西安 #古城' },
-    category: 'city',
-    citySlug: 'xian',
-  },
-  {
-    image: '/images/cities/xian/xian_p02_07.jpeg',
-    location: { en: 'Muslim Quarter, Xi\'an', zh: '西安 · 回民街' },
-    photographer: '',
-    description: { en: 'Night market crowd waves.', zh: '夜市人潮。' },
-    tags: { en: '#Xian #NightMarket', zh: '#西安 #夜市' },
-    category: 'people',
-    citySlug: 'xian',
-  },
-  {
-    image: '/images/cities/xian/xian_p03_13.jpeg',
-    location: { en: 'City Wall, Xi\'an', zh: '西安 · 城墙' },
-    photographer: '',
-    description: { en: '13.7 km of Ming dynasty brick.', zh: '13.7 公里的明代城砖。' },
-    tags: { en: '#Xian #CityWall', zh: '#西安 #城墙' },
-    category: 'city',
-    citySlug: 'xian',
-  },
-  {
-    image: '/images/cities/xian/xian_p05_18.jpeg',
-    location: { en: 'Muslim Quarter, Xi\'an', zh: '西安 · 回民街' },
-    photographer: '',
-    description: { en: 'Roujiamo, straight off the griddle.', zh: '刚出炉的肉夹馍。' },
-    tags: { en: '#Xian #StreetFood', zh: '#西安 #街头美食' },
-    category: 'food',
-    citySlug: 'xian',
-  },
-  {
-    image: '/images/cities/xian/xian_p12_44.jpeg',
-    location: { en: 'Mount Hua, Shaanxi', zh: '陕西 · 华山' },
-    photographer: '',
-    description: { en: 'Granite spine above the clouds.', zh: '云海之上的花岗岩山脊。' },
-    tags: { en: '#MountHua #Sunrise', zh: '#华山 #日出' },
-    category: 'landscape',
-    citySlug: 'xian',
-  },
-  {
-    image: '/images/cities/xian/xian_p15_50.jpeg',
-    location: { en: 'Terracotta Army, Xi\'an', zh: '西安 · 兵马俑' },
-    photographer: '',
-    description: { en: 'Two thousand years, still standing.', zh: '站了两千年，还在站。' },
-    tags: { en: '#Xian #TerracottaWarriors', zh: '#西安 #兵马俑' },
-    category: 'hiddenGems',
-    citySlug: 'xian',
-  },
-  // —— 北京 ——
-  {
-    image: '/images/cities/beijing/beijing_p04_17.jpeg',
-    location: { en: 'Forbidden City, Beijing', zh: '北京 · 故宫' },
-    photographer: '',
-    description: { en: 'Meridian Gate at first light.', zh: '晨光里的午门。' },
-    tags: { en: '#Beijing #ForbiddenCity', zh: '#北京 #故宫' },
-    category: 'city',
-    citySlug: 'beijing',
-  },
-  {
-    image: '/images/cities/beijing/beijing_p07_21.jpeg',
-    location: { en: 'Hutongs, Beijing', zh: '北京 · 胡同' },
-    photographer: '',
-    description: { en: 'Breakfast steam between grey walls.', zh: '灰墙之间的早餐蒸汽。' },
-    tags: { en: '#Beijing #Hutong #Breakfast', zh: '#北京 #胡同 #早餐' },
-    category: 'food',
-    citySlug: 'beijing',
-  },
-  {
-    image: '/images/cities/beijing/beijing_p07_23.jpeg',
-    location: { en: 'Hutongs, Beijing', zh: '北京 · 胡同' },
-    photographer: '',
-    description: { en: 'Local pace, no filter needed.', zh: '本地节奏，无需滤镜。' },
-    tags: { en: '#Beijing #People', zh: '#北京 #人文' },
-    category: 'people',
-    citySlug: 'beijing',
-  },
-  {
-    image: '/images/cities/beijing/beijing_p08_24.jpeg',
-    location: { en: 'Subway Line 2, Beijing', zh: '北京 · 地铁 2 号线' },
-    photographer: '',
-    description: { en: 'The cheapest city tour there is.', zh: '最便宜的城市观光线。' },
-    tags: { en: '#Beijing #Subway', zh: '#北京 #地铁' },
-    category: 'transport',
-    citySlug: 'beijing',
-  },
-  {
-    image: '/images/cities/beijing/beijing_p08_25.jpeg',
-    location: { en: 'Beijing', zh: '北京' },
-    photographer: '',
-    description: { en: 'Getting somewhere fast.', zh: '疾驰。' },
-    tags: { en: '#Beijing #Transport', zh: '#北京 #交通' },
-    category: 'transport',
-    citySlug: 'beijing',
-  },
-  {
-    image: '/images/cities/beijing/beijing_p13_29.jpeg',
-    location: { en: 'Outskirts, Beijing', zh: '北京 · 郊野' },
-    photographer: '',
-    description: { en: 'Where the city thins out.', zh: '城市变薄的地方。' },
-    tags: { en: '#Beijing #Outskirts', zh: '#北京 #郊野' },
-    category: 'landscape',
-    citySlug: 'beijing',
-  },
-  {
-    image: '/images/cities/beijing/beijing_p20_38.jpeg',
-    location: { en: 'Great Wall, Beijing', zh: '北京 · 长城' },
-    photographer: '',
-    description: { en: 'Watchtowers into the distance.', zh: '烽火台连向远方。' },
-    tags: { en: '#GreatWall #Hiking', zh: '#长城 #徒步' },
-    category: 'landscape',
-    citySlug: 'beijing',
-  },
-  {
-    image: '/images/cities/beijing/beijing_p20_39.jpeg',
-    location: { en: 'Great Wall, Beijing', zh: '北京 · 长城' },
-    photographer: '',
-    description: { en: 'The stretch everyone photographs — go at dawn instead.', zh: '人人都拍的那段——改成清晨去。' },
-    tags: { en: '#GreatWall #Sunrise', zh: '#长城 #日出' },
-    category: 'hiddenGems',
-    citySlug: 'beijing',
-  },
-]
+const guidesStart = src.indexOf('const rawExternalGuides')
+const guidesEnd = src.indexOf('// ===== 图片瀑布流数据 =====')
+if (guidesStart < 0 || guidesEnd < 0 || guidesStart > guidesEnd) throw new Error('rawExternalGuides block not found')
+src = src.slice(0, guidesStart) + newGuides + src.slice(guidesEnd)
 
-// ===== 本地服务商数据 =====
-// ⚠️ contactEmail 为占位邮箱，上线前替换为真实联系方式。
-
-const rawServices: Omit<PartnerService, 'id'>[] = [
-  {
-    name: 'Wang Qiang — Chengdu Private Driver',
-    type: 'driver',
-    cities: ['chengdu'],
-    languages: ['English', 'Chinese'],
-    rating: 4.9,
-    reviewCount: 127,
-    intro: {
-      en: '10 years driving expat families around Sichuan. Panda base, Leshan, and 3–5 day western Sichuan loops.',
-      zh: '10 年外籍家庭包车经验，熟悉熊猫基地、乐山及川西 3–5 日环线。',
-    },
-    services: {
-      en: 'Airport pickup|Panda Base day trip|Leshan Buddha day trip|Western Sichuan 3–5 day loop',
-      zh: '机场接机|熊猫基地一日游|乐山大佛一日游|川西 3–5 日环线',
-    },
-    tags: { en: '#EnglishSpeaking #FamilyFriendly #FoodTour', zh: '#英文服务 #亲子友好 #美食路线' },
-    priceRange: { en: '$60–90 / day', zh: '¥420–650 / 天' },
-    isVerified: true,
-    contactEmail: 'partner@example.com',
-  },
-  {
-    name: 'Li Na — Xi\'an Licensed Tour Guide',
-    type: 'guide',
-    cities: ['xian'],
-    languages: ['English', 'Chinese'],
-    rating: 4.8,
-    reviewCount: 96,
-    intro: {
-      en: 'Licensed national guide. Terracotta Army deep dives and Muslim Quarter food walks with real history.',
-      zh: '持证导游，兵马俑深度讲解 + 回民街美食行走，历史功底扎实。',
-    },
-    services: {
-      en: 'Terracotta Army guided tour|Muslim Quarter food walk|City wall & bell tower walk|Airport/train station pickup coordination',
-      zh: '兵马俑讲解|回民街美食行|城墙钟鼓楼徒步|接站协调',
-    },
-    tags: { en: '#Licensed #HistoryDeepDive #FoodWalk', zh: '#持证 #历史深度 #美食行' },
-    priceRange: { en: '$45 / half day', zh: '¥320 / 半天' },
-    isVerified: true,
-    contactEmail: 'partner@example.com',
-  },
-  {
-    name: 'Zhang Wei — Great Wall Photographer',
-    type: 'photographer',
-    cities: ['beijing'],
-    languages: ['English', 'Chinese'],
-    rating: 5.0,
-    reviewCount: 58,
-    intro: {
-      en: 'Sunrise shoots at uncrowded Mutianyu watchtowers. 40 edited photos delivered within 48 hours.',
-      zh: '慕田峪人少烽火台日出跟拍，48 小时交付 40 张精修。',
-    },
-    services: {
-      en: 'Great Wall sunrise session|Hutong portrait walk|Forbidden City couple shoot|Family group session',
-      zh: '长城日出跟拍|胡同人像|故宫双人写真|全家福',
-    },
-    tags: { en: '#SunriseShoot #Mutianyu #48hDelivery', zh: '#日出跟拍 #慕田峪 #48小时交付' },
-    priceRange: { en: '$120 / session', zh: '¥850 / 次' },
-    isVerified: true,
-    contactEmail: 'partner@example.com',
-  },
-  {
-    name: 'Sichuan Discovery — Boutique Agency',
-    type: 'agency',
-    cities: ['chengdu'],
-    languages: ['English', 'Chinese'],
-    rating: 4.7,
-    reviewCount: 210,
-    intro: {
-      en: 'Small-team custom itineraries: Chengdu + Jiuzhaigou, Leshan, Emei and Tibet connections.',
-      zh: '小团定制：成都 + 九寨沟、乐山、峨眉及进藏衔接。',
-    },
-    services: {
-      en: 'Custom itinerary design|Hotel & train booking|Guide & driver dispatch|24/7 trip support',
-      zh: '行程定制|酒店火车预订|向导司机调度|全程 24 小时支持',
-    },
-    tags: { en: '#CustomTrips #Jiuzhaigou #SmallGroups', zh: '#定制 #九寨沟 #小团' },
-    priceRange: { en: 'from $150 / day per group', zh: '团体 ¥1050 / 天起' },
-    isVerified: false,
-    contactEmail: 'partner@example.com',
-  },
-  {
-    name: 'Chen Hao — Beijing City & Airport Driver',
-    type: 'driver',
-    cities: ['beijing'],
-    languages: ['English', 'Chinese'],
-    rating: 4.6,
-    reviewCount: 143,
-    intro: {
-      en: 'Buick GL8, child seats on request. Airport runs, Great Wall transfers, hutong-area hotels.',
-      zh: '别克 GL8，可配儿童安全座椅。机场接送、长城往返、胡同片区酒店直达。',
-    },
-    services: {
-      en: 'Airport transfers|Great Wall round trip|City day hire|Disney-style flexible stops',
-      zh: '机场接送|长城往返|市内包日|沿途灵活停靠',
-    },
-    tags: { en: '#EnglishSpeaking #AirportRuns #ChildSeats', zh: '#英文服务 #机场接送 #儿童座椅' },
-    priceRange: { en: '$40–70 / day', zh: '¥280–500 / 天' },
-    isVerified: true,
-    contactEmail: 'partner@example.com',
-  },
-  {
-    name: 'Silk Road Explorers — Xi\'an Agency',
-    type: 'agency',
-    cities: ['xian'],
-    languages: ['English'],
-    rating: 4.5,
-    reviewCount: 78,
-    intro: {
-      en: 'Xi\'an classics plus Huashan sunrise and Luoyang Longmen Grottoes extensions.',
-      zh: '西安经典线路 + 华山日出、洛阳龙门石窟延伸。',
-    },
-    services: {
-      en: 'Xi\'an 2–3 day packages|Huashan sunrise tour|Luoyang day trip|Train ticket assistance',
-      zh: '西安 2–3 日套餐|华山日出|洛阳一日|火车票协助',
-    },
-    tags: { en: '#Huashan #SunriseHike #Packages', zh: '#华山 #日出徒步 #套餐' },
-    priceRange: { en: 'from $90 / day', zh: '¥630 / 天起' },
-    isVerified: false,
-    contactEmail: 'partner@example.com',
-  },
-]
-
-// ===== 组装与访问函数 =====
-
-let _vlogId = 0
-let _guideId = 0
-let _photoId = 0
-let _serviceId = 0
-
-const vlogs: Vlog[] = rawVlogs.map(v => ({ ...v, id: ++_vlogId }))
-const externalGuides: ExternalGuide[] = rawExternalGuides.map(g => ({ ...g, id: ++_guideId }))
-const photos: Photo[] = rawPhotos.map(p => ({ ...p, id: ++_photoId }))
-const services: PartnerService[] = rawServices.map(s => ({ ...s, id: ++_serviceId }))
-
-// 全部 Vlog
-export function getVlogs(): Vlog[] {
-  return vlogs
-}
-
-// 精选 Vlog（首页横向滚动区）
-export function getFeaturedVlogs(): Vlog[] {
-  return vlogs.filter(v => v.featured)
-}
-
-// 按城市筛选 Vlog
-export function getVlogsByCity(citySlug: string): Vlog[] {
-  return vlogs.filter(v => v.citySlug === citySlug)
-}
-
-// 某城市 Vlog 数量（目的地卡片角标）
-export function getVlogCountByCity(citySlug: string): number {
-  return vlogs.filter(v => v.citySlug === citySlug).length
-}
-
-// 全部外部攻略
-export function getExternalGuides(): ExternalGuide[] {
-  return externalGuides
-}
-
-// 按城市筛选外部攻略（含未关联城市的通用攻略可另行取全量）
-export function getExternalGuidesByCity(citySlug: string): ExternalGuide[] {
-  return externalGuides.filter(g => g.citySlug === citySlug)
-}
-
-// 全部图片
-export function getPhotos(): Photo[] {
-  return photos
-}
-
-// 按城市筛选图片
-export function getPhotosByCity(citySlug: string): Photo[] {
-  return photos.filter(p => p.citySlug === citySlug)
-}
-
-// 全部服务商
-export function getServices(): PartnerService[] {
-  return services
-}
-
-// 按城市筛选服务商
-export function getServicesByCity(citySlug: string): PartnerService[] {
-  return services.filter(s => s.cities.includes(citySlug))
-}
+fs.writeFileSync(FILE, src, 'utf-8')
+console.log('patched OK')

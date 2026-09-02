@@ -36,3 +36,6 @@ prisma/*.db-journal
 
 # 本地 AI 工具配置
 .claude/
+
+# 冷启动采集中间产物（原始 JSON/封面清单）
+scripts/coldstart/out/
