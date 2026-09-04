@@ -95,7 +95,7 @@ export default defineNuxtConfig({
     lazy: true,
     differentDomains: false,
     detectBrowserLanguage: false,
-    baseUrl: 'https://travelchina-mu.vercel.app',
+    baseUrl: 'https://chinatravel.world',
   },
 
   // 应用级 head 配置（默认 SEO，各页面会按语言覆盖）
@@ -158,7 +158,7 @@ gtag('config', 'G-5V6YWGXS3Y');`,
   // prefix 策略下根路径无默认页面，静态部署时将 `/` 重定向到默认语言 `/en`
   // （兜底：Vercel 等平台会读取此规则；静态根 index.html 由 public/ 提供 meta 跳转）
   routeRules: {
-    '/': { redirect: '/en/' },
+    '/': { redirect: '/en' },
   },
 
   // 静态预渲染配置（SSG）

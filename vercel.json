@@ -4,5 +4,14 @@
   "outputDirectory": ".output/public",
   "installCommand": "npm install",
   "framework": "nuxtjs",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://chinatravel.world/:path*",
+      "permanent": true,
+      "has": [{ "type": "header", "key": "host", "value": "travelchina-mu.vercel.app" }]
+    }
+  ]
 }
