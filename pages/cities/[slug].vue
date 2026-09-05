@@ -101,10 +101,10 @@ useHead({
     <!-- 城市英雄区 -->
     <section
       class="relative h-[460px] flex flex-col items-center justify-center text-white text-center px-5"
-      :style="`background: linear-gradient(rgba(10,15,26,0.45), rgba(10,15,26,0.7)), url('${c.heroImage}') center/cover;`"
+      :style="`background: linear-gradient(rgba(10,15,26,0.32), rgba(10,15,26,0.62)), url('${c.heroImage}') center/cover;`"
     >
-      <h1 class="text-4xl md:text-5xl font-bold mb-3 tracking-[4px]">{{ c.name[locale] }}</h1>
-      <div class="text-lg opacity-90 mb-5 tracking-wide">{{ c.tagline[locale] }}</div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-3 tracking-[4px] text-shadow">{{ c.name[locale] }}</h1>
+      <div class="text-lg opacity-95 mb-5 tracking-wide text-shadow">{{ c.tagline[locale] }}</div>
       <!-- 城市标签 -->
       <div class="flex gap-3 flex-wrap justify-center mb-7">
         <span

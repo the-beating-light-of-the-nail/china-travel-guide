@@ -54,10 +54,10 @@ useHead({
     <!-- 顶部介绍区 -->
     <section
       class="h-[400px] flex flex-col items-center justify-center text-white text-center px-5"
-      style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1600') center/cover;"
+      style="background: linear-gradient(rgba(10,15,26,0.35), rgba(10,15,26,0.55)), url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1600') center/cover;"
     >
-      <h1 class="text-4xl md:text-[52px] font-bold mb-4 tracking-[6px]">{{ t('about.title') }}</h1>
-      <p class="text-lg opacity-90 max-w-2xl tracking-wide leading-relaxed">
+      <h1 class="text-4xl md:text-[52px] font-bold mb-4 tracking-[6px] text-shadow">{{ t('about.title') }}</h1>
+      <p class="text-lg opacity-95 max-w-2xl tracking-wide leading-relaxed text-shadow">
         {{ t('about.subtitle') }}
       </p>
     </section>

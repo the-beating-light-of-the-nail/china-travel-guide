@@ -78,12 +78,12 @@ useHead({
     <!-- 英雄横幅区 -->
     <section
       class="min-h-[520px] flex flex-col items-center justify-center text-white text-center px-5 py-[90px]"
-      :style="`background: linear-gradient(rgba(10,15,26,0.72), rgba(10,15,26,0.85)), url('${heroImage}') center/cover;`"
+      :style="`background: linear-gradient(rgba(10,15,26,0.30), rgba(10,15,26,0.55)), url('${heroImage}') center/cover;`"
     >
-      <h1 class="text-3xl md:text-[52px] font-bold mb-5 md:mb-6 max-w-4xl leading-tight tracking-tight">
+      <h1 class="text-3xl md:text-[52px] font-bold mb-5 md:mb-6 max-w-4xl leading-tight tracking-tight text-shadow">
         {{ t('home.heroTitle') }}
       </h1>
-      <p class="text-base md:text-lg text-slate-200 mb-9 tracking-wide">
+      <p class="text-base md:text-lg text-white/95 mb-9 tracking-wide text-shadow">
         {{ t('home.heroSubtitle') }}
       </p>
       <!-- 搜索框（trip.com 式白底大搜索条） -->
