@@ -19,7 +19,7 @@ const badgeClass = computed(() =>
 
 <template>
   <!-- 攻略卡片 -->
-  <div class="card-dark p-5 card-hover flex flex-col">
+  <div class="card p-5 card-hover flex flex-col">
     <!-- 来源行 -->
     <div class="flex items-center gap-2.5 mb-3">
       <span
@@ -28,36 +28,36 @@ const badgeClass = computed(() =>
       >
         {{ guide.sourceName.slice(0, 1) }}
       </span>
-      <span class="text-[13px] text-slate-300">{{ guide.sourceName }}</span>
+      <span class="text-[13px] text-ink-body">{{ guide.sourceName }}</span>
       <!-- 语言标识 -->
-      <span class="ml-auto text-[10px] uppercase tracking-wider text-slate-500 border border-slate-700 rounded px-1.5 py-0.5">
+      <span class="ml-auto text-[10px] uppercase tracking-wider text-ink-muted border border-slate-200 rounded px-1.5 py-0.5">
         {{ guide.language === 'en' ? 'EN' : '中文' }}
       </span>
     </div>
 
     <!-- 标题 -->
-    <h3 class="text-base text-slate-50 mb-2 font-semibold leading-snug">
+    <h3 class="text-base text-ink mb-2 font-semibold leading-snug">
       {{ guide.title[locale] }}
     </h3>
 
     <!-- 我们的点评摘要 -->
-    <p class="text-sm text-slate-400 leading-relaxed mb-3 flex-1">
+    <p class="text-sm text-ink-muted leading-relaxed mb-3 flex-1">
       {{ guide.summary[locale] }}
     </p>
 
     <!-- 标签 -->
-    <div class="text-xs text-blue-400 mb-4">
+    <div class="text-xs text-brand mb-4">
       {{ guide.tags[locale] }}
     </div>
 
     <!-- 底部：阅读原文 + 阅读时长 -->
-    <div class="flex items-center justify-between pt-3 border-t border-slate-700">
-      <span class="text-xs text-slate-500">{{ guide.readTime[locale] }}</span>
+    <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+      <span class="text-xs text-ink-muted">{{ guide.readTime[locale] }}</span>
       <a
         :href="guide.externalUrl"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-sm text-brand hover:text-brand-light font-medium transition-colors"
+        class="text-sm text-brand hover:text-brand-dark font-medium transition-colors"
       >
         {{ t('guidesHub.readOriginal') }}
       </a>

@@ -118,29 +118,29 @@ useHead({
     <!-- 顶部筛选栏 -->
     <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-5 mb-10">
       <div>
-        <h1 class="text-3xl md:text-4xl font-bold text-slate-50">
+        <h1 class="text-3xl md:text-4xl font-bold text-ink">
           {{ t('vlogs.pageTitle') }}
         </h1>
-        <p class="text-slate-400 text-sm mt-2">
+        <p class="text-ink-muted text-sm mt-2">
           {{ t('vlogs.pageSubtitle') }}
         </p>
       </div>
 
       <!-- 筛选器组 -->
       <div class="flex flex-wrap gap-3">
-        <select v-model="platform" class="input-dark px-3 py-2 text-sm cursor-pointer">
+        <select v-model="platform" class="input px-3 py-2 text-sm cursor-pointer">
           <option value="all">{{ t('vlogs.allPlatforms') }}</option>
           <option value="youtube">{{ t('vlogs.platforms.youtube') }}</option>
           <option value="bilibili">{{ t('vlogs.platforms.bilibili') }}</option>
         </select>
-        <select v-model="topic" class="input-dark px-3 py-2 text-sm cursor-pointer">
+        <select v-model="topic" class="input px-3 py-2 text-sm cursor-pointer">
           <option value="all">{{ t('vlogs.allTopics') }}</option>
           <option value="food">{{ t('vlogs.topics.food') }}</option>
           <option value="transport">{{ t('vlogs.topics.transport') }}</option>
           <option value="culture">{{ t('vlogs.topics.culture') }}</option>
           <option value="nature">{{ t('vlogs.topics.nature') }}</option>
         </select>
-        <select v-model="sortBy" class="input-dark px-3 py-2 text-sm cursor-pointer">
+        <select v-model="sortBy" class="input px-3 py-2 text-sm cursor-pointer">
           <option value="picks">{{ t('vlogs.sortPicks') }}</option>
           <option value="latest">{{ t('vlogs.sortLatest') }}</option>
           <option value="views">{{ t('vlogs.sortViews') }}</option>
@@ -152,10 +152,10 @@ useHead({
       <!-- 主内容区 -->
       <div class="flex-1 min-w-0">
         <!-- 搜索关键词回显（来自导航/首页搜索） -->
-        <div v-if="keyword" class="mb-6 flex items-center gap-3 text-sm text-slate-400">
+        <div v-if="keyword" class="mb-6 flex items-center gap-3 text-sm text-ink-muted">
           <span>“{{ keyword }}”</span>
           <button
-            class="text-brand hover:text-brand-light transition-colors"
+            class="text-brand hover:text-brand-dark transition-colors"
             @click="keyword = ''"
           >
             ×
@@ -173,7 +173,7 @@ useHead({
             :vlog="vlog"
           />
         </div>
-        <p v-else class="text-slate-500 text-sm py-16 text-center">
+        <p v-else class="text-ink-muted text-sm py-16 text-center">
           {{ t('vlogs.noResults') }}
         </p>
 
@@ -189,7 +189,7 @@ useHead({
       <aside class="hidden xl:block w-[280px] shrink-0 space-y-8">
         <!-- 趋势榜 -->
         <div>
-          <h3 class="text-base font-semibold text-slate-50 mb-4">
+          <h3 class="text-base font-semibold text-ink mb-4">
             🔥 {{ t('vlogs.trending') }}
           </h3>
           <ul class="list-none space-y-4">
@@ -200,14 +200,14 @@ useHead({
                 rel="noopener noreferrer"
                 class="flex gap-3 group"
               >
-                <span class="text-2xl font-bold text-slate-700 group-hover:text-brand transition-colors w-7 shrink-0">
+                <span class="text-2xl font-bold text-slate-300 group-hover:text-brand transition-colors w-7 shrink-0">
                   {{ idx + 1 }}
                 </span>
                 <span class="min-w-0">
-                  <span class="block text-[13px] text-slate-200 leading-snug line-clamp-2 group-hover:text-brand-light transition-colors">
+                  <span class="block text-[13px] text-ink-body leading-snug line-clamp-2 group-hover:text-brand transition-colors">
                     {{ vlog.title[locale] }}
                   </span>
-                  <span class="block text-xs text-slate-500 mt-1">
+                  <span class="block text-xs text-ink-muted mt-1">
                     {{ vlog.vloggerName }} · {{ vlog.views[locale] }}
                   </span>
                 </span>
@@ -217,8 +217,8 @@ useHead({
         </div>
 
         <!-- 城市云 -->
-        <div class="pt-6 border-t border-slate-800">
-          <h3 class="text-base font-semibold text-slate-50 mb-4">
+        <div class="pt-6 border-t border-slate-200">
+          <h3 class="text-base font-semibold text-ink mb-4">
             📍 {{ t('vlogs.filterByCity') }}
           </h3>
           <div class="flex flex-wrap gap-2">

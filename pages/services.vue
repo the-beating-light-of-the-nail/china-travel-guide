@@ -84,35 +84,35 @@ useHead({
   <div class="py-10 md:py-14 px-4 sm:px-[5%]">
     <!-- 顶部：标题 + 搜索框 -->
     <div class="max-w-3xl mb-8">
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-50">
+      <h1 class="text-3xl md:text-4xl font-bold text-ink">
         {{ t('services.pageTitle') }}
       </h1>
-      <p class="text-slate-400 text-sm mt-2 mb-6">
+      <p class="text-ink-muted text-sm mt-2 mb-6">
         {{ t('services.pageSubtitle') }}
       </p>
       <input
         v-model="keyword"
         type="text"
         :placeholder="t('services.searchPlaceholder')"
-        class="input-dark w-full px-5 py-3 text-sm"
+        class="input w-full px-5 py-3 text-sm"
       >
     </div>
 
     <!-- 筛选栏 + 视图切换 -->
     <div class="flex flex-wrap items-center gap-3 mb-10">
-      <select v-model="citySlug" class="input-dark px-3 py-2 text-sm cursor-pointer">
+      <select v-model="citySlug" class="input px-3 py-2 text-sm cursor-pointer">
         <option value="all">{{ t('services.allCities') }}</option>
         <option v-for="city in allCities" :key="city.slug" :value="city.slug">
           {{ city.name[locale] }}
         </option>
       </select>
-      <select v-model="serviceType" class="input-dark px-3 py-2 text-sm cursor-pointer">
+      <select v-model="serviceType" class="input px-3 py-2 text-sm cursor-pointer">
         <option value="all">{{ t('services.allTypes') }}</option>
         <option v-for="type in serviceTypes" :key="type" :value="type">
           {{ t(`services.types.${type}`) }}
         </option>
       </select>
-      <select v-model="language" class="input-dark px-3 py-2 text-sm cursor-pointer">
+      <select v-model="language" class="input px-3 py-2 text-sm cursor-pointer">
         <option value="all">{{ t('services.allLanguages') }}</option>
         <option v-for="lang in languageOptions" :key="lang" :value="lang">
           {{ lang }}
@@ -120,17 +120,17 @@ useHead({
       </select>
 
       <!-- 视图切换 -->
-      <div class="ml-auto flex rounded-lg border border-slate-600 overflow-hidden">
+      <div class="ml-auto flex rounded-lg border border-slate-300 overflow-hidden bg-white">
         <button
           class="px-3.5 py-2 text-sm transition-colors"
-          :class="viewMode === 'list' ? 'bg-brand text-white' : 'text-slate-300 hover:text-white'"
+          :class="viewMode === 'list' ? 'bg-brand text-white' : 'text-ink-body hover:text-brand'"
           @click="viewMode = 'list'"
         >
           ☰ {{ t('services.listLabel') }}
         </button>
         <button
           class="px-3.5 py-2 text-sm transition-colors"
-          :class="viewMode === 'grid' ? 'bg-brand text-white' : 'text-slate-300 hover:text-white'"
+          :class="viewMode === 'grid' ? 'bg-brand text-white' : 'text-ink-body hover:text-brand'"
           @click="viewMode = 'grid'"
         >
           ▦ {{ t('services.gridLabel') }}
@@ -150,7 +150,7 @@ useHead({
         :service="service"
       />
     </div>
-    <p v-else class="text-slate-500 text-sm py-16 text-center">
+    <p v-else class="text-ink-muted text-sm py-16 text-center">
       {{ t('services.noResults') }}
     </p>
   </div>

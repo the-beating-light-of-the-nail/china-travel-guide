@@ -13,9 +13,9 @@ const isPlaceholder = computed(() => !props.attraction.image || props.attraction
 
 <template>
   <!-- 景点卡片 -->
-  <div class="card-dark overflow-hidden card-hover cursor-pointer flex flex-col">
+  <div class="card overflow-hidden card-hover cursor-pointer flex flex-col">
     <!-- 图片区 -->
-    <div class="h-[200px] overflow-hidden bg-slate-700">
+    <div class="h-[200px] overflow-hidden bg-slate-100">
       <img
         v-if="!isPlaceholder"
         :src="attraction.image"
@@ -24,30 +24,30 @@ const isPlaceholder = computed(() => !props.attraction.image || props.attraction
       >
       <div
         v-else
-        class="w-full h-full flex items-center justify-center bg-gradient-to-br from-brand/15 via-brand/5 to-accent/10"
+        class="w-full h-full flex items-center justify-center bg-gradient-to-br from-brand/10 via-brand/5 to-gold/10"
       >
-        <span class="text-5xl opacity-50">🏞️</span>
+        <span class="text-5xl opacity-60">🏞️</span>
       </div>
     </div>
 
     <!-- 内容区 -->
     <div class="p-5 flex-1 flex flex-col">
       <!-- 标题 -->
-      <h3 class="text-lg text-slate-50 mb-2 font-semibold">{{ attraction.name[locale] }}</h3>
+      <h3 class="text-lg text-ink mb-2 font-semibold">{{ attraction.name[locale] }}</h3>
 
       <!-- 亮点 -->
-      <div class="text-accent text-[13px] mb-2.5 font-medium flex items-center gap-1">
-        <span>★</span>
+      <div class="text-promo text-[13px] mb-2.5 font-medium flex items-center gap-1">
+        <span class="text-gold">★</span>
         <span>{{ attraction.highlight[locale] }}</span>
       </div>
 
       <!-- 描述（两行截断） -->
-      <p class="text-sm text-slate-400 leading-relaxed line-clamp-2 flex-1">
+      <p class="text-sm text-ink-muted leading-relaxed line-clamp-2 flex-1">
         {{ attraction.description[locale] }}
       </p>
 
       <!-- 元信息 -->
-      <div class="flex justify-between items-center mt-3.5 pt-3.5 border-t border-slate-700 text-xs text-slate-500">
+      <div class="flex justify-between items-center mt-3.5 pt-3.5 border-t border-slate-100 text-xs text-ink-muted">
         <span>📍 {{ attraction.location[locale] }}</span>
         <span>⏱️ {{ attraction.duration[locale] }}</span>
         <span>🎫 {{ attraction.ticket[locale] }}</span>

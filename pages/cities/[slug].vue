@@ -90,18 +90,18 @@ useHead({
 <template>
   <div v-if="city">
     <!-- 面包屑 -->
-    <div class="py-4 px-4 sm:px-[5%] border-b border-slate-800 text-[13px] text-slate-400">
-      <NuxtLink :to="localePath('/')" class="text-brand-light hover:text-white">{{ t('city.home') }}</NuxtLink>
+    <div class="py-4 px-4 sm:px-[5%] border-b border-slate-200 text-[13px] text-ink-muted">
+      <NuxtLink :to="localePath('/')" class="text-brand hover:text-brand-dark">{{ t('city.home') }}</NuxtLink>
       <span> / </span>
-      <NuxtLink :to="localePath('/#destinations')" class="hover:text-white transition-colors">{{ t('nav.destinations') }}</NuxtLink>
+      <NuxtLink :to="localePath('/#destinations')" class="hover:text-brand transition-colors">{{ t('nav.destinations') }}</NuxtLink>
       <span> / </span>
-      <span class="text-slate-200">{{ c.name[locale] }}</span>
+      <span class="text-ink">{{ c.name[locale] }}</span>
     </div>
 
     <!-- 城市英雄区 -->
     <section
       class="relative h-[460px] flex flex-col items-center justify-center text-white text-center px-5"
-      :style="`background: linear-gradient(rgba(15,23,42,0.55), rgba(15,23,42,0.75)), url('${c.heroImage}') center/cover;`"
+      :style="`background: linear-gradient(rgba(10,15,26,0.45), rgba(10,15,26,0.7)), url('${c.heroImage}') center/cover;`"
     >
       <h1 class="text-4xl md:text-5xl font-bold mb-3 tracking-[4px]">{{ c.name[locale] }}</h1>
       <div class="text-lg opacity-90 mb-5 tracking-wide">{{ c.tagline[locale] }}</div>
@@ -110,15 +110,15 @@ useHead({
         <span
           v-for="tag in cityTags"
           :key="tag"
-          class="bg-slate-900/60 backdrop-blur-sm px-4 py-1.5 rounded-full text-[13px] border border-slate-600 text-slate-200"
+          class="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-[13px] border border-white/40 text-white"
         >
           {{ tag }}
         </span>
       </div>
       <!-- 收藏按钮 -->
       <button
-        class="flex items-center gap-2 bg-slate-900/60 backdrop-blur-sm border border-slate-600 hover:border-brand px-5 py-2.5 rounded-full text-sm transition-colors"
-        :class="saved ? 'text-brand-light' : 'text-slate-200'"
+        class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg"
+        :class="saved ? 'bg-brand text-white' : 'bg-white text-brand hover:bg-brand hover:text-white'"
         @click="saved = !saved"
       >
         <span>{{ saved ? '♥' : '♡' }}</span>
@@ -127,12 +127,12 @@ useHead({
     </section>
 
     <!-- Sticky 标签导航 -->
-    <nav class="sticky top-[70px] z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
+    <nav class="sticky top-[70px] z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
       <ul class="list-none flex gap-1 overflow-x-auto scroll-x-no-bar px-4 sm:px-[5%]">
         <li v-for="tab in tabs" :key="tab.key">
           <a
             :href="tab.hash"
-            class="inline-block px-4 py-3.5 text-sm text-slate-400 hover:text-white border-b-2 border-transparent hover:border-brand transition-colors whitespace-nowrap"
+            class="inline-block px-4 py-3.5 text-sm text-ink-muted hover:text-brand border-b-2 border-transparent hover:border-brand transition-colors whitespace-nowrap"
           >{{ t(`city.${tab.key}`) }}</a>
         </li>
       </ul>
@@ -148,12 +148,12 @@ useHead({
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         <!-- 文字介绍 -->
         <div class="lg:col-span-2">
-          <p class="text-slate-300 text-[15px] leading-loose text-justify">
+          <p class="text-ink-body text-[15px] leading-loose text-justify">
             {{ c.intro[locale] }}
           </p>
         </div>
         <!-- 城市图片 -->
-        <div class="rounded-[14px] overflow-hidden border border-slate-700 shadow-xl shadow-black/40">
+        <div class="rounded-[14px] overflow-hidden border border-slate-200 shadow-lg shadow-black/10 bg-white">
           <img :src="c.heroImage" :alt="c.name[locale]" class="w-full h-[300px] object-cover">
         </div>
       </div>
@@ -180,7 +180,7 @@ useHead({
     </section>
 
     <!-- 地道美食 -->
-    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-800">
+    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200">
       <GuideSection
         zh="地道美食"
         en="Local Flavors"
@@ -196,7 +196,7 @@ useHead({
     </section>
 
     <!-- 推荐行程 -->
-    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-800">
+    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200">
       <GuideSection
         zh="推荐行程"
         en="Itinerary"
@@ -212,7 +212,7 @@ useHead({
     </section>
 
     <!-- 出行贴士 -->
-    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-800">
+    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200">
       <GuideSection
         zh="出行贴士"
         en="Travel Tips"
@@ -228,7 +228,7 @@ useHead({
     </section>
 
     <!-- ===== Vlogs ===== -->
-    <section id="vlogs" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-800 scroll-mt-[130px]">
+    <section id="vlogs" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200 scroll-mt-[130px]">
       <GuideSection
         zh="必看视频"
         en="Must-Watch Vlogs"
@@ -241,7 +241,7 @@ useHead({
           :vlog="vlog"
         />
       </div>
-      <p v-else class="text-slate-500 text-sm">
+      <p v-else class="text-ink-muted text-sm">
         —
       </p>
       <div class="mt-8 text-center">
@@ -255,7 +255,7 @@ useHead({
     </section>
 
     <!-- ===== 攻略导航（手风琴） ===== -->
-    <section id="guides" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-800 scroll-mt-[130px]">
+    <section id="guides" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200 scroll-mt-[130px]">
       <GuideSection
         zh="精选攻略导航"
         en="Curated Guides"
@@ -265,7 +265,7 @@ useHead({
         <div
           v-for="guide in cityGuides"
           :key="guide.id"
-          class="card-dark overflow-hidden"
+          class="card overflow-hidden"
         >
           <!-- 手风琴标题 -->
           <button
@@ -274,31 +274,31 @@ useHead({
           >
             <span
               class="w-6 h-6 rounded-md flex items-center justify-center text-white text-xs font-bold shrink-0"
-              :class="guide.sourceName.charCodeAt(0) % 2 === 0 ? 'bg-brand' : 'bg-accent'"
+              :class="guide.sourceName.charCodeAt(0) % 2 === 0 ? 'bg-brand' : 'bg-gold'"
             >
               {{ guide.sourceName.slice(0, 1) }}
             </span>
             <span class="flex-1 min-w-0">
-              <span class="block text-[15px] font-semibold text-slate-50 leading-snug">{{ guide.title[locale] }}</span>
-              <span class="block text-xs text-slate-500 mt-1">{{ guide.sourceName }} · {{ guide.readTime[locale] }}</span>
+              <span class="block text-[15px] font-semibold text-ink leading-snug">{{ guide.title[locale] }}</span>
+              <span class="block text-xs text-ink-muted mt-1">{{ guide.sourceName }} · {{ guide.readTime[locale] }}</span>
             </span>
             <span
-              class="text-slate-500 text-lg transition-transform duration-300 shrink-0"
+              class="text-ink-muted text-lg transition-transform duration-300 shrink-0"
               :class="{ 'rotate-180': openGuideId === guide.id }"
             >⌄</span>
           </button>
           <!-- 展开内容 -->
-          <div v-if="openGuideId === guide.id" class="px-5 pb-5 border-t border-slate-700 pt-4">
-            <p class="text-sm text-slate-400 leading-relaxed mb-3">
+          <div v-if="openGuideId === guide.id" class="px-5 pb-5 border-t border-slate-100 pt-4">
+            <p class="text-sm text-ink-muted leading-relaxed mb-3">
               {{ guide.summary[locale] }}
             </p>
             <div class="flex items-center justify-between">
-              <span class="text-xs text-blue-400">{{ guide.tags[locale] }}</span>
+              <span class="text-xs text-brand">{{ guide.tags[locale] }}</span>
               <a
                 :href="guide.externalUrl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-sm text-brand hover:text-brand-light font-medium transition-colors"
+                class="text-sm text-brand hover:text-brand-dark font-medium transition-colors"
               >
                 {{ t('city.readOriginal') }}
               </a>
@@ -306,7 +306,7 @@ useHead({
           </div>
         </div>
       </div>
-      <p v-else class="text-slate-500 text-sm">
+      <p v-else class="text-ink-muted text-sm">
         —
       </p>
       <div class="mt-8 text-center">
@@ -320,7 +320,7 @@ useHead({
     </section>
 
     <!-- ===== 图片 ===== -->
-    <section id="photos" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-800 scroll-mt-[130px]">
+    <section id="photos" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200 scroll-mt-[130px]">
       <GuideSection
         zh="城市瞬间"
         en="Moments"
@@ -341,12 +341,12 @@ useHead({
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5">
             <div>
               <div class="text-white text-sm font-semibold">{{ photo.location[locale] }}</div>
-              <div class="text-blue-400 text-xs mt-0.5">{{ photo.tags[locale] }}</div>
+              <div class="text-sky-300 text-xs mt-0.5">{{ photo.tags[locale] }}</div>
             </div>
           </div>
         </div>
       </div>
-      <p v-else class="text-slate-500 text-sm">
+      <p v-else class="text-ink-muted text-sm">
         —
       </p>
       <div class="mt-8 text-center">
@@ -360,7 +360,7 @@ useHead({
     </section>
 
     <!-- ===== 本地服务 ===== -->
-    <section id="services" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-800 scroll-mt-[130px]">
+    <section id="services" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200 scroll-mt-[130px]">
       <GuideSection
         zh="本地合作伙伴"
         en="Local Partners"
@@ -373,7 +373,7 @@ useHead({
           :service="service"
         />
       </div>
-      <p v-else class="text-slate-500 text-sm">
+      <p v-else class="text-ink-muted text-sm">
         —
       </p>
       <div class="mt-8 text-center">
@@ -387,7 +387,7 @@ useHead({
     </section>
 
     <!-- 相关目的地 -->
-    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-800">
+    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200">
       <GuideSection
         zh="更多目的地"
         en="More Destinations"

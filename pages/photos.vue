@@ -111,10 +111,10 @@ useHead({
   <div class="py-10 md:py-14 px-4 sm:px-[5%]">
     <!-- 顶部：标题 + 分类筛选 -->
     <div class="max-w-3xl mb-8">
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-50">
+      <h1 class="text-3xl md:text-4xl font-bold text-ink">
         {{ t('photos.pageTitle') }}
       </h1>
-      <p class="text-slate-400 text-sm mt-2">
+      <p class="text-ink-muted text-sm mt-2">
         {{ t('photos.pageSubtitle') }}
       </p>
     </div>
@@ -159,7 +159,7 @@ useHead({
     <!-- Lightbox 模态框 -->
     <div
       v-if="activePhoto"
-      class="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
+      class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
       @click.self="closeLightbox"
     >
       <!-- 关闭按钮 -->
@@ -193,17 +193,17 @@ useHead({
           :alt="activePhoto.description[locale]"
           class="max-h-[55vh] md:max-h-[85vh] w-auto max-w-full md:flex-1 object-contain rounded-xl"
         >
-        <div class="md:w-[300px] shrink-0 bg-slate-900 border border-slate-700 rounded-xl p-6 flex flex-col justify-center overflow-y-auto">
-          <h3 class="text-lg font-semibold text-slate-50 mb-2">
+        <div class="md:w-[300px] shrink-0 bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-center overflow-y-auto shadow-2xl">
+          <h3 class="text-lg font-semibold text-ink mb-2">
             {{ activePhoto.location[locale] }}
           </h3>
-          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+          <p class="text-sm text-ink-body leading-relaxed mb-4">
             {{ activePhoto.description[locale] }}
           </p>
-          <div class="text-xs text-blue-400 mb-4">
+          <div class="text-xs text-brand mb-4">
             {{ activePhoto.tags[locale] }}
           </div>
-          <div class="text-xs text-slate-500 mb-4">
+          <div class="text-xs text-ink-muted mb-4">
             <span class="chip">{{ t(`photos.categories.${activePhoto.category}`) }}</span>
           </div>
           <a
@@ -211,7 +211,7 @@ useHead({
             :href="activePhoto.sourceUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-sm text-brand hover:text-brand-light font-medium transition-colors"
+            class="text-sm text-brand hover:text-brand-dark font-medium transition-colors"
           >
             {{ t('photos.viewSource') }} →
           </a>

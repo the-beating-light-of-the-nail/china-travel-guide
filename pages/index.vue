@@ -78,21 +78,21 @@ useHead({
     <!-- 英雄横幅区 -->
     <section
       class="min-h-[520px] flex flex-col items-center justify-center text-white text-center px-5 py-[90px]"
-      :style="`background: linear-gradient(rgba(15,23,42,0.82), rgba(15,23,42,0.92)), url('${heroImage}') center/cover;`"
+      :style="`background: linear-gradient(rgba(10,15,26,0.72), rgba(10,15,26,0.85)), url('${heroImage}') center/cover;`"
     >
       <h1 class="text-3xl md:text-[52px] font-bold mb-5 md:mb-6 max-w-4xl leading-tight tracking-tight">
         {{ t('home.heroTitle') }}
       </h1>
-      <p class="text-base md:text-lg text-slate-300 mb-9 tracking-wide">
+      <p class="text-base md:text-lg text-slate-200 mb-9 tracking-wide">
         {{ t('home.heroSubtitle') }}
       </p>
-      <!-- 搜索框 -->
-      <div class="flex bg-slate-800/95 border border-slate-600 rounded-full p-1.5 w-[580px] max-w-[92%] shadow-2xl shadow-black/50 focus-within:border-brand transition-colors">
+      <!-- 搜索框（trip.com 式白底大搜索条） -->
+      <div class="flex bg-white border border-slate-200 rounded-full p-1.5 w-[580px] max-w-[92%] shadow-2xl shadow-black/20 focus-within:border-brand transition-colors">
         <input
           v-model="heroSearch"
           type="text"
           :placeholder="t('search.heroPlaceholder')"
-          class="flex-1 border-none outline-none bg-transparent px-6 py-3 text-[15px] rounded-full text-slate-100 placeholder-slate-500"
+          class="flex-1 border-none outline-none bg-transparent px-6 py-3 text-[15px] rounded-full text-ink placeholder-slate-400"
           @keyup.enter="handleHeroSearch"
         >
         <button
@@ -108,7 +108,7 @@ useHead({
           v-for="(tag, i) in quickTags"
           :key="i"
           :to="localePath(tag.to)"
-          class="text-blue-400 hover:text-blue-300 text-sm transition-colors"
+          class="text-sky-300 hover:text-white text-sm transition-colors"
         >
           #{{ tag.label() }}
         </NuxtLink>
@@ -119,8 +119,8 @@ useHead({
     <section id="destinations" class="py-[70px] px-4 sm:px-[5%] scroll-mt-[90px]">
       <div class="flex items-end justify-between mb-10">
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-50">{{ t('home.destinationsTitle') }}</h2>
-          <p class="text-slate-400 text-sm mt-2">{{ t('home.destinationsSubtitle') }}</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-ink">{{ t('home.destinationsTitle') }}</h2>
+          <p class="text-ink-muted text-sm mt-2">{{ t('home.destinationsSubtitle') }}</p>
         </div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -133,15 +133,15 @@ useHead({
     </section>
 
     <!-- 精选 Vlog（横向滚动） -->
-    <section class="py-[70px] px-4 sm:px-[5%] bg-slate-900 border-y border-slate-800">
+    <section class="py-[70px] px-4 sm:px-[5%] bg-white border-y border-slate-200">
       <div class="flex items-end justify-between mb-10 gap-4">
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-50">{{ t('home.vlogsTitle') }}</h2>
-          <p class="text-slate-400 text-sm mt-2">{{ t('home.vlogsSubtitle') }}</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-ink">{{ t('home.vlogsTitle') }}</h2>
+          <p class="text-ink-muted text-sm mt-2">{{ t('home.vlogsSubtitle') }}</p>
         </div>
         <NuxtLink
           :to="localePath('/vlogs')"
-          class="shrink-0 text-brand hover:text-brand-light text-sm font-medium transition-colors whitespace-nowrap"
+          class="shrink-0 text-brand hover:text-brand-dark text-sm font-medium transition-colors whitespace-nowrap"
         >
           {{ t('home.viewAllVlogs') }}
         </NuxtLink>
@@ -161,12 +161,12 @@ useHead({
     <section class="py-[70px] px-4 sm:px-[5%]">
       <div class="flex items-end justify-between mb-10 gap-4">
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-50">{{ t('home.momentsTitle') }}</h2>
-          <p class="text-slate-400 text-sm mt-2">{{ t('home.momentsSubtitle') }}</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-ink">{{ t('home.momentsTitle') }}</h2>
+          <p class="text-ink-muted text-sm mt-2">{{ t('home.momentsSubtitle') }}</p>
         </div>
         <NuxtLink
           :to="localePath('/photos')"
-          class="shrink-0 text-brand hover:text-brand-light text-sm font-medium transition-colors whitespace-nowrap"
+          class="shrink-0 text-brand hover:text-brand-dark text-sm font-medium transition-colors whitespace-nowrap"
         >
           {{ t('home.viewAllPhotos') }}
         </NuxtLink>
@@ -191,15 +191,15 @@ useHead({
     </section>
 
     <!-- 精选原创攻略 -->
-    <section id="guides" class="py-[70px] px-4 sm:px-[5%] bg-slate-900 border-t border-slate-800 scroll-mt-[90px]">
+    <section id="guides" class="py-[70px] px-4 sm:px-[5%] bg-white border-t border-slate-200 scroll-mt-[90px]">
       <div class="flex items-end justify-between mb-10 gap-4">
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-50">{{ t('home.guidesTitle') }}</h2>
-          <p class="text-slate-400 text-sm mt-2">{{ t('home.guidesSubtitle') }}</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-ink">{{ t('home.guidesTitle') }}</h2>
+          <p class="text-ink-muted text-sm mt-2">{{ t('home.guidesSubtitle') }}</p>
         </div>
         <NuxtLink
           :to="localePath('/guides')"
-          class="shrink-0 text-brand hover:text-brand-light text-sm font-medium transition-colors whitespace-nowrap"
+          class="shrink-0 text-brand hover:text-brand-dark text-sm font-medium transition-colors whitespace-nowrap"
         >
           {{ t('home.viewAllGuides') }}
         </NuxtLink>

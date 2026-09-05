@@ -21,10 +21,10 @@ const platformStyle: Record<string, string> = {
     :href="vlog.externalUrl"
     target="_blank"
     rel="noopener noreferrer"
-    class="card-dark group block overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-black/40"
+    class="card group block overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-black/10"
   >
     <!-- 缩略图区 -->
-    <div class="relative aspect-video overflow-hidden bg-slate-700">
+    <div class="relative aspect-video overflow-hidden bg-slate-100">
       <img
         :src="vlog.thumbnail"
         :alt="vlog.title[locale]"
@@ -53,32 +53,32 @@ const platformStyle: Record<string, string> = {
     <!-- 内容区 -->
     <div class="p-4">
       <!-- 标题（两行截断） -->
-      <h3 class="text-[15px] text-slate-50 mb-2 font-semibold leading-snug line-clamp-2 group-hover:text-brand-light transition-colors">
+      <h3 class="text-[15px] text-ink mb-2 font-semibold leading-snug line-clamp-2 group-hover:text-brand transition-colors">
         {{ vlog.title[locale] }}
       </h3>
 
       <!-- 博主 -->
       <div class="flex items-center gap-2 mb-2">
-        <span class="w-6 h-6 rounded-full bg-slate-700 text-brand-light text-[11px] flex items-center justify-center font-semibold shrink-0">
+        <span class="w-6 h-6 rounded-full bg-brand-tint text-brand text-[11px] flex items-center justify-center font-semibold shrink-0">
           {{ vlog.vloggerName.slice(0, 1) }}
         </span>
-        <span class="text-[13px] text-slate-300">{{ vlog.vloggerName }}</span>
+        <span class="text-[13px] text-ink-body">{{ vlog.vloggerName }}</span>
       </div>
 
       <!-- 标签 -->
-      <div class="text-xs text-blue-400 mb-2">
+      <div class="text-xs text-brand mb-2">
         {{ vlog.tags[locale] }}
       </div>
 
       <!-- 我们的点评 -->
-      <p class="text-xs text-slate-400 leading-relaxed line-clamp-2 mb-3">
+      <p class="text-xs text-ink-muted leading-relaxed line-clamp-2 mb-3">
         {{ vlog.review[locale] }}
       </p>
 
       <!-- 底部元信息 -->
-      <div class="flex items-center justify-between text-xs text-slate-500 pt-2.5 border-t border-slate-700">
+      <div class="flex items-center justify-between text-xs text-ink-muted pt-2.5 border-t border-slate-100">
         <span>{{ vlog.views[locale] }} · {{ vlog.publishedAt[locale] }}</span>
-        <span class="text-brand font-medium group-hover:text-brand-light">
+        <span class="text-brand font-medium group-hover:text-brand-dark">
           {{ t('vlogs.watch') }} →
         </span>
       </div>

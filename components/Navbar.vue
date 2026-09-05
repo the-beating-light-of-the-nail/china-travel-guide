@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// 顶部导航栏组件 - 粘性布局、品牌 Logo、导航链接、搜索框、语言切换（深色主题）
+// 顶部导航栏组件 - 粘性布局、品牌 Logo、导航链接、搜索框、语言切换（trip.com 风格浅色）
 const route = useRoute()
 const { t, locale, locales } = useI18n()
 // 生成本地化路由地址与切换语言的地址
@@ -54,9 +54,9 @@ function isActive(to: string) {
 
 <template>
   <!-- 顶部导航栏 -->
-  <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 h-[70px] flex items-center justify-between px-4 sm:px-[5%]">
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm h-[70px] flex items-center justify-between px-4 sm:px-[5%]">
     <!-- 品牌 Logo -->
-    <NuxtLink :to="localePath('/')" class="text-[22px] font-bold text-slate-50 tracking-wide flex items-center shrink-0">
+    <NuxtLink :to="localePath('/')" class="text-[22px] font-bold text-ink tracking-wide flex items-center shrink-0">
       {{ t('brand.name') }}<span class="text-brand">{{ t('brand.highlight') }}</span>
     </NuxtLink>
 
@@ -65,8 +65,8 @@ function isActive(to: string) {
       <li v-for="link in navLinks" :key="link.key">
         <NuxtLink
           :to="localePath(link.to)"
-          class="text-[14px] transition-colors duration-300 hover:text-white"
-          :class="isActive(link.to) ? 'text-brand-light font-medium' : 'text-slate-400'"
+          class="text-[14px] transition-colors duration-300 hover:text-brand"
+          :class="isActive(link.to) ? 'text-brand font-medium' : 'text-ink-body'"
         >
           {{ t(link.key) }}
         </NuxtLink>
@@ -76,13 +76,13 @@ function isActive(to: string) {
     <!-- 右侧操作区：搜索框 + 语言切换（桌面端） -->
     <div class="hidden lg:flex items-center gap-3">
       <!-- 搜索框 -->
-      <div class="flex items-center bg-slate-800 border border-slate-700 rounded-full px-4 py-1.5 focus-within:border-brand transition-colors">
-        <span class="text-slate-500 mr-2 text-sm">⌕</span>
+      <div class="flex items-center bg-white border border-slate-300 rounded-full px-4 py-1.5 focus-within:border-brand transition-colors">
+        <span class="text-slate-400 mr-2 text-sm">⌕</span>
         <input
           v-model="searchKeyword"
           type="text"
           :placeholder="t('search.placeholder')"
-          class="border-none bg-transparent outline-none w-[170px] text-sm text-slate-100 placeholder-slate-500"
+          class="border-none bg-transparent outline-none w-[170px] text-sm text-ink placeholder-slate-400"
           @keyup.enter="handleSearch"
         >
       </div>
@@ -90,7 +90,7 @@ function isActive(to: string) {
       <!-- 语言切换下拉 -->
       <div class="relative">
         <button
-          class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-600 text-slate-300 text-sm font-medium hover:bg-brand hover:border-brand hover:text-white transition-colors"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-300 text-ink-body text-sm font-medium hover:border-brand hover:text-brand transition-colors"
           :title="t('language.label')"
           @click="langOpen = !langOpen"
         >
@@ -102,13 +102,13 @@ function isActive(to: string) {
         <div v-if="langOpen" class="fixed inset-0 z-40 cursor-default" @click="langOpen = false" />
         <div
           v-if="langOpen"
-          class="absolute right-0 top-[calc(100%+8px)] z-50 min-w-[150px] py-1.5 rounded-xl border border-slate-700 bg-slate-900/98 backdrop-blur-md shadow-xl shadow-black/40"
+          class="absolute right-0 top-[calc(100%+8px)] z-50 min-w-[150px] py-1.5 rounded-xl border border-slate-200 bg-white shadow-xl shadow-black/10"
         >
           <NuxtLink
             v-for="l in availableLocales"
             :key="l.code"
             :to="switchLocalePath(l.code)"
-            class="flex items-center gap-2 px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 transition-colors whitespace-nowrap"
+            class="flex items-center gap-2 px-4 py-2 text-sm text-ink-body hover:text-brand hover:bg-brand-tint transition-colors whitespace-nowrap"
             @click="langOpen = false"
           >
             {{ l.name || l.code }}
@@ -120,14 +120,14 @@ function isActive(to: string) {
     <!-- 移动端：搜索 + 菜单按钮 -->
     <div class="flex lg:hidden items-center gap-2">
       <button
-        class="text-slate-300 hover:text-white text-xl px-2"
+        class="text-ink-body hover:text-brand text-xl px-2"
         :aria-label="t('search.placeholder')"
         @click="navigateTo(localePath('/vlogs'))"
       >
         ⌕
       </button>
       <button
-        class="text-slate-300 hover:text-white text-2xl px-2 leading-none"
+        class="text-ink-body hover:text-brand text-2xl px-2 leading-none"
         aria-label="Menu"
         @click="menuOpen = !menuOpen"
       >
@@ -138,25 +138,25 @@ function isActive(to: string) {
     <!-- 移动端下拉菜单 -->
     <div
       v-if="menuOpen"
-      class="lg:hidden absolute top-[70px] left-0 right-0 bg-slate-900/98 backdrop-blur-md border-b border-slate-800 px-6 py-4 z-50"
+      class="lg:hidden absolute top-[70px] left-0 right-0 bg-white border-b border-slate-200 px-6 py-4 z-50 shadow-lg shadow-black/5"
     >
       <ul class="list-none space-y-3">
         <li v-for="link in navLinks" :key="link.key">
           <NuxtLink
             :to="localePath(link.to)"
-            class="block text-[15px] text-slate-300 hover:text-white py-1"
+            class="block text-[15px] text-ink-body hover:text-brand py-1"
             @click="menuOpen = false"
           >
             {{ t(link.key) }}
           </NuxtLink>
         </li>
-        <li class="pt-3 border-t border-slate-800">
-          <div class="text-xs text-slate-500 mb-2">{{ t('language.label') }}</div>
+        <li class="pt-3 border-t border-slate-200">
+          <div class="text-xs text-ink-muted mb-2">{{ t('language.label') }}</div>
           <NuxtLink
             v-for="l in availableLocales"
             :key="l.code"
             :to="switchLocalePath(l.code)"
-            class="inline-block mr-3 mb-1 text-[15px] text-brand-light py-1"
+            class="inline-block mr-3 mb-1 text-[15px] text-brand py-1"
             @click="menuOpen = false"
           >
             {{ l.name || l.code }}

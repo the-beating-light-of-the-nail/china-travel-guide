@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// 城市卡片组件 - 图片、覆盖层、标签、名称、描述、Vlog 数量角标（深色主题）
+// 城市卡片组件 - 图片、覆盖层、标签、名称、描述、Vlog 数量角标（trip.com 风格浅色）
 import type { CitySummary } from '~/data/travel-data'
 import { getVlogCountByCity } from '~/data/hub-data'
 
@@ -25,10 +25,10 @@ const displayTag = computed(() => {
   <!-- 城市卡片 -->
   <NuxtLink
     :to="localePath(`/cities/${city.slug}`)"
-    class="group relative rounded-[14px] overflow-hidden h-[320px] block cursor-pointer border border-slate-700 transition-all duration-400 hover:-translate-y-1.5 hover:border-slate-500 hover:shadow-xl hover:shadow-black/40"
+    class="group relative rounded-xl overflow-hidden h-[320px] block cursor-pointer border border-slate-200 bg-white transition-all duration-400 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-black/15"
   >
     <!-- 标签 -->
-    <div class="absolute top-4 right-4 z-10 bg-slate-900/80 text-brand-light px-3 py-1 rounded-full text-xs font-medium border border-slate-700 backdrop-blur-sm">
+    <div class="absolute top-4 right-4 z-10 bg-white/95 text-brand px-3 py-1 rounded-full text-xs font-medium shadow-sm">
       {{ displayTag }}
     </div>
 
@@ -40,14 +40,14 @@ const displayTag = computed(() => {
     >
 
     <!-- 底部覆盖层 -->
-    <div class="absolute bottom-0 left-0 right-0 p-5 pt-[46px] bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent text-white">
+    <div class="absolute bottom-0 left-0 right-0 p-5 pt-[46px] bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
       <div class="flex items-end justify-between gap-3">
         <div class="min-w-0">
           <h3 class="text-[22px] mb-1 font-semibold">{{ city.name[locale] }}</h3>
           <p class="text-[13px] opacity-80 line-clamp-2">{{ city.tagline[locale] }}</p>
         </div>
         <!-- Vlog 数量角标 -->
-        <span class="shrink-0 bg-slate-800/90 border border-slate-700 text-blue-400 text-xs px-2.5 py-1 rounded-full whitespace-nowrap">
+        <span class="shrink-0 bg-white/95 text-brand text-xs px-2.5 py-1 rounded-full whitespace-nowrap font-medium">
           {{ t('home.vlogCount', { n: vlogCount }) }}
         </span>
       </div>

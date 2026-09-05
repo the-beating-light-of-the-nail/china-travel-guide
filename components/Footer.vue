@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// 页脚组件 - 品牌信息、目的地、探索栏目、关于（深色主题）
+// 页脚组件 - 品牌信息、目的地、探索栏目、关于（trip.com 式深海军蓝页脚）
 const { t } = useI18n()
 const localePath = useLocalePath()
 

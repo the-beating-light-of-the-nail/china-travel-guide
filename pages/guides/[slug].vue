@@ -74,9 +74,9 @@ useHead({
     <!-- 文章头部 -->
     <header class="relative h-[460px] flex items-end overflow-hidden">
       <img :src="g.image" :alt="g.title[locale]" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-slate-950/40" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/35" />
       <div class="relative max-w-3xl mx-auto px-4 pb-12 text-white w-full">
-        <NuxtLink :to="localePath('/guides')" class="text-brand-light hover:text-white text-sm mb-3 inline-block">
+        <NuxtLink :to="localePath('/guides')" class="text-sky-300 hover:text-white text-sm mb-3 inline-block">
           {{ t('guide.backToGuides') }}
         </NuxtLink>
         <span class="inline-block bg-brand text-white px-3 py-1 rounded text-xs mb-4">
@@ -94,16 +94,16 @@ useHead({
     </header>
 
     <!-- 文章正文 -->
-    <article class="max-w-3xl mx-auto px-4 py-12">
+    <article class="max-w-3xl mx-auto px-4 py-12 bg-white my-8 rounded-xl border border-slate-200">
       <!-- 摘要 -->
-      <p class="text-lg text-slate-300 leading-relaxed mb-8 pb-8 border-b border-slate-700 italic">
+      <p class="text-lg text-ink-body leading-relaxed mb-8 pb-8 border-b border-slate-200 italic">
         {{ g.excerpt[locale] }}
       </p>
       <!-- 正文内容（HTML 富文本，按当前语言取） -->
       <div class="prose-content max-w-none" v-html="g.content[locale]" />
 
       <!-- 底部导航 -->
-      <div class="mt-12 pt-8 border-t border-slate-700 text-center">
+      <div class="mt-12 pt-8 border-t border-slate-200 text-center">
         <NuxtLink
           :to="localePath('/guides')"
           class="inline-block btn-primary rounded-full"
@@ -116,17 +116,17 @@ useHead({
 </template>
 
 <style scoped>
-/* 文章正文富文本样式（深色主题） */
+/* 文章正文富文本样式（浅色主题） */
 .prose-content :deep(h2) {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #60a5fa;
+  color: #1f2430;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .prose-content :deep(p) {
-  color: #cbd5e1;
+  color: #4b505c;
   line-height: 1.8;
   margin-bottom: 1.25rem;
 }

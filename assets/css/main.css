@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 全局基础样式（深色主题 #0f172a） */
+/* 全局基础样式（trip.com 风格浅色主题 #F5F6F8） */
 @layer base {
   body {
-    @apply text-slate-50 antialiased;
-    background-color: #0f172a;
+    @apply text-ink-body antialiased;
+    background-color: #f5f6f8;
     line-height: 1.6;
   }
 
   ::selection {
-    @apply bg-brand/40 text-white;
+    @apply bg-brand/20 text-ink;
   }
 }
 
@@ -28,36 +28,36 @@
   }
 
   .section-title h2 {
-    @apply text-3xl md:text-4xl font-bold text-slate-50 mb-2;
+    @apply text-3xl md:text-4xl font-bold text-ink mb-2;
   }
 
   .section-title .subtitle {
-    @apply text-slate-400 text-sm tracking-wide;
+    @apply text-ink-muted text-sm tracking-wide;
   }
 
-  /* 深色卡片：slate-800 底 + subtle 边框，hover 边框提亮 */
-  .card-dark {
-    @apply bg-slate-800 border border-slate-700 rounded-xl transition-all duration-300 hover:border-slate-500;
+  /* 白卡片：白底 + 浅边框（trip.com 风格，灰白画布上的纯白卡片） */
+  .card {
+    @apply bg-white border border-slate-200 rounded-xl transition-all duration-300;
   }
 
-  /* 主按钮 */
+  /* 主按钮（trip.com 蓝色实心按钮） */
   .btn-primary {
     @apply bg-brand hover:bg-brand-dark text-white px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer;
   }
 
-  /* 次按钮 */
+  /* 次按钮（白底描边，悬浮描边转蓝） */
   .btn-secondary {
-    @apply border border-slate-600 hover:border-slate-400 text-slate-200 px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer;
+    @apply bg-white border border-slate-300 hover:border-brand hover:text-brand text-ink px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer;
   }
 
-  /* 标签 */
+  /* 标签（浅灰胶囊，激活态由使用处覆盖为 bg-brand text-white） */
   .chip {
-    @apply bg-slate-700/50 text-brand text-xs px-2 py-1 rounded-full;
+    @apply bg-slate-100 text-ink-body text-xs px-2 py-1 rounded-full transition-colors hover:bg-slate-200;
   }
 
-  /* 深色输入框 */
-  .input-dark {
-    @apply bg-slate-800 border border-slate-600 focus:border-brand rounded-lg text-slate-100 placeholder-slate-500 outline-none transition-colors;
+  /* 输入框（浅色） */
+  .input {
+    @apply bg-white border border-slate-300 focus:border-brand rounded-md text-ink placeholder-slate-400 outline-none transition-colors;
   }
 
   /* 卡片悬停效果 */
@@ -66,7 +66,7 @@
   }
 
   .card-hover:hover {
-    @apply -translate-y-1 shadow-xl shadow-black/40;
+    @apply -translate-y-1 shadow-xl shadow-black/10;
   }
 
   /* 文本截断（两行/三行） */
@@ -106,23 +106,23 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 深色滚动条 */
+/* 浅色滚动条 */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #f1f2f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #c9ceda;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #aeb5c4;
 }
 
 /* 横向滚动区（首页精选 Vlog）隐藏滚动条 */

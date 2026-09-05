@@ -74,17 +74,17 @@ useHead({
   <div class="py-10 md:py-14 px-4 sm:px-[5%]">
     <!-- 顶部：标题 + 搜索框 -->
     <div class="max-w-3xl mb-8">
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-50">
+      <h1 class="text-3xl md:text-4xl font-bold text-ink">
         {{ t('guidesHub.pageTitle') }}
       </h1>
-      <p class="text-slate-400 text-sm mt-2 mb-6">
+      <p class="text-ink-muted text-sm mt-2 mb-6">
         {{ t('guidesHub.pageSubtitle') }}
       </p>
       <input
         v-model="keyword"
         type="text"
         :placeholder="t('guidesHub.searchPlaceholder')"
-        class="input-dark w-full px-5 py-3 text-sm"
+        class="input w-full px-5 py-3 text-sm"
       >
     </div>
 
@@ -121,14 +121,14 @@ useHead({
             :guide="guide"
           />
         </div>
-        <p v-else class="text-slate-500 text-sm py-16 text-center">
+        <p v-else class="text-ink-muted text-sm py-16 text-center">
           {{ t('guidesHub.noResults') }}
         </p>
       </div>
 
       <!-- 侧边栏：最新收录 -->
       <aside class="hidden lg:block w-[260px] shrink-0">
-        <h3 class="text-base font-semibold text-slate-50 mb-4">
+        <h3 class="text-base font-semibold text-ink mb-4">
           🆕 {{ t('guidesHub.recentlyAdded') }}
         </h3>
         <ul class="list-none space-y-4">
@@ -139,10 +139,10 @@ useHead({
               rel="noopener noreferrer"
               class="group block"
             >
-              <span class="block text-[13px] text-slate-200 leading-snug line-clamp-2 group-hover:text-brand-light transition-colors">
+              <span class="block text-[13px] text-ink-body leading-snug line-clamp-2 group-hover:text-brand transition-colors">
                 {{ guide.title[locale] }}
               </span>
-              <span class="block text-xs text-slate-500 mt-1">
+              <span class="block text-xs text-ink-muted mt-1">
                 {{ guide.sourceName }} · {{ t(`guidesHub.categories.${guide.category}`) }}
               </span>
             </a>
@@ -152,12 +152,12 @@ useHead({
     </div>
 
     <!-- 站内原创攻略 -->
-    <section class="mt-[70px] pt-[70px] border-t border-slate-800">
+    <section class="mt-[70px] pt-[70px] border-t border-slate-200">
       <div class="mb-10">
-        <h2 class="text-2xl md:text-3xl font-bold text-slate-50">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink">
           {{ t('guidesHub.ourGuidesTitle') }}
         </h2>
-        <p class="text-slate-400 text-sm mt-2">
+        <p class="text-ink-muted text-sm mt-2">
           {{ t('guidesHub.ourGuidesSubtitle') }}
         </p>
       </div>

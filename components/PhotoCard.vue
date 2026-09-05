@@ -16,7 +16,7 @@ const emit = defineEmits<{
 
 <template>
   <div
-    class="masonry-item group relative rounded-xl overflow-hidden cursor-zoom-in bg-slate-800 border border-slate-700"
+    class="masonry-item group relative rounded-xl overflow-hidden cursor-zoom-in bg-slate-100 border border-slate-200"
     @click="emit('open', photo)"
   >
     <img
@@ -31,10 +31,10 @@ const emit = defineEmits<{
       <div class="text-white text-sm font-semibold">
         {{ photo.location[locale] }}
       </div>
-      <div v-if="photo.photographer" class="text-slate-300 text-xs mt-0.5">
+      <div v-if="photo.photographer" class="text-white/70 text-xs mt-0.5">
         {{ t('photos.byLabel') }} @{{ photo.photographer }}
       </div>
-      <div class="text-blue-400 text-xs mt-1">
+      <div class="text-sky-300 text-xs mt-1">
         {{ photo.tags[locale] }}
       </div>
     </div>

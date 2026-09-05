@@ -63,18 +63,18 @@ useHead({
     </section>
 
     <!-- 品牌故事：名字来源 -->
-    <section class="py-[60px] px-4 sm:px-[5%] border-t border-slate-800">
+    <section class="py-[60px] px-4 sm:px-[5%] border-t border-slate-200">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-slate-50 mb-5">{{ t('about.brandStoryTitle') }}</h2>
-        <p class="text-slate-300 text-[16px] leading-relaxed">{{ t('about.brandStory') }}</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-ink mb-5">{{ t('about.brandStoryTitle') }}</h2>
+        <p class="text-ink-body text-[16px] leading-relaxed">{{ t('about.brandStory') }}</p>
       </div>
     </section>
 
     <!-- 项目介绍 -->
     <section class="py-[70px] px-4 sm:px-[5%]">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-6">{{ t('about.missionTitle') }}</h2>
-        <div class="space-y-5 text-slate-300 text-[16px] leading-relaxed text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">{{ t('about.missionTitle') }}</h2>
+        <div class="space-y-5 text-ink-body text-[16px] leading-relaxed text-left">
           <p>{{ t('about.missionP1') }}</p>
           <p>{{ t('about.missionP2') }}</p>
           <p>{{ t('about.missionP3') }}</p>
@@ -83,7 +83,7 @@ useHead({
     </section>
 
     <!-- 特色介绍 -->
-    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-800">
+    <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200">
       <div class="section-title">
         <h2>{{ t('about.offerTitle') }}</h2>
         <div class="subtitle">{{ t('about.offerSubtitle') }}</div>
@@ -92,11 +92,11 @@ useHead({
         <div
           v-for="feature in features"
           :key="feature.titleKey"
-          class="card-dark p-6 text-center card-hover"
+          class="card p-6 text-center card-hover"
         >
           <div class="text-4xl mb-3">{{ feature.icon }}</div>
-          <h3 class="text-lg font-semibold text-brand-light mb-2">{{ t(`about.${feature.titleKey}`) }}</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">{{ t(`about.${feature.descKey}`) }}</p>
+          <h3 class="text-lg font-semibold text-brand mb-2">{{ t(`about.${feature.titleKey}`) }}</h3>
+          <p class="text-sm text-ink-muted leading-relaxed">{{ t(`about.${feature.descKey}`) }}</p>
         </div>
       </div>
     </section>
@@ -109,7 +109,7 @@ useHead({
       </p>
       <NuxtLink
         :to="localePath('/#destinations')"
-        class="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-3 rounded-full transition-colors text-[15px]"
+        class="inline-block bg-white text-brand hover:bg-slate-100 px-8 py-3 rounded-full transition-colors text-[15px] font-medium"
       >
         {{ t('about.ctaButton') }}
       </NuxtLink>
