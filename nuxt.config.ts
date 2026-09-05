@@ -24,6 +24,7 @@ const prerenderPages = [
   '/cities/chengdu',
   '/cities/xian',
   '/cities/beijing',
+  '/cities/guizhou',
   '/guides/xian-3-day-classic-route',
   '/guides/beijing-off-the-beaten-path',
   '/guides/chengdu-food-guide',

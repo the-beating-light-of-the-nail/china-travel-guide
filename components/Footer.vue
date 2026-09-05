@@ -8,6 +8,7 @@ const destinations = [
   { slug: 'xian' },
   { slug: 'beijing' },
   { slug: 'chengdu' },
+  { slug: 'guizhou' },
 ]
 
 // 城市名称映射（用于页脚目的地显示，按当前语言取）

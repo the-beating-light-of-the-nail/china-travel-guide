@@ -190,6 +190,34 @@ const rawCities = [
     },
     duration: { en: '5 days recommended', zh: '建议5天' },
   },
+  {
+    slug: 'guizhou',
+    name: { en: 'Guizhou', zh: '贵州' },
+    region: { en: 'Southwest China', zh: '中国西南' },
+    tagline: { en: 'Waterfalls, karst peaks and the world\'s highest bridges', zh: '山地公园省 · 瀑布与桥梁博物馆' },
+    tags: { en: 'Huangguoshu Waterfall,Fanjingshan,Miao & Dong Villages,World\'s Highest Bridges,Cool Summers', zh: '黄果树瀑布,梵净山,苗侗村寨,世界第一高桥,清凉避暑' },
+    heroImage: '/images/cities/guizhou/fanjingshan_2.jpg',
+    description: {
+      en: 'A mountain province in China\'s southwest that foreign travelers are only now discovering: Asia\'s biggest waterfall (Huangguoshu), a UNESCO "Castle in the Sky" peak (Fanjingshan), the largest Miao village on earth, and — since September 2025 — the world\'s highest bridge. Half of the world\'s 100 tallest bridges span its karst gorges, summer stays a cool 23°C, and prices remain among the friendliest in China.',
+      zh: '中国西南正在被世界发现的"山地公园省"：亚洲最大瀑布黄果树、UNESCO 世界自然遗产"天空之城"梵净山、全球最大的苗寨，以及 2025 年 9 月通车的世界第一高桥。全球前 100 座高桥近半数横跨其喀斯特峡谷，夏季均温 23℃ 的凉爽与全国前列的旅行性价比，让贵州成为入境游的新晋顶流。',
+    },
+    intro: {
+      en: 'Guizhou is the China travel brochures forgot — until recently. Ninety-two percent of the province is mountains and the old saying went "no three flat li of land, no three days without rain," which kept mass tourism away and left the karst scenery, the terraced valleys and the Miao, Dong and Buyi villages beautifully intact. Guiyang, the laid-back capital, is your gateway: from here high-speed rail radiates to Anshun for the thundering Huangguoshu Waterfall, to Libo for the emerald pools of Xiaoqikong, and to Kaili for the thousand stilted houses of Xijiang Miao Village. Since September 2025 the Huajiang Canyon Bridge — 625 meters above the Beipan River, the highest bridge on earth — has become a destination in its own right. Come for the scenery, stay for the sour soup, the bridge views and prices that feel a decade behind Shanghai.',
+      zh: '贵州曾是旅行册子遗忘的角落——全省 92.5% 是山地，"地无三里平、天无三日晴"的老话挡住了大众旅游，却完好保存了喀斯特山水、梯田河谷与苗、侗、布依族的村寨。省会贵阳是最佳门户：高铁向四周辐射，西去安顺看黄果树瀑布，南到荔波小七孔的翡翠水潭，东南进西江千户苗寨的千栋吊脚楼。2025 年 9 月，距北盘江面 625 米的世界第一高桥——花江峡谷大桥通车，本身即成目的地。为风景而来，为酸汤、大桥与"落后上海十年"的物价而留下。',
+    },
+    history: {
+      en: 'Made a province in 1413 under the Ming dynasty; for centuries China\'s most isolated heartland, which allowed 17 minority cultures to survive intact. The same mountains that once kept Guizhou poor and unknown now draw travelers chasing what the rest of China has paved over.',
+      zh: '明永乐十一年（1413 年）建省。因群山阻隔长期是中国最孤立的腹地，却也让 17 个世居少数民族的文化完整存续至今。曾经让贵州贫困闭塞的大山，如今正是旅行者追逐的"未被铺平的中国"。',
+    },
+    bestSeason: {
+      en: 'May–October; July–August is cool 23°C high season (book Fanjingshan days ahead), September–October brings fewer crowds and golden rice terraces at Wanfenglin',
+      zh: '5-10月最佳；7-8月均温约23℃是避暑旺季（梵净山需提前数日预约），9-10月人少且万峰林稻田金黄',
+    },
+    duration: {
+      en: '5–7 days recommended (Guiyang + Anshun + Qiandongnan; add Tongren for Fanjingshan)',
+      zh: '建议5-7天（贵阳+安顺+黔东南；梵净山再加铜仁1-2天）',
+    },
+  },
 ] as const
 
 // 景点数据 - 每座城市 6 个
@@ -503,6 +531,104 @@ const rawAttractions: Record<string, Omit<Attraction, 'id' | 'sortOrder'>[]> = {
       },
     },
   ],
+  guizhou: [
+    {
+      name: { en: 'Huangguoshu Waterfall', zh: '黄果树瀑布' },
+      image: '/images/cities/guizhou/huangguoshu_1.jpg',
+      location: { en: 'Zhenning, Anshun (about 45 min from Anshun West station)', zh: '安顺市镇宁布依族苗族自治县（距安顺西站约45分钟车程）' },
+      duration: { en: '1 full day (three scenic areas)', zh: '建议1天（含三大景区）' },
+      ticket: { en: '¥160 peak / ¥150 off-season, includes Doupotang & Tianxingqiao', zh: '旺季¥160 / 淡季¥150，含陡坡塘与天星桥' },
+      highlight: { en: 'Asia\'s largest waterfall', zh: '亚洲第一大瀑布' },
+      description: {
+        en: 'At 77.8 meters high and 101 meters wide, Huangguoshu is the biggest waterfall in Asia and the reason most first-time visitors come to Guizhou. The circuit links three areas — Doupotang\'s broad curtain (of Journey to the West fame), the main falls where you can walk 134 meters behind the water in the Water Curtain Cave, and the stone forests and pools of Tianxingqiao. Flow peaks June–August; in summer there\'s also a night light show. Come at opening time, do the main falls first, and expect to get misted.',
+        zh: '高77.8米、宽101米的黄果树是亚洲第一大瀑布，也是多数初次来贵州的理由。景区由三部分组成：《西游记》片尾取景的陡坡塘、可在 134 米长水帘洞中从瀑布背后穿行的主瀑，以及石林与水潭交错的天星桥。6-8 月水量最盛，夏季另有夜间灯光秀。建议开门即入、先看主瀑，做好被水雾打湿的准备。',
+      },
+    },
+    {
+      name: { en: 'Fanjingshan (Mount Fanjing)', zh: '梵净山' },
+      image: '/images/cities/guizhou/fanjingshan_1.jpg',
+      location: { en: 'Tongren, East Gate (Jiangkou) is the main entrance', zh: '铜仁市江口县（东门为主要入口）' },
+      duration: { en: '1 full day', zh: '建议1天' },
+      ticket: { en: '¥100 entry + ¥20 shuttle; cable car extra — book days ahead, daily cap sells out', zh: '门票¥100 + 观光车¥20；索道另计——需提前数日预约，每日限售' },
+      highlight: { en: 'UNESCO "Castle in the Sky", 2,572 m', zh: 'UNESCO世界自然遗产 · 2572米"天空之城"' },
+      description: {
+        en: 'The main peak of the Wuling Mountains and a UNESCO World Heritage site, Fanjingshan is the single most dramatic summit in China: the Red Clouds Golden Summit is a 100-meter spire split in two, the two mini-temples on top joined by a stone bridge above the clouds. The Mushroom Stone balancing rock is the other icon. Most visitors take the cable car and climb stairs for the final push; hardcore hikers can tackle the ~8,888-step pilgrim route. Go early for the sea of clouds — and book the daily-capped tickets well in advance.',
+        zh: '武陵山脉主峰、世界自然遗产，中国最险峻壮观的山顶：红云金顶是一座百米孤峰，山体一分为二，峰顶两座小庙由石桥凌空相连，云海之上恍若"天空之城"；平衡矗立的蘑菇石是另一标志。多数人乘索道上山后徒步登顶，硬核徒步者可挑战约 8888 级台阶的朝圣古道。想看云海务必赶早，且务必提前预约每日限售门票。',
+      },
+    },
+    {
+      name: { en: 'Xijiang Qianhu Miao Village', zh: '西江千户苗寨' },
+      image: '/images/cities/guizhou/xijiang.jpg',
+      location: { en: 'Leishan County, Qiandongnan (about 2.5 hrs from Guiyang)', zh: '黔东南州雷山县（距贵阳约2.5小时车程）' },
+      duration: { en: 'Half a day + one night for the lights', zh: '建议半天+住一晚看夜景' },
+      ticket: { en: '¥90 + sightseeing bus ¥20', zh: '门票¥90 + 观光车¥20' },
+      highlight: { en: 'The largest Miao village on earth', zh: '全球最大苗寨 · 千栋吊脚楼' },
+      description: {
+        en: 'More than 1,200 stilted wooden houses spill down both sides of a river valley — the biggest Miao settlement in the world and the best place to experience Miao culture: long-table feasts, silver headdresses, rice wine toasts and a hillside viewpoint where the village lights up like a constellation after dark. It gets touristic by day; stay overnight and the village returns to its residents (and the smoke of their kitchen fires) in the evening.',
+        zh: '1200 余栋吊脚楼沿河谷两侧铺满山坡——全球最大的苗族聚居村寨，也是体验苗文化的最佳现场：长桌宴、银饰盛装、拦门米酒，入夜后山坡观景台上看万家灯火如星河铺开。白天游客较多，住上一晚，傍晚后的村寨才回到炊烟与本地人的生活里。',
+      },
+    },
+    {
+      name: { en: 'Libo Xiaoqikong', zh: '荔波小七孔' },
+      image: '/images/cities/guizhou/xiaoqikong.jpg',
+      location: { en: 'Libo County, Qiannan (HSR from Guiyang about 1 hr to Libo)', zh: '黔南州荔波县（贵阳高铁约1小时达荔波）' },
+      duration: { en: '1 full day', zh: '建议1天' },
+      ticket: { en: '¥130 + shuttle bus ¥40', zh: '门票¥130 + 景区观光车¥40' },
+      highlight: { en: 'Emerald pools and a 68-step waterfall chain', zh: '翡翠色水潭 · 68级跌水瀑布' },
+      description: {
+        en: 'Named after a little seven-arch stone bridge from the Daoguang era, Xiaoqikong is a 7 km valley of impossibly green water: the 68-step waterfall chain, the Water Forest where you wade between trees, and the Mandarin Duck Lakes where you can kayak in glass-clear water. Part of the South China Karst UNESCO site, Libo is the swim-stop of any Guizhou trip — bring a change of clothes in summer.',
+        zh: '小七孔因道光年间的七孔石桥得名，是一条 7 公里长的"绿到不真实"的峡谷水景：68 级跌水瀑布、可在树间涉水的上森林、能划皮划艇的翡翠色鸳鸯湖。作为"中国南方喀斯特"世界自然遗产的一部分，荔波是贵州行程里的亲水站——夏天记得带替换衣物。',
+      },
+    },
+    {
+      name: { en: 'Huajiang Canyon Bridge', zh: '花江峡谷大桥' },
+      image: '/images/cities/guizhou/huajiang_bridge.jpg',
+      location: { en: 'Anshun–Qiannan border, on the G65 highway (about 1.5 hrs from Guiyang)', zh: '安顺与黔南交界处，G65高速上（距贵阳约1.5小时）' },
+      duration: { en: '1 hour viewing stop', zh: '建议1小时观景' },
+      ticket: { en: 'Free to cross; canyon viewing area ticketed', zh: '过桥免费；峡谷观景区域另收费' },
+      highlight: { en: 'The world\'s highest bridge — 625 m above the river', zh: '世界第一高桥 · 距江面625米' },
+      description: {
+        en: 'Opened on September 28, 2025, the Huajiang Canyon Bridge took the world\'s-highest title at 625 meters above the Beipan River, with a 1,420-meter main span — cutting a two-hour mountain detour to a two-minute crossing. Guizhou is sometimes called the world\'s bridge museum: nearly half of the planet\'s 100 highest bridges are here, built across canyon after canyon. Drop a stone off the viewing area and count eleven seconds before it lands.',
+        zh: '2025 年 9 月 28 日通车，花江峡谷大桥以距北盘江面 625 米、主跨 1420 米拿下"世界第一高桥"，把两小时的山路绕行变成两分钟跨越。贵州被称为"世界桥梁博物馆"——全球最高的 100 座桥里近一半在这里。站在观景平台丢一块石头，数到 11 秒才会落地。',
+      },
+    },
+    {
+      name: { en: 'Qingyan Ancient Town', zh: '青岩古镇' },
+      image: '/images/cities/guizhou/qingyan.jpg',
+      location: { en: 'Huaxi District, Guiyang (about 29 km south of downtown)', zh: '贵阳市花溪区（市区以南约29公里）' },
+      duration: { en: 'Half a day', zh: '建议半天' },
+      ticket: { en: 'Free to wander; ¥60 combo ticket for temples & city wall', zh: '进镇免费；寺庙城墙联票¥60' },
+      highlight: { en: 'Ming-era stone garrison town', zh: '明代军屯石城 · 600年古镇' },
+      description: {
+        en: 'Built in 1378 as a Ming military garrison, Qingyan is a compact town of stone walls, stone lanes and stone houses an easy half-day trip from Guiyang. Climb the city wall for rooftop views, then snack your way through the lanes: rose candy (guiyang\'s favorite souvenir), zhuanti pig trotters, chicken-chili and tofu fruit. Quietest in the morning before tour buses arrive.',
+        zh: '明洪武十一年（1378 年）建屯，青岩是一座石墙、石巷、石屋的明代军屯古镇，从贵阳出发半天即可往返。登城墙看层层屋瓦，然后沿街一路吃过去：玫瑰糖、状元蹄、鸡辣角、恋爱豆腐果。趁旅行团到达前的上午最清净。',
+      },
+    },
+    {
+      name: { en: 'Jiaxiu Tower', zh: '甲秀楼' },
+      image: '/images/cities/guizhou/jiaxiu.jpg',
+      location: { en: 'Nanming River, downtown Guiyang', zh: '贵阳市中心 · 南明河上' },
+      duration: { en: '1 hour, best at dusk', zh: '建议1小时，傍晚最佳' },
+      ticket: { en: 'Free', zh: '免费' },
+      highlight: { en: 'Guiyang\'s 400-year-old symbol', zh: '贵阳城市地标 · 400年名楼' },
+      description: {
+        en: 'Built in 1598 on a giant rock in the middle of the Nanming River, the three-tiered Jiaxiu Tower ("First Scholar\'s Tower") is the symbol of Guiyang — and a free one. Come at dusk when the pavilion lights up against the skyline of glass towers behind it, then walk along the riverside promenade into the city\'s night-food streets. It anchors an easy evening: tower, riverside walk, then late-night sour soup and barbecue nearby.',
+        zh: '始建于明万历二十六年（1598 年），三层飞楼建于南明河鳌矶石上，"甲秀"取科甲挺秀之意，是贵阳的城市象征，且免费开放。傍晚亮灯时来，古楼背后即是玻璃幕墙天际线，拍完沿河步行道走进夜宵街区：甲秀楼—河边散步—深夜酸汤与烧烤，一晚刚好。',
+      },
+    },
+    {
+      name: { en: 'Wanfenglin (Forest of Ten Thousand Peaks)', zh: '万峰林' },
+      image: '/images/cities/guizhou/wanfenglin.jpg',
+      location: { en: 'Xingyi, Qianxinan (about 1 hr HSR from Guiyang)', zh: '黔西南州兴义市（贵阳高铁约1小时）' },
+      duration: { en: 'Half a day', zh: '建议半天' },
+      ticket: { en: 'About ¥80 with sightseeing bus', zh: '约¥80（含观光车）' },
+      highlight: { en: 'A "forest" of thousands of karst cones', zh: '万座锥状喀斯特峰林' },
+      description: {
+        en: 'Ming-era traveler Xu Xiake wrote: "Of all the peaks under heaven, only here do they form a forest." Wanfenglin is exactly that — thousands of green karst cones marching to the horizon, ringed by villages and rice fields you can cycle between. September–October turns the valley floor gold. It\'s the most relaxed sight in Guizhou: rent a bike or take the sightseeing bus, eat egg-fried rice cooked with local rice in a village, and watch the cones drift by.',
+        zh: '明代徐霞客写下"天下山峰何其多，唯有此处峰成林"。万峰林正是如此——数千座绿色锥状峰林绵延到天际，村庄与稻田散落其间，可骑行穿梭。9-10 月谷底稻田一片金黄，是贵州最松弛的景区：租一辆自行车或坐观光车，在村里吃一碗蛋炒饭，看峰林缓缓后退。',
+      },
+    },
+  ],
 }
 
 // 美食数据 - 每座城市 4-6 种
@@ -759,6 +885,35 @@ const rawFoods: Record<string, Omit<Food, 'id' | 'sortOrder'>[]> = {
       description: {
         en: 'Skewers of hawthorn berries dipped in molten rock sugar that cools into a glossy, crackling shell — the perfect sweet-tart crunch. The classic Beijing street snack, sold from roadside stalls year-round but best in winter when the sugar sets crisp and the haws are at their tart peak. The traditional hawthorn version remains the classic.',
         zh: '冰糖葫芦被列为京味小吃的代表。山楂串裹上晶莹脆硬的糖衣，酸甜适口、嘎嘣脆，是男女老少都爱的传统北京街头小吃。一年四季都能在街边见到售卖的小摊，但冬季糖衣最脆、山楂最酸，风味最佳。最经典的永远是传统的山楂口味。',
+      },
+    },
+  ],
+  guizhou: [
+    {
+      name: { en: 'Sour Soup Fish (Suantangyu)', zh: '酸汤鱼' },
+      image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800',
+      highlight: { en: 'The soul of Guizhou cooking — sour, not spicy', zh: '贵州味道的灵魂 · 酸鲜不辣' },
+      description: {
+        en: 'Guizhou\'s signature dish: whole fish poached in a bubbling red-orange broth fermented from local tomatoes and rice. The sourness is natural, bright and addictive — locals say "three days without sour soup and even the best meal feels bland." Dip the fish in chili-soy, drink the broth straight, and finish by dumping rice noodles into the pot. Miao-style (white sour, from rice) and Kaili-style (red sour, from tomato) are the two schools to try.',
+        zh: '贵州的招牌菜：整鱼入锅，煮在由本地番茄与大米自然发酵的红酸汤里。酸味天然、明亮、越喝越上瘾——本地人说"三天不吃酸，走路打蹿蹿"。鱼肉蘸辣椒水，先喝汤，最后下米粉收尾。苗家白酸（米汤发酵）与凯里红酸（番茄发酵）是两大流派，都值得试。',
+      },
+    },
+    {
+      name: { en: 'Huaxi Beef Rice Noodles', zh: '花溪牛肉粉' },
+      image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800',
+      highlight: { en: 'Guiyang\'s proudest breakfast', zh: '贵阳人最骄傲的一碗早餐' },
+      description: {
+        en: 'Rice noodles in a clear beef broth simmered for hours, topped with braised beef slices, pickled mustard greens, coriander and a spoon of chili — this is the dish Guiyang people argue about which stall does best (the Huaxi district originals win most debates). Order "jia fen" (add noodles) if you\'re hungry; locals add a fried egg and an extra scoop of beef tallow. Breakfast-only ritual: queues peak before 9 AM.',
+        zh: '大骨牛肉汤底熬数小时，米粉烫熟后铺上酱黄牛肉片、酸菜、香菜，再加一勺糊辣椒——这是贵阳人为"哪家最正宗"能吵起来的菜（花溪本地的老店赢面最大）。饿了就说"加粉"，本地人标配再加一个煎蛋、一勺牛油。这是只在早餐时段的仪式感：9 点前排队最长。',
+      },
+    },
+    {
+      name: { en: 'Bayberry Juice & Bingjiang', zh: '杨梅汤与冰浆' },
+      image: 'https://images.unsplash.com/photo-1497534446932-c925b458314e?w=800',
+      highlight: { en: 'The iced antidote to a bridge-view summer', zh: '夏天看桥爬山的解暑标配' },
+      description: {
+        en: 'Two cold drinks you\'ll find everywhere in Guizhou. Bayberry (yangmei) juice is dark red, sweet-sour and served over ice — Xingyi and Qingyan versions are famous. Bingjiang ("ice paste") is Guiyang\'s slushie: fruit, ice and glutinous rice blended into a drinkable snack, best known in peach and watermelon flavors. After a Fanjingshan climb or a Huajiang bridge stop in 30-degree heat, these two are worth planning a route around.',
+        zh: '在贵州随处可见的两款冷饮：杨梅汤红得发紫、酸甜透心，兴义和青岩的最有名；冰浆是贵阳特供"可以喝的水果"——水果、冰与糯米一起打成浆，桃子和西瓜味最经典。爬完梵净山、看完花江大桥的 30℃ 盛夏，这两样值得专门绕路去喝。',
       },
     },
   ],
@@ -1225,6 +1380,150 @@ const rawItineraries: Record<string, RawItinerary[]> = {
       ],
     },
   ],
+  guizhou: [
+    {
+      dayNumber: 1,
+      title: { en: 'Guiyang: Gateway City & First Sour Soup', zh: '贵阳：门户城市与第一口酸汤' },
+      items: [
+        {
+          timeSlot: { en: 'Afternoon', zh: '下午' },
+          content: {
+            en: 'Arrive at Guiyang Longdongbao airport or Guiyang North HSR station; check in near Qingyun Shi (青云市集) for the night-market street-food block',
+            zh: '抵达贵阳龙洞堡机场或贵阳北站，住在青云市集附近，晚上夜市步行可达',
+          },
+        },
+        {
+          timeSlot: { en: 'Dusk', zh: '傍晚' },
+          content: {
+            en: 'Jiaxiu Tower at lighting-up time — the 400-year-old pavilion against the glass-tower skyline, then walk the Nanming riverfront',
+            zh: '亮灯时分看甲秀楼——400年古楼对望玻璃幕墙天际线，沿南明河散步',
+          },
+        },
+        {
+          timeSlot: { en: 'Dinner', zh: '晚上' },
+          content: {
+            en: 'First sour soup fish of the trip, plus a bowl of huaxi beef noodles if you\'re still hungry — Guiyang food streets run past midnight',
+            zh: '旅程第一顿酸汤鱼，没吃饱再来一碗花溪牛肉粉——贵阳的美食街开到凌晨',
+          },
+        },
+      ],
+    },
+    {
+      dayNumber: 2,
+      title: { en: 'Qingyan Ancient Town & the World\'s Highest Bridge', zh: '青岩古镇与世界第一高桥' },
+      items: [
+        {
+          timeSlot: { en: 'Morning', zh: '上午' },
+          content: {
+            en: 'Bus or taxi to Qingyan Ancient Town (45 min) — walk the Ming stone walls before the tour buses arrive, snack on rose candy and zhuanti trotters',
+            zh: '乘车前往青岩古镇（约45分钟），趁旅行团未到登明代石城墙，路上玫瑰糖、状元蹄边走边吃',
+          },
+        },
+        {
+          timeSlot: { en: 'Afternoon', zh: '下午' },
+          content: {
+            en: 'Drive 1.5 hrs to the Huajiang Canyon Bridge viewpoint — stand under the 625-meter world\'s highest bridge, watch trucks cross the abyss in two minutes',
+            zh: '驱车1.5小时到花江峡谷大桥观景处——在625米高的世界第一高桥下仰望，看货车两分钟跨越深渊',
+          },
+        },
+        {
+          timeSlot: { en: 'Evening', zh: '傍晚' },
+          content: {
+            en: 'Return to Guiyang or overnight in Anshun (closer to tomorrow\'s waterfall); Anshun\'s laneway barbecue is a local secret',
+            zh: '返回贵阳或宿安顺（离明天的瀑布更近）；安顺巷子里的烙锅烧烤是本地人的秘密',
+          },
+        },
+      ],
+    },
+    {
+      dayNumber: 3,
+      title: { en: 'Huangguoshu Waterfall, Full Circuit', zh: '黄果树瀑布全天大环线' },
+      items: [
+        {
+          timeSlot: { en: 'Morning', zh: '上午' },
+          content: {
+            en: 'Enter at opening time, do the main falls first and walk the 134-meter Water Curtain Cave behind the water; flow is loudest June–August',
+            zh: '开园即入，先看主瀑布，再从134米长的水帘洞从瀑布背后穿行；6-8月水量最震撼',
+          },
+        },
+        {
+          timeSlot: { en: 'Midday', zh: '中午' },
+          content: {
+            en: 'Shuttle to Doupotang, the wide curtain from the Journey to the West credits, then Tianxingqiao\'s stone-forest boardwalks',
+            zh: '摆渡车去陡坡塘——《西游记》片尾的宽幅水帘，再走天星桥的石林栈道',
+          },
+        },
+        {
+          timeSlot: { en: 'Evening', zh: '傍晚' },
+          content: {
+            en: 'In summer, stay for the night light show over the falls; otherwise take the HSR back to Guiyang (about 40 min from Anshun West)',
+            zh: '夏季可留下看瀑布灯光秀；否则从安顺西站高铁返回贵阳（约40分钟）',
+          },
+        },
+      ],
+    },
+    {
+      dayNumber: 4,
+      title: { en: 'Libo Xiaoqikong: The Emerald Valley', zh: '荔波小七孔：翡翠峡谷' },
+      items: [
+        {
+          timeSlot: { en: 'Morning', zh: '上午' },
+          content: {
+            en: 'HSR from Guiyang to Libo (about 1 hr), then shuttle to Xiaoqikong\'s West Gate; work downstream along the 68-step waterfall chain',
+            zh: '贵阳高铁至荔波（约1小时），转车到小七孔西门，沿68级跌水瀑布顺流而下',
+          },
+        },
+        {
+          timeSlot: { en: 'Afternoon', zh: '下午' },
+          content: {
+            en: 'Wade the Water Forest, kayak the glass-green Mandarin Duck Lakes, and end at the little seven-arch bridge that gives the valley its name',
+            zh: '在水上森林涉水前行，鸳鸯湖划皮划艇，最后到达给峡谷命名的七孔古石桥',
+          },
+        },
+        {
+          timeSlot: { en: 'Evening', zh: '傍晚' },
+          content: {
+            en: 'Overnight in Libo county town — riverside night market with yangmei juice and grilled fish',
+            zh: '宿荔波县城——河滨夜市喝杨梅汤、吃烤鱼',
+          },
+        },
+      ],
+    },
+    {
+      dayNumber: 5,
+      title: { en: 'Xijiang Miao Village & the Night of a Thousand Lights', zh: '西江千户苗寨：万家灯火之夜' },
+      items: [
+        {
+          timeSlot: { en: 'Morning', zh: '上午' },
+          content: {
+            en: 'Bus or car from Libo to Xijiang Qianhu Miao Village (about 3 hrs; tours run Guiyang→Xijiang in 2.5)',
+            zh: '从荔波乘车前往西江千户苗寨（约3小时；贵阳出发约2.5小时）',
+          },
+        },
+        {
+          timeSlot: { en: 'Afternoon', zh: '下午' },
+          content: {
+            en: 'Cross the wind-rain bridge, watch the free Miao song-and-dance show, try a long-table feast with rice-wine toasts',
+            zh: '过风雨桥，看苗族歌舞表演，体验敬米酒的长桌宴',
+          },
+        },
+        {
+          timeSlot: { en: 'Night', zh: '夜晚' },
+          content: {
+            en: 'Ride the sightseeing bus to the hillside viewpoint: 1,200 stilted houses lighting up like a constellation. Stay overnight — the village belongs to locals after the day trippers leave',
+            zh: '乘观光车上山坡观景台：1200栋吊脚楼的灯火如星河亮起。务必住一晚——一日游客离开后，村寨才是本地人的',
+          },
+        },
+        {
+          timeSlot: { en: 'Extension', zh: '延伸' },
+          content: {
+            en: 'With 2 more days, go north to Tongren for Fanjingshan (cable car + Golden Summit) and the 8,888-step pilgrim route',
+            zh: '若还有2天，北上铜仁登梵净山（索道+红云金顶），挑战8888级朝圣台阶',
+          },
+        },
+      ],
+    },
+  ],
 }
 
 // 贴士数据 - 每座城市 3 类
@@ -1331,6 +1630,40 @@ const rawTips: Record<string, Omit<Tip, 'id' | 'sortOrder'>[]> = {
       },
     },
   ],
+  guizhou: [
+    {
+      icon: 'transport',
+      title: { en: 'Getting Around', zh: '交通指南' },
+      items: {
+        en: 'Guiyang Longdongbao airport (KWE) links to most Chinese hub cities; the HSR station is Guiyang North or Guiyang East|High-speed rail is the backbone: Anshun West 40 min, Libo 1 hr, Xingyi (Wanfenglin) 1 hr, Kaili 40 min — buy on Trip.com or 12306 with a passport|Huangguoshu has no train station access from Anshun West: tourist buses and Didi are the way; a day tour van costs ¥100–150 per seat|Distances are deceiving in a mountain province — always plan by rail time, not map distance; renting a car gives the most bridge-and-canyon freedom|Taxis in Guiyang start around ¥10; Didi works everywhere with international cards',
+        zh: '贵阳龙洞堡机场（KWE）通国内主要枢纽城市；高铁站为贵阳北站/贵阳东站|高铁是交通骨干：安顺西40分钟、荔波1小时、兴义（万峰林）1小时、凯里40分钟——护照可在Trip.com或12306购票|安顺西站到黄果树无铁路接驳：乘景区直通车或网约车；一日游车位约100-150元/座|山区地图距离与实际耗时差距大，务必按铁路时间规划；自驾看桥看峡谷最自由|贵阳市内出租车起步约10元，滴滴国际卡可用',
+      },
+    },
+    {
+      icon: 'hotel',
+      title: { en: 'Where to Stay', zh: '住宿建议' },
+      items: {
+        en: 'Guiyang: near Qingyun Shi or Jiaxiu Tower for food streets and riverfront walks; Future Square area for business hotels|Anshun city: one night makes Huangguoshu day 1 stress-free; book near the bus station|Libo county town: riverside guesthouses, walkable night market|Xijiang Miao Village: stay INSIDE the village for the after-dark hours — hillside guesthouses with balconies over the valley are the pick|Fanjingshan: stay at Jiangkou East Gate village for the 7 AM entry queue',
+        zh: '贵阳：住青云市集或甲秀楼附近，夜市与河滨步行可达；商务酒店可选未来方舟一带|安顺市区：住一晚让黄果树行程从容；汽车站周边最方便|荔波县城：临河民宿，夜市步行可达|西江苗寨：务必住寨内才看得到夜晚——带山谷阳台的山坡民宿最佳|梵净山：宿江口东门村口，方便一早排队进山',
+      },
+    },
+    {
+      icon: 'tips',
+      title: { en: 'Good to Know', zh: '温馨提示' },
+      items: {
+        en: 'Fanjingshan caps daily visitors — book 3–7 days ahead on the official WeChat mini-program or via your hotel; East Gate (Jiangkou) is the scenic entrance|Rain is a feature, not a bug: bring a light rain jacket; waterfalls are fullest June–August|Guizhou food is sour-first, spicy-second — say "wei la" (mildly spicy) if you\'re cautious; vegetarian options are limited in villages|Alipay/WeChat Pay work almost everywhere, but village homestays sometimes prefer cash or scan-to-pay to their personal code|Foreigner-friendly infrastructure is thinner than Beijing/Chengdu: download offline maps, and let hotel staff write destination names in Chinese for drivers',
+        zh: '梵净山每日限流——提前3-7天在官方小程序或请民宿代订；江口东门是景观入口|下雨是常态而非意外：带轻便雨衣；6-8月瀑布水量最足|贵州菜以酸为先、辣为次——怕辣说"微辣"；村寨里素食选择有限|支付宝/微信支付几乎通用，但村寨民宿有时更愿意收现金或扫个人码|外国人友好设施比北京/成都少：下载离线地图，让酒店把目的地写成中文给司机',
+      },
+    },
+    {
+      icon: 'budget',
+      title: { en: 'Budget & Costs', zh: '消费预算' },
+      items: {
+        en: 'Guizhou is one of China\'s best-value provinces: ¥1,500–2,500 per person covers 5 comfortable days (mid-range hotels + HSR + tickets)|Big tickets: Huangguoshu ¥160, Fanjingshan ¥100 + shuttle + cable car (about ¥260 all-in), Xiaoqikong ¥130 + ¥40 shuttle, Xijiang ¥90|Meals are cheap: beef noodles ¥12–15, sour soup fish ¥80–120 per pot for two, night-market dinners ¥30–50|Village homestays in Xijiang or Libo run ¥120–300 for a double with valley views|Guided day tours (Huangguoshu or bridges) cost ¥200–400 per person including transport — worth it where buses are sparse',
+        zh: '贵州是全国性价比最高的省份之一：人均1500-2500元即可舒适玩5天（中档酒店+高铁+门票）|主要门票：黄果树¥160、梵净山¥100+观光车+索道（全套约¥260）、小七孔¥130+观光车¥40、西江¥90|餐饮便宜：牛肉粉12-15元、两人份酸汤鱼80-120元、夜市晚餐30-50元|西江或荔波的村寨民宿120-300元/晚即可住到带山景的双人间|黄果树或桥梁一日游（含车）约200-400元/人——交通不便的线路值得报',
+      },
+    },
+  ],
 }
 
 // 亮点图廊数据（每城若干张实景图，源自攻略 PDF）
@@ -1354,6 +1687,11 @@ const rawGalleries: Record<string, string[]> = {
     '/images/cities/beijing/beijing_p07_23.jpeg',
     '/images/cities/beijing/beijing_p08_24.jpeg',
     '/images/cities/beijing/beijing_p08_25.jpeg',
+  ],
+  guizhou: [
+    '/images/cities/guizhou/huangguoshu_2.jpg',
+    '/images/cities/guizhou/baling_bridge.jpg',
+    '/images/cities/guizhou/guiyang.jpg',
   ],
 }
 
