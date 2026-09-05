@@ -30,6 +30,10 @@ const prerenderPages = [
   '/guides/chengdu-food-guide',
   '/guides/first-trip-to-china-guide',
   '/guides/best-time-to-visit-china',
+  '/guides/what-to-buy-in-china',
+  '/guides/china-tax-refund-guide',
+  '/guides/taobao-jd-for-tourists',
+  '/shopping',
 ]
 
 export default defineNuxtConfig({

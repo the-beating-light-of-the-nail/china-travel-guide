@@ -12,7 +12,8 @@
     "guides": "Guides",
     "photos": "Photos",
     "services": "Services",
-    "about": "About"
+    "about": "About",
+    "shopping": "Shopping"
   },
   "search": {
     "placeholder": "Search city, topic or vlogger...",
@@ -42,12 +43,30 @@
     "seoOgDescription": "Handpicked vlogs, guides & local services. Plan your real China trip."
   },
   "categories": {
-    "history": { "title": "History & Culture", "desc": "Ancient capitals and millennia-old heritage" },
-    "nature": { "title": "Nature & Outdoors", "desc": "Mountains, rivers, and hidden gems off the grid" },
-    "food": { "title": "Food & Drink", "desc": "Street food stalls and time-honored favorites" },
-    "family": { "title": "Family Travel", "desc": "Fun, easy, and educational for all ages" },
-    "romantic": { "title": "Romantic Getaways", "desc": "Sweet spots and quiet retreats for two" },
-    "budget": { "title": "Budget Backpacking", "desc": "Save money, meet people, see more" }
+    "history": {
+      "title": "History & Culture",
+      "desc": "Ancient capitals and millennia-old heritage"
+    },
+    "nature": {
+      "title": "Nature & Outdoors",
+      "desc": "Mountains, rivers, and hidden gems off the grid"
+    },
+    "food": {
+      "title": "Food & Drink",
+      "desc": "Street food stalls and time-honored favorites"
+    },
+    "family": {
+      "title": "Family Travel",
+      "desc": "Fun, easy, and educational for all ages"
+    },
+    "romantic": {
+      "title": "Romantic Getaways",
+      "desc": "Sweet spots and quiet retreats for two"
+    },
+    "budget": {
+      "title": "Budget Backpacking",
+      "desc": "Save money, meet people, see more"
+    }
   },
   "city": {
     "overviewTitle": "City Overview",
@@ -220,7 +239,8 @@
       "vlogs": "Travel Vlogs",
       "guides": "Guides",
       "photos": "Photo Gallery",
-      "services": "Local Partners"
+      "services": "Local Partners",
+      "shopping": "Shopping Picks"
     },
     "links": {
       "about": "About Us",
@@ -234,5 +254,33 @@
   "language": {
     "switch": "中文",
     "label": "Language"
+  },
+  "shopping": {
+    "pageTitle": "Shopping in China: What's Worth Buying",
+    "pageSubtitle": "Curated picks that are genuinely cheaper or impossible to get at home — real prices, where to buy, and fake-risk ratings, distilled from hundreds of traveler reports.",
+    "allCategories": "All categories",
+    "allCities": "All cities",
+    "categories": {
+      "electronics": "Electronics & Tech",
+      "fashion": "Clothing & Silk",
+      "eyewear": "Eyewear",
+      "tea-food": "Tea & Food",
+      "hobby": "Hobby & ACG",
+      "crafts": "Crafts & Museum"
+    },
+    "nationwide": "Nationwide",
+    "filterByCity": "Filter by city",
+    "taxRefundOnly": "Tax refund eligible",
+    "taxRefundBadge": "Tax refund",
+    "risk": {
+      "low": "Low risk",
+      "medium": "Check source",
+      "high": "Buy with care"
+    },
+    "priceLabel": "Ref. price",
+    "whereLabel": "Where to buy",
+    "noResults": "No picks match — try clearing a filter",
+    "loadMore": "Load more",
+    "deepDive": "Deep-dive guides"
   }
 }

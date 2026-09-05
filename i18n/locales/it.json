@@ -12,7 +12,8 @@
     "guides": "Guide",
     "photos": "Foto",
     "services": "Servizi",
-    "about": "Chi siamo"
+    "about": "Chi siamo",
+    "shopping": "Shopping"
   },
   "search": {
     "placeholder": "Cerca città, tema o vlogger...",
@@ -42,12 +43,30 @@
     "seoOgDescription": "Vlog, guide e servizi locali scelti a mano. Pianifica il tuo vero viaggio in Cina."
   },
   "categories": {
-    "history": { "title": "Storia e Cultura", "desc": "Antiche capitali ed eredità millenarie" },
-    "nature": { "title": "Natura e Outdoor", "desc": "Montagne, fiumi e angoli fuori dai radar" },
-    "food": { "title": "Cibo e Bevande", "desc": "Bancarelle di strada e classiche storiche" },
-    "family": { "title": "Viaggi in famiglia", "desc": "Divertente, semplice e istruttivo per tutte le età" },
-    "romantic": { "title": "Fughe romantiche", "desc": "Angoli dolci e rifugi tranquilli per due" },
-    "budget": { "title": "Zaino in spalla", "desc": "Risparmia, incontra, vedi di più" }
+    "history": {
+      "title": "Storia e Cultura",
+      "desc": "Antiche capitali ed eredità millenarie"
+    },
+    "nature": {
+      "title": "Natura e Outdoor",
+      "desc": "Montagne, fiumi e angoli fuori dai radar"
+    },
+    "food": {
+      "title": "Cibo e Bevande",
+      "desc": "Bancarelle di strada e classiche storiche"
+    },
+    "family": {
+      "title": "Viaggi in famiglia",
+      "desc": "Divertente, semplice e istruttivo per tutte le età"
+    },
+    "romantic": {
+      "title": "Fughe romantiche",
+      "desc": "Angoli dolci e rifugi tranquilli per due"
+    },
+    "budget": {
+      "title": "Zaino in spalla",
+      "desc": "Risparmia, incontra, vedi di più"
+    }
   },
   "city": {
     "overviewTitle": "Ritratto della città",
@@ -220,7 +239,8 @@
       "vlogs": "Vlog di viaggio",
       "guides": "Guide",
       "photos": "Galleria foto",
-      "services": "Partner locali"
+      "services": "Partner locali",
+      "shopping": "Selezione shopping"
     },
     "links": {
       "about": "Chi siamo",
@@ -234,5 +254,33 @@
   "language": {
     "switch": "English",
     "label": "Lingua"
+  },
+  "shopping": {
+    "pageTitle": "Shopping in Cina: cosa vale davvero la pena",
+    "pageSubtitle": "Proposte davvero più convenienti o introvabili altrove — prezzi reali, dove comprarle e livello di rischio, da centinaia di racconti di viaggiatori.",
+    "allCategories": "Tutte le categorie",
+    "allCities": "Tutte le città",
+    "categories": {
+      "electronics": "Elettronica",
+      "fashion": "Moda e seta",
+      "eyewear": "Occhiali",
+      "tea-food": "Tè e cibo",
+      "hobby": "Hobby e anime",
+      "crafts": "Artigianato e musei"
+    },
+    "nationwide": "In tutta la Cina",
+    "filterByCity": "Filtra per città",
+    "taxRefundOnly": "Con rimborso IVA",
+    "taxRefundBadge": "Tax free",
+    "risk": {
+      "low": "Rischio basso",
+      "medium": "Verifica il venditore",
+      "high": "Con cautela"
+    },
+    "priceLabel": "Prezzo indicativo",
+    "whereLabel": "Dove comprare",
+    "noResults": "Nessun risultato — prova a rimuovere un filtro",
+    "loadMore": "Carica altro",
+    "deepDive": "Guide approfondite"
   }
 }

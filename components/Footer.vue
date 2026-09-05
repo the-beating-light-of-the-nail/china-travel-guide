@@ -24,6 +24,7 @@ function cityName(slug: string) {
 const exploreLinks = [
   { key: 'vlogs', to: '/vlogs' },
   { key: 'guides', to: '/guides' },
+  { key: 'shopping', to: '/shopping' },
   { key: 'photos', to: '/photos' },
   { key: 'services', to: '/services' },
 ] as const

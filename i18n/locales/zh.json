@@ -12,7 +12,8 @@
     "guides": "攻略导航",
     "photos": "图片墙",
     "services": "本地服务",
-    "about": "关于我们"
+    "about": "关于我们",
+    "shopping": "购物"
   },
   "search": {
     "placeholder": "搜索城市、话题或博主...",
@@ -42,12 +43,30 @@
     "seoOgDescription": "精选 Vlog、攻略与本地服务，助你规划真实的中国之旅。"
   },
   "categories": {
-    "history": { "title": "历史文化", "desc": "古迹名城 · 人文底蕴" },
-    "nature": { "title": "自然风光", "desc": "山川湖海 · 秘境探索" },
-    "food": { "title": "美食探店", "desc": "地道风味 · 街头小吃" },
-    "family": { "title": "亲子出游", "desc": "寓教于乐 · 轻松出行" },
-    "romantic": { "title": "浪漫情侣", "desc": "甜蜜打卡 · 小众秘境" },
-    "budget": { "title": "背包穷游", "desc": "省钱攻略 · 青年旅舍" }
+    "history": {
+      "title": "历史文化",
+      "desc": "古迹名城 · 人文底蕴"
+    },
+    "nature": {
+      "title": "自然风光",
+      "desc": "山川湖海 · 秘境探索"
+    },
+    "food": {
+      "title": "美食探店",
+      "desc": "地道风味 · 街头小吃"
+    },
+    "family": {
+      "title": "亲子出游",
+      "desc": "寓教于乐 · 轻松出行"
+    },
+    "romantic": {
+      "title": "浪漫情侣",
+      "desc": "甜蜜打卡 · 小众秘境"
+    },
+    "budget": {
+      "title": "背包穷游",
+      "desc": "省钱攻略 · 青年旅舍"
+    }
   },
   "city": {
     "overviewTitle": "城市印象",
@@ -220,7 +239,8 @@
       "vlogs": "旅行视频",
       "guides": "攻略导航",
       "photos": "图片墙",
-      "services": "本地服务"
+      "services": "本地服务",
+      "shopping": "购物清单"
     },
     "links": {
       "about": "网站介绍",
@@ -234,5 +254,33 @@
   "language": {
     "switch": "EN",
     "label": "语言"
+  },
+  "shopping": {
+    "pageTitle": "在中国买什么值得",
+    "pageSubtitle": "真正便宜或国内买不到的精选推荐——真实价格、购买渠道与避坑评级，取材数百条旅行者反馈。",
+    "allCategories": "全部品类",
+    "allCities": "全部城市",
+    "categories": {
+      "electronics": "电子产品",
+      "fashion": "服装丝绸",
+      "eyewear": "眼镜",
+      "tea-food": "茶叶美食",
+      "hobby": "谷子手办",
+      "crafts": "文创手作"
+    },
+    "nationwide": "全国通用",
+    "filterByCity": "按城市筛选",
+    "taxRefundOnly": "可退税",
+    "taxRefundBadge": "可退税",
+    "risk": {
+      "low": "避坑低",
+      "medium": "挑渠道",
+      "high": "谨慎买"
+    },
+    "priceLabel": "参考价",
+    "whereLabel": "去哪买",
+    "noResults": "没有匹配的推荐——试试清除筛选",
+    "loadMore": "加载更多",
+    "deepDive": "深度指南"
   }
 }

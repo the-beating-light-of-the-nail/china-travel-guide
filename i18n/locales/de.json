@@ -12,7 +12,8 @@
     "guides": "Guides",
     "photos": "Fotos",
     "services": "Services",
-    "about": "Über uns"
+    "about": "Über uns",
+    "shopping": "Shopping"
   },
   "search": {
     "placeholder": "Stadt, Thema oder Vlogger suchen...",
@@ -42,12 +43,30 @@
     "seoOgDescription": "Handverlesene Vlogs, Guides & lokale Services. Plane deine echte China-Reise."
   },
   "categories": {
-    "history": { "title": "Geschichte & Kultur", "desc": "Alte Hauptstädte und Jahrtausende altes Erbe" },
-    "nature": { "title": "Natur & Outdoor", "desc": "Berge, Flüsse und verborgene Juwelen" },
-    "food": { "title": "Essen & Trinken", "desc": "Straßenstände und traditionsreiche Favoriten" },
-    "family": { "title": "Familienreisen", "desc": "Spannend, einfach und lehrreich für alle Altersgruppen" },
-    "romantic": { "title": "Romantik", "desc": "Süße Flecken und stille Rückzugsorte für zwei" },
-    "budget": { "title": "Rucksackreisen", "desc": "Geld sparen, Leute treffen, mehr sehen" }
+    "history": {
+      "title": "Geschichte & Kultur",
+      "desc": "Alte Hauptstädte und Jahrtausende altes Erbe"
+    },
+    "nature": {
+      "title": "Natur & Outdoor",
+      "desc": "Berge, Flüsse und verborgene Juwelen"
+    },
+    "food": {
+      "title": "Essen & Trinken",
+      "desc": "Straßenstände und traditionsreiche Favoriten"
+    },
+    "family": {
+      "title": "Familienreisen",
+      "desc": "Spannend, einfach und lehrreich für alle Altersgruppen"
+    },
+    "romantic": {
+      "title": "Romantik",
+      "desc": "Süße Flecken und stille Rückzugsorte für zwei"
+    },
+    "budget": {
+      "title": "Rucksackreisen",
+      "desc": "Geld sparen, Leute treffen, mehr sehen"
+    }
   },
   "city": {
     "overviewTitle": "Stadtporträt",
@@ -220,7 +239,8 @@
       "vlogs": "Reise-Vlogs",
       "guides": "Guides",
       "photos": "Fotogalerie",
-      "services": "Lokale Partner"
+      "services": "Lokale Partner",
+      "shopping": "Shopping-Tipps"
     },
     "links": {
       "about": "Über uns",
@@ -234,5 +254,33 @@
   "language": {
     "switch": "English",
     "label": "Sprache"
+  },
+  "shopping": {
+    "pageTitle": "Shopping in China: Was sich wirklich lohnt",
+    "pageSubtitle": "Kuratierte Empfehlungen, die wirklich günstiger oder nur vor Ort erhältlich sind — echte Preise, Bezugsquellen und Risikoeinstufung aus hunderten Reiseberichten.",
+    "allCategories": "Alle Kategorien",
+    "allCities": "Alle Städte",
+    "categories": {
+      "electronics": "Elektronik & Technik",
+      "fashion": "Mode & Seide",
+      "eyewear": "Brillen",
+      "tea-food": "Tee & Essen",
+      "hobby": "Hobby & Anime",
+      "crafts": "Kunsthandwerk & Museen"
+    },
+    "nationwide": "Überall erhältlich",
+    "filterByCity": "Nach Stadt filtern",
+    "taxRefundOnly": "Tax Refund möglich",
+    "taxRefundBadge": "Tax Refund",
+    "risk": {
+      "low": "Geringes Risiko",
+      "medium": "Händler prüfen",
+      "high": "Mit Vorsicht"
+    },
+    "priceLabel": "Richtpreis",
+    "whereLabel": "Wo kaufen",
+    "noResults": "Keine Treffer — Filter zurücksetzen",
+    "loadMore": "Mehr laden",
+    "deepDive": "Vertiefende Guides"
   }
 }

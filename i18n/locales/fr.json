@@ -12,7 +12,8 @@
     "guides": "Guides",
     "photos": "Photos",
     "services": "Services",
-    "about": "À propos"
+    "about": "À propos",
+    "shopping": "Shopping"
   },
   "search": {
     "placeholder": "Rechercher une ville, un thème ou un vlogueur...",
@@ -42,12 +43,30 @@
     "seoOgDescription": "Vlogs, guides et services locaux sélectionnés. Préparez votre vrai voyage en Chine."
   },
   "categories": {
-    "history": { "title": "Histoire & Culture", "desc": "Capitales anciennes et héritages millénaires" },
-    "nature": { "title": "Nature & Plein air", "desc": "Montagnes, rivières et joyaux hors des sentiers" },
-    "food": { "title": "Gastronomie", "desc": "Échoppes de rue et adresses centenaires" },
-    "family": { "title": "Voyage en famille", "desc": "Amusant, simple et instructif pour tous les âges" },
-    "romantic": { "title": "Escapades romantiques", "desc": "Douceurs d'adresse et retraites tranquilles pour deux" },
-    "budget": { "title": "Sac à dos", "desc": "Économiser, rencontrer, voir plus" }
+    "history": {
+      "title": "Histoire & Culture",
+      "desc": "Capitales anciennes et héritages millénaires"
+    },
+    "nature": {
+      "title": "Nature & Plein air",
+      "desc": "Montagnes, rivières et joyaux hors des sentiers"
+    },
+    "food": {
+      "title": "Gastronomie",
+      "desc": "Échoppes de rue et adresses centenaires"
+    },
+    "family": {
+      "title": "Voyage en famille",
+      "desc": "Amusant, simple et instructif pour tous les âges"
+    },
+    "romantic": {
+      "title": "Escapades romantiques",
+      "desc": "Douceurs d'adresse et retraites tranquilles pour deux"
+    },
+    "budget": {
+      "title": "Sac à dos",
+      "desc": "Économiser, rencontrer, voir plus"
+    }
   },
   "city": {
     "overviewTitle": "Portrait de la ville",
@@ -220,7 +239,8 @@
       "vlogs": "Vlogs de voyage",
       "guides": "Guides",
       "photos": "Galerie photo",
-      "services": "Partenaires locaux"
+      "services": "Partenaires locaux",
+      "shopping": "Sélection shopping"
     },
     "links": {
       "about": "À propos",
@@ -234,5 +254,33 @@
   "language": {
     "switch": "English",
     "label": "Langue"
+  },
+  "shopping": {
+    "pageTitle": "Shopping en Chine : ce qui vaut vraiment le coup",
+    "pageSubtitle": "Une sélection d'articles vraiment moins chers ou introuvables ailleurs — prix réels, où acheter et niveau de risque, issus de centaines de retours de voyageurs.",
+    "allCategories": "Toutes catégories",
+    "allCities": "Toutes les villes",
+    "categories": {
+      "electronics": "Électronique",
+      "fashion": "Mode & soie",
+      "eyewear": "Lunettes",
+      "tea-food": "Thé & gastronomie",
+      "hobby": "Loisirs & anime",
+      "crafts": "Artisanat & musées"
+    },
+    "nationwide": "Partout en Chine",
+    "filterByCity": "Filtrer par ville",
+    "taxRefundOnly": "Éligible détaxe",
+    "taxRefundBadge": "Détaxe",
+    "risk": {
+      "low": "Risque faible",
+      "medium": "Vérifier le vendeur",
+      "high": "Prudence"
+    },
+    "priceLabel": "Prix indicatif",
+    "whereLabel": "Où acheter",
+    "noResults": "Aucun résultat — réinitialisez un filtre",
+    "loadMore": "Voir plus",
+    "deepDive": "Guides approfondis"
   }
 }

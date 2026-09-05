@@ -12,7 +12,8 @@
     "guides": "가이드",
     "photos": "사진",
     "services": "현지 서비스",
-    "about": "소개"
+    "about": "소개",
+    "shopping": "쇼핑"
   },
   "search": {
     "placeholder": "도시, 주제 또는 크리에이터 검색...",
@@ -42,12 +43,30 @@
     "seoOgDescription": "엄선된 브이로그·가이드·현지 서비스로 진짜 중국 여행을 계획하세요."
   },
   "categories": {
-    "history": { "title": "역사와 문화", "desc": "고도와 천년의 유산" },
-    "nature": { "title": "자연과 아웃도어", "desc": "산, 강, 그리고 숨은 명소" },
-    "food": { "title": "먹거리", "desc": "노점과 원조 맛집" },
-    "family": { "title": "가족 여행", "desc": "모든 연령이 즐거운 쉬운 일정" },
-    "romantic": { "title": "로맨틱 여행", "desc": "둘만의 달콤한 명소와 조용한 휴식" },
-    "budget": { "title": "배낭여행", "desc": "아끼고, 만나고, 더 보기" }
+    "history": {
+      "title": "역사와 문화",
+      "desc": "고도와 천년의 유산"
+    },
+    "nature": {
+      "title": "자연과 아웃도어",
+      "desc": "산, 강, 그리고 숨은 명소"
+    },
+    "food": {
+      "title": "먹거리",
+      "desc": "노점과 원조 맛집"
+    },
+    "family": {
+      "title": "가족 여행",
+      "desc": "모든 연령이 즐거운 쉬운 일정"
+    },
+    "romantic": {
+      "title": "로맨틱 여행",
+      "desc": "둘만의 달콤한 명소와 조용한 휴식"
+    },
+    "budget": {
+      "title": "배낭여행",
+      "desc": "아끼고, 만나고, 더 보기"
+    }
   },
   "city": {
     "overviewTitle": "도시 인상",
@@ -220,7 +239,8 @@
       "vlogs": "여행 브이로그",
       "guides": "가이드",
       "photos": "사진 갤러리",
-      "services": "현지 파트너"
+      "services": "현지 파트너",
+      "shopping": "추천 쇼핑"
     },
     "links": {
       "about": "사이트 소개",
@@ -234,5 +254,33 @@
   "language": {
     "switch": "English",
     "label": "언어"
+  },
+  "shopping": {
+    "pageTitle": "중국 쇼핑: 살 만한 것들",
+    "pageSubtitle": "실제로 더 저렴하거나 현지에서만 살 수 있는 엄선 아이템 — 여행자 후기 수백 건에서 뽑은 실제 가격, 구매처, 리스크 등급.",
+    "allCategories": "전체 카테고리",
+    "allCities": "전체 도시",
+    "categories": {
+      "electronics": "전자·테크",
+      "fashion": "의류·실크",
+      "eyewear": "안경",
+      "tea-food": "차·식품",
+      "hobby": "취미·굿즈",
+      "crafts": "공예·뮤지엄"
+    },
+    "nationwide": "전국 어디서나",
+    "filterByCity": "도시별 보기",
+    "taxRefundOnly": "택스리펀 가능",
+    "taxRefundBadge": "택스리펀",
+    "risk": {
+      "low": "리스크 낮음",
+      "medium": "판매처 확인",
+      "high": "신중하게"
+    },
+    "priceLabel": "참고가",
+    "whereLabel": "구매처",
+    "noResults": "조건에 맞는 아이템이 없어요 — 필터를 초기화해 보세요",
+    "loadMore": "더 보기",
+    "deepDive": "심화 가이드"
   }
 }

@@ -21,6 +21,7 @@ const navLinks = [
   { key: 'nav.destinations', to: '/#destinations' },
   { key: 'nav.vlogs', to: '/vlogs' },
   { key: 'nav.guides', to: '/guides' },
+  { key: 'nav.shopping', to: '/shopping' },
   { key: 'nav.photos', to: '/photos' },
   { key: 'nav.services', to: '/services' },
   { key: 'nav.about', to: '/about' },

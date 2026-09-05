@@ -12,7 +12,8 @@
     "guides": "ガイド",
     "photos": "写真",
     "services": "現地サービス",
-    "about": "About"
+    "about": "About",
+    "shopping": "ショッピング"
   },
   "search": {
     "placeholder": "都市・テーマ・クリエイターを検索…",
@@ -42,12 +43,30 @@
     "seoOgDescription": "厳選Vlog・ガイド・現地サービスで、本当の中国旅を計画しよう。"
   },
   "categories": {
-    "history": { "title": "歴史と文化", "desc": "古都と千年の遺産" },
-    "nature": { "title": "自然とアウトドア", "desc": "山、川、そして秘境" },
-    "food": { "title": "グルメ", "desc": "屋台と老舗の味" },
-    "family": { "title": "家族旅行", "desc": "全年齢で楽しくラクラク" },
-    "romantic": { "title": "ロマンチック", "desc": "二人だけの甘いスポットと静かな隠れ家" },
-    "budget": { "title": "バックパック旅行", "desc": "節約して、出会って、もっと見る" }
+    "history": {
+      "title": "歴史と文化",
+      "desc": "古都と千年の遺産"
+    },
+    "nature": {
+      "title": "自然とアウトドア",
+      "desc": "山、川、そして秘境"
+    },
+    "food": {
+      "title": "グルメ",
+      "desc": "屋台と老舗の味"
+    },
+    "family": {
+      "title": "家族旅行",
+      "desc": "全年齢で楽しくラクラク"
+    },
+    "romantic": {
+      "title": "ロマンチック",
+      "desc": "二人だけの甘いスポットと静かな隠れ家"
+    },
+    "budget": {
+      "title": "バックパック旅行",
+      "desc": "節約して、出会って、もっと見る"
+    }
   },
   "city": {
     "overviewTitle": "街の印象",
@@ -220,7 +239,8 @@
       "vlogs": "旅のVlog",
       "guides": "ガイド",
       "photos": "フォトギャラリー",
-      "services": "現地パートナー"
+      "services": "現地パートナー",
+      "shopping": "おすすめショッピング"
     },
     "links": {
       "about": "サイト紹介",
@@ -234,5 +254,33 @@
   "language": {
     "switch": "English",
     "label": "言語"
+  },
+  "shopping": {
+    "pageTitle": "中国で買うべきもの",
+    "pageSubtitle": "本当に安い、または現地でしか買えない厳選アイテム——旅行者数百件の報告からまとめた実価格、購入先、リスク評価。",
+    "allCategories": "すべてのカテゴリー",
+    "allCities": "すべての都市",
+    "categories": {
+      "electronics": "家電・ガジェット",
+      "fashion": "衣類・シルク",
+      "eyewear": "メガネ",
+      "tea-food": "茶・食品",
+      "hobby": "ホビー・グッズ",
+      "crafts": "工芸・ミュージアム"
+    },
+    "nationwide": "全国どこでも",
+    "filterByCity": "都市で絞り込む",
+    "taxRefundOnly": "免税還付対象",
+    "taxRefundBadge": "免税還付",
+    "risk": {
+      "low": "リスク低",
+      "medium": "販売元を確認",
+      "high": "要注意"
+    },
+    "priceLabel": "参考価格",
+    "whereLabel": "購入先",
+    "noResults": "該当なし——フィルターを外してみてください",
+    "loadMore": "もっと見る",
+    "deepDive": "詳解ガイド"
   }
 }
