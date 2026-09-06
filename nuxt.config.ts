@@ -38,6 +38,8 @@ const prerenderPages = [
   '/guides/altitude-sickness-trekking-china',
   '/shopping',
   '/hiking',
+  '/dumplings',
+  '/guides/china-dumpling-guide',
 ]
 
 export default defineNuxtConfig({

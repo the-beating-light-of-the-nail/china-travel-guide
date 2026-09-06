@@ -14,7 +14,8 @@
     "services": "Services",
     "about": "About",
     "shopping": "Shopping",
-    "hiking": "Hiking"
+    "hiking": "Hiking",
+    "dumplings": "Dumplings"
   },
   "search": {
     "placeholder": "Search city, topic or vlogger...",
@@ -101,7 +102,6 @@
     "photosSectionTitle": "{name} Moments",
     "partnersSectionTitle": "Local Partners",
     "partnersSectionSubtitle": "Verified guides, drivers & services in {name}",
-    "relatedTitle": "More Destinations",
     "readOriginal": "Read Full Guide →"
   },
   "regions": {
@@ -242,7 +242,8 @@
       "photos": "Photo Gallery",
       "services": "Local Partners",
       "shopping": "Shopping Picks",
-      "hiking": "Hiking & Treks"
+      "hiking": "Hiking & Treks",
+      "dumplings": "Dumpling Guide"
     },
     "links": {
       "about": "About Us",
@@ -307,5 +308,32 @@
     "deepDive": "Trekking guides",
     "noResults": "No routes at this level",
     "moreVlogs": "More China travel vlogs"
+  },
+  "dumplings": {
+    "pageTitle": "Dumplings of China: 15 Wrappers Every Traveler Should Know",
+    "pageSubtitle": "From midnight jiaozi in Beijing to chili-oil wontons in Chengdu — how each one is made, what it should cost, and exactly where to eat it.",
+    "allCategories": "All styles",
+    "allCities": "All cities",
+    "categories": {
+      "boiled": "Boiled",
+      "pan-fried": "Pan-Fried",
+      "steamed": "Steamed",
+      "soup": "In Soup",
+      "sweet": "Sweet"
+    },
+    "nationwide": "Nationwide",
+    "filterByCity": "Filter by city",
+    "vegOnly": "Vegetarian option",
+    "vegBadge": "Veg option",
+    "spice": {
+      "none": "Mild",
+      "medium": "Medium heat",
+      "spicy": "Spicy"
+    },
+    "priceLabel": "Ref. price",
+    "whereLabel": "Where to eat",
+    "noResults": "No dumplings match — try clearing a filter",
+    "loadMore": "Load more",
+    "deepDive": "Deep-dive guides"
   }
 }

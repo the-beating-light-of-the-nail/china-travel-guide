@@ -14,7 +14,8 @@
     "services": "Services",
     "about": "À propos",
     "shopping": "Shopping",
-    "hiking": "Randonnée"
+    "hiking": "Randonnée",
+    "dumplings": "Raviolis"
   },
   "search": {
     "placeholder": "Rechercher une ville, un thème ou un vlogueur...",
@@ -101,7 +102,6 @@
     "photosSectionTitle": "Moments de {name}",
     "partnersSectionTitle": "Partenaires locaux",
     "partnersSectionSubtitle": "Guides, chauffeurs et services vérifiés à {name}",
-    "relatedTitle": "Autres destinations",
     "readOriginal": "Lire le guide complet →"
   },
   "regions": {
@@ -242,7 +242,8 @@
       "photos": "Galerie photo",
       "services": "Partenaires locaux",
       "shopping": "Sélection shopping",
-      "hiking": "Treks en Chine"
+      "hiking": "Treks en Chine",
+      "dumplings": "Guide des raviolis"
     },
     "links": {
       "about": "À propos",
@@ -307,5 +308,32 @@
     "deepDive": "Guides de trek",
     "noResults": "Aucun itinéraire à ce niveau",
     "moreVlogs": "Plus de vidéos de voyage"
+  },
+  "dumplings": {
+    "pageTitle": "Les raviolis de Chine : 15 variétés à connaître avant de voyager",
+    "pageSubtitle": "Des jiaozi de minuit à Pékin aux wontons à l'huile de piment de Chengdu — comment chacun est préparé, combien il doit coûter et où exactement le manger.",
+    "allCategories": "Tous les modes",
+    "allCities": "Toutes les villes",
+    "categories": {
+      "boiled": "Bouillis",
+      "pan-fried": "Poêlés",
+      "steamed": "Cuits à la vapeur",
+      "soup": "En bouillon",
+      "sweet": "Sucrés"
+    },
+    "nationwide": "Partout en Chine",
+    "filterByCity": "Filtrer par ville",
+    "vegOnly": "Option végétarienne",
+    "vegBadge": "Végé",
+    "spice": {
+      "none": "Non épicé",
+      "medium": "Moyennement épicé",
+      "spicy": "Épicé"
+    },
+    "priceLabel": "Prix indicatif",
+    "whereLabel": "Où manger",
+    "noResults": "Aucun ravioli ne correspond — essayez de retirer un filtre",
+    "loadMore": "Voir plus",
+    "deepDive": "Guides approfondis"
   }
 }

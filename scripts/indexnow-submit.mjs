@@ -18,10 +18,8 @@ const LOCALES = ['en', 'zh', 'ko', 'ja', 'th', 'de', 'fr', 'es', 'it']
 
 // 默认提交清单：按「新上线路径 × 全语言」笛卡尔积生成（改成需要的路径再跑）
 const DEFAULT_PAGE_PATHS = [
-  '/hiking',
-  '/guides/tiger-leaping-gorge-trek-guide',
-  '/guides/china-trekking-permits-guide',
-  '/guides/altitude-sickness-trekking-china',
+  '/dumplings',
+  '/guides/china-dumpling-guide',
 ]
 
 function defaultUrls() {

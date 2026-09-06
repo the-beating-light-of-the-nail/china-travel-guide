@@ -41,6 +41,7 @@ export interface LocalePack {
   services?: Record<string, unknown>[]
   shoppingItems?: Record<string, unknown>[]
   hikingRoutes?: Record<string, unknown>[]
+  dumplingItems?: Record<string, unknown>[]
 }
 
 /** 判断节点是否为本地化文本对象（L） */

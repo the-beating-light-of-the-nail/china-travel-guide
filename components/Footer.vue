@@ -26,6 +26,7 @@ const exploreLinks = [
   { key: 'guides', to: '/guides' },
   { key: 'hiking', to: '/hiking' },
   { key: 'shopping', to: '/shopping' },
+  { key: 'dumplings', to: '/dumplings' },
   { key: 'photos', to: '/photos' },
   { key: 'services', to: '/services' },
 ] as const

@@ -14,7 +14,8 @@
     "services": "Servizi",
     "about": "Chi siamo",
     "shopping": "Shopping",
-    "hiking": "Trekking"
+    "hiking": "Trekking",
+    "dumplings": "Ravioli"
   },
   "search": {
     "placeholder": "Cerca città, tema o vlogger...",
@@ -101,7 +102,6 @@
     "photosSectionTitle": "Momenti di {name}",
     "partnersSectionTitle": "Partner locali",
     "partnersSectionSubtitle": "Guide, autisti e servizi verificati a {name}",
-    "relatedTitle": "Altre destinazioni",
     "readOriginal": "Leggi la guida completa →"
   },
   "regions": {
@@ -242,7 +242,8 @@
       "photos": "Galleria foto",
       "services": "Partner locali",
       "shopping": "Selezione shopping",
-      "hiking": "Trek in Cina"
+      "hiking": "Trek in Cina",
+      "dumplings": "Guida ai ravioli"
     },
     "links": {
       "about": "Chi siamo",
@@ -307,5 +308,32 @@
     "deepDive": "Guide di trekking",
     "noResults": "Nessun percorso a questo livello",
     "moreVlogs": "Altri video di viaggio"
+  },
+  "dumplings": {
+    "pageTitle": "I ravioli della Cina: 15 varietà che ogni viaggiatore dovrebbe conoscere",
+    "pageSubtitle": "Dagli jiaozi di mezzanotte a Pechino ai wonton all'olio di peperoncino di Chengdu — come sono fatti, quanto devono costare e dove mangiarli precisamente.",
+    "allCategories": "Tutti gli stili",
+    "allCities": "Tutte le città",
+    "categories": {
+      "boiled": "Bolliti",
+      "pan-fried": "In padella",
+      "steamed": "Al vapore",
+      "soup": "In brodo",
+      "sweet": "Dolci"
+    },
+    "nationwide": "Ovunque in Cina",
+    "filterByCity": "Filtra per città",
+    "vegOnly": "Opzione vegetariana",
+    "vegBadge": "Veg",
+    "spice": {
+      "none": "Non piccante",
+      "medium": "Media piccantezza",
+      "spicy": "Piccante"
+    },
+    "priceLabel": "Prezzo indic.",
+    "whereLabel": "Dove mangiarli",
+    "noResults": "Nessun raviolo corrisponde — prova a rimuovere un filtro",
+    "loadMore": "Carica altri",
+    "deepDive": "Guide approfondite"
   }
 }

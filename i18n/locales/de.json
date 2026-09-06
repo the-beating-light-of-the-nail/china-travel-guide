@@ -14,7 +14,8 @@
     "services": "Services",
     "about": "Über uns",
     "shopping": "Shopping",
-    "hiking": "Wandern"
+    "hiking": "Wandern",
+    "dumplings": "Teigtaschen"
   },
   "search": {
     "placeholder": "Stadt, Thema oder Vlogger suchen...",
@@ -101,7 +102,6 @@
     "photosSectionTitle": "{name}-Momente",
     "partnersSectionTitle": "Lokale Partner",
     "partnersSectionSubtitle": "Verifizierte Guides, Fahrer & Services in {name}",
-    "relatedTitle": "Weitere Ziele",
     "readOriginal": "Ganzen Guide lesen →"
   },
   "regions": {
@@ -242,7 +242,8 @@
       "photos": "Fotogalerie",
       "services": "Lokale Partner",
       "shopping": "Shopping-Tipps",
-      "hiking": "Trekking-Routen"
+      "hiking": "Trekking-Routen",
+      "dumplings": "Teigtaschen-Guide"
     },
     "links": {
       "about": "Über uns",
@@ -307,5 +308,32 @@
     "deepDive": "Trekking-Leitfäden",
     "noResults": "Keine Routen auf dieser Stufe",
     "moreVlogs": "Mehr China-Reisevideos"
+  },
+  "dumplings": {
+    "pageTitle": "Chinas Teigtaschen: 15 Sorten, die jeder Reisende kennen sollte",
+    "pageSubtitle": "Von Mitternachts-Jiaozi in Peking bis Chili-Öl-Wontons in Chengdu — wie jede Sorte gemacht wird, was sie kosten darf und wo man sie genau isst.",
+    "allCategories": "Alle Zubereitungen",
+    "allCities": "Alle Städte",
+    "categories": {
+      "boiled": "Gekocht",
+      "pan-fried": "Gebraten",
+      "steamed": "Gedämpft",
+      "soup": "In Brühe",
+      "sweet": "Süß"
+    },
+    "nationwide": "Ganz China",
+    "filterByCity": "Nach Stadt filtern",
+    "vegOnly": "Vegetarische Option",
+    "vegBadge": "Vegetarisch",
+    "spice": {
+      "none": "Mild",
+      "medium": "Mittelscharf",
+      "spicy": "Scharf"
+    },
+    "priceLabel": "Richtpreis",
+    "whereLabel": "Wo essen",
+    "noResults": "Keine Teigtaschen gefunden — Filter zurücksetzen",
+    "loadMore": "Mehr laden",
+    "deepDive": "Vertiefungs-Guides"
   }
 }

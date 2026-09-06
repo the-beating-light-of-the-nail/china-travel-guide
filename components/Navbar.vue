@@ -23,6 +23,7 @@ const navLinks = [
   { key: 'nav.guides', to: '/guides' },
   { key: 'nav.hiking', to: '/hiking' },
   { key: 'nav.shopping', to: '/shopping' },
+  { key: 'nav.dumplings', to: '/dumplings' },
   { key: 'nav.photos', to: '/photos' },
   { key: 'nav.services', to: '/services' },
   { key: 'nav.about', to: '/about' },

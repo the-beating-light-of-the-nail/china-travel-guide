@@ -14,7 +14,8 @@
     "services": "現地サービス",
     "about": "About",
     "shopping": "ショッピング",
-    "hiking": "トレッキング"
+    "hiking": "トレッキング",
+    "dumplings": "餃子"
   },
   "search": {
     "placeholder": "都市・テーマ・クリエイターを検索…",
@@ -101,7 +102,6 @@
     "photosSectionTitle": "{name}の瞬間",
     "partnersSectionTitle": "現地パートナー",
     "partnersSectionSubtitle": "{name}の認定ガイド・ドライバー・サービス",
-    "relatedTitle": "他の目的地",
     "readOriginal": "全文を読む →"
   },
   "regions": {
@@ -242,7 +242,8 @@
       "photos": "フォトギャラリー",
       "services": "現地パートナー",
       "shopping": "おすすめショッピング",
-      "hiking": "中国トレッキング"
+      "hiking": "中国トレッキング",
+      "dumplings": "餃子ガイド"
     },
     "links": {
       "about": "サイト紹介",
@@ -307,5 +308,32 @@
     "deepDive": "トレッキングガイド",
     "noResults": "この難易度のルートはありません",
     "moreVlogs": "中国旅行動画をもっと見る"
+  },
+  "dumplings": {
+    "pageTitle": "中国餃子図鑑：旅人知っておきたい15種",
+    "pageSubtitle": "北京の深夜の水餃子から成都の紅油抄手まで — 作り方、適正価格、どこで食べるかまで完全網羅。",
+    "allCategories": "すべての調理法",
+    "allCities": "すべての都市",
+    "categories": {
+      "boiled": "水餃子",
+      "pan-fried": "焼き餃子",
+      "steamed": "蒸し餃子",
+      "soup": "スープ仕立て",
+      "sweet": "デザート"
+    },
+    "nationwide": "全国どこでも",
+    "filterByCity": "都市で絞り込む",
+    "vegOnly": "ベジ対応",
+    "vegBadge": "ベジ可",
+    "spice": {
+      "none": "辛くない",
+      "medium": "中辛",
+      "spicy": "激辛"
+    },
+    "priceLabel": "参考価格",
+    "whereLabel": "食べられる場所",
+    "noResults": "該当する餃子がありません — フィルターを外してみてください",
+    "loadMore": "もっと見る",
+    "deepDive": "詳細ガイド"
   }
 }

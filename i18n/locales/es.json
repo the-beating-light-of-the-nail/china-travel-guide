@@ -14,7 +14,8 @@
     "services": "Servicios",
     "about": "Acerca de",
     "shopping": "Compras",
-    "hiking": "Senderismo"
+    "hiking": "Senderismo",
+    "dumplings": "Dumplings"
   },
   "search": {
     "placeholder": "Busca ciudad, tema o creador...",
@@ -101,7 +102,6 @@
     "photosSectionTitle": "Momentos de {name}",
     "partnersSectionTitle": "Socios locales",
     "partnersSectionSubtitle": "Guías, chóferes y servicios verificados en {name}",
-    "relatedTitle": "Más destinos",
     "readOriginal": "Leer la guía completa →"
   },
   "regions": {
@@ -242,7 +242,8 @@
       "photos": "Galería de fotos",
       "services": "Socios locales",
       "shopping": "Selección de compras",
-      "hiking": "Treks en China"
+      "hiking": "Treks en China",
+      "dumplings": "Guía de dumplings"
     },
     "links": {
       "about": "Quiénes somos",
@@ -307,5 +308,32 @@
     "deepDive": "Guías de trekking",
     "noResults": "Sin rutas en este nivel",
     "moreVlogs": "Más vídeos de viaje"
+  },
+  "dumplings": {
+    "pageTitle": "Los dumplings de China: 15 variedades que todo viajero debería conocer",
+    "pageSubtitle": "De los jiaozi de medianoche en Pekín a los wontons en aceite de chile de Chengdú — cómo se hace cada uno, cuánto debe costar y dónde comerlo exactamente.",
+    "allCategories": "Todos los estilos",
+    "allCities": "Todas las ciudades",
+    "categories": {
+      "boiled": "Hervidos",
+      "pan-fried": "A la plancha",
+      "steamed": "Al vapor",
+      "soup": "En caldo",
+      "sweet": "Dulces"
+    },
+    "nationwide": "En toda China",
+    "filterByCity": "Filtrar por ciudad",
+    "vegOnly": "Opción vegetariana",
+    "vegBadge": "Opción veggie",
+    "spice": {
+      "none": "Sin picante",
+      "medium": "Poco picante",
+      "spicy": "Picante"
+    },
+    "priceLabel": "Precio ref.",
+    "whereLabel": "Dónde comer",
+    "noResults": "Ningún dumpling coincide — prueba a quitar un filtro",
+    "loadMore": "Cargar más",
+    "deepDive": "Guías a fondo"
   }
 }

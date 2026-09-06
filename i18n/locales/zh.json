@@ -14,7 +14,8 @@
     "services": "本地服务",
     "about": "关于我们",
     "shopping": "购物",
-    "hiking": "徒步"
+    "hiking": "徒步",
+    "dumplings": "饺子图鉴"
   },
   "search": {
     "placeholder": "搜索城市、话题或博主...",
@@ -101,7 +102,6 @@
     "photosSectionTitle": "{name}瞬间",
     "partnersSectionTitle": "本地合作伙伴",
     "partnersSectionSubtitle": "{name}认证向导、司机与本地服务",
-    "relatedTitle": "更多目的地",
     "readOriginal": "阅读全文 →"
   },
   "regions": {
@@ -242,7 +242,8 @@
       "photos": "图片墙",
       "services": "本地服务",
       "shopping": "购物清单",
-      "hiking": "徒步中国"
+      "hiking": "徒步中国",
+      "dumplings": "饺子图鉴"
     },
     "links": {
       "about": "网站介绍",
@@ -307,5 +308,32 @@
     "deepDive": "徒步深度指南",
     "noResults": "该难度暂无路线",
     "moreVlogs": "更多中国旅行视频"
+  },
+  "dumplings": {
+    "pageTitle": "中国饺子图鉴：旅行者该认识的 15 张皮",
+    "pageSubtitle": "从北京深夜的水饺到成都的红油抄手——每一种怎么做、该花多少钱、去哪儿吃才对。",
+    "allCategories": "全部做法",
+    "allCities": "全部城市",
+    "categories": {
+      "boiled": "水煮",
+      "pan-fried": "煎烙",
+      "steamed": "蒸笼",
+      "soup": "带汤",
+      "sweet": "甜口"
+    },
+    "nationwide": "全国通行",
+    "filterByCity": "按城市筛选",
+    "vegOnly": "有素馅",
+    "vegBadge": "素馅可选",
+    "spice": {
+      "none": "不辣",
+      "medium": "微辣",
+      "spicy": "麻辣"
+    },
+    "priceLabel": "参考价",
+    "whereLabel": "去哪吃",
+    "noResults": "没有匹配的饺子——试试清除筛选",
+    "loadMore": "加载更多",
+    "deepDive": "深度指南"
   }
 }

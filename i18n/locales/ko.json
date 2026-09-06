@@ -14,7 +14,8 @@
     "services": "현지 서비스",
     "about": "소개",
     "shopping": "쇼핑",
-    "hiking": "트레킹"
+    "hiking": "트레킹",
+    "dumplings": "만두"
   },
   "search": {
     "placeholder": "도시, 주제 또는 크리에이터 검색...",
@@ -101,7 +102,6 @@
     "photosSectionTitle": "{name}의 순간",
     "partnersSectionTitle": "현지 파트너",
     "partnersSectionSubtitle": "{name}의 인증 가이드·기사·서비스",
-    "relatedTitle": "다른 여행지",
     "readOriginal": "전문 읽기 →"
   },
   "regions": {
@@ -242,7 +242,8 @@
       "photos": "사진 갤러리",
       "services": "현지 파트너",
       "shopping": "추천 쇼핑",
-      "hiking": "트레킹 코스"
+      "hiking": "트레킹 코스",
+      "dumplings": "만두 가이드"
     },
     "links": {
       "about": "사이트 소개",
@@ -307,5 +308,32 @@
     "deepDive": "트레킹 가이드",
     "noResults": "이 난이도의 코스가 없습니다",
     "moreVlogs": "더 많은 중국 여행 브이로그"
+  },
+  "dumplings": {
+    "pageTitle": "중국 만두 도감: 여행자가 알아야 할 15가지",
+    "pageSubtitle": "베이징의 심야 물만두부터 청두의 홍유원탕까지 — 만드는 법, 적정 가격, 정확히 어디서 먹을지까지.",
+    "allCategories": "전체 조리법",
+    "allCities": "전체 도시",
+    "categories": {
+      "boiled": "물만두",
+      "pan-fried": "군만두",
+      "steamed": "찐만두",
+      "soup": "국물 요리",
+      "sweet": "디저트"
+    },
+    "nationwide": "전국 어디서나",
+    "filterByCity": "도시별 보기",
+    "vegOnly": "채식 옵션",
+    "vegBadge": "채식 가능",
+    "spice": {
+      "none": "맵지 않음",
+      "medium": "약간 매움",
+      "spicy": "매움"
+    },
+    "priceLabel": "참고가",
+    "whereLabel": "먹을 곳",
+    "noResults": "조건에 맞는 만두가 없어요 — 필터를 초기화해 보세요",
+    "loadMore": "더 보기",
+    "deepDive": "심화 가이드"
   }
 }
