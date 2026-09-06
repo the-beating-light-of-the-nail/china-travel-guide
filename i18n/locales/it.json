@@ -13,7 +13,8 @@
     "photos": "Foto",
     "services": "Servizi",
     "about": "Chi siamo",
-    "shopping": "Shopping"
+    "shopping": "Shopping",
+    "hiking": "Trekking"
   },
   "search": {
     "placeholder": "Cerca città, tema o vlogger...",
@@ -240,7 +241,8 @@
       "guides": "Guide",
       "photos": "Galleria foto",
       "services": "Partner locali",
-      "shopping": "Selezione shopping"
+      "shopping": "Selezione shopping",
+      "hiking": "Trek in Cina"
     },
     "links": {
       "about": "Chi siamo",
@@ -282,5 +284,28 @@
     "noResults": "Nessun risultato — prova a rimuovere un filtro",
     "loadMore": "Carica altro",
     "deepDive": "Guide approfondite"
+  },
+  "hiking": {
+    "pageTitle": "Trekking in Cina: 14 itinerari classici, dall'iniziazione alla spedizione",
+    "pageSubtitle": "Una scala di difficoltà dei migliori trek cinesi — dalle Gole del Salto della Tigre al Kailash — con durate, altitudini, permessi e video cinesi selezionati.",
+    "allTiers": "Tutti i livelli",
+    "tiers": {
+      "beginner": "Principiante",
+      "classic": "Classico",
+      "challenging": "Impegnativo",
+      "expedition": "Spedizione"
+    },
+    "daysLabel": "Giorni",
+    "distanceLabel": "Distanza",
+    "altitudeLabel": "Quota max",
+    "seasonLabel": "Stagione",
+    "permitLabel": "Permessi",
+    "videosLabel": "Video di trek",
+    "safetyTitle": "Sicurezza e regole",
+    "safetyText": "Alcuni percorsi famosi (la traversata di Aotai, la Grande Muraglia selvatica di Jiankou) sono ufficialmente chiusi — qui elenchiamo solo sentieri legali e aperti. Stipulate un'assicurazione che copra la quota massima, consultate la nostra guida ai permessi prima di andare in Tibet e non fate mai trekking da soli sopra i 4.000 m.",
+    "spotlightTag": "Iniziate da qui",
+    "deepDive": "Guide di trekking",
+    "noResults": "Nessun percorso a questo livello",
+    "moreVlogs": "Altri video di viaggio"
   }
 }

@@ -13,7 +13,8 @@
     "photos": "写真",
     "services": "現地サービス",
     "about": "About",
-    "shopping": "ショッピング"
+    "shopping": "ショッピング",
+    "hiking": "トレッキング"
   },
   "search": {
     "placeholder": "都市・テーマ・クリエイターを検索…",
@@ -240,7 +241,8 @@
       "guides": "ガイド",
       "photos": "フォトギャラリー",
       "services": "現地パートナー",
-      "shopping": "おすすめショッピング"
+      "shopping": "おすすめショッピング",
+      "hiking": "中国トレッキング"
     },
     "links": {
       "about": "サイト紹介",
@@ -282,5 +284,28 @@
     "noResults": "該当なし——フィルターを外してみてください",
     "loadMore": "もっと見る",
     "deepDive": "詳解ガイド"
+  },
+  "hiking": {
+    "pageTitle": "中国トレッキングガイド：入門から探検まで14コース",
+    "pageSubtitle": "難易度ラダーで整理した中国の定番トレッキングルート — 虎跳峡からカイラスまで。日数・標高・許可情報と厳選した中国トレッキング動画。",
+    "allTiers": "全難易度",
+    "tiers": {
+      "beginner": "入門",
+      "classic": "定番",
+      "challenging": "上級",
+      "expedition": "探検"
+    },
+    "daysLabel": "日数",
+    "distanceLabel": "距離",
+    "altitudeLabel": "最高標高",
+    "seasonLabel": "ベストシーズン",
+    "permitLabel": "許可・準備",
+    "videosLabel": "トレッキング動画",
+    "safetyTitle": "安全とルール",
+    "safetyText": "一部の有名ルート（鰲太縦走、野生の箭扣長城）は公式に閉鎖されています — ここでは合法かつ開放されているルートのみ掲載。最高標高をカバーする保険に加入し、チベットの規定は許可ガイドで確認、4,000m以上は単独登山を避けてください。",
+    "spotlightTag": "まずはここから",
+    "deepDive": "トレッキングガイド",
+    "noResults": "この難易度のルートはありません",
+    "moreVlogs": "中国旅行動画をもっと見る"
   }
 }

@@ -13,7 +13,8 @@
     "photos": "Fotos",
     "services": "Servicios",
     "about": "Acerca de",
-    "shopping": "Compras"
+    "shopping": "Compras",
+    "hiking": "Senderismo"
   },
   "search": {
     "placeholder": "Busca ciudad, tema o creador...",
@@ -240,7 +241,8 @@
       "guides": "Guías",
       "photos": "Galería de fotos",
       "services": "Socios locales",
-      "shopping": "Selección de compras"
+      "shopping": "Selección de compras",
+      "hiking": "Treks en China"
     },
     "links": {
       "about": "Quiénes somos",
@@ -282,5 +284,28 @@
     "noResults": "Sin resultados — prueba a quitar un filtro",
     "loadMore": "Cargar más",
     "deepDive": "Guías a fondo"
+  },
+  "hiking": {
+    "pageTitle": "Senderismo y trekking en China: 14 rutas clásicas",
+    "pageSubtitle": "Una escalera de dificultad con los mejores treks de China — de la Garganta del Salto del Tigre al Kailash — con días, altitudes, permisos y vídeos chinos seleccionados.",
+    "allTiers": "Todos los niveles",
+    "tiers": {
+      "beginner": "Iniciación",
+      "classic": "Clásica",
+      "challenging": "Exigente",
+      "expedition": "Expedición"
+    },
+    "daysLabel": "Días",
+    "distanceLabel": "Distancia",
+    "altitudeLabel": "Alt. máx.",
+    "seasonLabel": "Temporada",
+    "permitLabel": "Permisos",
+    "videosLabel": "Vídeos de trek",
+    "safetyTitle": "Seguridad y normas",
+    "safetyText": "Algunas rutas famosas (la travesía de Aotai, la muralla salvaje de Jiankou) están cerradas oficialmente — aquí solo incluimos rutas legales y abiertas. Contrata un seguro que cubra tu altitud máxima, lee nuestra guía de permisos antes de ir al Tíbet y nunca camines solo por encima de 4.000 m.",
+    "spotlightTag": "Empieza aquí",
+    "deepDive": "Guías de trekking",
+    "noResults": "Sin rutas en este nivel",
+    "moreVlogs": "Más vídeos de viaje"
   }
 }

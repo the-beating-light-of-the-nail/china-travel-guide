@@ -13,7 +13,8 @@
     "photos": "Photos",
     "services": "Services",
     "about": "À propos",
-    "shopping": "Shopping"
+    "shopping": "Shopping",
+    "hiking": "Randonnée"
   },
   "search": {
     "placeholder": "Rechercher une ville, un thème ou un vlogueur...",
@@ -240,7 +241,8 @@
       "guides": "Guides",
       "photos": "Galerie photo",
       "services": "Partenaires locaux",
-      "shopping": "Sélection shopping"
+      "shopping": "Sélection shopping",
+      "hiking": "Treks en Chine"
     },
     "links": {
       "about": "À propos",
@@ -282,5 +284,28 @@
     "noResults": "Aucun résultat — réinitialisez un filtre",
     "loadMore": "Voir plus",
     "deepDive": "Guides approfondis"
+  },
+  "hiking": {
+    "pageTitle": "Randonnée et trekking en Chine : 14 itinéraires classiques",
+    "pageSubtitle": "Une échelle de difficulté des meilleurs treks de Chine — des Gorges du Saut du Tigre au Kailash — avec durées, altitudes, permis et vidéos chinoises sélectionnées.",
+    "allTiers": "Tous niveaux",
+    "tiers": {
+      "beginner": "Débutant",
+      "classic": "Classique",
+      "challenging": "Exigeant",
+      "expedition": "Expédition"
+    },
+    "daysLabel": "Jours",
+    "distanceLabel": "Distance",
+    "altitudeLabel": "Alt. max",
+    "seasonLabel": "Saison",
+    "permitLabel": "Autorisations",
+    "videosLabel": "Vidéos de trek",
+    "safetyTitle": "Sécurité & règles",
+    "safetyText": "Certains itinéraires célèbres (la traversée de Aotai, la muraille sauvage de Jiankou) sont officiellement fermés — cette page ne liste que des sentiers légaux et ouverts. Prenez une assurance couvrant votre altitude maximale, lisez notre guide des permis avant tout projet au Tibet, et ne randonnez jamais seul au-dessus de 4 000 m.",
+    "spotlightTag": "Commencez ici",
+    "deepDive": "Guides de trek",
+    "noResults": "Aucun itinéraire à ce niveau",
+    "moreVlogs": "Plus de vidéos de voyage"
   }
 }

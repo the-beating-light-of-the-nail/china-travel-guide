@@ -13,7 +13,8 @@
     "photos": "图片墙",
     "services": "本地服务",
     "about": "关于我们",
-    "shopping": "购物"
+    "shopping": "购物",
+    "hiking": "徒步"
   },
   "search": {
     "placeholder": "搜索城市、话题或博主...",
@@ -240,7 +241,8 @@
       "guides": "攻略导航",
       "photos": "图片墙",
       "services": "本地服务",
-      "shopping": "购物清单"
+      "shopping": "购物清单",
+      "hiking": "徒步中国"
     },
     "links": {
       "about": "网站介绍",
@@ -282,5 +284,28 @@
     "noResults": "没有匹配的推荐——试试清除筛选",
     "loadMore": "加载更多",
     "deepDive": "深度指南"
+  },
+  "hiking": {
+    "pageTitle": "中国徒步指南：从入门到探险的 14 条经典路线",
+    "pageSubtitle": "按难度阶梯整理的中国经典徒步路线——从虎跳峡到冈仁波齐，每条附天数、海拔、许可信息与精选中文徒步视频。",
+    "allTiers": "全部难度",
+    "tiers": {
+      "beginner": "入门",
+      "classic": "经典",
+      "challenging": "进阶",
+      "expedition": "探险"
+    },
+    "daysLabel": "天数",
+    "distanceLabel": "里程",
+    "altitudeLabel": "最高海拔",
+    "seasonLabel": "最佳季节",
+    "permitLabel": "许可与后勤",
+    "videosLabel": "徒步视频",
+    "safetyTitle": "安全与规则",
+    "safetyText": "部分网红路线（鳌太线、野箭扣长城）已被官方封闭——本页只收录合法开放的线路。请购买覆盖最高海拔的保险，进藏前先读许可指南，4000 米以上切勿独行。",
+    "spotlightTag": "从这里开始",
+    "deepDive": "徒步深度指南",
+    "noResults": "该难度暂无路线",
+    "moreVlogs": "更多中国旅行视频"
   }
 }

@@ -50,6 +50,24 @@ const pack: LocalePack = {
     },
   },
   guides: {
+    'tiger-leaping-gorge-trek-guide': {
+      title: 'Sentiero alto delle Gole del Salto della Tigre: guida completa in 2 giorni',
+      excerpt: 'Il trek che ogni visitatore straniero dovrebbe fare nello Yunnan: trasporti da Lijiang o Shangri-La, scelta dei rifugi, i 28 tornanti e l\'arrivo alle rapide — senza permessi, tenda o guida.',
+      label: 'Trek di 2 giorni',
+      readTime: 'Lettura 9 min',
+    },
+    'china-trekking-permits-guide': {
+      title: 'Permessi e regole del trekking in Cina: cosa possono (e non) fare gli stranieri',
+      excerpt: 'Dove bastano le scarpe (quasi tutto Yunnan e Sichuan), dove serve un\'agenzia (tutto il Tibet) e cosa è vietato — più zone di confine, assicurazioni e soccorso.',
+      label: 'Permessi e regole',
+      readTime: 'Lettura 10 min',
+    },
+    'altitude-sickness-trekking-china': {
+      title: 'Il mal di montagna sui trek cinesi: la guida in parole semplici',
+      excerpt: 'Quali itinerari comportano rischio di AMS, le regole d\'oro dell\'acclimatazione, i sintomi che impongono la discesa immediata e come salire gradualmente invece di volare dritti a 4.400 m.',
+      label: 'Guida all\'altitudine',
+      readTime: 'Lettura 9 min',
+    },
     "xian-3-day-classic-route": {
       title: "3 giorni a Xi'an: Esercito di Terracotta, mura e street food",
       excerpt:
@@ -233,6 +251,92 @@ const pack: LocalePack = {
       description: "«Il Museo Nazionale della Cina a Pechino — eccellentissimo!» è una citazione testuale, e vale in generale: i grandi musei cinesi hanno trasformato i loro negozi in studi di design. Repliche fedeli, sciarpe, servizi da tè e cancelleria legate a collezioni reali: regali con una storia. Ingresso gratis su prenotazione.",
       priceRef: "Souvenir ¥30–300",
       whereToBuy: "Negozio del Museo Nazionale della Cina; grandi negozi di museo",
+    },
+  ],
+  hikingRoutes: [
+    {
+      name: 'Sentiero alto delle Gole del Salto della Tigre',
+      region: 'Yunnan, vicino a Lijiang',
+      tagline: 'Il trek cinese più famoso tra gli stranieri — rifugi, niente tenda',
+      season: 'ott–apr (stagione secca)',
+    },
+    {
+      name: 'Traversata dei pascoli del Wugongshan',
+      region: 'Jiangxi, vicino a Pingxiang',
+      tagline: 'Un mare d\'erba di 10.000 ettari sopra le nuvole',
+      season: 'mag–ott; set. erba dorata',
+    },
+    {
+      name: 'Ascensione notturna del Monte Hua',
+      region: 'Shaanxi, vicino a Xi\'an',
+      tagline: 'Scalinate di granito a 2.100 m — si sale di notte, alba sopra le nuvole',
+      season: 'apr–ott',
+    },
+    {
+      name: 'Sentieri di pietra di Zhagana',
+      region: 'Gannan (Amdo tibetano), Gansu',
+      tagline: 'Un villaggio tibetano di pietra sotto piramidi rocciose di 4.000 m',
+      season: 'giu–ott',
+    },
+    {
+      name: 'Yubeng e la kora del Meili',
+      region: 'Deqin, Yunnan',
+      tagline: 'Un villaggio senza strada nella valle sacra del Meili',
+      season: 'apr–giu e set–nov',
+    },
+    {
+      name: 'Laghi celesti di Daocheng Yading',
+      region: 'Garzê (Kham, Sichuan)',
+      tagline: 'Tre seimila sui laghi turchesi a 4.600 m',
+      season: 'set–nov colori d\'autunno',
+    },
+    {
+      name: 'Trek forestale Kanas–Hemu',
+      region: 'Altay, Xinjiang',
+      tagline: 'Foresta siberiana e steppa kazaka sotto le cime dell\'Altaj',
+      season: 'giu–set; metà set. dorato',
+    },
+    {
+      name: 'Traversata del Monte Siguniang (Changping→Bipeng)',
+      region: 'Xiaojin, Sichuan',
+      tagline: 'La parete di 6.250 m della «regina del Sichuan», da un capo all\'altro',
+      season: 'mag–ott; fine set. larici dorati',
+    },
+    {
+      name: 'Grande anello del Gongga (Minya Konka)',
+      region: 'Kangding, Sichuan',
+      tagline: 'Il giro del «re del Sichuan» da 7.556 m — ghiacciai, valichi e valli termali',
+      season: 'mag–giu e set–ott',
+    },
+    {
+      name: 'Linea dei pascoli del Genie',
+      region: 'Litang, Sichuan',
+      tagline: 'Un altopiano fiorito sotto un gigante inviolato di 6.204 m',
+      season: 'giu–ott; lug. fioritura',
+    },
+    {
+      name: 'Traversata del versante nord del Meili',
+      region: 'Deqin, Yunnan',
+      tagline: 'A faccia a faccia con i ghiacciai sospesi del lato nord',
+      season: 'mag–ott',
+    },
+    {
+      name: 'Attraversata dei laghi del deserto del Tengger',
+      region: 'Alxa, Mongolia Interna',
+      tagline: 'Tre giorni di dune, laghi salati e le stelle più assordanti della vita',
+      season: 'apr–mag e set–ott',
+    },
+    {
+      name: 'Kora del Monte Kailash',
+      region: 'Ngari, Tibet',
+      tagline: '52 km attorno alla montagna più sacra della Terra — quattro religioni',
+      season: 'mag–ott; festa Saga Dawa (mag/giu)',
+    },
+    {
+      name: 'Antico sentiero di Wusun',
+      region: 'Ili–Aksu, Xinjiang',
+      tagline: '2.000 anni di Via della Seta attraverso il Tianshan, fino al Lago del Cielo',
+      season: 'solo giu–set',
     },
   ],
 }

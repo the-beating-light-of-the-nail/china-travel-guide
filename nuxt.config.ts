@@ -33,7 +33,11 @@ const prerenderPages = [
   '/guides/what-to-buy-in-china',
   '/guides/china-tax-refund-guide',
   '/guides/taobao-jd-for-tourists',
+  '/guides/tiger-leaping-gorge-trek-guide',
+  '/guides/china-trekking-permits-guide',
+  '/guides/altitude-sickness-trekking-china',
   '/shopping',
+  '/hiking',
 ]
 
 export default defineNuxtConfig({

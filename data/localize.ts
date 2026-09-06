@@ -40,6 +40,7 @@ export interface LocalePack {
   photos?: Record<string, unknown>[]
   services?: Record<string, unknown>[]
   shoppingItems?: Record<string, unknown>[]
+  hikingRoutes?: Record<string, unknown>[]
 }
 
 /** 判断节点是否为本地化文本对象（L） */

@@ -13,7 +13,8 @@
     "photos": "Photos",
     "services": "Services",
     "about": "About",
-    "shopping": "Shopping"
+    "shopping": "Shopping",
+    "hiking": "Hiking"
   },
   "search": {
     "placeholder": "Search city, topic or vlogger...",
@@ -240,7 +241,8 @@
       "guides": "Guides",
       "photos": "Photo Gallery",
       "services": "Local Partners",
-      "shopping": "Shopping Picks"
+      "shopping": "Shopping Picks",
+      "hiking": "Hiking & Treks"
     },
     "links": {
       "about": "About Us",
@@ -282,5 +284,28 @@
     "noResults": "No picks match — try clearing a filter",
     "loadMore": "Load more",
     "deepDive": "Deep-dive guides"
+  },
+  "hiking": {
+    "pageTitle": "Hiking & Trekking in China: 14 Classic Routes, Beginner to Expedition",
+    "pageSubtitle": "A difficulty ladder of China's best treks — Tiger Leaping Gorge to Mt. Kailash — with days, altitude, permits and hand-picked Chinese trail videos for every route.",
+    "allTiers": "All levels",
+    "tiers": {
+      "beginner": "Beginner",
+      "classic": "Classic",
+      "challenging": "Challenging",
+      "expedition": "Expedition"
+    },
+    "daysLabel": "Days",
+    "distanceLabel": "Distance",
+    "altitudeLabel": "Max alt.",
+    "seasonLabel": "Season",
+    "permitLabel": "Permits & logistics",
+    "videosLabel": "Trail vlogs",
+    "safetyTitle": "Safety & rules",
+    "safetyText": "Some Instagram-famous routes (the Aotai traverse, the wild Jiankou wall) are officially closed — this page only lists legal, open trails. Buy insurance that covers your maximum altitude, read our permits guide before anything in Tibet, and never trek alone above 4,000 m.",
+    "spotlightTag": "Start here",
+    "deepDive": "Trekking guides",
+    "noResults": "No routes at this level",
+    "moreVlogs": "More China travel vlogs"
   }
 }

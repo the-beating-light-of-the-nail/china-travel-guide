@@ -13,7 +13,8 @@
     "photos": "Fotos",
     "services": "Services",
     "about": "Über uns",
-    "shopping": "Shopping"
+    "shopping": "Shopping",
+    "hiking": "Wandern"
   },
   "search": {
     "placeholder": "Stadt, Thema oder Vlogger suchen...",
@@ -240,7 +241,8 @@
       "guides": "Guides",
       "photos": "Fotogalerie",
       "services": "Lokale Partner",
-      "shopping": "Shopping-Tipps"
+      "shopping": "Shopping-Tipps",
+      "hiking": "Trekking-Routen"
     },
     "links": {
       "about": "Über uns",
@@ -282,5 +284,28 @@
     "noResults": "Keine Treffer — Filter zurücksetzen",
     "loadMore": "Mehr laden",
     "deepDive": "Vertiefende Guides"
+  },
+  "hiking": {
+    "pageTitle": "Wandern & Trekking in China: 14 klassische Routen",
+    "pageSubtitle": "Eine Schwierigkeitsleiter der besten Treks Chinas — von der Tigersprungschlucht bis zum Kailash — mit Tagen, Höhen, Genehmigungen und handverlesenen chinesischen Trail-Videos.",
+    "allTiers": "Alle Stufen",
+    "tiers": {
+      "beginner": "Einsteiger",
+      "classic": "Klassiker",
+      "challenging": "Anspruchsvoll",
+      "expedition": "Expedition"
+    },
+    "daysLabel": "Tage",
+    "distanceLabel": "Strecke",
+    "altitudeLabel": "Max. Höhe",
+    "seasonLabel": "Saison",
+    "permitLabel": "Genehmigungen",
+    "videosLabel": "Trail-Videos",
+    "safetyTitle": "Sicherheit & Regeln",
+    "safetyText": "Einige Instagram-berühmte Routen (die Aotai-Überschreitung, die wilde Jiankou-Mauer) sind offiziell gesperrt — hier stehen nur legale, offene Trails. Schließen Sie eine Versicherung ab, die Ihre Maximalhöhe deckt, lesen Sie vor Tibet-Reisen unseren Genehmigungsleitfaden und wandern Sie nie allein über 4.000 m.",
+    "spotlightTag": "Hier starten",
+    "deepDive": "Trekking-Leitfäden",
+    "noResults": "Keine Routen auf dieser Stufe",
+    "moreVlogs": "Mehr China-Reisevideos"
   }
 }

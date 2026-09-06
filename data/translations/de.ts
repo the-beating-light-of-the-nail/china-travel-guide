@@ -50,6 +50,24 @@ const pack: LocalePack = {
     },
   },
   guides: {
+    'tiger-leaping-gorge-trek-guide': {
+      title: 'Tiger-Sprung-Schlucht Höhenweg: der komplette 2-Tages-Guide',
+      excerpt: 'Der Trek, den jeder Ausländer in Yunnan gehen sollte: Anreise ab Lijiang oder Shangri-La, Hüttenwahl, die 28 Kehren und der Abschluss an den Mittleren Stromschnellen — ohne Genehmigung, Zelt oder Guide.',
+      label: '2-Tage-Trek',
+      readTime: '9 Min. Lesezeit',
+    },
+    'china-trekking-permits-guide': {
+      title: 'Trekking-Genehmigungen in China: was Ausländer dürfen und was nicht',
+      excerpt: 'Wo nur Schuhe nötig sind (der Großteil Yunnans und Sichuans), wo organisierte Touren Pflicht sind (ganz Tibet) und was verboten ist — plus Grenzregeln, Versicherung und Rettung.',
+      label: 'Genehmigungen & Regeln',
+      readTime: '10 Min. Lesezeit',
+    },
+    'altitude-sickness-trekking-china': {
+      title: 'Höhenkrankheit auf Chinas Treks: der ehrliche Leitfaden',
+      excerpt: 'Welche Routen AMS-Risiko tragen, die goldenen Regeln der Akklimatisation, Warnsignale für „jetzt absteigen“ und wie man eine Reise plant, die allmählich steigt statt direkt auf 4.400 m zu fliegen.',
+      label: 'Höhen-Leitfaden',
+      readTime: '9 Min. Lesezeit',
+    },
     'xian-3-day-classic-route': {
       title: '3 Tage in Xi’an: Terrakotta-Armee, Stadtmauer & Streetfood',
       excerpt: 'Erstmals in Xi’an? Diese 3-Tage-Route deckt alle Highlights ab, führt zu den besten Streetfood-Spots und enthält praktische Verkehrstipps. Einfach Schritt für Schritt folgen.',
@@ -228,6 +246,92 @@ const pack: LocalePack = {
       description: '„Nationalmuseum China in Peking — exzellent!“ ist ein Zitat aus einem Reiseforum, und es verallgemeinert: Chinas große Museen haben ihre Shops zu Designstudios gemacht. Getreue Replikate, Tücher, Teeservices und Schreibwaren mit Bezug zu echten Sammlungen sind Geschenke mit Geschichte. Eintritt frei mit Reservierung.',
       priceRef: 'Souvenirs ¥30–300',
       whereToBuy: 'Museumsshop des Nationalmuseums China; große Museumsshops',
+    },
+  ],
+  hikingRoutes: [
+    {
+      name: 'Tiger-Sprung-Schlucht Höhenweg',
+      region: 'Yunnan, bei Lijiang',
+      tagline: 'Chinas bei Ausländern berühmtester Trek — Hütten statt Zelt',
+      season: 'Okt–Apr (Trockenzeit)',
+    },
+    {
+      name: 'Wugongshan-Almwiesen-Überschreitung',
+      region: 'Jiangxi, bei Pingxiang',
+      tagline: '10.000 Hektar Grasmeer über den Wolken',
+      season: 'Mai–Okt; Sep goldenes Gras',
+    },
+    {
+      name: 'Huashan-Nachtwanderung',
+      region: 'Shaanxi, bei Xi\'an',
+      tagline: 'Granittreppen auf 2.100 m — nachts rauf, Sonnenaufgang über den Wolken',
+      season: 'Apr–Okt',
+    },
+    {
+      name: 'Zhagana-Steinberg-Pfade',
+      region: 'Gannan (tibetisches Amdo), Gansu',
+      tagline: 'Tibetisches Steindorf unter 4.000-m-Felspyramiden',
+      season: 'Jun–Okt',
+    },
+    {
+      name: 'Yubeng & die Meili-Kora',
+      region: 'Deqin, Yunnan',
+      tagline: 'Straßenloses Dorf unter dem heiligen Meili-Schneeberg',
+      season: 'Apr–Jun & Sep–Nov',
+    },
+    {
+      name: 'Daocheng-Yading-Himmelsseen',
+      region: 'Garzê (Sichuan-Kham)',
+      tagline: 'Drei 6.000er über türkisen Seen auf 4.600 m',
+      season: 'Sep–Nov Herbstfarben',
+    },
+    {
+      name: 'Kanas–Hemu-Waldtrek',
+      region: 'Altay, Xinjiang',
+      tagline: 'Sibirischer Wald und kasachische Steppe unter den Altaigipfeln',
+      season: 'Jun–Sep; Mitte Sep golden',
+    },
+    {
+      name: 'Mt.-Siguniang-Überschreitung (Changping→Bipeng)',
+      region: 'Xiaojin, Sichuan',
+      tagline: 'Die 6.250-m-Wand der „Königin von Sichuan“ komplett zu Fuß',
+      season: 'Mai–Okt; Ende Sep Lärchengold',
+    },
+    {
+      name: 'Gongga (Minya Konka) Große Runde',
+      region: 'Kangding, Sichuan',
+      tagline: 'Rund um den 7.556-m-„König von Sichuan“ — Gletscher, Pässe, Thermalquellen',
+      season: 'Mai–Jun & Sep–Okt',
+    },
+    {
+      name: 'Genie-Pastorenrunde',
+      region: 'Litang, Sichuan',
+      tagline: 'Blumenhochebene unter einem unbestiegenen 6.204er',
+      season: 'Jun–Okt; Jul Blüte',
+    },
+    {
+      name: 'Meili-Nordhang-Überschreitung',
+      region: 'Deqin, Yunnan',
+      tagline: 'Hängenden Gletschern auf der Nordseite direkt gegenüber',
+      season: 'Mai–Okt',
+    },
+    {
+      name: 'Tengger-Wüsten-Seenquerung',
+      region: 'Alxa, Innere Mongolei',
+      tagline: 'Drei Tage Dünen, Salzseen und die lautesten Sterne Ihres Lebens',
+      season: 'Apr–Mai & Sep–Okt',
+    },
+    {
+      name: 'Kailash-Kora',
+      region: 'Ngari, Tibet',
+      tagline: '52 km um den heiligsten Berg der Erde — vier Religionen, ein Gipfel',
+      season: 'Mai–Okt; Saga-Dawa-Fest (Mai/Jun)',
+    },
+    {
+      name: 'Wusun-Alter Pfad',
+      region: 'Ili–Aksu, Xinjiang',
+      tagline: '2.000 Jahre alte Seidenstraßen-Querung des Tianshan bis zum Himmelssee',
+      season: 'Nur Jun–Sep',
     },
   ],
 }

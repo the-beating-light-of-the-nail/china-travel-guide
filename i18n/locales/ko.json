@@ -13,7 +13,8 @@
     "photos": "사진",
     "services": "현지 서비스",
     "about": "소개",
-    "shopping": "쇼핑"
+    "shopping": "쇼핑",
+    "hiking": "트레킹"
   },
   "search": {
     "placeholder": "도시, 주제 또는 크리에이터 검색...",
@@ -240,7 +241,8 @@
       "guides": "가이드",
       "photos": "사진 갤러리",
       "services": "현지 파트너",
-      "shopping": "추천 쇼핑"
+      "shopping": "추천 쇼핑",
+      "hiking": "트레킹 코스"
     },
     "links": {
       "about": "사이트 소개",
@@ -282,5 +284,28 @@
     "noResults": "조건에 맞는 아이템이 없어요 — 필터를 초기화해 보세요",
     "loadMore": "더 보기",
     "deepDive": "심화 가이드"
+  },
+  "hiking": {
+    "pageTitle": "중국 트레킹 가이드: 입문부터 원정까지 14개 코스",
+    "pageSubtitle": "난도 사다리로 정리한 중국 대표 트레킹 코스 — 타이러핑 협곡부터 카일라시까지. 소요 일수·고도·허가 정보와 엄선한 중국 트레킹 영상.",
+    "allTiers": "전체 난이도",
+    "tiers": {
+      "beginner": "입문",
+      "classic": "클래식",
+      "challenging": "중급",
+      "expedition": "원정"
+    },
+    "daysLabel": "일정",
+    "distanceLabel": "거리",
+    "altitudeLabel": "최고 고도",
+    "seasonLabel": "최적 시기",
+    "permitLabel": "허가·준비",
+    "videosLabel": "트레킹 브이로그",
+    "safetyTitle": "안전과 규정",
+    "safetyText": "일부 유명 코스(아오타이 종주, 야생 젠커우 장성)는 공식 폐쇄되었습니다 — 이곳에는 합법적이고 개방된 코스만 담았습니다. 최고 고도를 보장하는 보험에 가입하고, 티베트 규정은 허가 가이드를 확인하며, 4,000m 이상은 절대 단독 산행을 삼가세요.",
+    "spotlightTag": "먼저 이 영상부터",
+    "deepDive": "트레킹 가이드",
+    "noResults": "이 난이도의 코스가 없습니다",
+    "moreVlogs": "더 많은 중국 여행 브이로그"
   }
 }
