@@ -102,6 +102,7 @@
     "photosSectionTitle": "ช่วงเวลาของ{name}",
     "partnersSectionTitle": "พาร์ตเนอร์ท้องถิ่น",
     "partnersSectionSubtitle": "ไกด์ คนขับ และบริการผ่านการตรวจสอบใน{name}",
+    "relatedTitle": "จุดหมายอื่น ๆ",
     "readOriginal": "อ่านฉบับเต็ม →"
   },
   "regions": {
@@ -202,7 +203,11 @@
   },
   "guide": {
     "backToGuides": "← กลับไปหน้าคู่มือทั้งหมด",
-    "moreGuides": "คู่มือเพิ่มเติม"
+    "moreGuides": "คู่มือเพิ่มเติม",
+    "faqTitle": "คำถามที่พบบ่อย",
+    "videosTitle": "ดูของจริง: วิดีโอจาก Bilibili",
+    "videosNote": "วิดีโอทั้งหมดเปิดในแท็บใหม่บน Bilibili (YouTube ของจีน) ไม่ต้องมีบัญชีก็ดูได้",
+    "relatedTitle": "แนะนำต่อ"
   },
   "about": {
     "title": "เกี่ยวกับเว็บไซต์นี้",

@@ -12,6 +12,8 @@
 import { mergeLanguagePack, fillLocaleFallbacks } from './localize'
 import type { L } from './localize'
 import { contentPacks } from './translations'
+import { fermentedVideoGroups } from './fermented-videos'
+import type { FermentedVideoGroup } from './fermented-videos'
 
 // 向后兼容：hub-data.ts 等仍从此处导入 L 类型
 export type { L } from './localize'
@@ -94,6 +96,18 @@ export interface CitySummary {
   region: L
 }
 
+/** guide 内嵌 FAQ：折叠面板渲染 + FAQPage JSON-LD */
+export interface GuideFaq {
+  q: L
+  a: L
+}
+
+/** guide 尾部互链（localePath 路由 chip） */
+export interface GuideRelatedLink {
+  to: string
+  label: L
+}
+
 export interface Guide {
   id: number
   title: L
@@ -106,6 +120,12 @@ export interface Guide {
   views: L
   publishedAt: L
   featured: boolean
+  /** 可选：正文后的分组视频架（B 站封面卡片 + 外链，见 data/fermented-videos.ts） */
+  videos?: FermentedVideoGroup[]
+  /** 可选：FAQ 折叠面板（同时注入 FAQPage 结构化数据） */
+  faq?: GuideFaq[]
+  /** 可选：尾部互链 chips */
+  relatedLinks?: GuideRelatedLink[]
 }
 
 // ===== 原始数据 =====
@@ -1966,6 +1986,72 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     views: { en: '3.8k reads', zh: '阅读 3800' },
     publishedAt: { en: '1 day ago', zh: '1天前' },
     featured: false,
+  },
+  {
+    slug: 'kimchi-sauerkraut-suancai',
+    title: {
+      en: 'Kimchi vs Sauerkraut vs Suancai: The Fermented Cabbage Atlas of China',
+      zh: '韩国泡菜、德国酸菜、中国酸菜：一颗白菜的发酵版图',
+    },
+    label: { en: 'Food Culture', zh: '美食文化' },
+    excerpt: {
+      en: 'Kimchi and sauerkraut are each one dish. China is a whole map: Northeast crock suancai, Sichuan\'s living pickle jars, Guizhou\'s hot-sour soup, Chongqing\'s suancaiyu, Fuling zhacai — what each one is, how they differ, where to eat them, and what the health claims actually say.',
+      zh: '韩国泡菜与德国酸菜各是一道单菜；中国是一整张地图：东北大缸酸菜、四川的老坛泡菜、贵州的酸汤、重庆的酸菜鱼、涪陵榨菜——它们各是什么、彼此差在哪、去哪吃，以及健康传言的真相。',
+    },
+    content: {
+      en: '<p>In early 2026, fermented cabbage had a genuinely strange moment: a sauerkraut-centered diet reportedly favored in the White House turned into American talk-show material, and searches for sauerkraut spiked. The fad has already faded. The question it left behind has not: when a cabbage ferments, whose tradition are you tasting? Most of the world can name exactly two — Germany\'s sauerkraut and Korea\'s kimchi. China has neither one dish nor one word for it. It has a family, spread across a continent-sized country: crock-fermented suancai in the Northeast, Sichuan\'s living pickle jars, Guizhou\'s hot-sour soup, Chongqing\'s suancaiyu, Fuling\'s zhacai. This is that map — what each one is, how they differ, where to eat them, and what the health claims actually say.</p><h2>The Two You Already Know</h2><p>Sauerkraut is the spare northern European branch: shredded white cabbage, about two percent salt, pressed under its own juice and left to lactic acid bacteria for one to four weeks. The result is one clean sour note. It traveled with migrants everywhere — an Eastern European winter staple, and in Pennsylvania Dutch country, pork with sauerkraut on New Year\'s Day for luck.</p><img src="/images/guides/fermented-sauerkraut.jpg" alt="A bowl of European sauerkraut, finely shredded fermented white cabbage"><p>Kimchi is the seasoned branch: napa cabbage salted overnight, rubbed with a paste of gochugaru chili, garlic, ginger and fermented seafood, and aged — traditionally in an onggi crock, in the old days partly buried to hold a cool, steady temperature. Korea keeps dozens of documented varieties, and kimjang, the collective autumn kimchi-making, joined UNESCO\'s intangible heritage list in 2013. In global search interest kimchi sits far above every other fermented cabbage on Earth — which is exactly why this article keeps it in the comparison.</p><img src="/images/guides/fermented-kimchi.jpg" alt="A bowl of Korean kimchi, napa cabbage fermented with chili paste"><h2>Suancai: The Northeast Crock</h2><p>In China\'s Northeast — Heilongjiang, Jilin, Liaoning — suancai (酸菜, "sour vegetable") means one specific thing: whole or halved napa cabbage packed into a waist-high ceramic crock with a light salt brine, weighed down with a stone, and left on a cold balcony or stairwell for a month or more as winter arrives. Technically it is sauerkraut\'s closest Chinese cousin — cabbage, salt, time, no spice. The format differs: whole leaves rather than shreds, a pressing stone rather than a lid-weight, and near-freezing outdoor air doing the job a European cellar does.</p><p>Unlike both sauerkraut and kimchi, Northeast suancai is almost never eaten raw. It goes into the pot: suancai stewed with pork belly and blood sausage (酸菜白肉血肠) is the region\'s signature winter dish; there are suancai-pork dumplings, iron-pot stews, hotpot. To eat it properly, plan a winter trip — Harbin or Shenyang, a restaurant with fogged windows, and a pot that arrives still boiling.</p><img src="/images/guides/fermented-suancai.jpg" alt="Northeast Chinese suancai stew with pork belly and blood sausage"><h2>Paocai: Sichuan\'s Living Jar</h2><p>Paocai is less a dish than an institution: a dedicated pickle jar (泡菜坛) with a water-sealed rim, holding a living spiced brine that a household keeps going for years — in the stories restaurants proudly tell, sometimes for generations. Vegetables cycle through at two speeds. Old-jar pickles (老坛泡菜) sit for weeks until properly sour; they are cooking ingredients — pickled chilies and ginger anchor yuxiang and countless other Sichuan flavors. "Bath pickles" (洗澡泡菜) dip in for a day and come out crisp and bright — the complimentary little dish that lands on every Chengdu table before you have ordered.</p><p>The brine itself is the point: a managed microbiome, fed with new vegetables, occasionally treated with a splash of baijiu, feared and loved like a family pet. When a Sichuan chef says the restaurant makes its own pickles, that is the claim — not a recipe, an ecosystem.</p><img src="/images/guides/fermented-paocai.jpg" alt="Sichuan paocai, pickled vegetables from a traditional water-sealed pickle jar"><h2>Suantang: Guizhou\'s Sour That Isn\'t Cabbage</h2><p>Guizhou, in China\'s mountainous southwest, pushes the idea one step further: the sour is not the vegetable, it is the soup. Red sour soup (红酸汤) ferments small tomatoes — traditionally the wild kind locals call maolajiao — with chili into a paste, then builds a broth on it. White sour soup (白酸汤) ferments rice water instead. The tradition belongs above all to the Miao and Dong peoples of a highland that historically saw little salt; sour did salt\'s job of making rice go down. The local proverb is blunt: "Three days without sour, and your legs wobble when you walk" (三天不吃酸，走路打蹿蹿).</p><p>The flagship is Kaili sour soup fish (凯里酸汤鱼): river fish poached in bubbling red sour broth, with a personal dipping bowl of chopped chili and fermented tomato. Kaili, a small city in Qiandongnan prefecture, is the dish\'s home; the nearby Xijiang Thousand-Household Miao Village serves it with the full mountain-stage experience. Guiyang runs excellent versions, and sour beef hotpot is the winter alternative.</p><img src="/images/guides/fermented-suantang.jpg" alt="Guizhou sour soup fish, Kaili suantangyu in red fermented tomato broth"><h2>Suancaiyu: A Sichuan Classic Built on Northern Cabbage</h2><p>Here is the twist that shows how Chinese food actually moves. Suancaiyu (酸菜鱼, "sour cabbage fish") — silky fish fillets poached in a broth loaded with pickled mustard greens — reads as pure Sichuan-Chongqing cooking, and most origin stories trace it to 1990s Chongqing. But the sour cabbage in the pot is Northeast-style suancai. A northern preservation technique, shipped south and rebuilt inside a southern flavor profile, became one of the most-ordered dishes in the country and spawned nationwide chains. Food mobility, in one pot.</p><img src="/images/guides/fermented-suancaiyu.jpg" alt="Suancaiyu, fish fillets with pickled cabbage in broth, at a Tai Er restaurant"><h2>Beyond Cabbage: Zhacai and the Wider Pickle Map</h2><p>The family extends past cabbage entirely. Fuling zhacai (涪陵榨菜) — the packet pickle in every Chinese supermarket and a real export product — is the pressed, salted, spiced knobby stem of a mustard plant, harvested in a narrow window before spring around Chongqing\'s Fuling district; the traditional process walks the tuber through drying, salting and pressing over many weeks (one much-watched video maker spent thirty days making ten crocks, then waited two more years to eat them). Tianjin\'s dongcai (冬菜) ferments napa with garlic into an umami finisher for soup and congee. Hakka cooks in Guangdong and Fujian keep their own suancai and the related meicai for braised pork belly. Dali, in Yunnan, folds local suancai into rice-noodle bowls. One country, one preservation idea, a dozen regional dialects of it.</p><img src="/images/guides/fermented-zhacai.jpg" alt="Fuling zhacai, the pressed and salted pickled mustard tuber"><h2>The Comparison Matrix</h2><table><thead><tr><th>Style</th><th>Main ingredient</th><th>Brine / medium</th><th>Time</th><th>Sour profile</th><th>Classic pairing</th><th>Live cultures</th></tr></thead><tbody><tr><td>Suancai (NE China)</td><td>Napa cabbage</td><td>Plain salt brine, stone-pressed crock</td><td>~30–45 days, near-freezing</td><td>Clean lactic sour, no spice</td><td>Pork belly &amp; blood sausage stew</td><td>No — always cooked</td></tr><tr><td>Paocai (Sichuan)</td><td>Cabbage, radish, chili, ginger…</td><td>Living spiced brine, water-sealed jar</td><td>1 day ("bath") to months</td><td>Bright, spiced, crunchy</td><td>Free table pickle; cooked into dishes</td><td>Yes, when raw</td></tr><tr><td>Red suantang (Guizhou)</td><td>Wild tomato + chili (or rice water)</td><td>Fermented paste → broth</td><td>Weeks to months</td><td>Hot, fruity fermented sour</td><td>Sour soup fish hotpot</td><td>Yes, in the broth</td></tr><tr><td>Kimchi (Korea)</td><td>Napa + radish</td><td>Gochugaru, garlic, ginger, fish sauce</td><td>1–3 weeks, cool</td><td>Spicy, umami-deep sour</td><td>Banchan, stews</td><td>Yes</td></tr><tr><td>Sauerkraut (Germany/Europe)</td><td>White cabbage</td><td>~2% salt, no spice</td><td>1–4 weeks</td><td>Sharp, simple lactic sour</td><td>Sausage, pork</td><td>Yes, when raw</td></tr></tbody></table><h2>Where to Eat What: The Travel Map</h2><table><thead><tr><th>You want</th><th>Go to</th><th>Order</th><th>Budget</th></tr></thead><tbody><tr><td>True crock suancai</td><td>Harbin or Shenyang, in winter</td><td>酸菜白肉血肠 — pointing at the menu works</td><td>¥40–80 a head</td></tr><tr><td>The living jar</td><td>Chengdu, any proper Sichuan restaurant</td><td>The free bath-paocai plate, then a pickled-chili dish</td><td>Free with your meal</td></tr><tr><td>Sour soup fish</td><td>Kaili, or Guiyang</td><td>凯里酸汤鱼 with the dipping bowl; sour beef hotpot in winter</td><td>¥60–120 a head</td></tr><tr><td>Suancaiyu at the source</td><td>Chongqing — or any Tai Er branch nationwide</td><td>One pot, rice on the side</td><td>¥50–90 a head</td></tr><tr><td>Zhacai tourism</td><td>Fuling (Chongqing), or any supermarket</td><td>A ¥3 packet; check the export shelves</td><td>¥3–10</td></tr></tbody></table><h2>The Health Truth, Without the Fad</h2><p>Fermented vegetables are legitimately good food: low in calories, high in fiber, and — when eaten raw — full of live lactic acid bacteria. Two honest footnotes. First, sodium: pickles are salt-delivery systems, and a generous serving can carry a meaningful share of a day\'s limit, which is exactly why Chinese tables treat them as condiments, not courses. Second, the 2026 sauerkraut-diet headlines: no vegetable burns fat, and a "White House diet" does not change chemistry. What fermented cabbage actually offers is flavor, and a window into how food stayed safe before refrigeration. That is a better story anyway.</p><h2>One Last Stop: The Dumpling</h2><p>The fermented cabbage universe ends where much of Chinese food ends: inside a dumpling. Northeast suancai, chopped and wrung dry with pork mince, fills one of the North\'s great dumplings — and in Xi\'an you will meet suantang shuijiao, dumplings served swimming in sour soup. Our dumpling atlas covers both, dumpling by dumpling, city by city.</p><img src="/images/guides/fermented-suancai-jiaozi.jpg" alt="A suancai pork dumpling (jiaozi)">',
+      zh: '<p>2026 年初，发酵白菜经历了一段真正魔幻的时刻：一则"白宫偏爱的酸菜饮食法"传闻成了美国脱口秀的素材，Google 上 sauerkraut 的搜索量随之飙升。热潮很快退去，它留下的问题却没退：一颗白菜发酵之后，你尝到的是谁的传统？全世界大多数人只能说出两个——德国酸菜（sauerkraut）和韩国泡菜（kimchi）。而中国既不止一道菜，也不止一个词，而是散布在这片大陆级国土上的一个家族：东北大缸里的酸菜、四川的老坛泡菜、贵州的酸汤、重庆的酸菜鱼、涪陵的榨菜。这就是那张版图——它们各是什么、彼此差在哪、去哪吃，以及健康传言的真相。</p><h2>你已经认识的那两位</h2><p>Sauerkraut（德国酸菜）是北欧的极简分支：圆白菜切丝，约 2% 的盐，靠自身析出的菜汁压住，交给乳酸菌一到四周。结果是一个干净的酸味。它随移民走遍世界——东欧的越冬主食；在宾州荷兰人地区，新年第一天的猪肉配酸菜寓意好运。</p><img src="/images/guides/fermented-sauerkraut.jpg" alt="一碗德式酸菜（sauerkraut），切细丝发酵的白圆白菜"><p>Kimchi（韩国泡菜）是调味分支：大白菜先盐腌过夜，再抹上辣椒粉、蒜、姜与发酵海鲜调成的酱料，装坛熟成——传统用陶缸（onggi），过去常半埋入土以保持低温稳定。韩国有据可查的泡菜品类数以十计，集体秋腌泡菜的 kimjang（越冬泡菜文化）2013 年列入 UNESCO 人类非物质文化遗产。在全球搜索热度上，kimchi 远高于其他任何发酵白菜——这正是本文必须把它放进对比的原因。</p><img src="/images/guides/fermented-kimchi.jpg" alt="一碗韩国泡菜（kimchi），辣椒酱发酵的大白菜"><h2>东北酸菜：大缸与压缸石</h2><p>在中国东北——黑龙江、吉林、辽宁——"酸菜"特指一件事：整棵或对半切的大白菜，装进齐腰高的陶缸，只放淡盐水，压上一块石头，搁在冷阳台或楼道里，交给渐渐到来的冬天，一个月以上。论工艺，它是 sauerkraut 在中国最近的亲戚——白菜、盐、时间，不加香料。形态不同：整叶而非切丝、压缸石而非盖重物、接近冰点的户外空气替欧洲的地窖完成了工作。</p><p>与 sauerkraut 和 kimchi 都不同的是，东北酸菜几乎从不生吃。它下锅：酸菜白肉血肠是这里的招牌炖菜；还有酸菜猪肉饺子、铁锅炖、火锅。想吃到位，请把行程放在冬天——哈尔滨或沈阳，找一家玻璃上凝着雾气的馆子，等一锅端上来还在沸腾的。</p><img src="/images/guides/fermented-suancai.jpg" alt="东北酸菜炖白肉血肠"><h2>四川泡菜：活着的老坛</h2><p>泡菜与其说是一道菜，不如说是一套制度：专用泡菜坛带水封沿口，坛里是养了多年的活性卤水——按餐馆爱讲的说法，有的传了几代人。蔬菜以两种速度进出：老坛泡菜泡到足周才算正酸，是烹饪原料——泡椒、泡姜撑起鱼香味型和无数川菜味；"洗澡泡菜"只泡一天，出来又脆又亮——就是在成都任意一家馆子落座后、还没点菜就先上桌的那碟免费小菜。</p><p>卤水本身才是主角：一个被管理着的微生物群落——添新菜"养坛"，偶尔倒一点白酒"救坛"，像家里的宠物一样被敬畏和疼爱。四川厨师说"泡菜我们自己泡"，说的就是这个：不是一份配方，是一个生态系统。</p><img src="/images/guides/fermented-paocai.jpg" alt="四川泡菜，传统水封泡菜坛里的泡菜"><h2>贵州酸汤：酸的尽头不是白菜</h2><p>贵州把这个想法再推一步：酸的不是菜，是汤。红酸汤用小番茄——传统上当地人叫"毛辣角"的野番茄——与辣椒发酵成酱再兑成汤底；白酸汤则发酵米汤。这套传统主要属于苗、侗等民族，属于这片历史上见盐不易的高地——酸替盐完成了"把饭送下去"的任务。俗话说得直白："三天不吃酸，走路打蹿蹿。"</p><p>头牌是凯里酸汤鱼：河鱼在翻滚的红酸汤里烫熟，配一碗辣椒面加酸番茄的个人蘸水。黔东南的凯里是这道菜的老家；附近的西江千户苗寨能给你完整的山地舞台版。贵阳也有出色版本，冬天的替代项是酸汤牛肉火锅。</p><img src="/images/guides/fermented-suantang.jpg" alt="贵州凯里酸汤鱼，红酸汤里的河鱼"><h2>重庆酸菜鱼：用东北酸菜做的川菜</h2><p>最能说明中国食物如何流动的一锅。酸菜鱼——滑嫩鱼片烫在铺满酸菜的汤里——从味型看是彻头彻尾的川渝菜，主流起源说法都指向 1990 年代的重庆。但锅里那把酸菜，正是东北做法的酸菜。一种北方保存技艺南下，被装进南方味型的框架，最终成为全国点单率最高的菜式之一，长出全国连锁。食物流动性，一锅见尽。</p><img src="/images/guides/fermented-suancaiyu.jpg" alt="太二酸菜鱼门店的酸菜鱼一锅"><h2>不止白菜：榨菜与更大的腌菜版图</h2><p>这个家族还越过了白菜本身。涪陵榨菜——每家中国超市都有、也真正出口海外的袋装腌菜——是芥菜的茎瘤（青菜头）经晾晒、盐腌、压榨、拌料制成，重庆涪陵周边在开春前的短暂窗口里收获；传统工艺要让菜头走完数周的流程（一位博主照本地做法花三十天做了十坛，然后又等了两年才开吃）。天津冬菜用白菜加大蒜发酵，是汤和粥的鲜味收尾。广东、福建的客家人有自己的酸菜和近亲梅干菜，专为梅菜扣肉而生。云南大理把本地酸菜折进米线碗。一个国家，同一种保存的智慧，十几种方言式的表达。</p><img src="/images/guides/fermented-zhacai.jpg" alt="涪陵榨菜，压榨盐腌的青菜头"><h2>对比矩阵</h2><table><thead><tr><th>品类</th><th>主料</th><th>介质</th><th>时长</th><th>酸型</th><th>经典搭配</th><th>入口活菌</th></tr></thead><tbody><tr><td>东北酸菜</td><td>大白菜</td><td>淡盐水、压缸石陶缸</td><td>约 30–45 天，近冰点</td><td>干净的乳酸酸，无香料</td><td>酸菜白肉血肠</td><td>无——必熟吃</td></tr><tr><td>四川泡菜</td><td>白菜、萝卜、辣椒、姜等</td><td>活性香料卤水、水封坛</td><td>1 天（洗澡）至数月</td><td>明亮的香料酸、脆</td><td>免费佐餐小菜；入菜</td><td>生吃时有</td></tr><tr><td>贵州红酸汤</td><td>毛辣角番茄 + 辣椒（或米汤）</td><td>发酵酱 → 汤底</td><td>数周至数月</td><td>热果味发酵酸</td><td>酸汤鱼火锅</td><td>汤里有</td></tr><tr><td>韩国泡菜</td><td>大白菜 + 萝卜</td><td>辣椒粉、蒜、姜、鱼露</td><td>1–3 周，低温</td><td>辣而鲜的深酸</td><td>小菜、汤锅</td><td>有</td></tr><tr><td>德国酸菜</td><td>圆白菜</td><td>约 2% 盐，无香料</td><td>1–4 周</td><td>锐利的单纯乳酸酸</td><td>香肠、猪肉</td><td>生吃时有</td></tr></tbody></table><h2>旅行吃图：去哪吃什么</h2><table><thead><tr><th>想吃</th><th>去哪</th><th>点什么</th><th>预算</th></tr></thead><tbody><tr><td>正宗大缸酸菜</td><td>哈尔滨或沈阳，冬天</td><td>酸菜白肉血肠（指着菜单点也行）</td><td>人均 ¥40–80</td></tr><tr><td>活着的老坛</td><td>成都，任意正经川菜馆</td><td>免费的洗澡泡菜，再点一道泡椒系菜</td><td>随餐免费</td></tr><tr><td>酸汤鱼</td><td>凯里，或贵阳</td><td>凯里酸汤鱼配蘸水；冬天换酸汤牛肉</td><td>人均 ¥60–120</td></tr><tr><td>源头的酸菜鱼</td><td>重庆——或全国任意太二门店</td><td>一锅，配米饭</td><td>人均 ¥50–90</td></tr><tr><td>榨菜巡礼</td><td>涪陵（重庆），或任意超市</td><td>一包 ¥3 的榨菜；看看出口货架</td><td>¥3–10</td></tr></tbody></table><h2>健康真相：不聊玄学</h2><p>发酵蔬菜是货真价实的好食物：低卡、高纤维，生吃时富含活性乳酸菌。两句诚实的补充。其一，钠：腌菜本质上是盐的载体，一份下饭的量可能就占掉一天限量的可观份额——这正是中国餐桌把它当佐餐小菜而非主菜的原因。其二，2026 年那波"酸菜减肥法"头条：没有任何蔬菜能燃烧脂肪，"白宫同款"也改变不了化学。发酵白菜真正给你的是风味，以及一段"冰箱发明之前食物如何保持安全"的历史。这本来就是个更好的故事。</p><h2>最后一站：饺子</h2><p>发酵白菜宇宙的终点，和许多中国食物一样，落在饺子里。东北酸菜切碎挤干拌上猪肉，是北方伟大饺子之一的心；在西安，你会遇到酸汤水饺——饺子泡在酸汤里上桌。我们的饺子图鉴讲过它们，一颗一颗、一城一城。</p><img src="/images/guides/fermented-suancai-jiaozi.jpg" alt="一颗酸菜猪肉饺子">',
+    },
+    image: '/images/guides/suancai-vs-sauerkraut.jpg',
+    readTime: { en: '12 min read', zh: '阅读 12 分钟' },
+    views: { en: '1.2k reads', zh: '阅读 1200' },
+    publishedAt: { en: 'Just published', zh: '刚刚发布' },
+    featured: false,
+    videos: fermentedVideoGroups,
+    faq: [
+      {
+        q: { en: 'Is Chinese suancai the same thing as kimchi?', zh: '中国酸菜和韩国泡菜是一回事吗？' },
+        a: {
+          en: 'They are relatives, not the same dish. All are lactic-acid ferments of vegetables, but Northeast suancai uses only a plain salt brine and whole leaves and is cooked before eating, while kimchi is seasoned with a chili-garlic-fish-sauce paste and eaten raw. China\'s closer cousin to kimchi in spirit is Sichuan paocai — also a spiced, living brine — though it is its own tradition too. This article deliberately introduces them side by side, without ranking them.',
+          zh: '是亲戚，不是同一道菜。它们都是蔬菜的乳酸发酵，但东北酸菜只用淡盐水泡整叶、吃前必烹，而 kimchi 用辣椒蒜酱与鱼露调味、生吃。气质上更接近 kimchi 的中国亲戚是四川泡菜——同样是调味的活性卤水——但它也是自成一派的传统。本文有意平行介绍，不排座次。',
+        },
+      },
+      {
+        q: { en: 'Is fermented cabbage actually healthy?', zh: '发酵白菜真的健康吗？' },
+        a: {
+          en: 'Low in calories, high in fiber, and raw versions carry live cultures — those virtues are real. The catch is sodium: pickles are salty by design, so they work as condiments rather than courses. And no fermented food burns fat; the 2026 sauerkraut-diet headlines were a fad, not chemistry.',
+          zh: '低卡、高纤维，生吃的版本含活菌——这些优点是真的。要注意的是钠：腌菜天生就是咸的，适合当佐餐小菜而非主菜。另外没有任何发酵食品能燃脂；2026 年那波"酸菜减肥法"头条是热潮，不是化学。',
+        },
+      },
+      {
+        q: { en: 'Where should I go to try Guizhou sour soup fish?', zh: '去哪里吃贵州酸汤鱼？' },
+        a: {
+          en: 'Kaili, in Qiandongnan prefecture, is the dish\'s home — a well-reviewed meal there runs about ¥100 a head. Guiyang has excellent versions with easier transport, and Xijiang Thousand-Household Miao Village adds the full mountain setting. Our Guizhou city page covers all of them.',
+          zh: '黔东南的凯里是这道菜的老家——当地一顿口碑店的酸汤鱼约人均百元。贵阳版本出色、交通更方便；西江千户苗寨胜在完整的山地场景。这些在贵州城市页里都有展开。',
+        },
+      },
+      {
+        q: { en: 'I\'m vegetarian — what can I eat from this list?', zh: '我是素食者，这份清单里能吃什么？' },
+        a: {
+          en: 'Plenty: bath paocai, zhacai, dongcai and most table pickles are plant-based. Suancai dumplings are usually pork-filled (ask first), and sour-soup broths are often built on fish or meat stock — check before ordering, or head to a Buddhist vegetarian restaurant (素菜馆), where fermented vegetables get whole menus of their own.',
+          zh: '不少：洗澡泡菜、榨菜、冬菜和大多数佐餐小菜都是素的。酸菜饺子多为猪肉馅（先问一句）；酸汤常以鱼汤或肉汤打底——点菜前确认，或直接去素菜馆，发酵蔬菜在那里有整页整页的菜单。',
+        },
+      },
+      {
+        q: { en: 'Can I buy any of this outside China?', zh: '在中国以外能买到这些吗？' },
+        a: {
+          en: 'Yes. Fuling zhacai is exported worldwide — look for "pickled mustard" or 榨菜 on Chinese supermarket shelves — and vacuum-packed suancai and paocai jars travel well. But the fresh-crock experience, you have to come for.',
+          zh: '能。涪陵榨菜远销全球——在中超货架找"pickled mustard"或榨菜字样；真空包装的酸菜、泡菜也耐储运。但大缸现捞的体验，只能亲自来。',
+        },
+      },
+    ],
+    relatedLinks: [
+      { to: '/dumplings', label: { en: 'The Dumpling Atlas', zh: '饺子图鉴' } },
+      { to: '/cities/guizhou', label: { en: 'Guizhou: Sour Soup Heartland', zh: '贵州：酸汤之乡' } },
+      { to: '/cities/chengdu', label: { en: 'Chengdu: Home of the Living Jar', zh: '成都：老坛泡菜之城' } },
+      { to: '/guides/chengdu-food-guide', label: { en: 'Chengdu Food Guide', zh: '成都美食攻略' } },
+      { to: '/guides/china-dumpling-guide', label: { en: 'China Dumpling Guide', zh: '中国饺子指南' } },
+    ],
   },
 ]
 

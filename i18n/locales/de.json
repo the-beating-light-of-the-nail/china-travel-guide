@@ -102,6 +102,7 @@
     "photosSectionTitle": "{name}-Momente",
     "partnersSectionTitle": "Lokale Partner",
     "partnersSectionSubtitle": "Verifizierte Guides, Fahrer & Services in {name}",
+    "relatedTitle": "Weitere Ziele",
     "readOriginal": "Ganzen Guide lesen →"
   },
   "regions": {
@@ -202,7 +203,11 @@
   },
   "guide": {
     "backToGuides": "← Zurück zu allen Guides",
-    "moreGuides": "Weitere Guides"
+    "moreGuides": "Weitere Guides",
+    "faqTitle": "FAQ",
+    "videosTitle": "Sehen Sie es selbst: Bilibili-Auswahl",
+    "videosNote": "Alle Videos laufen auf Bilibili, dem chinesischen YouTube, und öffnen in einem neuen Tab – ganz ohne Konto.",
+    "relatedTitle": "Weiter erkunden"
   },
   "about": {
     "title": "Über diese Seite",

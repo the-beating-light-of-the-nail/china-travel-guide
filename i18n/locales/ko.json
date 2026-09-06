@@ -102,6 +102,7 @@
     "photosSectionTitle": "{name}의 순간",
     "partnersSectionTitle": "현지 파트너",
     "partnersSectionSubtitle": "{name}의 인증 가이드·기사·서비스",
+    "relatedTitle": "다른 여행지",
     "readOriginal": "전문 읽기 →"
   },
   "regions": {
@@ -202,7 +203,11 @@
   },
   "guide": {
     "backToGuides": "← 가이드 목록으로",
-    "moreGuides": "더 많은 가이드"
+    "moreGuides": "더 많은 가이드",
+    "faqTitle": "자주 묻는 질문",
+    "videosTitle": "직접 확인하기: 빌리빌리 영상",
+    "videosNote": "모든 영상은 중국의 유튜브 빌리빌리(Bilibili)에서 새 탭으로 열리며 로그인이 필요 없습니다.",
+    "relatedTitle": "계속 둘러보기"
   },
   "about": {
     "title": "이 사이트 소개",

@@ -102,6 +102,7 @@
     "photosSectionTitle": "{name}の瞬間",
     "partnersSectionTitle": "現地パートナー",
     "partnersSectionSubtitle": "{name}の認定ガイド・ドライバー・サービス",
+    "relatedTitle": "他の目的地",
     "readOriginal": "全文を読む →"
   },
   "regions": {
@@ -202,7 +203,11 @@
   },
   "guide": {
     "backToGuides": "← ガイド一覧へ",
-    "moreGuides": "他のガイド"
+    "moreGuides": "他のガイド",
+    "faqTitle": "よくある質問",
+    "videosTitle": "その目で確かめる：ビリビリ動画",
+    "videosNote": "動画はすべて中国の YouTube「ビリビリ（Bilibili）」で新しいタブに開きます。ログイン不要です。",
+    "relatedTitle": "関連コンテンツ"
   },
   "about": {
     "title": "このサイトについて",

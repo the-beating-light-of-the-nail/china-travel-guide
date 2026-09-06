@@ -51,8 +51,8 @@ function cityName(slug: string): string {
   return c ? c.name[locale.value] : slug
 }
 
-// 侧边栏深度指南（饺子指南 + 成都美食指南）
-const deepDiveSlugs = ['china-dumpling-guide', 'chengdu-food-guide']
+// 侧边栏深度指南（饺子指南 + 发酵白菜宇宙 + 成都美食指南）
+const deepDiveSlugs = ['china-dumpling-guide', 'kimchi-sauerkraut-suancai', 'chengdu-food-guide']
 const deepDiveGuides = deepDiveSlugs
   .map(slug => getGuideBySlug(slug))
   .filter((g): g is NonNullable<typeof g> => Boolean(g))

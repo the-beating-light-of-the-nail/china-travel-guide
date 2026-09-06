@@ -102,6 +102,7 @@
     "photosSectionTitle": "{name}瞬间",
     "partnersSectionTitle": "本地合作伙伴",
     "partnersSectionSubtitle": "{name}认证向导、司机与本地服务",
+    "relatedTitle": "更多目的地",
     "readOriginal": "阅读全文 →"
   },
   "regions": {
@@ -202,7 +203,11 @@
   },
   "guide": {
     "backToGuides": "← 返回攻略导航",
-    "moreGuides": "更多攻略"
+    "moreGuides": "更多攻略",
+    "faqTitle": "常见问题",
+    "videosTitle": "眼见为实：B 站精选",
+    "videosNote": "以下视频均来自 B 站，新窗口打开，无需登录即可观看。",
+    "relatedTitle": "继续探索"
   },
   "about": {
     "title": "关于我们",

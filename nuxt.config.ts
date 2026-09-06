@@ -40,6 +40,7 @@ const prerenderPages = [
   '/hiking',
   '/dumplings',
   '/guides/china-dumpling-guide',
+  '/guides/kimchi-sauerkraut-suancai',
 ]
 
 export default defineNuxtConfig({
