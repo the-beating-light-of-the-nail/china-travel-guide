@@ -214,6 +214,9 @@ useHead({
         </div>
       </nav>
 
+      <!-- 视频速览栏：宽屏右侧固定列（guide 携带 videos 时渲染），窄屏由正文内联卡片覆盖 -->
+      <GuideVideoRail v-if="g.videos?.length" :groups="g.videos" />
+
       <!-- 底部导航 -->
       <div class="mt-12 pt-8 border-t border-slate-200 text-center">
         <NuxtLink
