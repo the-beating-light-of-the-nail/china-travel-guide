@@ -3,7 +3,6 @@
 // 供 chengdu-airport-food-guide / halal-food-in-chengdu /
 // chengdu-vs-chongqing-food / chengdu-food-guide（增强）四个页面挂载，
 // 结构与 data/fermented-videos.ts 的 FermentedVideoGroup 同构。
-// 封面存于 /images/vlogs/<bvid>.jpg，点击外链 B 站（新窗口），不嵌 iframe。
 // 【摆放位置】视频组默认渲染在文章尾部；在 guide 正文的 HTML 里写
 //   [[videos:<组id>]]（如 [[videos:tfu-inside]]）
 // 即可让该组内联渲染在标记处（推荐放在其主题章节末尾，让读者扫读时
@@ -17,10 +16,6 @@ import type { FermentedVideoGroup } from './fermented-videos'
 
 export function chengduFoodVideoUrl(bvid: string): string {
   return `https://www.bilibili.com/video/${bvid}`
-}
-
-export function chengduFoodVideoThumb(bvid: string): string {
-  return `/images/vlogs/${bvid}.jpg`
 }
 
 // ===== 天府/双流机场美食生存指南 =====
@@ -406,6 +401,317 @@ export const realVoicesVideoGroups: FermentedVideoGroup[] = [
         note: {
           en: 'The countryside banquet experience inside Chengdu\'s city limits: communal tables, no ordering, dishes land and you grab. The comments double as a street-vendor scam warning thread.',
           zh: '成都市区里的农村吃席体验：拼桌、不点菜、菜来了靠抢。评论区还兼职科普了街头小贩的坑。',
+        },
+        featured: false,
+      },
+    ],
+  },
+]
+
+// ===== 成都街头小吃指南（chengdu-street-food） =====
+// 播放量为 2026-09-09 快照，来自 scripts/coldstart/bili-search.mjs
+// search（"成都街头小吃"/"成都苍蝇馆子"/"成都夜市小吃"/"成都蛋烘糕"）
+// + batch 详情（scripts/coldstart/out/street-food-details.json）。
+export const streetFoodVideoGroups: FermentedVideoGroup[] = [
+  {
+    id: 'street-stalls',
+    heading: { en: 'The Street-Stall Lunch Economy', zh: '路边摊的午餐经济学' },
+    videos: [
+      {
+        bvid: 'BV1WY4y1p77K',
+        title: { en: 'Chengdu\'s ¥1-per-Skewer Bobo Chicken Street Cart', zh: '成都"1元地摊钵钵鸡"，够麻够辣，端着碗围着摊吃' },
+        vloggerName: '肉肉大搜索',
+        duration: '6:00',
+        viewsText: { en: '2.6M views', zh: '260.0万播放' },
+        publishedAt: { en: 'Mar 2022', zh: '2022年3月' },
+        note: {
+          en: 'Bobo chicken (钵钵鸡) at its most primitive: cold skewers pulled from a tub of chili oil, one yuan each, eaten standing around the cart with your bowl in hand. This is the format that later got gentrified into ¥3-a-skewer chain stores.',
+          zh: '钵钵鸡最原始的形态：冷串从红油钵里现抽，一元一签，端着碗围着摊站着吃。后来被连锁店"精致化"成 3 元一串之前，它长这样。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1eS4y1c7Gt',
+        title: { en: 'The Boxed-Lunch Auntie: ¥16 to Eat Your Fill, Mixed in a Basin', zh: '成都街头盒饭大姐，十几年用大盆拌肉，16元就能吃的饱' },
+        vloggerName: '肉肉大搜索',
+        duration: '6:41',
+        viewsText: { en: '4.2M views', zh: '415.1万播放' },
+        publishedAt: { en: 'Apr 2022', zh: '2022年4月' },
+        note: {
+          en: 'For over a decade this auntie has mixed rice and meat in a wash-basin-sized bowl for the neighborhood\'s workers — ¥16, no ambiance, pure fuel. Watching regulars arrive is a lesson in how Chengdu actually lunches.',
+          zh: '十几年了，这位大姐用洗脸盆大小的盆给街坊打工人拌饭——16 元，毫无环境，全是热量。看熟客们陆续来，就是看成都真实的午饭生态。',
+        },
+        featured: false,
+      },
+      {
+        bvid: 'BV1tg41187YK',
+        title: { en: '¥7 Pork Rice, ¥14 Twice-Cooked Pork: A 30-Year-Old Counter', zh: '成都7元肉扣饭，14元回锅肉满满的锅气，30多年老店边吃边扣' },
+        vloggerName: '肉肉大搜索',
+        duration: '5:05',
+        viewsText: { en: '2.2M views', zh: '217.7万播放' },
+        publishedAt: { en: 'Oct 2022', zh: '2022年10月' },
+        note: {
+          en: 'A 30-year-old rice-and-topping counter where ¥7 still buys pork over rice and ¥14 gets wok-heated twice-cooked pork. The owner tops up your bowl as you eat — the old street contract of "nobody leaves hungry."',
+          zh: '开了 30 多年的饭摊：7 元肉扣饭，14 元回锅肉还带着锅气。老板看你吃得差不多就过来"扣"一勺——街头的老规矩：没人饿着走。',
+        },
+        featured: false,
+      },
+    ],
+  },
+  {
+    id: 'fly-restaurants',
+    heading: { en: 'Fly Restaurants: Where Locals Actually Eat', zh: '苍蝇馆子：本地人真正下馆子的地方' },
+    videos: [
+      {
+        bvid: 'BV1fZ421H73B',
+        title: { en: 'Wang Gang Reviews a Fly Restaurant Selling Only 3 Dishes for 20+ Years', zh: '【王刚探店】成都苍蝇馆子，生意火爆，20多年来只卖"三样菜"' },
+        vloggerName: '餐饮研究员王刚',
+        duration: '14:05',
+        viewsText: { en: '1.5M views', zh: '151.0万播放' },
+        publishedAt: { en: 'Jun 2024', zh: '2024年6月' },
+        note: {
+          en: 'China\'s most-watched professional chef reviews a hole-in-the-wall that has sold exactly three dishes for two decades — and explains, in cook\'s terms, why the fire control beats restaurants ten times the price.',
+          zh: '中国最有影响力的专业厨师博主，探一家 20 年只卖三样菜的苍蝇馆子，并用厨师的语言解释：为什么它的火候胜过十倍价格的馆子。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1ba411q7Pw',
+        title: { en: 'A French Chef in Chengdu\'s Fly Restaurants: "I\'ve Become Fully Chinese-Stomached"', zh: '主厨广坦：大成都就像挖掘不尽的美食宝藏，苍蝇馆子撸串串，让我彻底变成中国胃' },
+        vloggerName: '主厨广坦',
+        duration: '5:12',
+        viewsText: { en: '134K views', zh: '13.4万播放' },
+        publishedAt: { en: 'Jan 2022', zh: '2022年1月' },
+        note: {
+          en: 'A classically trained French chef working in Chengdu eats skewers at a fly restaurant and narrates his full conversion. The best foreign-language bridge into this world: he explains what he\'s tasting in terms a Western palate understands.',
+          zh: '一位在成都工作的法餐主厨，在苍蝇馆子撸串串并全程解说自己的"倒戈"。这是外国观众进入这个世界最好的桥：他用西式味觉的词汇，讲清他在吃什么。',
+        },
+        featured: false,
+      },
+      {
+        bvid: 'BV1pz4y1W79X',
+        title: { en: 'Honest Review: Chengdu\'s Viral Fly Restaurant (Full of Tourists Queuing?)', zh: '成都爆火的苍蝇馆味道怎么样？（不过好像都是游客在排队）' },
+        vloggerName: '真探高文麒',
+        duration: '4:07',
+        viewsText: { en: '663K views', zh: '66.3万播放' },
+        publishedAt: { en: 'Aug 2023', zh: '2023年8月' },
+        note: {
+          en: 'The honest-check genre at its best: a no-drama reviewer visits a social-media-famous fly restaurant, notices the queue is mostly tourists, and separates the food from the hype. Exactly the skepticism you should pack for any "viral" spot.',
+          zh: '诚实测评的范本：探店博主去了一家网红苍蝇馆子，发现排队的多是游客，然后把"菜本身"和"网红滤镜"分开打分。去任何"爆火"小店前，都该带上这份警惕。',
+        },
+        featured: false,
+      },
+      {
+        bvid: 'BV1pW4y197WK',
+        title: { en: 'A Korean First-Timer Tries Mao-Kaoya at a Fly Restaurant', zh: '成都的苍蝇馆子都这么好吃吗？韩国人第一次吃冒烤鸭' },
+        vloggerName: 'Iam小方',
+        duration: '11:30',
+        viewsText: { en: '453K views', zh: '45.4万播放' },
+        publishedAt: { en: 'Jun 2023', zh: '2023年6月' },
+        note: {
+          en: 'Mao kaoya — roast duck drowned in mala broth — is Chengdu\'s answer to both hotpot and roast meat. A Korean vlogger\'s first encounter doubles as a beginner\'s FAQ: how to order, what the red oil is, why it costs so little.',
+          zh: '冒烤鸭——烤鸭泡进麻辣汤底——是成都对火锅和烤肉的双重回答。韩国博主的第一次体验顺便就是新手 FAQ：怎么点、红油是什么、为什么这么便宜。',
+        },
+        featured: false,
+      },
+    ],
+  },
+  {
+    id: 'night-markets',
+    heading: { en: 'Night Markets: The After-Dark Crawl', zh: '夜市：天黑之后的逛吃' },
+    videos: [
+      {
+        bvid: 'BV1e14y1i7pe',
+        title: { en: 'Chengdu\'s "Ceiling" Night Market: 11 Stalls in One Crawl', zh: '探秘成都夜市天花板！连吃11个小吃摊位！红油肥肠豆花+巨无霸肉串苕皮' },
+        vloggerName: '羊羊羊PD',
+        duration: '13:47',
+        viewsText: { en: '1.2M views', zh: '119.6万播放' },
+        publishedAt: { en: 'Aug 2023', zh: '2023年8月' },
+        note: {
+          en: 'A full crawl through one of Chengdu\'s biggest night markets — 11 stalls in one video, from red-oil pork-intestine douhua to jumbo meat skewers and shaopi (sweet potato sheets). Use it as your visual menu before you go.',
+          zh: '一条视频刷完成都头部夜市的 11 个摊位：红油肥肠豆花、巨无霸肉串、苕皮……出发前把它当图片菜单看。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1my4y1P71m',
+        title: { en: 'Three Hours in Yulin Night Market, Snacks From a Few Yuan', zh: '成都极限三小时逛吃玉林夜市！低至几元钱的小吃美味又管饱' },
+        vloggerName: '小果食',
+        duration: '7:36',
+        viewsText: { en: '175K views', zh: '17.5万播放' },
+        publishedAt: { en: 'Oct 2023', zh: '2023年10月' },
+        note: {
+          en: 'Yulin is the neighborhood the folk song made famous — and its night market is where locals actually eat, a few yuan per snack, no queue theater. A calmer alternative to the tourist-heavy Jianshe Road.',
+          zh: '玉林就是民谣里唱的那条路——它的夜市是本地人真正吃饭的地方，几块钱一样小吃，没有排队表演。比游客扎堆的建设路更松弛的选择。',
+        },
+        featured: false,
+      },
+    ],
+  },
+  {
+    id: 'snack-icons',
+    heading: { en: 'Snack Icons: Dan Hong Gao & the Sweet Finish', zh: '小吃名物：蛋烘糕与甜口收尾' },
+    videos: [
+      {
+        bvid: 'BV1CTG2z7E5j',
+        title: { en: 'An Objective Review of Chengdu\'s Famous "Granny" Dan Hong Gao', zh: '【客观评价】成都蛋烘糕婆婆的蛋烘糕' },
+        vloggerName: '山禾Yellow',
+        duration: '6:19',
+        viewsText: { en: '405K views', zh: '40.5万播放' },
+        publishedAt: { en: 'Apr 2025', zh: '2025年4月' },
+        note: {
+          en: 'Dan hong gao — the griddled egg cakes folded around fillings — is THE Chengdu street snack. This review of a viral granny\'s stall measures hype against craft: crust texture, filling ratio, and whether fame changed anything.',
+          zh: '蛋烘糕——小铜锅烙的蛋饼对折夹馅——是成都街头小吃的头牌。这条对"婆婆蛋烘糕"的测评，把名气和手艺分开称重：饼皮、馅料比、出名之后变没变味。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1iz421U7Cq',
+        title: { en: 'A Family Food Crawl from Chengdu to Leshan: Dan Hong Gao Breakfast to Beef Dinner', zh: '带娃从成都逛吃到乐山：早餐蛋烘糕红油抄手和红糖凉虾' },
+        vloggerName: '君在西安',
+        duration: '6:56',
+        viewsText: { en: '528K views', zh: '52.8万播放' },
+        publishedAt: { en: 'May 2024', zh: '2024年5月' },
+        note: {
+          en: 'A family with a toddler eats Chengdu street-style from breakfast onward — dan hong gao, red-oil wontons, brown-sugar liangxia — then trains it to Leshan for more. Proof the street-food tier of this city is genuinely family-friendly.',
+          zh: '带娃家庭从早餐开始吃成都街头：蛋烘糕、红油抄手、红糖凉虾，再坐高铁去乐山接着吃。证明这座城的小吃层级是真的亲子友好。',
+        },
+        featured: false,
+      },
+    ],
+  },
+]
+
+// ===== 成都火锅指南（chengdu-hot-pot-guide） =====
+// 播放量为 2026-09-09 快照（scripts/coldstart/out/batch2-details.json）。
+export const hotPotVideoGroups: FermentedVideoGroup[] = [
+  {
+    id: 'hotpot-queues',
+    heading: { en: 'The Queue Question: Is a 3-Hour Wait Worth It?', zh: '排队问题：3 小时的队值不值？' },
+    videos: [
+      {
+        bvid: 'BV1Sp4y1g7Zr',
+        title: { en: 'The Chengdu Hot Pot People Queue 3 Hours For — How Good Is It Really?', zh: '排队快三小时的成都火锅店到底有多好吃？' },
+        vloggerName: '真探高文麒',
+        duration: '4:51',
+        viewsText: { en: '1.8M views', zh: '184.8万播放' },
+        publishedAt: { en: 'Aug 2023', zh: '2023年8月' },
+        note: {
+          en: 'Chengdu\'s most trusted no-drama reviewer joins the city\'s most notorious hot pot queue and reports back like an auditor: wait mechanics, table turnover, and whether the pot itself justifies the clock. The comment section is a citywide referendum on queue culture.',
+          zh: '成都最可信的毒舌测评博主，加入了全城最出名的火锅队伍，然后像审计一样汇报：排队机制、翻台速度、锅底本身值不值这个时间。评论区则是一场全市公投。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1aw411Q7ud',
+        title: { en: 'A Foreign Resident Tests His Chengdu Friends\' No.1 Hot Pot', zh: '成都朋友心中 TOP1 的火锅，好吃得不像样了' },
+        vloggerName: '老王在中国',
+        duration: '6:53',
+        viewsText: { en: '581K views', zh: '58.1万播放' },
+        publishedAt: { en: 'Aug 2023', zh: '2023年8月' },
+        note: {
+          en: 'A long-term foreign resident takes his local friends\' unanimous No.1 pick to the test — the strongest possible curation signal, because Chengdu friends do not agree on hot pot lightly. His verdict doubles as a beginner\'s ordering guide.',
+          zh: '长居中国的外国博主，去测评本地朋友们口径罕见的"TOP1"——这是最强的筛选信号，因为成都人在火锅上从不轻易统一意见。他的结论顺便就是新手点单指南。',
+        },
+        featured: false,
+      },
+    ],
+  },
+  {
+    id: 'hotpot-neighborhood',
+    heading: { en: 'Neighborhood Pots: Where the Regulars Go', zh: '社区火锅：熟客们的地方' },
+    videos: [
+      {
+        bvid: 'BV17rqrY2Ev5',
+        title: { en: 'The South-Gate Hot Pot I\'ve Eaten at 20+ Times', zh: '吃了不下20次的火锅店！我愿称为成都南门火锅之光' },
+        vloggerName: '丹妮妮妮妮2098',
+        duration: '10:01',
+        viewsText: { en: '464K views', zh: '46.4万播放' },
+        publishedAt: { en: 'Dec 2024', zh: '2024年12月' },
+        note: {
+          en: 'Repeat-visit content is the highest tier of trust: a local vlogger\'s own rotation spot, eaten at twenty-plus times. This is what "local favorite" actually means — not a listicle, a habit.',
+          zh: '回访类内容是信任的最高等级：本地博主自己的轮换食堂，吃了二十多次。这才是"本地人最爱"的真实含义——不是清单，是习惯。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV16sNE6iEq3',
+        title: { en: 'The Neighborhood Pot My Subscribers Won\'t Stop Recommending', zh: '粉丝推荐N次的社区火锅，必须翻牌' },
+        vloggerName: '丹妮妮妮妮2098',
+        duration: '12:56',
+        viewsText: { en: '194K views', zh: '19.4万播放' },
+        publishedAt: { en: 'Jul 2026', zh: '2026年7月' },
+        note: {
+          en: 'Crowd-sourced curation: a community hot pot nominated over and over in the comments until the vlogger finally goes. Watch for the cold-menu fried-rice trick — a deep-cut local ordering move.',
+          zh: '众包筛选：评论区被粉丝点名太多次的社区火锅，博主终于去了。注意视频里的"冷门炒饭吃法"——相当深入的本地点单操作。',
+        },
+        featured: false,
+      },
+    ],
+  },
+]
+
+// ===== 成都美食一日游（chengdu-food-tour） =====
+export const foodTourVideoGroups: FermentedVideoGroup[] = [
+  {
+    id: 'tour-yulin',
+    heading: { en: 'One Day in Yulin, Eaten Properly', zh: '玉林一天的正确吃法' },
+    videos: [
+      {
+        bvid: 'BV1im421x7Q8',
+        title: { en: 'An Old-Chengdu Vlogger\'s Yulin Eating Day, Distilled', zh: '成都玉林一日游吃喝攻略，来自老成都up主的阶段性总结' },
+        vloggerName: '馒头叔叔就是大馒头',
+        duration: '8:27',
+        viewsText: { en: '184K views', zh: '18.4万播放' },
+        publishedAt: { en: 'Apr 2024', zh: '2024年4月' },
+        note: {
+          en: 'A born-and-raised Chengdu vlogger compresses his own neighborhood — the folk-song Yulin — into one walkable day of eating. The closest thing to being walked around by a local friend; steal his stop order directly.',
+          zh: '土生土长的成都 up 主，把自家街区——民谣里的玉林——压缩成一天走完的吃喝动线。等于本地朋友带你逛；他的停站顺序可以直接照抄。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1bzU2YrESN',
+        title: { en: 'Chengdu Speed-Run Food Day: Eating Whenever, Wherever', zh: '成都极限逛吃一日游，这里太适合随地大小吃了' },
+        vloggerName: '饭局的鱼',
+        duration: '10:41',
+        viewsText: { en: '57K views', zh: '5.7万播放' },
+        publishedAt: { en: 'Nov 2024', zh: '2024年11月' },
+        note: {
+          en: 'The anti-itinerary itinerary: no plan, maximum stops, eating standing, walking, queueing. Watch it to calibrate your own pace — this city rewards grazing over scheduling.',
+          zh: '反行程的行程：不做计划、停站最多、站着吃、走着吃、排队吃。看它来校准自己的节奏——这座城市奖励"放牧"，不奖励"排表"。',
+        },
+        featured: false,
+      },
+    ],
+  },
+  {
+    id: 'tour-classics',
+    heading: { en: 'The Old-School Rotation: Legacy Shops & Hand-Holding Routes', zh: '老店轮换：资深老店与保姆级路线' },
+    videos: [
+      {
+        bvid: 'BV1Zz9rBLEiL',
+        title: { en: '17 Legacy Chengdu Eateries, Mapped for Eating While Walking', zh: '最新成都17家资深老店美食攻略，最好的旅行就是边走边吃' },
+        vloggerName: '许有有Kmi',
+        duration: '11:30',
+        viewsText: { en: '142K views', zh: '14.2万播放' },
+        publishedAt: { en: 'Apr 2026', zh: '2026年4月' },
+        note: {
+          en: 'Seventeen time-tested shops in one current (2026) sweep — use it as the master index behind any self-guided route: pick three near your day\'s path, ignore the rest with a clear conscience.',
+          zh: '一条 2026 年新鲜的 17 家老店大盘点——把它当任何自走路线背后的主索引：挑你当天动线附近的三家，其余的放心略过。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV11ELrzLEpc',
+        title: { en: 'The Reputation-Only Chengdu Guide: Old Shops, Zero Misses', zh: '只推口碑老店的成都保姆级旅游攻略' },
+        vloggerName: '胖虎和小夫-',
+        duration: '10:01',
+        viewsText: { en: '87K views', zh: '8.7万播放' },
+        publishedAt: { en: 'Apr 2025', zh: '2025年4月' },
+        note: {
+          en: 'A "nanny-level" (hand-holding) guide that only lists shops with long-standing word of mouth — the Chinese internet\'s term for step-by-step curation. A good template for pacing a full eating day without burning out.',
+          zh: '一份只收口碑老店的"保姆级"攻略——中文互联网对"手把手级精选"的叫法。照着它安排一整天的吃喝不容易吃到撑崩。',
         },
         featured: false,
       },

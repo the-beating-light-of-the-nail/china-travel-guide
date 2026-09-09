@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // Guide 视频速览栏：宽屏（≥1280px）右侧固定列，按组列出全部 B 站精选视频，
 // 不读正文也能直达视频（新窗口外链）。窄屏隐藏（正文内联卡片已覆盖）。
-import { fermentedVideoUrl, fermentedVideoThumb } from '~/data/fermented-videos'
+// 缩略图为纯 CSS 占位（不自托管封面图），点击整卡外链 B 站观看。
+import { fermentedVideoUrl } from '~/data/fermented-videos'
 import type { FermentedVideoGroup } from '~/data/fermented-videos'
 
 defineProps<{ groups: FermentedVideoGroup[] }>()
@@ -30,13 +31,12 @@ const { t, locale } = useI18n()
           rel="noopener noreferrer"
           class="flex gap-2 rounded-lg px-1.5 py-1.5 hover:bg-slate-50 group/r transition-colors"
         >
-          <span class="relative w-[72px] shrink-0 aspect-video rounded overflow-hidden bg-slate-100">
-            <img
-              :src="fermentedVideoThumb(v.bvid)"
-              :alt="v.title[locale]"
-              loading="lazy"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover/r:scale-[1.08]"
-            >
+          <span class="relative w-[72px] shrink-0 aspect-video rounded overflow-hidden bg-gradient-to-br from-slate-700 via-slate-600 to-slate-500">
+            <span class="absolute inset-0 m-auto w-6 h-6 rounded-full bg-white/90 flex items-center justify-center">
+              <svg viewBox="0 0 24 24" class="w-3 h-3 text-brand translate-x-px" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
             <span class="absolute bottom-0.5 right-0.5 bg-black/75 text-white text-[8px] px-1 rounded">
               {{ v.duration }}
             </span>

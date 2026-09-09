@@ -95,7 +95,7 @@ useHead({
     { property: 'og:description', content: t('vlogs.pageSubtitle') },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: ogLocale(locale.value) },
-    { property: 'og:image', content: `${pub.siteUrl}${allVlogs[0]?.thumbnail || ''}` },
+    { property: 'og:image', content: `${pub.siteUrl}/images/dumplings/guide-cover.jpg` },
   ],
   script: [
     {

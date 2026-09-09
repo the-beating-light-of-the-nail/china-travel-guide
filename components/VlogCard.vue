@@ -1,8 +1,9 @@
 <script setup lang="ts">
-// Vlog 卡片组件 - 缩略图（16:9）、平台角标、播放按钮、标题、博主、标签、点评、外链
+// Vlog 卡片组件 - 点击加载官方播放器（不自托管封面图）、平台角标、时长角标、
+// 标题/底部「观看」外链原视频（新标签页）
 import type { Vlog } from '~/data/hub-data'
 
-defineProps<{
+const props = defineProps<{
   vlog: Vlog
 }>()
 
@@ -13,49 +14,57 @@ const platformStyle: Record<string, string> = {
   bilibili: 'bg-pink-600',
   youtube: 'bg-red-600',
 }
+
+// 从外链提取可嵌入的视频 id：B 站取 BV 号，YouTube 取 v 参数
+const videoId = computed(() => {
+  if (props.vlog.platform === 'youtube') {
+    try {
+      return new URL(props.vlog.externalUrl).searchParams.get('v') || ''
+    } catch {
+      return ''
+    }
+  }
+  return props.vlog.externalUrl.split('/').pop() || ''
+})
 </script>
 
 <template>
-  <!-- Vlog 卡片：整卡外链，新标签页打开 -->
-  <a
-    :href="vlog.externalUrl"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="card group block overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-black/10"
-  >
-    <!-- 缩略图区 -->
-    <div class="relative aspect-video overflow-hidden bg-slate-100">
-      <img
-        :src="vlog.thumbnail"
-        :alt="vlog.title[locale]"
-        loading="lazy"
-        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+  <!-- Vlog 卡片：缩略图点击原地播放（官方 iframe），标题/底部外链原视频 -->
+  <div class="card group block overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-black/10">
+    <!-- 播放器占位区（点击加载） -->
+    <div class="relative aspect-video overflow-hidden bg-slate-200">
+      <BiliPlayer
+        :id="videoId"
+        :provider="vlog.platform"
+        :title="vlog.title[locale]"
       >
+      </BiliPlayer>
       <!-- 平台角标 -->
       <span
-        class="absolute top-2 right-2 text-white text-[10px] font-semibold px-2 py-0.5 rounded"
+        class="absolute top-2 right-2 text-white text-[10px] font-semibold px-2 py-0.5 rounded pointer-events-none"
         :class="platformStyle[vlog.platform]"
       >
         {{ t(`vlogs.platforms.${vlog.platform}`) }}
       </span>
       <!-- 时长角标 -->
-      <span class="absolute bottom-2 right-2 bg-black/75 text-white text-[11px] px-1.5 py-0.5 rounded">
+      <span class="absolute bottom-2 right-2 bg-black/75 text-white text-[11px] px-1.5 py-0.5 rounded pointer-events-none">
         {{ vlog.duration }}
       </span>
-      <!-- 播放按钮（hover 浮现） -->
-      <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/25">
-        <span class="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-white text-lg shadow-lg">
-          ▶
-        </span>
-      </div>
     </div>
 
     <!-- 内容区 -->
     <div class="p-4">
-      <!-- 标题（两行截断） -->
-      <h3 class="text-[15px] text-ink mb-2 font-semibold leading-snug line-clamp-2 group-hover:text-brand transition-colors">
-        {{ vlog.title[locale] }}
-      </h3>
+      <!-- 标题（两行截断，外链原视频） -->
+      <a
+        :href="vlog.externalUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block mb-2"
+      >
+        <h3 class="text-[15px] text-ink font-semibold leading-snug line-clamp-2 group-hover:text-brand transition-colors">
+          {{ vlog.title[locale] }}
+        </h3>
+      </a>
 
       <!-- 博主 -->
       <div class="flex items-center gap-2 mb-2">
@@ -78,10 +87,15 @@ const platformStyle: Record<string, string> = {
       <!-- 底部元信息 -->
       <div class="flex items-center justify-between text-xs text-ink-muted pt-2.5 border-t border-slate-100">
         <span>{{ vlog.views[locale] }} · {{ vlog.publishedAt[locale] }}</span>
-        <span class="text-brand font-medium group-hover:text-brand-dark">
+        <a
+          :href="vlog.externalUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-brand font-medium group-hover:text-brand-dark"
+        >
           {{ t('vlogs.watch') }} →
-        </span>
+        </a>
       </div>
     </div>
-  </a>
+  </div>
 </template>

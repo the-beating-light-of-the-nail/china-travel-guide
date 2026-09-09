@@ -3,7 +3,7 @@
 // 路线按四级阶梯组织（beginner → classic → challenging → expedition），
 // 灵感来自国内流行的「徒步进阶路线」难度阶梯图，按外国徒步者
 // 的搜索与决策习惯重新筛选：合法开放、可到达、有成熟攻略与视频支撑。
-// 视频全部为 B 站精选长视频（封面存于 /images/vlogs/<bvid>.jpg）。
+// 视频全部为 B 站精选长视频，缩略图点击原地加载官方播放器（components/BiliPlayer.vue）。
 // 结构与 shopping-data.ts 同构：L 字段 en/zh 必填，
 // 其余 7 语由 data/translations/ 翻译包构建时合并，缺失回退英文。
 // 注意：数组顺序即翻译包索引对齐顺序，勿随意调换。
@@ -49,12 +49,8 @@ export interface HikingRoute {
   featured: boolean
 }
 
-// 封面与外链由 bvid 推导（与 /vlogs 目录约定一致）
 export function hikingVideoUrl(bvid: string): string {
   return `https://www.bilibili.com/video/${bvid}`
-}
-export function hikingVideoThumb(bvid: string): string {
-  return `/images/vlogs/${bvid}.jpg`
 }
 
 // ===== 原始数据（顺序即翻译包索引对齐顺序，勿随意调换） =====
@@ -77,7 +73,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'Oct–Apr (dry season)', zh: '10 月–次年 4 月（旱季）' },
     permit: { en: 'No permit; small trailhead fee at Qiaotou. Start early — the 28 Bends have no shade.', zh: '无需许可证；桥头入口有小额门票。早点出发——28 道拐全程无遮荫。' },
     highlights: { en: 'Jade Dragon Snow Mountain views, 28 Bends, Halfway Guesthouse "Toilet of the World", Middle Gorge rapids', zh: '玉龙雪山对望,28 道拐,Halfway 客栈天下第一厕,中虎跳江涛' },
-    image: hikingVideoThumb('BV1RovaBTEE4'),
+    image: '/images/guides/tiger-leaping-gorge-trek-guide.jpg',
     videos: [
       {
         bvid: 'BV1RovaBTEE4',
@@ -128,7 +124,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'May–Oct; Sep golden grass', zh: '5–10 月；9 月金草最美' },
     permit: { en: 'Scenic-area entry ticket only; "reverse crossing" (萍乡侧上山) avoids most stairs and crowds.', zh: '仅需景区门票；"反穿"（萍乡一侧上山）可避开大部分台阶与人流。' },
     highlights: { en: 'Summit grass sea, sunrise cloud ocean, reverse crossing route, ridge camping', zh: '高山草甸,日出云海,反穿路线,山脊露营' },
-    image: hikingVideoThumb('BV13U411o7AC'),
+    image: '/images/hiking/wugongshan.jpg',
     videos: [
       {
         bvid: 'BV13U411o7AC',
@@ -179,7 +175,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'Apr–Oct (summer for night climb)', zh: '4–10 月（夏季夜爬最舒服）' },
     permit: { en: 'Entry ticket + optional cable cars; the plank walk (长空栈道) is a separate small ticket. Gloves strongly recommended.', zh: '门票+可选缆车；长空栈道另收小额门票。强烈建议带手套。' },
     highlights: { en: 'Sunrise at East Peak, cliff plank walk, 5-peak ridge traverse, high-speed rail from Xi\'an (30 min)', zh: '东峰日出,长空栈道,五峰连穿,西安高铁 30 分钟直达' },
-    image: hikingVideoThumb('BV1uEQhBAEVr'),
+    image: '/images/hiking/mount-hua.jpg',
     videos: [
       {
         bvid: 'BV1uEQhBAEVr',
@@ -230,7 +226,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'Jun–Oct', zh: '6–10 月' },
     permit: { en: 'Scenic-area entry; for the 51 km Dieshan traverse hire a local guide — trails are faint and unmarked.', zh: '需景区门票；51 公里迭山穿越建议请当地向导——路迹细且无标记。' },
     highlights: { en: 'Tibetan villages & barley terraces, stone peak amphitheatre, marmots, almost no foreign tourists', zh: '藏寨与青稞梯田,石峰环抱,旱獭,几乎零外国游客' },
-    image: hikingVideoThumb('BV178qGYaEp9'),
+    image: '/images/hiking/zhagana.jpg',
     videos: [
       {
         bvid: 'BV178qGYaEp9',
@@ -272,7 +268,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'Apr–Jun & Sep–Nov', zh: '4–6 月、9–11 月' },
     permit: { en: 'Meili scenic-area entry; access trails change with roadworks (enter via Ninong in recent years) — check before booking. Acclimatize in Shangri-La (3,300 m) first.', zh: '需梅里景区门票；进村路线随修路调整（近年走尼农）——预订前先确认。建议先在香格里拉（3300 米）适应海拔。' },
     highlights: { en: 'Sacred Waterfall kora, Ice Lake, sunrise "golden mountain" on Kawagarbo, Tibetan pilgrimage culture', zh: '神瀑转经,冰湖,梅里日照金山,藏地转山文化' },
-    image: hikingVideoThumb('BV1pMaDepEyS'),
+    image: '/images/hiking/yubeng.jpg',
     videos: [
       {
         bvid: 'BV1pMaDepEyS',
@@ -323,7 +319,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'Sep–Nov autumn colours', zh: '9–11 月秋色最佳' },
     permit: { en: 'Park entry + shuttle; altitude is the real barrier — sleep low in Daocheng (3,750 m) the night before. Oxygen cans sold at the trailhead.', zh: '门票+观光车；真正的门槛是海拔——前一晚先住稻城县城（3750 米）适应。景区门口有氧气罐出售。' },
     highlights: { en: 'Milk Lake & Five-Color Lake, Chenresig kora, autumn larch gold, Tibetan monastery at the trailhead', zh: '牛奶海与五色海,央迈勇转山,秋日落叶松,冲古寺' },
-    image: hikingVideoThumb('BV1LSzHY4EsH'),
+    image: '/images/hiking/daocheng-yading.jpg',
     videos: [
       {
         bvid: 'BV1LSzHY4EsH',
@@ -374,7 +370,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'Jun–Sep; mid-Sep gold', zh: '6–9 月；9 月中旬金秋' },
     permit: { en: 'Scenic-area tickets for Hemu/Kanas; for Baihaba (border village) check current foreigner rules with your guesthouse. Bring your passport everywhere in Xinjiang.', zh: '禾木/喀纳斯需景区门票；白哈巴为边境村，外国人政策随时调整，请与客栈确认。在新疆请随身携带护照。' },
     highlights: { en: 'Hemu sunrise mist, Kanas river bends, Tuva log villages, mid-September larch gold', zh: '禾木晨雾,喀纳斯河湾,图瓦木屋,九月中旬落叶松金黄' },
-    image: hikingVideoThumb('BV1tV26YJEVU'),
+    image: '/images/hiking/kanas-hemu.jpg',
     videos: [
       {
         bvid: 'BV1tV26YJEVU',
@@ -425,7 +421,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'May–Oct; late Sep larch gold', zh: '5–10 月；9 月下旬秋色' },
     permit: { en: 'Valley entry tickets both ends; horse support bookable from Changping. Chengdu→Rilong is 3.5 h by bus — an easy add-on to a Sichuan trip.', zh: '两端均需沟内门票；长坪沟可雇马匹。成都→日隆班车 3.5 小时，川西行程轻松串联。' },
     highlights: { en: 'Mt. Siguniang (Yaomei) pyramid views, shepherd valleys, 4,680 m pass, autumn larch forest', zh: '幺妹峰金字塔,牧人山谷,4680 米垭口,秋日落叶松林' },
-    image: hikingVideoThumb('BV1qkHDzGE6b'),
+    image: '/images/hiking/siguniang-traverse.jpg',
     videos: [
       {
         bvid: 'BV1qkHDzGE6b',
@@ -477,7 +473,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'May–Jun & Sep–Oct windows', zh: '5–6 月与 9–10 月窗口期' },
     permit: { en: 'No permit, but true wilderness: carry tents, stove and 5+ days of food, or hire horses from Laoyulin. Weather kills the views half the time — build in a spare day for the Zimei Pass viewpoint.', zh: '无需许可证，但属于真正的荒野：帐篷炉具与 5 天以上食物，或在老榆林雇马。一半概率云雾锁山——为子梅垭口留一天机动。' },
     highlights: { en: 'Kangding hot springs, Zimei Pass sunrise on the summit, Cosha Haiku reflection, Ledorman Yin glacier', zh: '康定温泉,子梅垭口日照金山,冷噶措倒影,勒多曼因冰川' },
-    image: hikingVideoThumb('BV1Rm4y1s7qy'),
+    image: '/images/hiking/gongga-loop.jpg',
     videos: [
       {
         bvid: 'BV1Rm4y1s7qy',
@@ -528,7 +524,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'Jun–Oct; Jul flowers', zh: '6–10 月；7 月花季' },
     permit: { en: 'No permit; start from Litang with a driver to the trailhead. Bring camping gear or book the local herder-camp setups.', zh: '无需许可证；从理塘包车到徒步起点。自带露营装备或预订当地牧民营地。' },
     highlights: { en: '"Eye of Genie" spring, July flower sea, Litang horse festival (Aug), 6,204 m summit wall', zh: '格聂之眼,七月花海,理塘八月赛马节,6204 米主峰岩壁' },
-    image: hikingVideoThumb('BV1EsW3zuERd'),
+    image: '/images/hiking/genie-pasture.jpg',
     videos: [
       {
         bvid: 'BV1EsW3zuERd',
@@ -579,7 +575,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'May–Oct', zh: '5–10 月' },
     permit: { en: 'No permit currently, but go guided: horses carry gear, camps are established, and river fords need local judgement. Combine with Yubeng for the full Meili fortnight.', zh: '目前无需许可证，但务必跟队：马匹驮装备、营地成熟、过河需要当地判断。可与雨崩串成完整梅里徒步季。' },
     highlights: { en: 'Nairidongka glacier camp, 5,200 m border pass, frozen twin lakes, zero crowds', zh: '奶日顶卡冰川营地,5200 米滇藏垭口,双湖,无人打扰' },
-    image: hikingVideoThumb('BV1UDMXzqEaK'),
+    image: '/images/hiking/meili-north-slope.jpg',
     videos: [
       {
         bvid: 'BV1UDMXzqEaK',
@@ -620,7 +616,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'Apr–May & Sep–Oct', zh: '4–5 月与 9–10 月' },
     permit: { en: 'No permit; do not go independent — navigation and water make an operator essential. Gaiters or rented sand boots save your socks.', zh: '无需许可证；切勿独行——找水与导航决定了必须跟队。绑腿或租沙靴能救你的袜子。' },
     highlights: { en: 'Milky Way from a dune crest, salt-lake mirror, Moon Lake oasis, camel trains', zh: '沙脊银河,盐湖天空之镜,月亮湖绿洲,驼队' },
-    image: hikingVideoThumb('BV1Ux421k7We'),
+    image: '/images/hiking/tengger-desert.jpg',
     videos: [
       {
         bvid: 'BV1Ux421k7We',
@@ -662,7 +658,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'May–Oct; Saga Dawa festival (May/Jun)', zh: '5–10 月；萨嘎达瓦节（5/6 月）' },
     permit: { en: 'Tibet Travel Permit + Alien\'s Travel Permit + border permits, arranged by a licensed Tibet tour operator with guide and driver — foreigners cannot travel Tibet independently. Acclimatize 2–3 days in Lhasa first.', zh: '入藏函+外国人旅行证+边防证，由持牌西藏旅行社代办，配导游与司机——外国人在西藏不可自由行。请先在拉萨适应 2–3 天。' },
     highlights: { en: 'Dolma La pass with prayer flags, Drirapuk monastery face-on view, pilgrims from four faiths, Lake Manasarovar extension', zh: '卓玛拉经幡垭口,止热寺正面山容,四教朝圣者同路,可延伸玛旁雍错' },
-    image: hikingVideoThumb('BV1YyCCBWEa3'),
+    image: '/images/hiking/kailash-kora.jpg',
     videos: [
       {
         bvid: 'BV1YyCCBWEa3',
@@ -713,7 +709,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     season: { en: 'Jun–Sep window only', zh: '仅 6–9 月窗口期' },
     permit: { en: 'No special permit, but join an organised team: river fords, weather and logistics are genuine expedition scale. Horse support is normal and worth it. Carry passport at all times in Xinjiang.', zh: '无特殊许可证，但务必跟队：过河、天气与后勤都是真正的远征级。雇马很常见也值得。在新疆请全程携带护照。' },
     highlights: { en: 'Heaven Lake, glacier-river fords, Tianshan gorge systems, Silk Road history', zh: '天堂湖,冰川河过河,天山峡谷群,丝路古道史' },
-    image: hikingVideoThumb('BV1xtNw68Euz'),
+    image: '/images/hiking/wusun-trail.jpg',
     videos: [
       {
         bvid: 'BV1xtNw68Euz',

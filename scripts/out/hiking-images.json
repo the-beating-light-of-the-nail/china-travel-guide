@@ -1,0 +1,132 @@
+{
+  "mount-hua": {
+    "file": "mount-hua.jpg",
+    "title": "File:Huashan Mountain (140917819).jpeg",
+    "artist": "Neo",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Huashan_Mountain_(140917819).jpeg",
+    "search": "override",
+    "width": 2048,
+    "height": 831
+  },
+  "zhagana": {
+    "file": "zhagana.jpg",
+    "title": "File:202609 Zhagana Scenic Area 49.jpg",
+    "artist": "Jonashtand",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:202609_Zhagana_Scenic_Area_49.jpg",
+    "search": "override",
+    "width": 6000,
+    "height": 4000
+  },
+  "yubeng": {
+    "file": "yubeng.jpg",
+    "title": "File:Deqen, Yunnan, China - panoramio (3).jpg",
+    "artist": "christiali",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Deqen,_Yunnan,_China_-_panoramio_(3).jpg",
+    "search": "override",
+    "width": 3264,
+    "height": 2448
+  },
+  "siguniang-traverse": {
+    "file": "siguniang-traverse.jpg",
+    "title": "File:四姑娘山景区 Mount Siguniang Scenic Area 44.jpg",
+    "artist": "George N",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%E5%9B%9B%E5%A7%91%E5%A8%98%E5%B1%B1%E6%99%AF%E5%8C%BA_Mount_Siguniang_Scenic_Area_44.jpg",
+    "search": "override",
+    "width": 7952,
+    "height": 5304
+  },
+  "gongga-loop": {
+    "file": "gongga-loop.jpg",
+    "title": "File:Mount Gongga (Gonggashan Nature Reserve with WDPA ID 315667).jpg",
+    "artist": "Toni Wöhrl",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Gongga_(Gonggashan_Nature_Reserve_with_WDPA_ID_315667).jpg",
+    "search": "override",
+    "width": 3361,
+    "height": 2244
+  },
+  "tengger-desert": {
+    "file": "tengger-desert.jpg",
+    "title": "File:Tengger Desert.JPG",
+    "artist": "Unknown",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tengger_Desert.JPG",
+    "search": "override",
+    "width": 1280,
+    "height": 960
+  },
+  "wusun-trail": {
+    "file": "wusun-trail.jpg",
+    "title": "File:Kalajun Grassland.jpg",
+    "artist": "Akira CA",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kalajun_Grassland.jpg",
+    "search": "Kalajun grassland",
+    "width": 2048,
+    "height": 1063
+  },
+  "wugongshan": {
+    "file": "wugongshan.jpg",
+    "title": "File:Golden Dome of Wugong Mountain.jpg",
+    "artist": "RoundNoName",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Golden_Dome_of_Wugong_Mountain.jpg",
+    "search": "Wugong Mountain",
+    "width": 6000,
+    "height": 4000
+  },
+  "daocheng-yading": {
+    "file": "daocheng-yading.jpg",
+    "title": "File:Yading Chanadorje-Xianuoduoji Chonggu Grassland.jpg",
+    "artist": "Dcpeets",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Yading_Chanadorje-Xianuoduoji_Chonggu_Grassland.jpg",
+    "search": "Yading nature reserve",
+    "width": 4608,
+    "height": 3456
+  },
+  "kanas-hemu": {
+    "file": "kanas-hemu.jpg",
+    "title": "File:Hemu Village in the snow.jpg",
+    "artist": "Leeinm",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hemu_Village_in_the_snow.jpg",
+    "search": "Hemu village Xinjiang",
+    "width": 6240,
+    "height": 4160
+  },
+  "genie-pasture": {
+    "file": "genie-pasture.jpg",
+    "title": "File:Litang Monastry 09-2025.jpg",
+    "artist": "Izeberg007",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Litang_Monastry_09-2025.jpg",
+    "search": "Litang grassland",
+    "width": 5184,
+    "height": 3888
+  },
+  "meili-north-slope": {
+    "file": "meili-north-slope.jpg",
+    "title": "File:Meili Snow Mountain, Deqin County, Yunnan.jpg",
+    "artist": "Kevin Poh",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Meili_Snow_Mountain,_Deqin_County,_Yunnan.jpg",
+    "search": "Meili Xueshan",
+    "width": 4032,
+    "height": 3024
+  },
+  "kailash-kora": {
+    "file": "kailash-kora.jpg",
+    "title": "File:Kailash-Barkha.jpg",
+    "artist": "Jean-Marie Hullot",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kailash-Barkha.jpg",
+    "search": "Mount Kailash",
+    "width": 5472,
+    "height": 3648
+  }
+}

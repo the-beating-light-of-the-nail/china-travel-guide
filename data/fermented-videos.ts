@@ -1,8 +1,8 @@
 // 发酵美食专栏 B 站精选视频 - 《发酵白菜宇宙》guide 配套「眼见为实」视频架
 // ---------------------------------------------------------------
 // 16 条精选视频按 5 组组织，对应 guide 文章章节（东北酸菜 / 四川泡菜 /
-// 贵州酸汤 / 酸菜鱼 / 涪陵榨菜）。封面存于 /images/vlogs/<bvid>.jpg，
-// 点击外链 B 站（新窗口），不嵌 iframe。
+// 贵州酸汤 / 酸菜鱼 / 涪陵榨菜）。缩略图为纯 CSS 占位，点击原地加载 B 站官方播放器（components/BiliPlayer.vue），
+// 不自托管封面图。标题可外链 B 站（新窗口）。
 // 播放量为 2026-09-06 快照；筛选与元数据来自
 // scripts/coldstart/fermented-research.mjs + bili-search.mjs batch。
 // 结构与 hiking-data.ts 的 HikingVideo 同构：L 字段 en/zh 必填，
@@ -34,10 +34,6 @@ export interface FermentedVideoGroup {
 
 export function fermentedVideoUrl(bvid: string): string {
   return `https://www.bilibili.com/video/${bvid}`
-}
-
-export function fermentedVideoThumb(bvid: string): string {
-  return `/images/vlogs/${bvid}.jpg`
 }
 
 export const fermentedVideoGroups: FermentedVideoGroup[] = [

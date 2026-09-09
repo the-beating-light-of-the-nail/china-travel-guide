@@ -5,7 +5,7 @@ const localePath = useLocalePath()
 const route = useRoute()
 const { public: pub } = useRuntimeConfig()
 
-import { getHikingRoutes, HIKING_TIER_ORDER, hikingSpotlight, hikingVideoUrl, hikingVideoThumb } from '~/data/hiking-data'
+import { getHikingRoutes, HIKING_TIER_ORDER, hikingSpotlight, hikingVideoUrl } from '~/data/hiking-data'
 import type { HikingTier } from '~/data/hiking-data'
 import { getGuideBySlug } from '~/data/travel-data'
 
@@ -83,33 +83,29 @@ useHead({
       </div>
     </div>
 
-    <!-- 聚光灯视频：外国人徒步中国名场面 -->
-    <a
-      :href="hikingVideoUrl(hikingSpotlight.bvid)"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="card group flex flex-col md:flex-row overflow-hidden mb-10 hover:shadow-lg hover:shadow-black/10 transition-all"
-    >
-      <div class="relative md:w-[42%] aspect-video md:aspect-auto shrink-0 overflow-hidden bg-slate-100">
-        <img
-          :src="hikingVideoThumb(hikingSpotlight.bvid)"
-          :alt="hikingSpotlight.title[locale]"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-        >
-        <span class="absolute bottom-2 right-2 bg-black/75 text-white text-[11px] px-1.5 py-0.5 rounded">
-          {{ hikingSpotlight.duration }}
-        </span>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/25">
-          <span class="w-14 h-14 rounded-full bg-brand flex items-center justify-center text-white text-xl shadow-lg">▶</span>
-        </div>
+    <!-- 聚光灯视频：外国人徒步中国名场面（点击原地加载 B 站官方播放器） -->
+    <div class="card group flex flex-col md:flex-row overflow-hidden mb-10 hover:shadow-lg hover:shadow-black/10 transition-all">
+      <div class="relative md:w-[42%] aspect-video md:aspect-auto shrink-0 overflow-hidden bg-slate-200">
+        <BiliPlayer
+          :id="hikingSpotlight.bvid"
+          :title="hikingSpotlight.title[locale]"
+          :duration="hikingSpotlight.duration"
+        />
       </div>
       <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
         <span class="text-[10px] font-bold text-white bg-brand px-2 py-1 rounded self-start mb-3 uppercase tracking-wide">
           {{ t('hiking.spotlightTag') }}
         </span>
-        <h2 class="text-lg md:text-xl font-bold text-ink leading-snug mb-2 group-hover:text-brand transition-colors">
-          {{ hikingSpotlight.title[locale] }}
-        </h2>
+        <a
+          :href="hikingVideoUrl(hikingSpotlight.bvid)"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mb-2"
+        >
+          <h2 class="text-lg md:text-xl font-bold text-ink leading-snug group-hover:text-brand transition-colors">
+            {{ hikingSpotlight.title[locale] }}
+          </h2>
+        </a>
         <p class="text-sm text-ink-muted leading-relaxed mb-3">
           {{ hikingSpotlight.note[locale] }}
         </p>
@@ -118,7 +114,7 @@ useHead({
           <span class="text-brand font-medium ml-1">{{ t('vlogs.watch') }} →</span>
         </p>
       </div>
-    </a>
+    </div>
 
     <div class="flex gap-10">
       <!-- 主内容区：路线卡片 -->

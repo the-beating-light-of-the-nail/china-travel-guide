@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // 徒步路线卡片 - 难度角标、关键数据、路线简介、许可证提示、精选 B 站视频列表
 import type { HikingRoute } from '~/data/hiking-data'
-import { hikingVideoUrl, hikingVideoThumb } from '~/data/hiking-data'
+import { hikingVideoUrl } from '~/data/hiking-data'
 
 const props = defineProps<{
   route: HikingRoute
@@ -108,16 +108,12 @@ const tierStyle: Record<string, string> = {
               rel="noopener noreferrer"
               class="flex gap-3 group/v"
             >
-              <span class="relative w-[104px] shrink-0 aspect-video rounded overflow-hidden bg-slate-100">
-                <img
-                  :src="hikingVideoThumb(v.bvid)"
-                  :alt="v.title[locale]"
-                  loading="lazy"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover/v:scale-[1.05]"
-                >
-                <span class="absolute bottom-1 right-1 bg-black/75 text-white text-[9px] px-1 rounded">
-                  {{ v.duration }}
-                </span>
+              <span class="relative w-[104px] shrink-0 aspect-video rounded overflow-hidden bg-slate-200">
+                <BiliPlayer
+                  :id="v.bvid"
+                  :title="v.title[locale]"
+                  :duration="v.duration"
+                />
               </span>
               <span class="min-w-0 flex-1">
                 <span class="block text-[12px] text-ink font-medium leading-snug line-clamp-2 group-hover/v:text-brand transition-colors">
