@@ -135,3 +135,87 @@ export const airportVideoGroups: FermentedVideoGroup[] = [
     ],
   },
 ]
+
+// ===== 成都清真美食指南 =====
+export const halalVideoGroups: FermentedVideoGroup[] = [
+  {
+    id: 'halal-chengdu',
+    heading: { en: 'Chengdu\'s Sichuan-Style Halal Kitchens', zh: '川味清真菜：成都的全牛馆子' },
+    videos: [
+      {
+        bvid: 'BV1knVw6CEkP',
+        title: { en: 'A Food Journey — A Chengdu Hui Restaurant', zh: '美食之旅——成都回民餐馆' },
+        vloggerName: '王迅',
+        duration: '4:59',
+        viewsText: { en: '227K views', zh: '22.7万播放' },
+        publishedAt: { en: 'May 2026', zh: '2026年5月' },
+        note: {
+          en: 'Sichuan-born actor Wang Xun — a Chengdu local — takes viewers to the Hui-run restaurant he has eaten at for years. The most-watched recent window into the city\'s halal food scene.',
+          zh: '川籍演员王迅带观众去他吃了多年的回民餐馆——观察成都清真饮食圈最近的一扇高播放量窗口。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1zjUCB3EJv',
+        title: {
+          en: 'First Taste of Sichuan-Style Halal — The Boss Handed Me a Basin for Rice',
+          zh: '【逛吃成都】第一次吃川味清真菜！老板给了我一个盆…',
+        },
+        vloggerName: '逛吃小猪猪',
+        duration: '7:19',
+        viewsText: { en: '97K views', zh: '9.7万播放' },
+        publishedAt: { en: 'Nov 2025', zh: '2025年11月' },
+        note: {
+          en: 'At Huangchengba Beef Restaurant in the Xiaojiaghe residential quarter: an all-beef menu — brain, marrow, tripe, tongue — all in classic Sichuan technique. Rice refills come by the basin.',
+          zh: '肖家河居民区的皇城坝牛肉馆：全牛菜单——牛脑花、牛骨髓、牛肚、牛舌——全是经典川式做法，米饭直接用盆上。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV18qq8BFEiM',
+        title: { en: 'Found a Halal Restaurant in Chengdu — Coming Back', zh: '在成都发现了一家清真菜，下次还去' },
+        vloggerName: '馋人老田',
+        duration: '7:01',
+        viewsText: { en: '62K views', zh: '6.2万播放' },
+        publishedAt: { en: 'Dec 2025', zh: '2025年12月' },
+        note: {
+          en: 'A low-key walk into one of the halal joints locals actually rotate through — the comments chime in with more halal picks in the same block.',
+          zh: '低调探店成都本地人轮着去的清真馆子——评论区接力补充了同一条街上的更多清真选择。',
+        },
+        featured: false,
+      },
+    ],
+  },
+  {
+    id: 'halal-staples',
+    heading: { en: 'The Staples: Beef Noodles & Mutton Soup', zh: '日常支柱：牛肉面与羊肉汤' },
+    videos: [
+      {
+        bvid: 'BV13KbW6tEHx',
+        title: { en: 'Lanzhou Beef Noodles — The Standard, at the Source', zh: '在兰州连连跺脚的「兰州牛肉面」' },
+        vloggerName: '特别乌啦啦',
+        duration: '6:13',
+        viewsText: { en: '70K views', zh: '7.0万播放' },
+        publishedAt: { en: 'Sep 2026', zh: '2026年9月' },
+        note: {
+          en: 'What a proper bowl looks like at the source in Lanzhou — the benchmark for the Muslim-run noodle shops you\'ll rely on in every Chinese city, Chengdu included.',
+          zh: '兰州原产地的一碗标准牛肉面长什么样——你在所有中国城市（包括成都）赖以生存的清真拉面店的基准线。',
+        },
+        featured: false,
+      },
+      {
+        bvid: 'BV1zMAHeZE4X',
+        title: { en: 'Jianyang Mutton Soup: Milk-White Broth + Fire-Blasted Liver & Kidney', zh: '【王刚探店】四大羊肉汤之一：简阳羊肉汤' },
+        vloggerName: '餐饮研究员王刚',
+        duration: '12:33',
+        viewsText: { en: '524K views', zh: '52.4万播放' },
+        publishedAt: { en: 'Feb 2025', zh: '2025年2月' },
+        note: {
+          en: 'Chef Wang Gang on Sichuan\'s famous mutton soup, ladled from a milk-white pot and paired with wok-fired lamb organs — Chengdu\'s winter halal-friendly classic. Check for the 清真 sign shop by shop.',
+          zh: '王刚讲四川名物简阳羊肉汤：奶白汤锅配火爆羊肝腰——成都冬天的清真友好经典。具体门店记得逐家看清真标识。',
+        },
+        featured: true,
+      },
+    ],
+  },
+]

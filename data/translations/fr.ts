@@ -102,6 +102,13 @@ const pack: LocalePack = {
       label: "Guide aéroport",
       readTime: "9 min de lecture",
     },
+    "halal-food-in-chengdu": {
+      title: "Manger halal à Chengdu : le guide pratique pour voyageurs musulmans (+ carte de phrases)",
+      excerpt:
+        "Manger halal dans la capitale chinoise du porc, ça marche — avec la bonne méthode : cuisines halal 100 % bœuf façon sichuanaise, histoire du quartier hui près de la place Tianfu, les nouilles de Lanzhou comme filet de sécurité, les pièges du saindoux et du vin de cuisine, et une carte de phrases qui parle pour vous.",
+      label: "Guide halal",
+      readTime: "8 min de lecture",
+    },
     "first-trip-to-china-guide": {
       title: "Premier voyage en Chine : le guide de préparation complet",
       excerpt:

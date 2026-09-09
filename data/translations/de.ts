@@ -92,6 +92,12 @@ const pack: LocalePack = {
       label: 'Flughafen-Guide',
       readTime: '9 Min. Lesezeit',
     },
+    'halal-food-in-chengdu': {
+      title: 'Halal-Essen in Chengdu: der Praxis-Guide für muslimische Reisende (+ Sprachkarte)',
+      excerpt: 'Halal in Chinas Schweinefleisch-Hauptstadt funktioniert — mit System: reinen Rind-Küchen in Sichuan-Stil, der Hui-Geschichte rund um den Tianfu-Platz, Lanzhou-Nudelläden als Alltags-Rettung, den Schmalz- und Kochwein-Fallen und einer Sprachkarte, die für Sie redet.',
+      label: 'Halal-Guide',
+      readTime: '8 Min. Lesezeit',
+    },
     'china-dumpling-guide': {
       title: 'Der Teigtaschen-Guide für China: 15 Sorten, fünf Familien, ein langes Mittagessen',
       excerpt: 'Gekocht, gedämpft, gebraten, in Brühe oder süß — wie Sie jede chinesische Teigtasche unterscheiden, was sie kosten darf, wie Sie ohne ein Wort Chinesisch bestellen und wo jede Sorte am besten ist.',

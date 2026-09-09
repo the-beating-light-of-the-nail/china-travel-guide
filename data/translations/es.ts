@@ -92,6 +92,12 @@ const pack: LocalePack = {
       label: 'Guía de aeropuerto',
       readTime: 'Lectura de 9 min',
     },
+    'halal-food-in-chengdu': {
+      title: 'Comida halal en Chengdu: guía práctica para viajeros musulmanes (+ tarjeta de frases)',
+      excerpt: 'Comer halal en la capital china del cerdo funciona — con método: cocinas halal de solo ternera al estilo sichuano, la historia del barrio hui junto a la plaza Tianfu, los tallarines de Lanzhou como red de seguridad, las trampas de la manteca y el vino de cocina, y una tarjeta de frases que habla por ti.',
+      label: 'Guía halal',
+      readTime: 'Lectura de 8 min',
+    },
     'china-dumpling-guide': {
       title: 'La guía del dumpling en China: 15 variedades, cinco familias, un largo almuerzo',
       excerpt: 'Hervidos, al vapor, a la plancha, en sopa o dulces — cómo distinguir cada dumpling chino, cuánto pagar, cómo pedir sin una palabra de chino y dónde comer cada estilo en su mejor versión.',

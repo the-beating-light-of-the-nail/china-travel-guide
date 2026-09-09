@@ -14,7 +14,7 @@ import type { L } from './localize'
 import { contentPacks } from './translations'
 import { fermentedVideoGroups } from './fermented-videos'
 import type { FermentedVideoGroup } from './fermented-videos'
-import { airportVideoGroups } from './chengdu-food-videos'
+import { airportVideoGroups, halalVideoGroups } from './chengdu-food-videos'
 
 // 向后兼容：hub-data.ts 等仍从此处导入 L 类型
 export type { L } from './localize'
@@ -2121,8 +2121,74 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     ],
     relatedLinks: [
       { to: '/guides/chengdu-food-guide', label: { en: 'The Chengdu Food Guide', zh: '成都美食全指南' } },
+      { to: '/guides/halal-food-in-chengdu', label: { en: 'Halal Food in Chengdu', zh: '成都清真美食指南' } },
       { to: '/cities/chengdu', label: { en: 'Chengdu City Guide', zh: '成都城市页' } },
       { to: '/guides/first-trip-to-china-guide', label: { en: 'First Trip to China', zh: '第一次来中国' } },
+    ],
+  },
+  {
+    slug: 'halal-food-in-chengdu',
+    title: {
+      en: 'Halal Food in Chengdu, China: A Practical Guide for Muslim Travelers (+ Phrase Card)',
+      zh: '成都清真美食指南：穆斯林游客实用攻略（含点餐短语卡）',
+    },
+    label: { en: 'Halal Guide', zh: '清真美食指南' },
+    excerpt: {
+      en: 'Yes, halal eating in China\'s pork-loving capital of gastronomy works — if you know the system: Sichuan-style all-beef halal kitchens, the Hui history around Tianfu Square, Lanzhou noodle shops as the everyday safety net, the lard-and-cooking-wine traps, and a phrase card that does the talking.',
+      zh: '在这座以美食闻名的"猪肉之都"吃清真完全可行——只要懂规则：川味全牛清真馆子、天府广场旁的回民街区史、作为日常安全网的兰州拉面、猪油与料酒的隐形陷阱，外加一张能替你说话的短语卡。',
+    },
+    content: {
+      en: '<p>Chengdu\'s most famous dishes read like a halal traveler\'s obstacle course: mapo tofu traditionally carries minced pork, twice-cooked pork is — pork, and lard quietly shows up in pastries and snacks. And yet the UNESCO City of Gastronomy has a real, living halal food scene, because the city has been home to a Hui Muslim community for centuries. The trick is knowing the system: where the halal kitchens are, what the hidden traps are, and how to say the one sentence that changes everything.</p><h2>Sichuan-Style Halal: The All-Beef Kitchen</h2><p>The most pleasant surprise for most Muslim visitors is <em>chuan-wei qingzhen cai</em> (川味清真菜) — halal cooking done with full Sichuan technique. These restaurants go all-in on beef: stir-fried beef brain, braised marrow, sliced tongue and tripe in bright chili oil, all over free-flowing rice. The style was built by Chengdu\'s Hui cooks who took the city\'s flavor playbook and ran it entirely on beef and lamb.</p><p>The most-watched recent window into this world is a video by Sichuan-born actor Wang Xun — a Chengdu local — touring the Hui-run restaurant he has eaten at for years (227K views). A popular food vlog meanwhile documented Huangchengba Beef Restaurant in the Xiaojiaghe residential quarter, where the all-beef menu runs brain-to-tail and the owner hands you a basin because the rice bowls are too small.</p><blockquote><p>"What Chengdu truly does well is fragrant, not just spicy. These past few years some influencers have skewed it, chasing oily-and-hot."</p><footer>— Bilibili comment on a Chengdu halal food vlog (translated from Chinese)</footer></blockquote><blockquote><p>"Chengdu no longer allows live slaughter inside the city, so the freshest ingredients are out in the suburbs — Xindu district has the cattle and sheep abattoirs."</p><footer>— Bilibili comment, 12 likes (translated from Chinese)</footer></blockquote><p>That second comment matters more than it looks: halal and freshness run on the same logic. Beef restaurants that need same-day meat buy from the suburban slaughter belt, which is one reason the city\'s halal beef tastes notably better than the frozen import.</p><h2>A Short History: The Old Hui Quarter</h2><p>Chengdu\'s Hui community historically centered on <em>Huangchengba</em> (皇城坝， "the palace grounds") — the streets around today\'s Tianfu Square and Xiyu Street, where the city\'s historic mosques still stand, including the Qing-era Huangcheng Mosque. Beef shops, mutton stalls and halal butchers clustered there for generations, and the "Huangchengba beef" name still marks Hui-run beef restaurants across the city. When locals point you to "the old halal block," this is what they mean — and as one Bilibili commenter put it after a visit, "several of the halal restaurants around here are solid."</p><h2>The Everyday Safety Net: Lanzhou Noodle Shops</h2><p>Your default option in any Chinese city is the Lanzhou beef noodle shop (兰州拉面) — look for the Arabic 清真 halal sign and hand-pulled noodles. These shops are typically run by Hui or Dongxiang families from Gansu and Qinghai; pork, lard and cooking wine simply do not enter the kitchen. The standard order — a bowl of beef noodle soup with an egg, or a plate of stir-fried noodles with beef — costs ¥12–20 and is on every street corner of Chengdu. Watch a bowl being made properly at the source in Lanzhou and you\'ll know what the benchmark tastes like.</p><h2>Winter Bonus: Sichuan\'s Mutton Soup Culture</h2><p>From late autumn through winter, Sichuan runs on mutton soup. The most famous version comes from Jianyang on Chengdu\'s eastern edge: a milk-white, long-boiled broth served with fire-blasted lamb liver and kidney, considered one of China\'s four great mutton soups. Many shops in this tradition are Hui-run — but not all, so do what locals do and check for the 清真 crescent sign before sitting down.</p><h2>The Traps: What \'No Pork\' Does Not Mean</h2><p>This is the part that matters most. In Sichuan, a dish can contain zero pork and still not be halal:</p><table><thead><tr><th>Hidden ingredient</th><th>Where it hides</th><th>The question to ask</th></tr></thead><tbody><tr><td>Lard (猪油)</td><td>Pastries, fried snacks, some fried rice and noodle dishes</td><td>里面有猪油吗？ (Does it contain lard?)</td></tr><tr><td>Cooking wine (料酒)</td><td>Marinades, braises, fried rice — almost everywhere pork is cooked</td><td>有料酒吗？ (Is there cooking wine?)</td></tr><tr><td>Shared woks</td><td>Ordinary restaurants cook pork in the same wok</td><td>Stick to 清真 restaurants and skip the worry</td></tr></tbody></table><p>Two more specifics: mapo tofu\'s classic version uses minced pork — at halal restaurants it comes with beef instead and loses nothing. And hot pot: the classic Chengdu broth is beef-tallow based, but sourcing varies, so the safe play is one of the city\'s halal hot pot restaurants rather than guessing at a regular one.</p><h2>The Phrase Card</h2><p>Screenshot this. In Chengdu it does more work than any app:</p><table><thead><tr><th>Chinese</th><th>Pinyin</th><th>English</th></tr></thead><tbody><tr><td>我吃清真</td><td>Wǒ chī qīngzhēn</td><td>I eat halal</td></tr><tr><td>我不吃猪肉</td><td>Wǒ bù chī zhūròu</td><td>I don\'t eat pork</td></tr><tr><td>里面有猪油吗？</td><td>Lǐmiàn yǒu zhūyóu ma?</td><td>Does it contain lard?</td></tr><tr><td>有料酒吗？</td><td>Yǒu liàojiǔ ma?</td><td>Is there cooking wine in it?</td></tr><tr><td>哪里有清真餐厅？</td><td>Nǎlǐ yǒu qīngzhēn cāntīng?</td><td>Where is a halal restaurant?</td></tr><tr><td>牛肉面，微辣</td><td>Niúròu miàn, wēi là</td><td>Beef noodles, mild spice</td></tr></tbody></table><h2>How to Find Halal Food in Chengdu, Fast</h2><p>The green-and-white 清真 crescent logo is the universal marker — on shopfronts, packaging and restaurant licenses. In the Dianping app (China\'s Yelp), search 清真 filtered to Chengdu and sort by rating. Around both mosques and university areas, halal options cluster. Airports and train stations reliably host a Lanzhou noodle shop. And if your trip continues northwest, Xi\'an\'s Muslim Quarter — a 3-hour high-speed rail away — is the halal food capital of the region; our Xi\'an guide covers it street by street.</p>',
+      zh: '<p>成都最有名的菜式清单，在穆斯林游客眼里像闯关：麻婆豆腐传统做法放猪肉末、回锅肉就是猪肉，猪油还会悄无声息地出现在点心小吃里。但这座联合国"美食之都"有一个真实活着的清真饮食圈——因为这座城市数百年来一直有回族社区。诀窍在于懂规则：清真厨房在哪、隐形陷阱是什么、以及那句能改变一切的话怎么说。</p><h2>川味清真：全牛馆子</h2><p>大多数穆斯林游客最惊喜的发现是"川味清真菜"——用完整川菜技法做的清真菜。这类馆子全线做牛：炒牛脑花、烧牛骨髓、红油牛舌牛肚，配管够的米饭。这套味型由成都的回族厨师建立：拿过城市的川菜 playbook，全部换成牛肉和羊肉来跑。</p><p>观察这个世界最近的一扇高播放量窗口，是川籍演员王迅（成都本地人）探店他吃了多年的回民餐馆（22.7 万播放）。另一位人气美食博主则记录了肖家河居民区的皇城坝牛肉馆：全牛菜单从脑花到牛尾，老板直接递盆来盛饭，因为碗太小。</p><blockquote><p>"成都真正做得好的就是香而不辣。这几年被一些网红带偏了，切追求又油又辣。"</p><footer>— 清真探店视频下的 B 站评论</footer></blockquote><blockquote><p>"因为成都不允许市区鲜活宰杀，所以最新鲜的食材都在郊区了。新都那边有牛羊屠宰场。"</p><footer>— B 站评论，12 赞</footer></blockquote><p>第二条评论比看上去重要：清真与新鲜走的是同一套逻辑。需要当日鲜肉的牛肉馆子从郊区屠宰带进货，这也是城市里的清真牛肉明显好吃过冷冻货的原因之一。</p><h2>一小段历史：老回民街区</h2><p>成都回族社区历史上以"皇城坝"为中心——今天天府广场、西御街一带，城市的古老清真寺至今仍立在那里，包括清代建的皇城清真寺。牛肉铺、羊肉摊、清真牛屠户在此聚集了数代人，"皇城坝牛肉"的名字至今标注着全城的回民牛肉馆。本地人说"老清真那一块"，指的就是这里——正如一位 B 站网友探店后的评价："这儿几家清真馆子和拌菜都可以。"</p><h2>日常安全网：兰州拉面</h2><p>在任何中国城市，你的默认选项都是兰州牛肉拉面店——认准阿拉伯文与"清真"标识、现拉的面。这些店通常由甘肃、青海的回族或东乡族家庭经营，猪肉、猪油、料酒根本进不了厨房。标准点法——一碗牛肉汤面加蛋，或一盘牛肉炒面——12–20 元，成都每条街角都有。看一碗在兰州原产地被认真做出来的面，你就知道基准线是什么味道。</p><h2>冬季加菜：四川的羊肉汤文化</h2><p>从深秋到冬天，四川靠羊肉汤运转。最有名的版本来自成都东郊的简阳：奶白色久熬汤底，配火爆羊肝羊腰，号称四大羊肉汤之一。这个传统里的许多店家是回民经营——但不是全部，所以照本地人的做法：坐下之前先看清真新月标识。</p><h2>陷阱：「没有猪肉」不等于清真</h2><p>这是最重要的部分。在四川，一道菜可以一点猪肉都不含、但仍然不清真：</p><table><thead><tr><th>隐形食材</th><th>藏在哪</th><th>要问的话</th></tr></thead><tbody><tr><td>猪油</td><td>酥点、炸物、部分炒饭炒面</td><td>里面有猪油吗？</td></tr><tr><td>料酒</td><td>腌制、红烧、炒饭——凡做猪肉的地方几乎都有</td><td>有料酒吗？</td></tr><tr><td>共用炒锅</td><td>普通餐馆同一口锅炒猪肉</td><td>只进清真餐馆，无需担心</td></tr></tbody></table><p>再补两个具体点：麻婆豆腐经典版用猪肉末——清真餐馆换成牛肉末，风味毫不逊色。火锅：成都经典锅底是牛油锅底，但货源不一，稳妥做法是选城里的清真火锅店，而不是在普通店里猜。</p><h2>短语卡</h2><p>截这张图。在成都，它比任何 App 都好用：</p><table><thead><tr><th>中文</th><th>拼音</th><th>English</th></tr></thead><tbody><tr><td>我吃清真</td><td>Wǒ chī qīngzhēn</td><td>I eat halal</td></tr><tr><td>我不吃猪肉</td><td>Wǒ bù chī zhūròu</td><td>I don\'t eat pork</td></tr><tr><td>里面有猪油吗？</td><td>Lǐmiàn yǒu zhūyóu ma?</td><td>Does it contain lard?</td></tr><tr><td>有料酒吗？</td><td>Yǒu liàojiǔ ma?</td><td>Is there cooking wine in it?</td></tr><tr><td>哪里有清真餐厅？</td><td>Nǎlǐ yǒu qīngzhēn cāntīng?</td><td>Where is a halal restaurant?</td></tr><tr><td>牛肉面，微辣</td><td>Niúròu miàn, wēi là</td><td>Beef noodles, mild spice</td></tr></tbody></table><h2>在成都快速找到清真美食</h2><p>绿白配色的"清真"新月标识是通用标记——门头、包装、经营许可证上都有。在大众点评搜"清真"并按评分排序。清真寺和大学周边，清真选项天然成簇。机场和火车站必有兰州拉面。如果你的行程继续往西北走，3 小时高铁外的西安回民街是整个西北的清真美食之都——我们的西安指南逐街讲过它。</p>',
+    },
+    image: '/images/vlogs/BV1zjUCB3EJv.jpg',
+    readTime: { en: '8 min read', zh: '阅读 8 分钟' },
+    views: { en: '1.9k reads', zh: '阅读 1900' },
+    publishedAt: { en: 'Just published', zh: '刚刚发布' },
+    featured: false,
+    videos: halalVideoGroups,
+    faq: [
+      {
+        q: { en: 'Is Chengdu halal-friendly for Muslim travelers?', zh: '成都对穆斯林游客友好吗？' },
+        a: {
+          en: 'Yes, with know-how. Chengdu has a centuries-old Hui community, all-beef Sichuan-style halal restaurants, Lanzhou noodle shops on every corner (¥12–20 a bowl), and halal options at airports and stations. The traps are lard and cooking wine in ordinary restaurants — the phrase card in this guide handles that.',
+          zh: '友好，但要懂方法。成都回族社区有数百年历史，有全牛系的川味清真馆子、每条街角的兰州拉面（12–20 元一碗），机场车站也有清真选项。陷阱是普通餐馆里的猪油和料酒——用本文的短语卡就能应对。',
+        },
+      },
+      {
+        q: { en: 'Does mapo tofu contain pork?', zh: '麻婆豆腐里有猪肉吗？' },
+        a: {
+          en: 'The classic version does — minced pork is traditional. At halal restaurants it is made with minced beef instead and is every bit as good. Otherwise, ask for a vegetarian version or skip it at non-halal kitchens.',
+          zh: '经典版本有——猪肉末是传统做法。清真餐馆会换成牛肉末，风味不输。其他情况下可以要素版，或在非清真厨房直接跳过它。',
+        },
+      },
+      {
+        q: { en: 'Are there halal hot pot restaurants in Chengdu?', zh: '成都有清真火锅吗？' },
+        a: {
+          en: 'Yes — halal hot pot exists in Chengdu, running on beef and lamb with certified broths. Since ordinary Chengdu hot pot uses beef tallow of varying sourcing and shared wok traffic, booking a halal hot pot restaurant is the stress-free choice.',
+          zh: '有——成都清真火锅做牛羊肉、锅底有资质认证。普通成都火锅的牛油货源不一、锅具混用，想吃火锅，订清真火锅店是最省心的选择。',
+        },
+      },
+      {
+        q: { en: 'How do I recognize a halal restaurant in China?', zh: '在中国怎么认出清真餐厅？' },
+        a: {
+          en: 'Look for the green-and-white 清真 crescent logo on the shopfront or license, often alongside Arabic script. Lanzhou beef noodle shops displaying it are the most reliable quick meal nationwide. When in doubt, ask: 我吃清真 (wǒ chī qīngzhēn) — "I eat halal."',
+          zh: '看门头或执照上绿白配色的"清真"新月标识，常伴阿拉伯文。带此标识的兰州拉面店是全国最可靠的快餐。拿不准就问：我吃清真——英文即 "I eat halal"。',
+        },
+      },
+      {
+        q: { en: 'Where do locals eat halal food in Chengdu?', zh: '本地人在成都哪里吃清真？' },
+        a: {
+          en: 'The historic cluster is the old Huangchengba Hui quarter near Tianfu Square and its mosques; Hui-run beef restaurants like the Huangchengba Beef Restaurant in Xiaojiaghe appear across the city, and commenters under local food vlogs regularly swap more picks in the same blocks.',
+          zh: '历史上以天府广场周边清真寺所在的老皇城坝回民街区为核心；像肖家河皇城坝牛肉馆这样的回民牛肉馆遍布全城，本地探店视频评论区常接力补充同街段的更多选择。',
+        },
+      },
+    ],
+    relatedLinks: [
+      { to: '/guides/chengdu-food-guide', label: { en: 'The Chengdu Food Guide', zh: '成都美食全指南' } },
+      { to: '/guides/chengdu-airport-food-guide', label: { en: 'Chengdu Airport Food Guide', zh: '天府机场美食指南' } },
+      { to: '/cities/xian', label: { en: 'Xi\'an: Muslim Quarter & More', zh: '西安：回民街之城' } },
+      { to: '/cities/chengdu', label: { en: 'Chengdu City Guide', zh: '成都城市页' } },
     ],
   },
 ]
