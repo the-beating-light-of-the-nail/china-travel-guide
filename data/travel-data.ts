@@ -14,7 +14,7 @@ import type { L } from './localize'
 import { contentPacks } from './translations'
 import { fermentedVideoGroups } from './fermented-videos'
 import type { FermentedVideoGroup } from './fermented-videos'
-import { airportVideoGroups, halalVideoGroups } from './chengdu-food-videos'
+import { airportVideoGroups, halalVideoGroups, versusVideoGroups } from './chengdu-food-videos'
 
 // 向后兼容：hub-data.ts 等仍从此处导入 L 类型
 export type { L } from './localize'
@@ -2189,6 +2189,71 @@ const rawGuides: Omit<Guide, 'id'>[] = [
       { to: '/guides/chengdu-airport-food-guide', label: { en: 'Chengdu Airport Food Guide', zh: '天府机场美食指南' } },
       { to: '/cities/xian', label: { en: 'Xi\'an: Muslim Quarter & More', zh: '西安：回民街之城' } },
       { to: '/cities/chengdu', label: { en: 'Chengdu City Guide', zh: '成都城市页' } },
+    ],
+  },
+  {
+    slug: 'chengdu-vs-chongqing-food',
+    title: {
+      en: 'Chengdu vs Chongqing Food: The Real Differences (Broth, Spice, Scene & Which City to Pick)',
+      zh: '成都 vs 重庆美食终极对比：锅底、辣度、场景与选城指南',
+    },
+    label: { en: 'Rivalry Guide', zh: '双城对比' },
+    excerpt: {
+      en: 'Same cuisine family, two completely different eaters\' cities. The beef-tallow vs clear-oil hotpot divide, jianghu plates vs teahouse snacks, cave restaurants vs alley stalls — plus the honest answer to which city belongs on your trip.',
+      zh: '同一个菜系家族，两座完全不同的吃货城市。牛油vs清油的锅底之争、江湖大菜vs茶馆小吃、防空洞火锅vs巷巷苍蝇馆——以及你的行程到底该选哪座城的诚实答案。',
+    },
+    content: {
+      en: '<p>Ask any local which city eats better, Chengdu or Chongqing, and you have started a war that has no ending. The two rivals sit 300 km apart in the Sichuan basin, cook under the same "Sichuan cuisine" flag, and disagree about nearly everything that matters: what oil goes in the pot, how loud the chili should shout, whether food belongs in a teahouse or a bomb shelter. Here is the honest breakdown, with no winner declared — because the real answer is the high-speed rail that connects them in about an hour.</p><h2>The Broth Divide: Tallow vs Clear Oil</h2><p>Hotpot is where the rivalry shows its teeth. Chongqing hotpot runs on beef tallow (牛油) — a dense, scarlet, uncompromising fat that holds chili and Sichuan peppercorn like a fist. The flavor hits immediately and does not leave. It grew out of dockworkers\' cooking: cheap offal, brutal fuel, maximum flavor.</p><p>Chengdu hotpot leans on clear oil (清油) — rapeseed or seed oil infused with aromatics — layered, fragrant, and easier on a first-timer. Chengdu also civilized the ritual: think dipped-in-sesame-oil-and-garlic sauce culture, restaurant dining rooms, tables of small snacks around the pot. The shorthand locals use: Chongqing hotpot is fire; Chengdu hotpot is perfume.</p><table><thead><tr><th></th><th>Chongqing</th><th>Chengdu</th></tr></thead><tbody><tr><td>Base fat</td><td>Beef tallow (牛油), thick and intense</td><td>Clear/seed oil (清油), fragrant and layered</td></tr><tr><td>Chili character</td><td>Direct, aggressive heat</td><td>Layered mala, numbing balanced with fragrance</td></tr><tr><td>Signature items</td><td>Offal tripe, duck intestine, 毛肚</td><td>Tripe family + creative platters, dipping sauces</td></tr><tr><td>Setting</td><td>Cave hotpot, stilt-house streets, 九宫格 nine-grid pots</td><td>Dining-room hotpot, plus chuanchuan and maocai offshoots</td></tr><tr><td>Temperament</td><td>Jianghu — bold, loud, generous</td><td>Refined, playful, snack-minded</td></tr></tbody></table><h2>The Dishes: Jianghu Plates vs Teahouse Snacks</h2><p>Chongqing feeds you in bistro-sized shouting portions of jianghu cuisine — "rivers-and-lakes" home cooking served like a dare: lazi chicken buried in a mountain of fried chilies, Maoxuewang (blood curd and tripe stew in red oil), whole grilled fish under pepper avalanches. Breakfast is non-negotiable: xiaomian, the ¥10–15 bowl of springy noodles with chili oil and peas (wanza) that the whole city queues for before 9 AM.</p><p>Chengdu counters with a cabinet of small, precise pleasures: mapo tofu, twice-cooked pork, dan dan noodles, Zhong dumplings in sweet-spicy chili oil, sweet ice jelly for dessert, rabbit head for the brave. The portion logic is "order many, taste all." And the whole thing runs at teahouse speed — a gaiwan of tea in People\'s Park can legally occupy an afternoon.</p><blockquote><p>"After all the mountain-and-sea delicacies, you come home to a big bowl of wanza noodles — there\'s a beauty in washing off the glamour and returning to plainness."</p><footer>— Bilibili comment on a Chongqing noodle video, 3.6K likes (translated from Chinese)</footer></blockquote><h2>The Scene: Where You Eat It</h2><p>Chongqing eats inside geography: WWII air-raid shelters turned hotpot dining halls, restaurants stacked up the cliff faces of the "8D city," noodle shops under the light rail. The most famous visitor\'s introduction to the cave hotpot is a 2.8M-view vlog by a long-term foreign resident, who eats his way through the shelter and explains why the cave — steam, tallow, history — is the city\'s soul.</p><p>Chengdu eats inside time: the slow teahouse afternoon, the back-alley maocai stall with no signboard that opens four hours a day while neighbors arrive carrying their own pots (a 5M-view cult classic of the genre), the late-night tihua trotter soup after the bars close. For the classic Chengdu pot, locals still route to decades-old counters — under one such video a commenter pinned the exact route: "The Huafeng branch on East Street — Exit C of Dongmen Bridge station, toward Niuwangmiao, first lane opposite Jiaochangba. The Xinhua Park and Erxianqiao branches taste the same."</p><h2>Spice: Which City Burns More?</h2><p>Chongqing, and it is not close. Chengdu cooking aims at <em>mala</em> balance — numbing and aromatic in equal measure, with heat you can negotiate with ("wei la," mild, is a fully respectable order). Chongqing cooking treats heat as a feature, not a variable. First-timers with low chili tolerance usually last longer in Chengdu; heat-seekers get their ceiling in Chongqing, where even the breakfast noodles arrive pre-armed.</p><h2>So Which City Should You Pick?</h2><table><thead><tr><th>Choose Chengdu if…</th><th>Choose Chongqing if…</th></tr></thead><tbody><tr><td>You want variety — snacks, sweets, teahouses, plus the panda base</td><td>You want intensity — one unforgettable pot in a cave beats eight nice dishes</td></tr><tr><td>Your chili tolerance is negotiable</td><td>Your chili tolerance is a point of pride</td></tr><tr><td>You prefer a slow, walkable flat city</td><td>You want the vertical, neon, cinematic mountain city</td></tr><tr><td>You have 3+ days and want museums + food</td><td>You have 1–2 days and want maximum food per hour</td></tr></tbody></table><h2>The Real Answer: Do Both</h2><p>The Chengdu–Chongqing high-speed rail covers the 300 km in roughly 1–2 hours, with trains every few minutes at peak. The classic food crawl: two days of Chengdu (dumplings and dan dan noodles, a clear-oil pot, teahouse afternoon, rabbit head if you dare), then the train east, a Chongqing xiaomian breakfast off the station, jianghu plates for lunch, and a tallow nine-grid inside a bomb shelter for dinner — with the night skyline across the river for dessert. Five days, two food identities, zero regrets, and both cities get to believe they won.</p>',
+      zh: '<p>问任何一个本地人"成都和重庆哪座城市更好吃"，你就发动了一场没有终点的战争。这对冤家相距 300 公里，同在四川盆地、同挂"川菜"门旗，却在所有要紧的事上各执一词：锅里放什么油、辣椒该喊多大声、食物该待在茶馆还是防空洞。这是一份诚实的拆解，不判胜负——因为真正的答案，是那趟一小时出头就把两座城连起来的高铁。</p><h2>锅底之争：牛油 vs 清油</h2><p>火锅是战争的正面试战场。重庆火锅以牛油为魂——浓稠、猩红、不由分说，把辣椒和花椒攥在拳头里，味道一上来就不打算走。它长自码头工人的吃法：便宜下水、猛火重油、最大化风味。</p><p>成都火锅偏清油——菜籽油或色拉油熬香料——有层次、重香气，对新手友好。成都还把仪式"文明化"了：香油蒜泥碟的蘸料文化、正式的堂食环境、锅边摆一桌小吃。本地人的速记：重庆火锅是火，成都火锅是香。</p><table><thead><tr><th></th><th>重庆</th><th>成都</th></tr></thead><tbody><tr><td>锅底用油</td><td>牛油，厚且猛</td><td>清油，香且有层次</td></tr><tr><td>辣的性格</td><td>直接、暴烈</td><td>麻辣分层，麻与香平衡</td></tr><tr><td>代表菜</td><td>毛肚、鸭肠等下水系</td><td>毛肚系 + 创意拼盘、蘸料文化</td></tr><tr><td>场景</td><td>防空洞火锅、吊脚楼街区、九宫格</td><td>堂食火锅 + 串串、冒菜分支</td></tr><tr><td>气质</td><td>江湖——豪爽、大声、量大</td><td>精致——俏皮、小吃思维</td></tr></tbody></table><h2>菜式：江湖大菜 vs 茶馆小吃</h2><p>重庆用脸盆分量的江湖菜喂你——"江湖"即豪迈家常，上桌像下战书：埋在辣椒山里的辣子鸡、红油毛血旺、辣椒雪崩下的整条烤鱼。早餐没有商量余地：小面，全城上午九点前排队的那碗 10–15 元辣油豌杂面。</p><p>成都的反击是一柜子精准的小品：麻婆豆腐、回锅肉、担担面、甜辣红油的钟水饺、饭后冰粉、勇者的兔头。分量逻辑是"多点几样，每样都尝"。而整套系统以茶馆速度运转——人民公园一盏盖碗茶，就能合法地占掉一个下午。</p><blockquote><p>"山珍海味吃完归来仍是大碗豌杂面，有种洗尽铅华返璞归真的美。"</p><footer>— 重庆小面视频下的 B 站评论，3631 赞</footer></blockquote><h2>场景：你在哪里吃</h2><p>重庆吃的是地理：二战防空洞改的火锅堂、沿"8D 城市"崖壁层层堆叠的馆子、轻轨楼下的面摊。外国访客了解洞子火锅最出名的一扇窗，是长居中国的外国博主的 285 万播放 vlog——他在防空洞里边吃边讲：蒸汽、牛油、历史，为什么这个洞是这座城市的灵魂。</p><p>成都吃的是时间：慢悠悠的茶馆下午、无招牌一天只开四小时、街坊端着锅来打的冒菜摊（该类型的 500 万播放邪典经典）、酒吧散场后的深夜蹄花汤。想吃经典成都锅，本地人依然认几十年的老店——一条探店视频下有观众钉死了路线："东大街那家华丰，东门大桥 C 口出来往牛王庙方向走，较场坝对到那个巷巷儿头头上，新华公园和二仙桥两家分店味道菜品都差不多。"</p><h2>辣度：哪座城更烧？</h2><p>重庆，而且没有悬念。成都菜追求麻辣平衡——麻与香对半分，辣度可以商量（点"微辣"完全体面）。重庆菜把辣当主菜不当变量。辣度存疑的初学者在成都活得更久；嗜辣者的天花板在重庆，连早餐面都是预装弹药。</p><h2>那么你该选哪座城？</h2><table><thead><tr><th>选成都，如果……</th><th>选重庆，如果……</th></tr></thead><tbody><tr><td>你要多样性——小吃、甜饮、茶馆，外加熊猫基地</td><td>你要冲击力——洞子里一锅难忘胜过八道好菜</td></tr><tr><td>你的辣度还有商量余地</td><td>你的吃辣能力是骄傲的资本</td></tr><tr><td>偏好慢节奏、平地好走的城</td><td>想要垂直、霓虹、电影感的山城</td></tr><tr><td>有 3 天以上，想博物馆与美食兼得</td><td>只有 1–2 天，要每小时的食物密度</td></tr></tbody></table><h2>真正的答案：都去</h2><p>成渝高铁 1–2 小时跑完 300 公里，高峰期几乎分钟级发车。经典吃法：成都两天（水饺与担担面、一锅清油、茶馆下午、敢的话加兔头），然后一路向东，出站先来一碗重庆小面，中午江湖菜，晚上钻进防空洞吃牛油九宫格——江对岸的夜景当甜点。五天，两种食物人格，零后悔，两座城市都觉得自己赢了。</p>',
+    },
+    image: '/images/vlogs/BV1nu411M7xj.jpg',
+    readTime: { en: '8 min read', zh: '阅读 8 分钟' },
+    views: { en: '3.1k reads', zh: '阅读 3100' },
+    publishedAt: { en: 'Just published', zh: '刚刚发布' },
+    featured: false,
+    videos: versusVideoGroups,
+    faq: [
+      {
+        q: { en: 'Which is spicier, Chengdu or Chongqing food?', zh: '成都和重庆哪个更辣？' },
+        a: {
+          en: 'Chongqing, clearly. Chongqing cooking treats heat as a feature — even breakfast noodles arrive armed — while Chengdu aims at mala balance between numbing spice and fragrance, and "mild" (微辣) is a fully respectable order there.',
+          zh: '重庆，而且很明显。重庆菜把辣当主菜——连早餐面都是带弹药的；成都追求麻与香的平衡，点"微辣"完全体面。',
+        },
+      },
+      {
+        q: { en: 'What\'s the difference between Chengdu and Chongqing hotpot?', zh: '成都火锅和重庆火锅有什么区别？' },
+        a: {
+          en: 'The base: Chongqing uses beef tallow — thick, intense, immediate; Chengdu favors clear (seed) oil infused with aromatics — layered and gentler. Chongqing eats it in cave shelters with nine-grid pots and offal focus; Chengdu in dining rooms with dipping-sauce culture and offshoots like chuanchuan skewers and maocai.',
+          zh: '锅底：重庆用牛油——厚、猛、直给；成都偏香料清油——有层次、更温柔。重庆在防空洞里配九宫格吃下水；成都在堂食里配蘸料文化，还有串串、冒菜这些分支。',
+        },
+      },
+      {
+        q: { en: 'Can I visit both Chengdu and Chongqing on one trip?', zh: '一次旅行能同时去成都和重庆吗？' },
+        a: {
+          en: 'Easily — high-speed trains connect them in 1–2 hours with near-constant departures. The classic crawl: two days of Chengdu snacks and clear-oil hotpot, then a Chongqing day of xiaomian breakfast, jianghu lunch, and tallow nine-grid hotpot in a cave at night.',
+          zh: '轻松——高铁 1–2 小时直达，班次密集。经典走法：成都两天吃小吃和清油火锅，然后去重庆，早餐小面、中午江湖菜、晚上防空洞牛油九宫格。',
+        },
+      },
+      {
+        q: { en: 'Which city is better for foreign tourists?', zh: '对外国游客哪座城市更友好？' },
+        a: {
+          en: 'Chengdu is the gentler landing: flatter and walkable, slower pace, more snack variety, the panda base, and lower default spice levels. Chongqing rewards the adventurous with cinematic geography and stronger flavors. Many long-term foreign residents vlog their Chongqing cave-hotpot conversions on Bilibili.',
+          zh: '成都是更柔和的落地：平坦好走、节奏慢、小吃多样、有熊猫基地、默认辣度更低。重庆奖励冒险者——电影级的城市地形和更猛的味觉。B 站上不少长居中国的外国博主记录过自己被重庆洞子火锅"收编"的过程。',
+        },
+      },
+      {
+        q: { en: 'What are jianghu dishes in Chongqing?', zh: '重庆的"江湖菜"是什么？' },
+        a: {
+          en: 'Big, loud, generous home-style cooking served like a dare: lazi chicken buried in fried chilies, Maoxuewang blood-curd and tripe stew, pepper-covered grilled fish. The name — "rivers and lakes" — says it: food from the streets and docks, not the banquet hall.',
+          zh: '分量大、嗓门大、给得足的家常猛菜：辣椒山里的辣子鸡、毛血旺、辣椒覆盖的烤鱼。"江湖"二字说明出身：街头与码头，不是宴席厅。',
+        },
+      },
+    ],
+    relatedLinks: [
+      { to: '/guides/chengdu-food-guide', label: { en: 'The Chengdu Food Guide', zh: '成都美食全指南' } },
+      { to: '/guides/halal-food-in-chengdu', label: { en: 'Halal Food in Chengdu', zh: '成都清真美食指南' } },
+      { to: '/cities/chengdu', label: { en: 'Chengdu City Guide', zh: '成都城市页' } },
+      { to: '/guides/best-time-to-visit-china', label: { en: 'Best Time to Visit China', zh: '中国最佳旅行时间' } },
     ],
   },
 ]

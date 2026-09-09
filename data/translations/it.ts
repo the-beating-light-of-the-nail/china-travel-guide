@@ -109,6 +109,13 @@ const pack: LocalePack = {
       label: "Guida halal",
       readTime: "Lettura di 8 min",
     },
+    "chengdu-vs-chongqing-food": {
+      title: "Chengdu vs Chongqing: le differenze vere (brodo, piccante, scena e quale città scegliere)",
+      excerpt:
+        "Stessa famiglia culinaria, due città completamente diverse per chi mangia. Il duello sego di manzo contro olio chiaro, piatti jianghu contro stuzzichini da casa del tè, hot pot nel rifugio antiaereo contro bettole di vicolo — e la risposta onesta su quale città merita il tuo viaggio.",
+      label: "Duello di città",
+      readTime: "Lettura di 8 min",
+    },
     "first-trip-to-china-guide": {
       title: "Primo viaggio in Cina: guida completa alla pianificazione",
       excerpt:

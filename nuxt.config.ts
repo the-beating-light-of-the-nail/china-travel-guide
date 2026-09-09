@@ -43,6 +43,7 @@ const prerenderPages = [
   '/guides/kimchi-sauerkraut-suancai',
   '/guides/chengdu-airport-food-guide',
   '/guides/halal-food-in-chengdu',
+  '/guides/chengdu-vs-chongqing-food',
 ]
 
 export default defineNuxtConfig({

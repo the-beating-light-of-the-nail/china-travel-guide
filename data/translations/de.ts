@@ -98,6 +98,12 @@ const pack: LocalePack = {
       label: 'Halal-Guide',
       readTime: '8 Min. Lesezeit',
     },
+    'chengdu-vs-chongqing-food': {
+      title: 'Chengdu vs. Chongqing: die echten Unterschiede (Brühe, Schärfe, Szene, Wahl der Stadt)',
+      excerpt: 'Gleiche Küchenfamilie, zwei völlig verschiedene Städte für Genießer. Der Rindertalg-gegen-Öl-Hotpot-Streit, Jianghu-Platten gegen Teestuben-Snacks, Höhlenrestaurants gegen Gassenläden — plus die ehrliche Antwort, welche Stadt auf Ihre Reise gehört.',
+      label: 'Städte-Duell',
+      readTime: '8 Min. Lesezeit',
+    },
     'china-dumpling-guide': {
       title: 'Der Teigtaschen-Guide für China: 15 Sorten, fünf Familien, ein langes Mittagessen',
       excerpt: 'Gekocht, gedämpft, gebraten, in Brühe oder süß — wie Sie jede chinesische Teigtasche unterscheiden, was sie kosten darf, wie Sie ohne ein Wort Chinesisch bestellen und wo jede Sorte am besten ist.',

@@ -219,3 +219,97 @@ export const halalVideoGroups: FermentedVideoGroup[] = [
     ],
   },
 ]
+
+// ===== 成都 vs 重庆美食对比 =====
+export const versusVideoGroups: FermentedVideoGroup[] = [
+  {
+    id: 'versus-chengdu',
+    heading: { en: 'Team Chengdu: Refined Mala & Teahouse Slow', zh: '成都队：精致麻辣与茶馆慢生活' },
+    videos: [
+      {
+        bvid: 'BV11Z3v6BEY5',
+        title: { en: 'A Decades-Old Chengdu Hotpot Institution — The Beef Multi-Tripe Is Legendary', zh: '在成都开了几十年的老牌火锅店，他家的千层肚夯爆了' },
+        vloggerName: '密子君',
+        duration: '10:01',
+        viewsText: { en: '636K views', zh: '63.6万播放' },
+        publishedAt: { en: 'Jul 2026', zh: '2026年7月' },
+        note: {
+          en: 'The Chengdu side of the hotpot argument: an old-school local institution whose qiancengdu (leaf tripe) regulars chase across branches — the comment section posts the exact alleys.',
+          zh: '火锅之争的成都方：本地老字号，千层肚是回头客跨店追的灵魂菜——评论区直接给出具体巷子。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1J54y1f7Ys',
+        title: { en: 'Chengdu\'s No-Signboard Maocai, Open 4 Hours a Day — Neighbors Bring Their Own Pots', zh: '成都"油爆爆"辣冒菜，没招牌一天只开4小时，街坊端着锅来吃' },
+        vloggerName: '肉肉大搜索',
+        duration: '5:53',
+        viewsText: { en: '5M views', zh: '502.5万播放' },
+        publishedAt: { en: 'May 2022', zh: '2022年5月' },
+        note: {
+          en: 'Five million views of pure Chengdu neighborhood energy: a maocai stall with no sign, four open hours a day, and regulars carrying pots from home. This — not banquet cooking — is the city\'s daily spice.',
+          zh: '五百万播放的成都街坊烟火：无招牌、一天只开四小时的冒菜摊，街坊自己端锅来打。这才是成都的日常辣度，不是宴席菜。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1sJbW6UEpi',
+        title: { en: 'Chengdu Romance: Pork Trotter Soup & Chili-Oil Maocai', zh: '成都人的浪漫除了蹄花还有红油冒菜！' },
+        vloggerName: '密子君',
+        duration: '7:49',
+        viewsText: { en: '146K views', zh: '14.6万播放' },
+        publishedAt: { en: 'Sep 2026', zh: '2026年9月' },
+        note: {
+          en: 'A fresh 2026 tour of the two late-night Chengdu comfort plates: tender tihua (stewed trotter) and chili-oil maocai — the counter-argument to "Chengdu is only about hotpot."',
+          zh: '2026 年新视频：成都深夜两块慰藉——软糯蹄花与红油冒菜——反驳"成都只有火锅"的最好证据。',
+        },
+        featured: false,
+      },
+    ],
+  },
+  {
+    id: 'versus-chongqing',
+    heading: { en: 'Team Chongqing: Tallow Fire & Jianghu Soul', zh: '重庆队：牛油烈火与江湖气' },
+    videos: [
+      {
+        bvid: 'BV1nu411M7xj',
+        title: { en: 'Chongqing\'s Must-Do Bomb-Shelter Hotpot — Eat, and Understand the City', zh: '重庆必打卡的防空洞火锅' },
+        vloggerName: '老王在中国',
+        duration: '11:19',
+        viewsText: { en: '2.8M views', zh: '284.9万播放' },
+        publishedAt: { en: 'Oct 2023', zh: '2023年10月' },
+        note: {
+          en: 'A long-term foreign resident eats hotpot inside a WWII air-raid shelter and explains why the cave scene is the city\'s soul — the single best English-adjacent window into Chongqing hotpot culture.',
+          zh: '长居中国的外国博主在防空洞里吃火锅，讲清楚洞子场景为何是这座城市的灵魂——外国人理解重庆火锅的最佳窗口。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV12wYyzvEhU',
+        title: { en: 'Chongqing Wanza Noodles with Big Chunks of Beef — Half a Kilo Each', zh: '重庆特色豌杂面+大块牛肉，一人一斤！' },
+        vloggerName: '干饭三健客',
+        duration: '6:22',
+        viewsText: { en: '7.8M views', zh: '783.8万播放' },
+        publishedAt: { en: 'Aug 2025', zh: '2025年8月' },
+        note: {
+          en: 'The Chongqing breakfast argument in 7.8M views: wanza noodles — peas, minced-pork sauce, chili — by the half-kilo. This is the bowl Chongqing wakes up for.',
+          zh: '780 万播放的重庆早餐宣言：豌杂面——豌豆、肉酱、海椒——按斤上桌。重庆人早起就是为了这碗。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1nWc7e5EDc',
+        title: { en: 'Chongqing Hotpot, Slow-Told: An Elder\'s Lifetime with the Pot', zh: '重庆火锅"千呼万唤始出来"！听老辈子讲述他与火锅的一段奇缘' },
+        vloggerName: '叔叔的临时生活安顿处',
+        duration: '21:56',
+        viewsText: { en: '371K views', zh: '37.1万播放' },
+        publishedAt: { en: 'Jan 2025', zh: '2025年1月' },
+        note: {
+          en: 'A 22-minute slow documentary: broth built from scratch and an old Chongqing man\'s lifetime of hotpot stories — the depth piece for readers who want the culture, not just the chili.',
+          zh: '22 分钟慢纪录片：从头吊一锅汤，听一位重庆老辈子讲他与火锅的一世缘分——给想了解文化而不只是辣的读者。',
+        },
+        featured: false,
+      },
+    ],
+  },
+]

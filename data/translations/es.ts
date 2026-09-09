@@ -98,6 +98,12 @@ const pack: LocalePack = {
       label: 'Guía halal',
       readTime: 'Lectura de 8 min',
     },
+    'chengdu-vs-chongqing-food': {
+      title: 'Chengdu vs Chongqing: las diferencias reales (caldo, picante, ambiente y qué ciudad elegir)',
+      excerpt: 'La misma familia culinaria, dos ciudades radicalmente distintas para comer. El duelo manteca de res vs aceite claro, platos jianghu vs tentempiés de casa de té, hot pot en refugio antiaéreo vs puestos de callejón — y la respuesta honesta sobre qué ciudad merece tu viaje.',
+      label: 'Duelo de ciudades',
+      readTime: 'Lectura de 8 min',
+    },
     'china-dumpling-guide': {
       title: 'La guía del dumpling en China: 15 variedades, cinco familias, un largo almuerzo',
       excerpt: 'Hervidos, al vapor, a la plancha, en sopa o dulces — cómo distinguir cada dumpling chino, cuánto pagar, cómo pedir sin una palabra de chino y dónde comer cada estilo en su mejor versión.',
