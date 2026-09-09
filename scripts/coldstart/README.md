@@ -13,7 +13,25 @@ node scripts/coldstart/bili-search.mjs detail BV1kh411K77k
 
 # 批量详情（对 selected.json 里的 [{bvid}] 逐个拉取）
 node scripts/coldstart/bili-search.mjs batch scripts/coldstart/out/selected.json
+
+# 评论区（热度排序顶层评论，默认 3 页，存 out/comments/<BV>.json）
+node scripts/coldstart/bili-search.mjs comments BV1kh411K77k
 ```
+
+### 评论区抓取的限制（重要）
+
+B 站 2023 年起**未登录只能看到每个视频约 3 条精选热评**（任何端点翻页都返回空），
+所以免登录时 `comments` 命令抓到的 3 条就是全部可得内容——但它们恰好是点赞最高的
+「高赞回答」，做内容素材通常够用。需要全量评论区时：
+
+```bash
+# 从浏览器 F12 → Application → Cookies 里复制 SESSDATA 的值
+BILI_SESSDATA="xxx,xxx" node scripts/coldstart/bili-search.mjs comments BV1kh411K77k 5
+```
+
+输出字段：uname / message / like / rcount(回复数) / ctime / location(IP属地)。
+接口为 `/x/v2/reply/wbi/main`（wbi 签名 + 首页 `next=0`，注意 `next=1` 返回空），
+风控码 -412/-352/-509 自动退避重试，持续失败降级旧版 `/x/v2/reply`。
 
 原始结果落在 `scripts/coldstart/out/`（已 gitignore）。封面下载与数据回填当时为一次性操作（`patch-hub-data.mjs`，防重复执行）。
 
