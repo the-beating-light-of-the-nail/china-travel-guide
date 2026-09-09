@@ -41,7 +41,7 @@ const OK_LICENSES = /cc0|public domain|cc by(-sa)? [1-9]|cc by(-sa)?$/i
 const OVERRIDES = {
   'mount-hua': 'File:Huashan Mountain (140917819).jpeg',
   'zhagana': 'File:202609 Zhagana Scenic Area 49.jpg',
-  'yubeng': 'File:Deqen, Yunnan, China - panoramio (3).jpg',
+  'yubeng': 'File:Deqen, Yunnan, China - panoramio (16).jpg',
   'siguniang-traverse': 'File:四姑娘山景区 Mount Siguniang Scenic Area 44.jpg',
   'gongga-loop': 'File:Mount Gongga (Gonggashan Nature Reserve with WDPA ID 315667).jpg',
   'tengger-desert': 'File:Tengger Desert.JPG',

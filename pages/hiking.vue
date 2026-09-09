@@ -90,6 +90,8 @@ useHead({
           :id="hikingSpotlight.bvid"
           :title="hikingSpotlight.title[locale]"
           :duration="hikingSpotlight.duration"
+          size="lg"
+          auto
         />
       </div>
       <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
