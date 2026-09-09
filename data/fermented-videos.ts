@@ -7,6 +7,9 @@
 // scripts/coldstart/fermented-research.mjs + bili-search.mjs batch。
 // 结构与 hiking-data.ts 的 HikingVideo 同构：L 字段 en/zh 必填，
 // 其余 7 语由翻译包构建时合并（Phase 2），缺失回退英文。
+// 【摆放位置】默认渲染在文章尾部「眼见为实」架；正文 HTML 里写
+//   [[videos:<组id>]] 可让该组内联渲染在标记处（见 chengdu-food-videos.ts
+// 头注释与 pages/guides/[slug].vue 的 contentSegments）。
 // 注意：数组顺序即翻译包索引对齐顺序，勿随意调换。
 // ---------------------------------------------------------------
 import { fillLocaleFallbacks } from './localize'

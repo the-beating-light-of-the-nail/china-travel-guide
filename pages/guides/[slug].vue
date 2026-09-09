@@ -8,7 +8,6 @@ const localePath = useLocalePath()
 
 // 静态数据：按 slug 查询攻略文章（构建时注入，无需运行时数据库）
 import { getGuideBySlug } from '~/data/travel-data'
-import { fermentedVideoUrl, fermentedVideoThumb } from '~/data/fermented-videos'
 const guide = getGuideBySlug(slug)
 
 // 文章不存在则 404
@@ -17,6 +16,47 @@ if (!guide) {
 }
 
 const g = computed(() => guide!)
+
+// ===== 内联视频架：正文中写 [[videos:<组id>]] 占位标记，对应视频组渲染在该位置 =====
+// 未被标记引用的组仍渲染在文章尾部「眼见为实」架（向后兼容）；全部内联则尾部架隐藏。
+// 标记在渲染前从 HTML 中剥除，未匹配到组的标记静默忽略。
+import type { FermentedVideoGroup } from '~/data/fermented-videos'
+
+type ContentSegment = { type: 'html'; html: string } | { type: 'videos'; id: string }
+
+const videoGroupById = computed(() => {
+  const map = new Map<string, FermentedVideoGroup>()
+  for (const grp of g.value.videos || []) map.set(grp.id, grp)
+  return map
+})
+
+const contentSegments = computed<ContentSegment[]>(() => {
+  const html = g.value.content[locale.value] || ''
+  const segments: ContentSegment[] = []
+  const markerRe = /\[\[videos:([a-zA-Z0-9_-]+)\]\]/g
+  let last = 0
+  let m: RegExpExecArray | null
+  while ((m = markerRe.exec(html)) !== null) {
+    if (m.index > last) segments.push({ type: 'html', html: html.slice(last, m.index) })
+    segments.push({ type: 'videos', id: m[1] })
+    last = m.index + m[0].length
+  }
+  if (last < html.length) segments.push({ type: 'html', html: html.slice(last) })
+  return segments
+})
+
+const inlineVideoGroupFor = (seg: ContentSegment) =>
+  seg.type === 'videos' ? videoGroupById.value.get(seg.id) : undefined
+
+// 尾部兜底组 = 未被内联标记引用的组
+const remainingVideoGroups = computed(() => {
+  const inlined = new Set(
+    contentSegments.value
+      .filter((s): s is Extract<ContentSegment, { type: 'videos' }> => s.type === 'videos')
+      .map((s) => s.id)
+  )
+  return (g.value.videos || []).filter((grp) => !inlined.has(grp.id))
+})
 
 // 文章发布日期（用于 JSON-LD）
 const datePublished = computed(() => {
@@ -118,8 +158,18 @@ useHead({
       <p class="text-lg text-ink-body leading-relaxed mb-8 pb-8 border-b border-slate-200 italic">
         {{ g.excerpt[locale] }}
       </p>
-      <!-- 正文内容（HTML 富文本，按当前语言取） -->
-      <div class="prose-content max-w-none" v-html="g.content[locale]" />
+      <!-- 正文内容（HTML 富文本，按当前语言取；[[videos:<组id>]] 标记处内联渲染视频组） -->
+      <div class="prose-content max-w-none">
+        <template v-for="(seg, i) in contentSegments" :key="i">
+          <div v-if="seg.type === 'html'" v-html="seg.html" />
+          <div
+            v-else-if="inlineVideoGroupFor(seg)"
+            class="my-8 rounded-xl border border-slate-200 bg-slate-50/70 p-4"
+          >
+            <GuideVideoGroup :group="inlineVideoGroupFor(seg)!" />
+          </div>
+        </template>
+      </div>
 
       <!-- FAQ 折叠面板（guide 携带 faq 时渲染） -->
       <section v-if="g.faq?.length" class="mt-12 pt-8 border-t border-slate-200">
@@ -138,51 +188,12 @@ useHead({
         </details>
       </section>
 
-      <!-- 眼见为实：分组视频架（guide 携带 videos 时渲染，封面本地图 + 外链 B 站） -->
-      <section v-if="g.videos?.length" class="mt-12 pt-8 border-t border-slate-200">
+      <!-- 眼见为实：分组视频架兜底位（仅渲染未被正文内联标记引用的组；封面本地图 + 外链 B 站） -->
+      <section v-if="remainingVideoGroups.length" class="mt-12 pt-8 border-t border-slate-200">
         <h2 class="text-2xl font-bold text-ink mb-1">🎬 {{ t('guide.videosTitle') }}</h2>
         <p class="text-xs text-ink-muted mb-6">{{ t('guide.videosNote') }}</p>
-        <div v-for="group in g.videos" :key="group.id" class="mb-7">
-          <h3 class="text-xs font-semibold text-brand uppercase tracking-wider mb-3">
-            {{ group.heading[locale] }}
-          </h3>
-          <ul class="list-none space-y-2.5">
-            <li v-for="v in group.videos" :key="v.bvid">
-              <a
-                :href="fermentedVideoUrl(v.bvid)"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex gap-3 group/v rounded-lg border border-slate-100 hover:border-brand/50 hover:bg-slate-50 p-2 transition-colors"
-              >
-                <span class="relative w-[168px] shrink-0 aspect-video rounded overflow-hidden bg-slate-100">
-                  <img
-                    :src="fermentedVideoThumb(v.bvid)"
-                    :alt="v.title[locale]"
-                    loading="lazy"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover/v:scale-[1.05]"
-                  >
-                  <span class="absolute bottom-1 right-1 bg-black/75 text-white text-[9px] px-1 rounded">
-                    {{ v.duration }}
-                  </span>
-                  <span
-                    v-if="v.featured"
-                    class="absolute top-1 left-1 bg-brand text-white text-[9px] px-1.5 rounded"
-                  >★</span>
-                </span>
-                <span class="min-w-0 flex-1 py-0.5">
-                  <span class="block text-sm text-ink font-medium leading-snug line-clamp-2 group-hover/v:text-brand transition-colors">
-                    {{ v.title[locale] }}
-                  </span>
-                  <span class="block text-[11px] text-ink-muted mt-1">
-                    {{ v.vloggerName }} · {{ v.viewsText[locale] }} · {{ v.publishedAt[locale] }}
-                  </span>
-                  <span class="hidden md:block text-xs text-ink-muted/80 mt-1.5 leading-relaxed line-clamp-2">
-                    {{ v.note[locale] }}
-                  </span>
-                </span>
-              </a>
-            </li>
-          </ul>
+        <div v-for="group in remainingVideoGroups" :key="group.id" class="mb-7">
+          <GuideVideoGroup :group="group" />
         </div>
       </section>
 

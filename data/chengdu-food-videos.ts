@@ -4,6 +4,11 @@
 // chengdu-vs-chongqing-food / chengdu-food-guide（增强）四个页面挂载，
 // 结构与 data/fermented-videos.ts 的 FermentedVideoGroup 同构。
 // 封面存于 /images/vlogs/<bvid>.jpg，点击外链 B 站（新窗口），不嵌 iframe。
+// 【摆放位置】视频组默认渲染在文章尾部；在 guide 正文的 HTML 里写
+//   [[videos:<组id>]]（如 [[videos:tfu-inside]]）
+// 即可让该组内联渲染在标记处（推荐放在其主题章节末尾，让读者扫读时
+// 顺手看到）。en/zh 两个正文串都要插同一标记；未被标记引用的组仍在
+// 尾部兜底渲染，全部内联则尾部架自动隐藏。
 // 播放量为抓取日快照（机场组：2026-09-09，来自
 // scripts/coldstart/bili-search.mjs search/detail/comments）。
 // 注意：数组顺序即翻译包索引对齐顺序，勿随意调换。
