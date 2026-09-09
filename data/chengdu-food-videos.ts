@@ -313,3 +313,97 @@ export const versusVideoGroups: FermentedVideoGroup[] = [
     ],
   },
 ]
+
+// ===== 成都美食全指南（增强版）「眼见为实」视频架 =====
+export const realVoicesVideoGroups: FermentedVideoGroup[] = [
+  {
+    id: 'rv-firsttimers',
+    heading: { en: 'First-Timers Eat Chengdu', zh: '初来乍到：外国家庭的成都餐桌' },
+    videos: [
+      {
+        bvid: 'BV1RH4y1Q71r',
+        title: { en: 'A Finnish Family demolishes 15 Sichuan Meals in 3 Days', zh: '芬兰特种兵一家三天在成都狂炫15顿四川美食！' },
+        vloggerName: '小马逛吃',
+        duration: '22:43',
+        viewsText: { en: '8.5M views', zh: '846.1万播放' },
+        publishedAt: { en: 'Sep 2023', zh: '2023年9月' },
+        note: {
+          en: 'The classic foreign-family Chengdu pig-out: hotpot, roast duck, tihua trotter soup, BBQ — 15 meals in 72 hours. The top comment is a viewer-organized address list of every stop in the video.',
+          zh: '外国家庭吃成都的经典样本：火锅、冒烤鸭、蹄花、烧烤，72 小时 15 顿。置顶热评是观众整理的全片店铺地址清单。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1S659zREUE',
+        title: { en: 'A British Family\'s First Time in Chengdu — None of Us Slept That Night', zh: '英国家人第一次去成都，这一晚我们无人入睡' },
+        vloggerName: '小马逛吃',
+        duration: '19:00',
+        viewsText: { en: '1M views', zh: '104.0万播放' },
+        publishedAt: { en: 'Apr 2025', zh: '2025年4月' },
+        note: {
+          en: 'The same vlogger\'s British in-laws meet Chengdu for the first time — arrival night turns into an unplanned street-food crawl. The best proxy for what your own first evening will feel like.',
+          zh: '还是这位博主的英国亲家第一次进成都——落地当晚演变成一场计划外的街头觅食。你自己第一个晚上大概就是这种感觉。',
+        },
+        featured: false,
+      },
+      {
+        bvid: 'BV1WE421G7vt',
+        title: { en: 'First Time in Chengdu: What Should You Eat? (Part 1)', zh: '第一次来成都吃点儿啥？好吃的不要太多吧！（上）' },
+        vloggerName: '吃不胖的野妹儿',
+        duration: '5:40',
+        viewsText: { en: '5.2M views', zh: '522.5万播放' },
+        publishedAt: { en: 'May 2024', zh: '2024年5月' },
+        note: {
+          en: 'The local\'s starter checklist in 5 minutes — and the comment section under it is a second guide in itself: a Chengdu native\'s regular-rotation restaurant list sits at the top with 2.1K likes.',
+          zh: '5 分钟版本地人入门清单——它楼下的评论区本身就是第二份指南：一条成都土著的常吃店清单以 2.1K 赞置顶。',
+        },
+        featured: true,
+      },
+    ],
+  },
+  {
+    id: 'rv-beyond',
+    heading: { en: 'Chengdu Beyond the Restaurant List', zh: '清单之外：更野的成都' },
+    videos: [
+      {
+        bvid: 'BV1K6XAYZEFh',
+        title: { en: 'Dad from Jiangxi Takes On Chengdu\'s Spiciest Restaurant', zh: '江西老爸，挑战成都最辣餐厅！老爸：有点意思啊' },
+        vloggerName: '小马逛吃',
+        duration: '8:59',
+        viewsText: { en: '12M views', zh: '1206.3万播放' },
+        publishedAt: { en: 'Mar 2025', zh: '2025年3月' },
+        note: {
+          en: '12M views of a chili-hardened dad meeting Chengdu\'s ceiling — the honest test of how hot "hot" gets here, and how locals actually react to outsiders keeping up.',
+          zh: '1200 万播放：吃辣大省来的老爸挑战成都辣度天花板——"辣"在成都到底有多辣、本地人怎么看外地人扛辣，一次交代清楚。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1Ui4y1U7LD',
+        title: { en: 'Chengdu\'s ¥15 Street Buffet: 20 Dishes, and 85-Year-Olds Eat Free', zh: '成都街边15元自助餐，20道菜，85岁老人吃饭不要钱' },
+        vloggerName: '肉肉大搜索',
+        duration: '6:12',
+        viewsText: { en: '6.6M views', zh: '655.2万播放' },
+        publishedAt: { en: 'Apr 2022', zh: '2022年4月' },
+        note: {
+          en: 'The most-loved Chengdu food video on this site: a ¥15 all-you-can-eat street buffet for the city\'s workers, free for anyone over 85. Its top comment (26K likes) is an office worker discovering it 1.1 km from their desk.',
+          zh: '本站最出圈的成都美食视频：给打工人吃的 15 元 20 道菜街边自助，85 岁以上老人免单。26K 赞的置顶评论，是一位上班族发现自己公司离它只有 1.1 公里。',
+        },
+        featured: true,
+      },
+      {
+        bvid: 'BV1GbcMz8En9',
+        title: { en: 'A Baba Banquet in a Chengdu Village: No Menu, You Just Grab', zh: '在成都金牛区一个村里吃"成都坝坝宴"，吃饭全靠"抢"' },
+        vloggerName: '好吃_fooD',
+        duration: '10:10',
+        viewsText: { en: '5.1M views', zh: '507.5万播放' },
+        publishedAt: { en: 'Feb 2026', zh: '2026年2月' },
+        note: {
+          en: 'The countryside banquet experience inside Chengdu\'s city limits: communal tables, no ordering, dishes land and you grab. The comments double as a street-vendor scam warning thread.',
+          zh: '成都市区里的农村吃席体验：拼桌、不点菜、菜来了靠抢。评论区还兼职科普了街头小贩的坑。',
+        },
+        featured: false,
+      },
+    ],
+  },
+]
