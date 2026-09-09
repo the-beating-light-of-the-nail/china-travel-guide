@@ -14,6 +14,7 @@ import type { L } from './localize'
 import { contentPacks } from './translations'
 import { fermentedVideoGroups } from './fermented-videos'
 import type { FermentedVideoGroup } from './fermented-videos'
+import { airportVideoGroups } from './chengdu-food-videos'
 
 // 向后兼容：hub-data.ts 等仍从此处导入 L 类型
 export type { L } from './localize'
@@ -2051,6 +2052,77 @@ const rawGuides: Omit<Guide, 'id'>[] = [
       { to: '/cities/chengdu', label: { en: 'Chengdu: Home of the Living Jar', zh: '成都：老坛泡菜之城' } },
       { to: '/guides/chengdu-food-guide', label: { en: 'Chengdu Food Guide', zh: '成都美食攻略' } },
       { to: '/guides/china-dumpling-guide', label: { en: 'China Dumpling Guide', zh: '中国饺子指南' } },
+    ],
+  },
+  {
+    slug: 'chengdu-airport-food-guide',
+    title: {
+      en: 'Food at Chengdu Tianfu Airport (TFU): What to Eat, Real Prices & Layover Survival',
+      zh: '成都天府机场美食指南：吃什么、真实价格与转机过夜攻略',
+    },
+    label: { en: 'Airport Survival', zh: '机场美食指南' },
+    excerpt: {
+      en: 'Stuck at Chengdu\'s giant new airport? What\'s actually inside Tianfu (and Shuangliu) — terminal restaurants, the ¥10 convenience-store trick, where flight crews eat, overnight pod prices, and when it\'s worth riding Metro Line 18 into town for the real thing.',
+      zh: '在天府机场转机吃什么？航站楼里有什么、10 元吃饱的便利店技巧、机组人员去哪吃、太空舱过夜什么价，以及什么时候值得坐 18 号线进城吃顿正宗的。',
+    },
+    content: {
+      en: '<p>Chengdu Tianfu International Airport (TFU) is one of the largest airports on Earth, opened in 2021 about 50 km (31 miles) south of downtown. That distance defines your entire food strategy, and Chinese travelers have already distilled it into a running joke:</p><blockquote><p>"Tianfu Airport is actually pretty fair — from here, almost every city in China is two hours away. Including Chengdu itself."</p><footer>— Bilibili comment, 1.2K likes (translated from Chinese)</footer></blockquote><p>This guide covers what you\'ll actually find: the restaurants inside both terminals, the budget tricks locals use, where flight crews and ground staff eat, overnight layover options at real prices — and the math on when to just take the metro into town.</p><h2>Eating Inside the Terminal</h2><p>Yes, TFU has real Sichuan food, not just burger chains. The most common local advice is surprisingly direct: skip the trek outside and eat at the Chen Mapo Tofu counter inside the terminal — mapo tofu is the city\'s signature dish, and the airport branch spares you a taxi.</p><blockquote><p>"Honestly, just eat the Chen Mapo Tofu inside Tianfu. Don\'t bother coming out here — from TFU, the taxi ride will probably cost more than your meal."</p><footer>— Bilibili comment on a near-airport food vlog (translated from Chinese)</footer></blockquote><p>One warning from a 560K-view vlog by one of China\'s most famous food vloggers, who filmed a full sit-down Sichuan meal at TFU and nearly missed her flight when the gate changed mid-meal: the terminal is enormous, gates involve serious walking distances, and screens update fast. Budget 20–30 minutes between finishing your meal and reaching a distant gate.</p><h3>The ¥10 Trick (Locals\' Favorite)</h3><p>Airport restaurants everywhere charge a premium. Convenience stores don\'t — because they can\'t. At chains like Lawson and FamilyMart, packaged bentos, rice balls and sandwiches carry the price printed by the manufacturer, so airport branches sell at city prices. Ground crew and airport staff buy their lunches there for exactly this reason.</p><blockquote><p>"Convenience-store food like Lawson\'s and FamilyMart\'s packaged bentos and rice balls costs the same as outside — the price is printed on the package, so even the airport location can\'t mark it up."</p><footer>— Bilibili comment, 161 likes (translated from Chinese)</footer></blockquote><p>Another frequent-flyer move: skip food counters entirely and use an airport lounge. Many credit cards and membership programs bundle free lounge access, and lounges usually include noodles, snacks and drinks.</p><h2>Where the Airport Workers Eat</h2><p>Leave the terminal with 4+ hours to spare and another Chengdu opens up: the <em>cangying guanzi</em> ("fly restaurants") — bare-bones, family-run holes-in-the-wall where the food is spectacular and the decor is an afterthought. The small towns around TFU are full of them, and the people who know best are the ones who work there. Under a vlog about a near-airport fly restaurant, a self-described seven-year airport veteran left the definitive list:</p><blockquote><p>"Caochi\'s Li Erjie, Shibandeng\'s Wang Family mutton soup, and Dong Tihua at the China Eastern center inside the airport. Seven years at Tianfu Airport — that\'s all I have to say."</p><footer>— Bilibili comment by an airport worker, 73 likes (translated from Chinese)</footer></blockquote><p>Caochi (草池) and Shibandeng (石板凳) are small towns a short taxi ride from the terminals. Order like the regulars: mutton soup at Wang\'s, braised pork trotter (tihua) at Dong\'s. Expect ¥20–40 a head — and remember the warning above: the round-trip taxi may outcost the meal.</p><h2>Overnight Layovers: Pods, Corners, or a Shuttle Hotel?</h2><p>TFU sells sleep pods/nap capsules at roughly ¥200+ per night. The verdict from travelers who have tried them is mixed — great for a horizontal hour, less great for a whole night.</p><blockquote><p>"The pods are ¥200-something… honestly just buy the direct flight next time. Sleeping in one is suffering — they feel like coffins and the soundproofing is terrible."</p><footer>— Bilibili comment on a TFU overnight guide (translated from Chinese)</footer></blockquote><blockquote><p>"I booked a hotel near Tianfu with a free airport shuttle — just over ¥100 a night. Better value than a pod, and you can actually shower."</p><footer>— Bilibili comment, 73 likes (translated from Chinese)</footer></blockquote><p>For solo female travelers arriving late, several commenters lean the other way: the pod area\'s security and camera coverage inside the terminal feels safer than a midnight shuttle to an unfamiliar hotel. If you do leave, note that the last metro to the city runs before midnight — check the schedule for your date.</p><h2>When to Skip the Airport Entirely</h2><p>Metro Line 18 links TFU to downtown Chengdu in roughly 40–50 minutes on the express. The math only works with a generous layover: two metro legs plus security re-entry plus Chengdu\'s portion sizes means you want 6+ hours before your next flight. With that kind of time — and the right passport — it is absolutely worth it. China\'s visa-free transit policy now covers many nationalities for up to 240 hours (check the current list before you fly), and a bowl of dan dan noodles in the actual city beats anything in any terminal. Our full <a href="/guides/chengdu-food-guide">Chengdu food guide</a> has the shortlist.</p><h2>Flying Through Shuangliu (CTU) Instead</h2><p>Chengdu\'s older airport, Shuangliu (CTU), sits much closer to the city — but do not sleep on its food. A 169K-view vlog toured CTU\'s terminal snack street, where crayfish are sold by weight at about ¥18 per 500g, alongside noodle stalls and a luosifen counter so popular that one regular went six days in a row without catching it open.</p><p>The bigger insider play near CTU is the staff canteen where uniformed airline crews actually eat:</p><blockquote><p>"Nongjia Family Restaurant, Jichang East 2nd Road, Shuanglu District: tofu-and-beef pot ¥48, rice ¥2. It\'s genuinely good — it\'s where tons of airport staff eat. Avoid the lunch rush, portions are huge, and the fried-skewer place next door is decent too."</p><footer>— Bilibili comment, 208 likes (address and prices as posted; translated from Chinese)</footer></blockquote><p>Thirty-odd yuan to eat like a flight attendant, five minutes from the terminal — that is the Chengdu way.</p><h2>Quick Decision Table</h2><table><thead><tr><th>Your situation</th><th>Best move</th><th>Budget</th></tr></thead><tbody><tr><td>Short layover (&lt;2h free time)</td><td>Chen Mapo Tofu or noodle counter inside TFU</td><td>¥35–70</td></tr><tr><td>Budget tight</td><td>Convenience-store bento + drink (city-priced)</td><td>¥10–25</td></tr><tr><td>4+ hours, adventurous</td><td>Taxi to Caochi/Shibandeng fly restaurants</td><td>¥20–40 + taxi</td></tr><tr><td>Overnight</td><td>Shuttle hotel (~¥100) or sleep pod (¥200+)</td><td>¥100–250</td></tr><tr><td>6+ hours, right passport</td><td>Metro Line 18 → downtown Chengdu</td><td>¥10 each way + meal</td></tr></tbody></table>',
+      zh: '<p>成都天府国际机场（TFU）是全球最大的机场之一，2021 年投运，距市中心以南约 50 公里。这段距离决定了你的整个觅食策略，中国网友已经把它总结成一个段子：</p><blockquote><p>"天府机场还是挺公平的。去国内大多数地方都是两小时，当然，也包括去成都。"</p><footer>— B 站评论，1177 赞</footer></blockquote><p>这篇指南讲清楚：两个航站楼里到底有什么、本地人的省钱技巧、机组和地勤去哪吃、过夜转机的真实价格——以及什么时候该直接坐地铁进城。</p><h2>航站楼里怎么吃</h2><p>天府机场有正经川菜，不只是汉堡连锁。本地人最常见的建议非常直接：别折腾出机场，就在航站楼里的陈麻婆豆腐吃——麻婆豆腐是成都的招牌，机场店省你一趟打车钱。</p><blockquote><p>"有一说一，直接天府机场里面吃陈麻婆豆腐就行了，不要跑出来了，你从天府机场跑这儿吃饭，车费很有可能贵得爆。"</p><footer>— 机场周边探店视频下的 B 站评论</footer></blockquote><p>一条 56 万播放的视频里，中国头部吃播在天府机场正儿八经吃了顿川菜，结果中途换登机口差点误机——教训：航站楼巨大，登机口走起来很远，屏幕信息变得很快。吃完饭去远端登机口，请预留 20–30 分钟。</p><h3>10 元吃饱的技巧（本地人最爱）</h3><p>机场餐厅到处都溢价，便利店不溢价——因为它没法溢价。罗森、全家这类连锁的盒饭、饭团、三明治，价格是厂家印在包装上的，机场店也只能按市区价卖。地勤和机场员工自己就在那里解决午饭：</p><blockquote><p>"机场的罗森、全家这种便利店的自制食品（盒饭、饭团之类的）价格和外边都是一样的，因为这些产品的价格都是标在包装上的。"</p><footer>— B 站评论，161 赞</footer></blockquote><p>另一个常旅客操作：直接进休息室。很多信用卡和会员权益都送机场休息室，里面通常有面、小吃和饮料。</p><h2>机场工作人员去哪吃</h2><p>转机时间 4 小时以上，可以出航站楼探索另一番成都：苍蝇馆子——装修将就、味道惊人、家庭经营的路边小店。天府机场周边的小镇上到处都是，最懂行的人就是在那里上班的人。在一条机场周边苍蝇馆子探店视频下面，一位自称在机场干了 7 年的老员工留下了权威清单：</p><blockquote><p>"草池李二姐，石板凳汪氏羊肉汤，机场里面东航中心董蹄花，7 年天府机场人言尽于此。"</p><footer>— 机场员工的 B 站评论，73 赞</footer></blockquote><p>草池、石板凳是距航站楼不远的两个小镇，打车几分钟。照着老客点：汪氏羊肉汤、董蹄花（炖猪肘），人均 20–40 元——但记住上面的警告：来回打车费可能比饭钱还贵。</p><h2>过夜转机：太空舱、角落，还是接送机酒店？</h2><p>天府机场的太空舱/睡眠舱约 200 元一晚起。试过的人评价两极——躺一小时很香，睡一整晚遭罪：</p><blockquote><p>"太空舱两百多……还不如一开始就买直飞的，简直受罪。太空舱总感觉像棺材，隔音很差。"</p><footer>— 天府机场过夜攻略视频下的 B 站评论</footer></blockquote><blockquote><p>"我是在天府附近定了酒店，免费接送机，一百出头一晚，比太空舱合适，还能洗漱。"</p><footer>— B 站评论，73 赞</footer></blockquote><p>深夜落地的独行女生，评论区的意见相反：航站楼里太空舱区域有安保和监控，比半夜坐摆渡车去陌生酒店更安心。另外，末班地铁在午夜前就收车，出行前查好当天的时刻表。</p><h2>什么时候干脆别在机场吃</h2><p>地铁 18 号线快车从天府机场到市中心约 40–50 分钟。账要这么算：两程地铁 + 二次安检 + 成都的菜量，转机时间 6 小时以上才值得。有这个时间、护照又合适的话，绝对值得——中国的过境免签政策目前对许多国家护照开放最长 240 小时（出行前查最新名单），在市区吃一碗真正的担担面，胜过任何航站楼。完整的店铺清单看我们的<a href="/guides/chengdu-food-guide">成都美食全指南</a>。</p><h2>飞双流（CTU）的看这里</h2><p>成都的老机场双流离市区近得多，但伙食不容小觑。一条 16.9 万播放的视频逛了双流航站楼里的小吃街：小龙虾按斤卖约 18 元/斤，还有面档和一家让常客连去六天都扑空的螺蛳粉档口。</p><p>双流周边更大的宝藏是空乘制服小姐姐们真正去吃的员工食堂：</p><blockquote><p>"农家菜馆，成都市双流区机场东二路：豆花牛肉 48，米饭 2。这家真的好吃，很多机场员工的食堂，要去要避开正饭点，菜量也大，另外旁边那家油炸串串也还可以。"</p><footer>— B 站评论，208 赞（地址与价格为评论原文）</footer></blockquote><p>离航站楼五分钟，三十来块吃得像机组一样好——这就是成都的规矩。</p><h2>快速决策表</h2><table><thead><tr><th>你的情况</th><th>最优解</th><th>预算</th></tr></thead><tbody><tr><td>转机时间紧（空闲 &lt;2 小时）</td><td>航站楼内陈麻婆豆腐或面档</td><td>¥35–70</td></tr><tr><td>预算有限</td><td>便利店盒饭 + 饮料（市区同价）</td><td>¥10–25</td></tr><tr><td>4 小时以上，想探险</td><td>打车去草池/石板凳苍蝇馆子</td><td>¥20–40 + 打车</td></tr><tr><td>过夜</td><td>接送机酒店（约 ¥100）或太空舱（¥200+）</td><td>¥100–250</td></tr><tr><td>6 小时以上，护照合适</td><td>地铁 18 号线 → 市区</td><td>¥10/程 + 餐费</td></tr></tbody></table>',
+    },
+    image: '/images/vlogs/BV15j411v7LS.jpg',
+    readTime: { en: '9 min read', zh: '阅读 9 分钟' },
+    views: { en: '2.4k reads', zh: '阅读 2400' },
+    publishedAt: { en: 'Just published', zh: '刚刚发布' },
+    featured: false,
+    videos: airportVideoGroups,
+    faq: [
+      {
+        q: { en: 'Is food expensive at Chengdu Tianfu Airport?', zh: '成都天府机场吃饭贵吗？' },
+        a: {
+          en: 'Airport restaurants carry a premium — expect ¥35–70 for a noodle or rice dish. The escape hatch is convenience stores: Lawson and FamilyMart bentos and rice balls sell at city prices because the price is printed on the package, so a full meal for ¥10–20 is genuinely possible.',
+          zh: '机场餐厅有溢价——一碗面或一份饭约 ¥35–70。逃生通道是便利店：罗森、全家的盒饭饭团按市区价卖（价格印在包装上），10–20 元吃一顿完全可行。',
+        },
+      },
+      {
+        q: { en: 'Are there halal food options at Chengdu airports?', zh: '成都机场有清真餐吗？' },
+        a: {
+          en: 'Lanzhou beef noodle shops — typically Muslim-run and pork-free — are the standard halal-friendly option in Chinese airports; look for the 清真 (halal) sign. If you have a long layover and the right passport, the city has a proper halal food scene; our halal Chengdu guide covers it in detail.',
+          zh: '兰州拉面店——通常是穆斯林经营、无猪肉——是中国机场里标准的清真友好选项，认准"清真"标识。如果转机时间长、护照合适，市区有真正的清真美食圈，详见我们的成都清真美食指南。',
+        },
+      },
+      {
+        q: { en: 'Can I leave Tianfu Airport during a layover?', zh: '转机时能出天府机场吗？' },
+        a: {
+          en: 'Yes, with a valid visa or visa-free transit eligibility — China\'s transit policy now covers many nationalities for up to 240 hours; check the current list. Practically you want 6+ hours: Metro Line 18 takes about 40–50 minutes each way, plus security re-entry. With less time, eat inside the terminal or taxi to the fly restaurants near Caochi or Shibandeng.',
+          zh: '可以，需要有效签证或符合过境免签——目前政策覆盖多国护照、最长 240 小时，出行前查最新名单。实际操作建议 6 小起：地铁 18 号线单程约 40–50 分钟，还要算上二次安检。时间不够就在航站楼里吃，或打车去草池、石板凳的苍蝇馆子。',
+        },
+      },
+      {
+        q: { en: 'Where can I eat or sleep late at night at TFU?', zh: '天府机场深夜能吃饭/睡觉吗？' },
+        a: {
+          en: 'Convenience stores in the terminal keep long hours for snacks and boxed meals. For sleeping, TFU sells nap pods from around ¥200, while nearby hotels with free airport shuttles start just over ¥100 a night — solo travelers often prefer the monitored pod area inside the terminal for safety. The last metro to the city leaves before midnight.',
+          zh: '航站楼便利店营业到很晚，能买到小吃和盒饭。睡觉方面，太空舱约 ¥200 起，机场周边带免费接送的酒店一百出头一晚——独行旅客出于安全考虑常选航站楼内有监控的太空舱区域。末班地铁在午夜前发车。',
+        },
+      },
+      {
+        q: { en: 'Which Chengdu airport has better food, Tianfu (TFU) or Shuangliu (CTU)?', zh: '天府和双流哪个机场伙食好？' },
+        a: {
+          en: 'Both eat surprisingly well by airport standards. CTU is compact with a terminal snack street — crayfish by weight at ~¥18/500g and a famous luosifen stall. TFU is newer and vast, with real sit-down Sichuan including Chen Mapo Tofu. Near either one, staff-canteen restaurants serve airline-crew meals from ¥30.',
+          zh: '按机场标准两家都吃得意外地好。双流紧凑，航站楼里有小吃街——按斤卖的小龙虾（约 18 元/斤）和网红螺蛳粉档口；天府更新更大，有陈麻婆豆腐这样的正经堂食川菜。两场周边都有员工食堂系餐馆，30 元起吃得像机组。',
+        },
+      },
+      {
+        q: { en: 'How far is Tianfu Airport from downtown Chengdu?', zh: '天府机场离成都市区多远？' },
+        a: {
+          en: 'About 50 km (31 miles). Metro Line 18 covers it in roughly 40–50 minutes; a taxi or DiDi runs ¥100+ and 60–90 minutes depending on traffic. The distance is why locals joke that "from Tianfu, even Chengdu is two hours away" — build it into any city-during-layover plan.',
+          zh: '约 50 公里。地铁 18 号线约 40–50 分钟；打车或网约车 ¥100 起，视路况 60–90 分钟。所以本地人才开玩笑"从天府出发，连成都都是两小时以外"——规划进城觅食时务必算进去。',
+        },
+      },
+    ],
+    relatedLinks: [
+      { to: '/guides/chengdu-food-guide', label: { en: 'The Chengdu Food Guide', zh: '成都美食全指南' } },
+      { to: '/cities/chengdu', label: { en: 'Chengdu City Guide', zh: '成都城市页' } },
+      { to: '/guides/first-trip-to-china-guide', label: { en: 'First Trip to China', zh: '第一次来中国' } },
     ],
   },
 ]

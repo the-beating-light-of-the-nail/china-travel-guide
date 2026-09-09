@@ -86,6 +86,12 @@ const pack: LocalePack = {
       label: 'Mapa gastronómico',
       readTime: 'Lectura de 7 min',
     },
+    'chengdu-airport-food-guide': {
+      title: 'Comer en el aeropuerto Chengdu Tianfu (TFU): qué comer, precios reales y escalas nocturnas',
+      excerpt: '¿Varado en el enorme aeropuerto nuevo de Chengdu? Qué hay de verdad en Tianfu (y Shuangliu) — restaurantes del terminal, el truco de ¥10 en tiendas de conveniencia, dónde comen las tripulaciones, precios de las cápsulas y cuándo vale la pena el metro línea 18.',
+      label: 'Guía de aeropuerto',
+      readTime: 'Lectura de 9 min',
+    },
     'china-dumpling-guide': {
       title: 'La guía del dumpling en China: 15 variedades, cinco familias, un largo almuerzo',
       excerpt: 'Hervidos, al vapor, a la plancha, en sopa o dulces — cómo distinguir cada dumpling chino, cuánto pagar, cómo pedir sin una palabra de chino y dónde comer cada estilo en su mejor versión.',

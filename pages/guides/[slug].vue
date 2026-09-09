@@ -239,6 +239,26 @@ useHead({
   margin: 1.75rem 0 0.5rem;
 }
 
+/* 「真实观众评论」等引述块 */
+.prose-content :deep(blockquote) {
+  margin: 1.5rem 0;
+  padding: 0.875rem 1.25rem;
+  border-left: 4px solid #d946ef;
+  background: #fdf4ff;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose-content :deep(blockquote p) {
+  margin-bottom: 0.375rem;
+  color: #3f3f46;
+}
+
+.prose-content :deep(blockquote footer) {
+  font-size: 0.8125rem;
+  color: #a21caf;
+  margin-bottom: 0;
+}
+
 /* 对比矩阵 / 旅行吃图等正文表格 */
 .prose-content :deep(table) {
   width: 100%;

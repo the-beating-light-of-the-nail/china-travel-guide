@@ -86,6 +86,12 @@ const pack: LocalePack = {
       label: 'Food-Karte',
       readTime: '7 Min. Lesezeit',
     },
+    'chengdu-airport-food-guide': {
+      title: 'Essen am Flughafen Chengdu Tianfu (TFU): was essen, echte Preise & Layover-Guide',
+      excerpt: 'Am riesigen neuen Flughafen festgehangen? Was es in Tianfu (und Shuangliu) wirklich gibt — Terminal-Restaurants, der ¥10-Convini-Trick, wo Kabinencrew isst, Kapsel-Preise und wann sich Metro Line 18 in die Stadt lohnt.',
+      label: 'Flughafen-Guide',
+      readTime: '9 Min. Lesezeit',
+    },
     'china-dumpling-guide': {
       title: 'Der Teigtaschen-Guide für China: 15 Sorten, fünf Familien, ein langes Mittagessen',
       excerpt: 'Gekocht, gedämpft, gebraten, in Brühe oder süß — wie Sie jede chinesische Teigtasche unterscheiden, was sie kosten darf, wie Sie ohne ein Wort Chinesisch bestellen und wo jede Sorte am besten ist.',

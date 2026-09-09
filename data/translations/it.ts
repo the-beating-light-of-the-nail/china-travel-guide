@@ -95,6 +95,13 @@ const pack: LocalePack = {
       label: "Mappa gastronomica",
       readTime: "Lettura di 7 min",
     },
+    "chengdu-airport-food-guide": {
+      title: "Mangiare all'aeroporto Chengdu Tianfu (TFU): cosa mangiare, prezzi reali e soste notturne",
+      excerpt:
+        "Bloccato nel gigantesco nuovo aeroporto di Chengdu? Cosa c'è davvero a Tianfu (e Shuangliu) — ristoranti del terminal, il trucco da ¥10 al minimarket, dove mangiano gli equipaggi, prezzi delle capsule e quando conviene la metro linea 18.",
+      label: "Guida aeroporto",
+      readTime: "Lettura di 9 min",
+    },
     "first-trip-to-china-guide": {
       title: "Primo viaggio in Cina: guida completa alla pianificazione",
       excerpt:
