@@ -22,6 +22,7 @@ const { locale } = useI18n()
               :title="v.title[locale]"
               :duration="v.duration"
               :featured="v.featured"
+              :cover="v.cover"
             />
           </span>
           <span class="min-w-0 flex-1 py-0.5">

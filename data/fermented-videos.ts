@@ -17,6 +17,7 @@ import type { L } from './localize'
 
 export interface FermentedVideo {
   bvid: string
+  cover?: string
   title: L
   vloggerName: string
   duration: string
@@ -43,6 +44,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1eu411o745',
+        cover: 'https://i1.hdslb.com/bfs/archive/4288fa6adcd69bafc13db0344278eaa474393ed3.jpg',
         title: { en: 'Dongbei Cannot Live Without Suancai! — The Complete Tutorial', zh: '东北不能失去酸菜！' },
         vloggerName: '手艺贾',
         duration: '10:20',
@@ -56,6 +58,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1gy4y1m7Xx',
+        cover: 'https://i2.hdslb.com/bfs/archive/8e90cc8c33e2564b2bea33f8638298f25de29adb.jpg',
         title: { en: 'Pickled Sour Cabbage, the Family Way', zh: '【小高姐】腌酸白菜' },
         vloggerName: '小高姐的魔法调料',
         duration: '6:15',
@@ -69,6 +72,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1oSCsBMEPh',
+        cover: 'https://i1.hdslb.com/bfs/archive/1bd80b3e8770906b34d752ecdc139efc56754f9f.jpg',
         title: { en: 'Grandma Pickles 500 Jin of Cabbage in One Go', zh: '东北腌酸菜啦，看我姥五百斤白菜能腌多少酸菜' },
         vloggerName: '八零徐姥姥',
         duration: '5:39',
@@ -82,6 +86,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1kQ4y1D7j5',
+        cover: 'https://i1.hdslb.com/bfs/archive/2fcca8cdbaab59b46659f10c2344ffff6314c9fc.jpg',
         title: { en: 'How the Suancai in Your Fish Pot Is Mass-Made', zh: '酸菜鱼里的酸菜，泡面里的酸菜包，是这样做出来的' },
         vloggerName: '四处观察的小臣',
         duration: '4:28',
@@ -95,6 +100,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1MK4y1z7fw',
+        cover: 'https://i0.hdslb.com/bfs/archive/4a6165a067b6821d9a9a4ab792dd9782033eb48c.jpg',
         title: { en: 'Suancai Pork Belly — Winter\'s Hardest-Working Dish', zh: '冬天不可或缺的大硬菜！丨酸菜白肉' },
         vloggerName: '老饭骨',
         duration: '4:57',
@@ -108,6 +114,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1XT4y1n7A1',
+        cover: 'https://i1.hdslb.com/bfs/archive/3dbb4b94a2d0c294ef63ebbb56fc94fce0796d4a.jpg',
         title: { en: 'A Full Dongbei Suancai Hotpot, Table-Cam Edition', zh: '东北酸菜锅！能吃又能喝！' },
         vloggerName: '小傲想睡觉',
         duration: '16:34',
@@ -127,6 +134,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1B8411Z71Q',
+        cover: 'https://i2.hdslb.com/bfs/archive/0d48745ce3f9192febd16deaf9be55fb15dea87d.jpg',
         title: { en: 'The Microbiology of Sichuan Paocai, Demystified', zh: '微观层面解释四川泡菜原理，把玄学讲清楚！' },
         vloggerName: '吉尔的小灯塔',
         duration: '15:30',
@@ -140,6 +148,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1jq4y16757',
+        cover: 'https://i1.hdslb.com/bfs/archive/cca8a071882ca6399306d0690fb77d5f304502cf.jpg',
         title: { en: 'Bath Paocai — the Jar Every Sichuan Home Keeps', zh: '四川洗澡泡菜，家家户户必吃' },
         vloggerName: '林述巍JACKLIN',
         duration: '11:13',
@@ -153,6 +162,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1oF411J7Uv',
+        cover: 'https://i1.hdslb.com/bfs/archive/b4f417a9602518dce97ab2bf2d58525da5d59c16.jpg',
         title: { en: 'What Does a 120-Year-Old Mother Brine Taste Like?', zh: '传承120年的老坛泡菜水，是啥口感？' },
         vloggerName: '锅铲居士',
         duration: '18:05',
@@ -172,6 +182,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1mWUGBNESc',
+        cover: 'https://i2.hdslb.com/bfs/archive/9cb6eed39846ae9e728e32abee9e40156f037d06.jpg',
         title: { en: 'From Mountain Kitchens to China\'s Hottest Menu Trend', zh: '从黔贵山乡到国民餐桌：贵州酸汤如何成为中餐顶流？' },
         vloggerName: '赛博食录',
         duration: '15:18',
@@ -185,6 +196,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1HZ4y1M7TB',
+        cover: 'https://i0.hdslb.com/bfs/archive/837fb872775589b153c9901929b08b543b83b1fe.jpg',
         title: { en: 'Sour Soup Fish in a Miao Village Near Kaili', zh: '贵州凯里酸汤鱼，500年苗寨美味河鱼' },
         vloggerName: '阿星探店',
         duration: '20:36',
@@ -198,6 +210,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1g14y1S78K',
+        cover: 'https://i2.hdslb.com/bfs/archive/d12dcb2a637b4c650479ea5342e6d839070c29d4.jpg',
         title: { en: 'A Chef Reviews Kaili Sour Soup Fish — ¥102 a Head', zh: '凯里.酸汤鱼 厨子探店¥102' },
         vloggerName: '真探唐仁杰',
         duration: '3:49',
@@ -211,6 +224,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1Bw411m7Gg',
+        cover: 'https://i0.hdslb.com/bfs/archive/68401360e605bf2c27f7ad1c0fca06a2bcc5476b.jpg',
         title: { en: 'Guizhou Sour Hotpot: One Spoonful of Broth per Bowl of Rice', zh: '一勺汤就是一碗饭，贵州酸汤火锅是世界上最下饭的火锅！' },
         vloggerName: '特厨做饭_',
         duration: '5:33',
@@ -224,6 +238,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1Mz4y1s7KB',
+        cover: 'https://i2.hdslb.com/bfs/archive/a92d5a27ffc9f81f049f9544611479a530403a29.jpg',
         title: { en: 'Red Sour Soup, Tested Like a Lab Experiment', zh: '科学制作贵州红酸汤，对照测试不同发酵方法和器皿' },
         vloggerName: '吉尔的小灯塔',
         duration: '13:40',
@@ -243,6 +258,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1RsE9z6EhK',
+        cover: 'https://i1.hdslb.com/bfs/archive/edb5188e6d9a7e9ad0e919d7352056c7fe0c777c.jpg',
         title: { en: 'Suancaiyu with Blackfish — Silkier Fillets, Better Broth', zh: '用黑鱼做出的酸菜鱼比草鱼好吃多了' },
         vloggerName: '小厨大凯',
         duration: '4:54',
@@ -262,6 +278,7 @@ export const fermentedVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV12A4m1P7PW',
+        cover: 'https://i0.hdslb.com/bfs/archive/1bc48ca690df4229656d2fd66352ecf48b398364.jpg',
         title: { en: '30 Days of Work, 2 Years Until It\'s Edible', zh: '用30天做了10坛涪陵本地人爱吃的榨菜，但是要2年后才能吃到' },
         vloggerName: '燕麦行游',
         duration: '12:50',

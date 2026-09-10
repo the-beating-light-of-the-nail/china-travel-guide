@@ -18,6 +18,7 @@ export type HikingTier = 'beginner' | 'classic' | 'challenging' | 'expedition'
 /** 路线视频（B 站外链卡片行） */
 export interface HikingVideo {
   bvid: string
+  cover?: string
   title: L
   vloggerName: string
   duration: string
@@ -77,6 +78,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1RovaBTEE4',
+        cover: 'https://i0.hdslb.com/bfs/archive/ba740db0329163fefc7beb98ccb3d15d6f5688cc.jpg',
         title: { en: 'Tiger Leaping Gorge: Our First 20 km Mountain Trek', zh: '跟风去雪山徒步20公里，下场就是……【云南-虎跳峡】' },
         vloggerName: '期末77',
         duration: '44:09',
@@ -87,6 +89,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1H84y1y7Qm',
+        cover: 'https://i1.hdslb.com/bfs/archive/b0fe83d2148a543ae74491fc91a128328900ed62.jpg',
         title: { en: 'Tiger Leaping Gorge 4K — a World Top-10 Trek', zh: '【虎跳峡徒步4K】全球十大徒步路线 在国外比国内还知名' },
         vloggerName: '徒步的LeoWang',
         duration: '16:25',
@@ -97,6 +100,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1pFkdYzEYR',
+        cover: 'https://i2.hdslb.com/bfs/archive/cf579e99450f8cf6e5a3c51c790d4722a9a0f7e1.jpg',
         title: { en: 'How to Hike the High Trail — 2 Days on China\'s Coziest Trek', zh: '虎跳峡高路怎么走？两天徒步体验国内最小资的户外线路！' },
         vloggerName: 'captainmeng',
         duration: '21:53',
@@ -128,6 +132,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV13U411o7AC',
+        cover: 'https://i1.hdslb.com/bfs/archive/52f25968c402de889ae69c0c83f5a91a482ac5df.jpg',
         title: { en: 'Wugongshan: The Mountain Where "the Wilderness Is Full of Students"', zh: '妈妈，人生是武功山，旷野上全是大学生……【互联网脚替07】' },
         vloggerName: '超Carry的柴西',
         duration: '10:39',
@@ -138,6 +143,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1fu4m1F7YM',
+        cover: 'https://i2.hdslb.com/bfs/archive/016dc29739fc13751976d7d244db61db884c9824.png',
         title: { en: 'First Time on Wugongshan: Routes, Costs & Tips', zh: '第一次爬武功山该咋爬' },
         vloggerName: '崂山Bro',
         duration: '15:15',
@@ -148,6 +154,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV12a411V7VU',
+        cover: 'https://i0.hdslb.com/bfs/archive/b3752b32a7c1b826e1955d4191cd5bcd42721565.jpg',
         title: { en: 'Wugongshan Complete Route Guide in 9 Minutes', zh: '武功山攻略（全集），9分钟带你玩转武功山' },
         vloggerName: '独行客卡卡',
         duration: '9:06',
@@ -179,6 +186,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1uEQhBAEVr',
+        cover: 'https://i1.hdslb.com/bfs/archive/2ed4d5ca7a65dcf75a2eb3dad1835ba2adf56024.jpg',
         title: { en: 'Mount Hua: The Entire Trail in One Take (28 min)', zh: '一镜到底带您全程徒步【华山】' },
         vloggerName: '问题不太大-',
         duration: '28:16',
@@ -189,6 +197,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1kG4y1e7va',
+        cover: 'https://i2.hdslb.com/bfs/archive/8c6760b2a5e0c35a560a43eaaf9ddca1dc22bec9.jpg',
         title: { en: '12-Hour Night Climb of Mount Hua — Full Guide', zh: '历时12小时夜爬华山的保姆级攻略来了！' },
         vloggerName: '乔梓Zoey',
         duration: '8:15',
@@ -199,6 +208,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1Pe4y197fQ',
+        cover: 'https://i2.hdslb.com/bfs/archive/7c6462834952d99f12587e33a681979ec364559c.jpg',
         title: { en: 'You Have to Night-Climb Hua Shan Once — for the 5 AM Sunrise', zh: '总要夜爬一次华山，看凌晨五点的日出吧！' },
         vloggerName: '乔梓Zoey',
         duration: '9:51',
@@ -230,6 +240,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV178qGYaEp9',
+        cover: 'https://i1.hdslb.com/bfs/archive/7b0eef7b8d0feae4c4d650b85c1e5e97f71dbdc1.jpg',
         title: { en: 'Zhagana Reverse Traverse: 51 km Through the Dieshan Secret Range', zh: '反穿扎尕那！51km徒步穿越迭山秘境，我竟然被土拨鼠偷家了！' },
         vloggerName: 'captainmeng',
         duration: '34:28',
@@ -240,6 +251,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV14W4y1o7dM',
+        cover: 'https://i1.hdslb.com/bfs/archive/8a5707497acbad3504301cc33a0811cf2b167ee4.jpg',
         title: { en: 'Solo Trekking Zhagana — Rain, Scree and a Victory Moment', zh: '甘南扎尕那｜一个人徒步走完忍不住哭出来' },
         vloggerName: '妙玉Mavis',
         duration: '5:14',
@@ -272,6 +284,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1pMaDepEyS',
+        cover: 'https://i2.hdslb.com/bfs/archive/4909ff6814c0bb98ea028a1d4c92439ed230aa9f.jpg',
         title: { en: 'Yubeng 4K: the Epic 66 km Trek Through Meili Snow Mountain', zh: '【4K】雨崩——此生必徒的史诗级路线 | 雨崩66KM徒步全纪录' },
         vloggerName: '小V的奇幻旅程',
         duration: '44:00',
@@ -282,6 +295,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1aasBzGEaR',
+        cover: 'https://i2.hdslb.com/bfs/archive/b4902ffb6c3e289518af120bd17c811c3d2ede8d.jpg',
         title: { en: 'Rainy 12 km to Yubeng — Meili\'s Hidden Village', zh: '和好友冒雨徒步雨崩12km，藏在梅里雪山里的秘境……【互联网脚替17】' },
         vloggerName: '超Carry的柴西',
         duration: '16:18',
@@ -292,6 +306,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1Wj411o7Dg',
+        cover: 'https://i2.hdslb.com/bfs/archive/44513ff1fc57d1e3dd95430110e94c597b4c2d1a.jpg',
         title: { en: 'Yubeng Ultimate Guide: Trails, Transport & Seasons', zh: '雨崩保姆级攻略，徒步/自驾/神湖/虫草线' },
         vloggerName: '独行客卡卡',
         duration: '11:50',
@@ -323,6 +338,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1LSzHY4EsH',
+        cover: 'https://i1.hdslb.com/bfs/archive/43e2ccd5c43377c656f92079e85338aa5c303e88.jpg',
         title: { en: 'Yading North Loop 4K — a Side of the Park Almost Nobody Sees', zh: '徒步稻城亚丁，我发现了一个无人知晓的秘境｜亚丁北线4K' },
         vloggerName: '秘密仙人掌',
         duration: '8:45',
@@ -333,6 +349,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1Bx14BJEsc',
+        cover: 'https://i0.hdslb.com/bfs/archive/3b28256e5212b6a561df1d6bd6f00c64fe43fa00.jpg',
         title: { en: '6 Days Offline: the Yading Kora — China\'s Middle-earth', zh: '与世界断联，寻找现实版中土大陆 | 亚丁徒步 4K' },
         vloggerName: '夜空中最亮的喵',
         duration: '36:52',
@@ -343,6 +360,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1TdadzNEYF',
+        cover: 'https://i2.hdslb.com/bfs/archive/e1c165245b5e3b0e2cff8247dcedfbdaf31b2d0f.jpg',
         title: { en: 'First Time in Daocheng Yading: How to Do It', zh: '第一次来稻城亚丁该咋玩' },
         vloggerName: '崂山Bro',
         duration: '12:38',
@@ -374,6 +392,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1tV26YJEVU',
+        cover: 'https://i0.hdslb.com/bfs/archive/435bbf51268f54f91dfcb14be7aaf2ee5d207dca.jpg',
         title: { en: 'Kanas River 4K HDR — China\'s Most Beautiful Riverside Walk (POV)', zh: '新疆阿勒泰喀纳斯河 4K HDR - 在中国最美的河滨步行道漫步' },
         vloggerName: '行走中国WalkChina',
         duration: '53:45',
@@ -384,6 +403,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1dP41157hv',
+        cover: 'https://i1.hdslb.com/bfs/archive/7c5beeb4e1d36106b5eef070714c76492c25d5cd.jpg',
         title: { en: '103 km Across Hemu, Kanas & Baihaba — Into the Untouched Zone', zh: '徒步103公里穿越禾木、喀纳斯、白哈巴，进入未开发区域' },
         vloggerName: 'lucky卡卡',
         duration: '13:10',
@@ -394,6 +414,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1kV411M7rU',
+        cover: 'https://i1.hdslb.com/bfs/archive/0149e9748238de870fbd2cab465ee241c2bbead0.jpg',
         title: { en: 'Hemu to Kanas: 42 km Through Forest, Steppe & Snow Peaks', zh: '新疆禾木-喀纳斯42km登山徒步' },
         vloggerName: '金鱼派力西',
         duration: '14:56',
@@ -425,6 +446,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1qkHDzGE6b',
+        cover: 'https://i1.hdslb.com/bfs/archive/7c6a00437f9308cc3b66e87f12f8ad17ce0b67ec.jpg',
         title: { en: 'Changping→Bipeng Traverse: 32 km Heavy-Pack Under the Four Sisters', zh: '长坪沟穿越毕棚沟32km重装徒步，四姑娘山的夏天在川西没有对手！' },
         vloggerName: 'captainmeng',
         duration: '33:46',
@@ -435,6 +457,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV18nTj6JE4N',
+        cover: 'https://i2.hdslb.com/bfs/archive/cd112e714f4483608a75cfe0b9274032b88d51a3.jpg',
         title: { en: 'Siguniang With My Little Brother — a Western Sichuan Farewell Trip', zh: '和弟弟的四姑娘山川西毕业旅行，终不似少年游' },
         vloggerName: '超Carry的柴西',
         duration: '22:34',
@@ -445,6 +468,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1iH4y1R7pp',
+        cover: 'https://i0.hdslb.com/bfs/archive/a544fbb0bacf272860da9f3306140dd58c5d8ea9.jpg',
         title: { en: 'Autumn on the Siguniang Traverse — a Golden Oil Painting in 4K', zh: '[4K]四姑娘山徒步 | 长穿毕｜走在金色油画般的秋日川西' },
         vloggerName: '娅呀呀呀呀',
         duration: '19:28',
@@ -477,6 +501,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1Rm4y1s7qy',
+        cover: 'https://i2.hdslb.com/bfs/archive/1cfbc53a1e0a4b1f0bc91bbbfff925d8ae7f6ef2.jpg',
         title: { en: 'Solo Heavy-Pack Gongga Loop + Ledorman Yin Glacier (4K)', zh: '【4K】Solo重装徒步贡嘎大环线+勒多曼因' },
         vloggerName: 'okianyumi',
         duration: '12:23',
@@ -487,6 +512,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1AHt7zgEw7',
+        cover: 'https://i1.hdslb.com/bfs/archive/72701cea756d7120f13cffae58e9f0f127f4c687.jpg',
         title: { en: 'Gongga Loop: 80 km Solo Crossing, 6 Days 5 Nights', zh: '贡嘎大环线-勒多曼因80km单人穿越，6天5夜攻略vlog' },
         vloggerName: '山仲有阳',
         duration: '48:22',
@@ -497,6 +523,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV17m411U7Ry',
+        cover: 'https://i2.hdslb.com/bfs/archive/9bad5dbc9aeea1470d6eb1037af5aef8db1ff8a3.jpg',
         title: { en: 'Every Gongga-area Trek Route Explained in 7 Minutes', zh: '一个视频讲清楚贡嘎山域所有的徒步路线（硬核攻略）' },
         vloggerName: '户外小祝',
         duration: '6:58',
@@ -528,6 +555,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1EsW3zuERd',
+        cover: 'https://i1.hdslb.com/bfs/archive/83c86224abe5f9b99771421ca797dfe0535e7ff5.jpg',
         title: { en: 'Genie Pasture Line, 3-Day Full-Pack Trek — Hiking 101 S4E1', zh: '对不起B友们，我们把峰哥活着带出来了｜《徒步101》格聂牧场线3天2夜' },
         vloggerName: '阅路山',
         duration: '36:14',
@@ -538,6 +566,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1RDbXzFEeu',
+        cover: 'https://i2.hdslb.com/bfs/archive/24796d4f117939880fae09e9245cd95c09a387e2.jpg',
         title: { en: 'Genie in Its Divine Season — 30 km Pasture Line in 2 Days', zh: '川西格聂徒步路线，已经来到了封神季节' },
         vloggerName: '安文龙-无限挑战',
         duration: '27:27',
@@ -548,6 +577,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1xfNT6yEH6',
+        cover: 'https://i2.hdslb.com/bfs/archive/75127a42e0cd99ff65eef4b3e949cd39a99321e6.jpg',
         title: { en: '65 km Solo Around the Genie Pastures', zh: '独自在四川甘孜格聂牧场徒步65km' },
         vloggerName: '游山浪人',
         duration: '22:14',
@@ -579,6 +609,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1UDMXzqEaK',
+        cover: 'https://i1.hdslb.com/bfs/archive/2432f192f65b01bbeb768b9f27d7f6838405e7be.jpg',
         title: { en: 'Meili North Slope — the Full Traverse, Day by Day', zh: '户外就是一场成年人的过家家｜徒步梅里北坡全程记录' },
         vloggerName: '山肆十四',
         duration: '13:47',
@@ -589,6 +620,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1JTDnY4EDF',
+        cover: 'https://i2.hdslb.com/bfs/archive/15751f98e8acca106c86319542172e1e3764ba83.jpg',
         title: { en: 'Meili North Slope Guide: 4 Days, 42 km, 5,200 m Pass', zh: '梅里北坡 四天三夜 42公里 徒步攻略' },
         vloggerName: '艾伦趣发现',
         duration: '11:07',
@@ -620,6 +652,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1Ux421k7We',
+        cover: 'https://i0.hdslb.com/bfs/archive/af42a1833f8fd48ecb07baa0bec82a2c575f4172.jpg',
         title: { en: 'Whatever You Do, Don\'t Go Watch the Galaxy in the Desert', zh: '千 万 别 去 沙 漠 看 银 河 ！【内蒙古-腾格里沙漠】' },
         vloggerName: '期末77',
         duration: '16:40',
@@ -630,6 +663,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1Gc7K6UEgz',
+        cover: 'https://i2.hdslb.com/bfs/archive/638b9b4a941d0f5333dcff8ab5a6cbaa7f158d68.jpg',
         title: { en: '32 km to the Heart of the Desert — Tengger Trek & Camp', zh: '徒步32km，我来到了沙漠之心！' },
         vloggerName: '呆呆不吃喵',
         duration: '31:08',
@@ -662,6 +696,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1YyCCBWEa3',
+        cover: 'https://i2.hdslb.com/bfs/archive/1df17bdbd3e5faf7799476f54c23a79d5a664c6b.jpg',
         title: { en: 'Links: 52 km Around Kailash — Why Pilgrims Walk', zh: 'Links｜终于来到"世界中心"！徒步52公里，我找到了冈仁波齐转山的意义' },
         vloggerName: 'Linksphotograph',
         duration: '22:37',
@@ -672,6 +707,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1szZJB6Ebv',
+        cover: 'https://i0.hdslb.com/bfs/archive/f34962c1f147d718638f2eaa16d1dca39d5940ca.jpg',
         title: { en: '5,000 km to the King of Sacred Mountains', zh: '跨越5000公里，到神山之王！冈仁波齐还愿！' },
         vloggerName: '东尼ookii',
         duration: '22:41',
@@ -682,6 +718,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV16r4y1R7zy',
+        cover: 'https://i0.hdslb.com/bfs/archive/5d9039ed76365ecee60fd274c2ba49d1e8db6518.jpg',
         title: { en: 'Circling Kailash With a Cat — 54 km in 2 Days', zh: '带小猫咪转山冈仁波齐，54公里，耗时两天' },
         vloggerName: '山肆十四',
         duration: '31:58',
@@ -713,6 +750,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
     videos: [
       {
         bvid: 'BV1xtNw68Euz',
+        cover: 'https://i0.hdslb.com/bfs/archive/7f8f8bab9daf5581d2bb6e144828d6ad5085a255.jpg',
         title: { en: '"This Is My Wusun Trail." — the Cinematic Cut', zh: '"这是我的乌孙古道。"' },
         vloggerName: '我名字ahua被人用了',
         duration: '6:41',
@@ -723,6 +761,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1t7s4eCEGA',
+        cover: 'https://i0.hdslb.com/bfs/archive/7c2f8080d742dc0e2b27e58aee7fc4168360890a.jpg',
         title: { en: 'Wusun Trail Guide: 6 Days, 120 km, Independent Heavy-Pack', zh: '新疆 乌孙古道 6天5夜 自主重装 120KM 正穿 保姆级徒步攻略' },
         vloggerName: '艾伦趣发现',
         duration: '16:40',
@@ -733,6 +772,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
       },
       {
         bvid: 'BV1FhbDzKEDU',
+        cover: 'https://i2.hdslb.com/bfs/archive/ed95e78fcc607ae863b102fd35bd97baac55bb37.jpg',
         title: { en: 'Wusun Trail 4K: Xinjiang\'s Cathedral of Treks', zh: '【4K】新疆殿堂级徒步路线 一眼便是天堂人间 | 乌孙古道徒步全纪录' },
         vloggerName: '小V的奇幻旅程',
         duration: '47:14',
@@ -750,6 +790,7 @@ const rawHikingRoutes: Omit<HikingRoute, 'id'>[] = [
 
 export const hikingSpotlight = fillLocaleFallbacks({
   bvid: 'BV1v1421t7ZS',
+  cover: 'https://i2.hdslb.com/bfs/archive/99a647aaa6ba23f15828c40f08fccf99bcbf2cbb.jpg',
   title: {
     en: '37 km up Emei Shan With My Foreign Friend Kerry',
     zh: '带外国朋友37km爬峨眉山！kerry：中国的山再也不爬了',

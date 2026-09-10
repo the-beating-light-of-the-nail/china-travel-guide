@@ -29,6 +29,7 @@ export interface Vlog {
   vloggerName: string
   platform: VlogPlatform
   externalUrl: string
+  cover?: string
   duration: string
   views: L
   review: L
@@ -106,6 +107,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '阿星探店',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1fB4y1b7so',
+    cover: 'https://i0.hdslb.com/bfs/archive/7e6e5578114e0079edbf4dfb8f2fe758376f4889.jpg',
     duration: '22:12',
     views: { en: '453K views', zh: '45万播放' },
     review: {
@@ -123,6 +125,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '阿星探店',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1y24y117Yo',
+    cover: 'https://i2.hdslb.com/bfs/archive/84f217b61e6465e2ff14b8c6a58961e2304cdb90.jpg',
     duration: '19:04',
     views: { en: '396K views', zh: '40万播放' },
     review: {
@@ -140,6 +143,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '深山远方兽',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1oM411a7P8',
+    cover: 'https://i2.hdslb.com/bfs/archive/e2ea04b3d4c7358cf64c498894416a589a93a03d.jpg',
     duration: '4:51',
     views: { en: '166K views', zh: '17万播放' },
     review: {
@@ -157,6 +161,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '庄子HD',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1kh411K77k',
+    cover: 'https://i2.hdslb.com/bfs/archive/430ebe0f3c02e6597c5d15ffe0a6dba501737e3b.jpg',
     duration: '12:04',
     views: { en: '11.7M views', zh: '1171万播放' },
     review: {
@@ -174,6 +179,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '神奇海挪',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV14u4y1R7fR',
+    cover: 'https://i1.hdslb.com/bfs/archive/3c802248b8be2524919a9f420210ab99921ded1c.jpg',
     duration: '7:38',
     views: { en: '4.8M views', zh: '482万播放' },
     review: {
@@ -191,6 +197,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '涡轮风扇鱼ViC',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1Np4y1N7u5',
+    cover: 'https://i2.hdslb.com/bfs/archive/8b86e621f8504ac6b7482fd98503e95bf3fad5ca.jpg',
     duration: '35:55',
     views: { en: '1.2M views', zh: '116万播放' },
     review: {
@@ -208,6 +215,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '雨琪在芬兰',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1RH4y1Q71r',
+    cover: 'https://i2.hdslb.com/bfs/archive/e24ad2b91e01f2f7589c5a0fc7ccba9323442366.jpg',
     duration: '22:43',
     views: { en: '8.5M views', zh: '845万播放' },
     review: {
@@ -225,6 +233,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '小傲想睡觉',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1MN4y1D7JQ',
+    cover: 'https://i2.hdslb.com/bfs/archive/f147f2182de8c38ec3518ebf46c6b9b321dc4f08.jpg',
     duration: '20:38',
     views: { en: '5.3M views', zh: '529万播放' },
     review: {
@@ -242,6 +251,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '娜塔莎一家',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1MG411S7Mc',
+    cover: 'https://i1.hdslb.com/bfs/archive/9aa9175644c92c1e5b214eff659504bd0e15d96d.jpg',
     duration: '15:28',
     views: { en: '634K views', zh: '63万播放' },
     review: {
@@ -259,6 +269,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '超Carry的柴西',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV13N4y1i7Jy',
+    cover: 'https://i1.hdslb.com/bfs/archive/bb9ad6b97e695ce4f967f0108fe1ca016bf9b9c1.jpg',
     duration: '8:32',
     views: { en: '1.3M views', zh: '128万播放' },
     review: {
@@ -276,6 +287,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: 'KerryDowdle',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV17Q4y1w7iS',
+    cover: 'https://i0.hdslb.com/bfs/archive/2911ab18bc3e3ab9f6a3eef13194f19c97b55444.jpg',
     duration: '8:03',
     views: { en: '1.1M views', zh: '105万播放' },
     review: {
@@ -293,6 +305,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '超Carry的柴西',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1Mg4y1e74E',
+    cover: 'https://i0.hdslb.com/bfs/archive/dcb7b6b7e63189cac407503a445f2bfaec318c75.jpg',
     duration: '11:46',
     views: { en: '1.1M views', zh: '108万播放' },
     review: {
@@ -310,6 +323,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '崂山Bro',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1UF4m1K7dL',
+    cover: 'https://i2.hdslb.com/bfs/archive/86db5c2cdf18580ab8cbb7642441921beb24ffae.jpg',
     duration: '12:09',
     views: { en: '684K views', zh: '68万播放' },
     review: {
@@ -327,6 +341,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '青云迹',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV12b421e7Lu',
+    cover: 'https://i0.hdslb.com/bfs/archive/133db5cba0a1486b39fae2ba7b5ad2e9491dcec3.jpg',
     duration: '37:09',
     views: { en: '1.96M views', zh: '196万播放' },
     review: {
@@ -344,6 +359,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: 'Two Mad Explorers',
     platform: 'youtube',
     externalUrl: 'https://www.youtube.com/watch?v=Uh7Y_buHREI',
+    cover: 'https://i.ytimg.com/vi/Uh7Y_buHREI/hqdefault.jpg',
     duration: '18:34',
     views: { en: '101K views', zh: '10万播放' },
     review: {
@@ -361,6 +377,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '逢坂鱼鱼',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1n6421f7ei',
+    cover: 'https://i1.hdslb.com/bfs/archive/8faae609bf0c84abf8de0b92b2db3f5ec311870d.jpg',
     duration: '10:17',
     views: { en: '258K views', zh: '26万播放' },
     review: {
@@ -378,6 +395,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '-欣小萌-',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1pf421q7Eq',
+    cover: 'https://i1.hdslb.com/bfs/archive/01138a742e8f0dd59585054c5ee605c0b616f386.jpg',
     duration: '17:40',
     views: { en: '1.77M views', zh: '177万播放' },
     review: {
@@ -395,6 +413,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '小鹿Lawrence',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1F1421b7vU',
+    cover: 'https://i2.hdslb.com/bfs/archive/1414d987458a24c3d3766348da0cd06d0fb9e3b5.jpg',
     duration: '12:56',
     views: { en: '1.4M views', zh: '141万播放' },
     review: {
@@ -412,6 +431,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '博文的旅行日记',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1QJ4pekESL',
+    cover: 'https://i0.hdslb.com/bfs/archive/0f2214fb0d55cea207745954405885e38fbbccf8.jpg',
     duration: '8:18',
     views: { en: '84K views', zh: '8万播放' },
     review: {
@@ -429,6 +449,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '干饭三健客',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1YqBjYTEzn',
+    cover: 'https://i1.hdslb.com/bfs/archive/1b0152729df8cfbe9514fc04c1fc101e8abe808d.jpg',
     duration: '16:22',
     views: { en: '5.6M views', zh: '560万播放' },
     review: {
@@ -446,6 +467,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '李格Greg',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1q4fWYUE1X',
+    cover: 'https://i0.hdslb.com/bfs/archive/72020e7539c17796723e7851fce570026e4ffc23.jpg',
     duration: '4:03',
     views: { en: '2.3M views', zh: '225万播放' },
     review: {
@@ -463,6 +485,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '可尔必思哥哥',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1hoKHzLE65',
+    cover: 'https://i0.hdslb.com/bfs/archive/7b913226627cb8ab2c5c140dade9b41ca0b8b2ae.jpg',
     duration: '23:59',
     views: { en: '1.4M views', zh: '141万播放' },
     review: {
@@ -480,6 +503,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: 'Mr有意思',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1u4grzGEcB',
+    cover: 'https://i2.hdslb.com/bfs/archive/563855e9a572f5a65e6f4b47ca7967dd26f11545.jpg',
     duration: '13:03',
     views: { en: '3M views', zh: '301万播放' },
     review: {
@@ -497,6 +521,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '抖个姬灵',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1jahmzdE6X',
+    cover: 'https://i2.hdslb.com/bfs/archive/e322d20275d8ad0f22d48c1d11c024b454b90a68.jpg',
     duration: '11:33',
     views: { en: '977K views', zh: '97万播放' },
     review: {
@@ -514,6 +539,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '星球研究所',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1fXnXzJETg',
+    cover: 'https://i1.hdslb.com/bfs/archive/7780745644373d55d65c386f348d28c207c36478.jpg',
     duration: '10:07',
     views: { en: '9.76M views', zh: '976万播放' },
     review: {
@@ -531,6 +557,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '差评君',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1hakfB9ET5',
+    cover: 'https://i1.hdslb.com/bfs/archive/49dd08291723d0c27bd250cd626042b4ee1ec065.jpg',
     duration: '13:47',
     views: { en: '717K views', zh: '72万播放' },
     review: {
@@ -548,6 +575,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '达哥在上海',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1GbcMz8En9',
+    cover: 'https://i1.hdslb.com/bfs/archive/d0581430e57c0e7b7c14fa6b902938f66ef71d17.jpg',
     duration: '10:10',
     views: { en: '5.1M views', zh: '507万播放' },
     review: {
@@ -565,6 +593,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '烩饭在路上',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1h5dYB7E7o',
+    cover: 'https://i2.hdslb.com/bfs/archive/b4faf79f262a5a2944a64fb87e8a47f08d199276.jpg',
     duration: '11:16',
     views: { en: '756K views', zh: '76万播放' },
     review: {
@@ -582,6 +611,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '神奇海挪',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1Y2Tg6TE85',
+    cover: 'https://i2.hdslb.com/bfs/archive/85c3ddff4f5e07081feea2d27a84d5229de1420c.jpg',
     duration: '7:15',
     views: { en: '1.5M views', zh: '151万播放' },
     review: {
@@ -599,6 +629,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '泡芙喵-PuFF',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV11ubk6ME1d',
+    cover: 'https://i2.hdslb.com/bfs/archive/047c3af4dc218db6fd60b375d495ee14eff6a1af.jpg',
     duration: '14:44',
     views: { en: '555K views', zh: '56万播放' },
     review: {
@@ -616,6 +647,7 @@ const rawVlogs: Omit<Vlog, 'id'>[] = [
     vloggerName: '雨琪在芬兰',
     platform: 'bilibili',
     externalUrl: 'https://www.bilibili.com/video/BV1XgtJ6LEsT',
+    cover: 'https://i1.hdslb.com/bfs/archive/6a6fc537e2a51ec785aa9de876a8fc05b0cf0ff4.jpg',
     duration: '33:16',
     views: { en: '750K views', zh: '75万播放' },
     review: {

@@ -1,12 +1,15 @@
 <script setup lang="ts">
 // Guide 视频速览栏：宽屏（≥1280px）右侧固定列，按组列出全部 B 站精选视频，
 // 不读正文也能直达视频（新窗口外链）。窄屏隐藏（正文内联卡片已覆盖）。
-// 缩略图为纯 CSS 占位（不自托管封面图），点击整卡外链 B 站观看。
+// 缩略图走官方 CDN 热链（no-referrer，失败回退纯 CSS 占位）。
 import { fermentedVideoUrl } from '~/data/fermented-videos'
 import type { FermentedVideoGroup } from '~/data/fermented-videos'
 
 defineProps<{ groups: FermentedVideoGroup[] }>()
 const { t, locale } = useI18n()
+
+// 热链封面加载失败的 bvid 集合（回退 CSS 占位）
+const failedCovers = reactive(new Set<string>())
 </script>
 
 <template>
@@ -31,8 +34,22 @@ const { t, locale } = useI18n()
           rel="noopener noreferrer"
           class="flex gap-2 rounded-lg px-1.5 py-1.5 hover:bg-slate-50 group/r transition-colors"
         >
-          <span class="relative w-[72px] shrink-0 aspect-video rounded overflow-hidden bg-gradient-to-br from-slate-700 via-slate-600 to-slate-500">
-            <span class="absolute inset-0 m-auto w-6 h-6 rounded-full bg-white/90 flex items-center justify-center">
+          <span class="relative w-[72px] shrink-0 aspect-video rounded overflow-hidden"
+            :class="v.cover && !failedCovers.has(v.bvid) ? 'bg-slate-200' : 'bg-gradient-to-br from-slate-700 via-slate-600 to-slate-500'"
+          >
+            <img
+              v-if="v.cover && !failedCovers.has(v.bvid)"
+              :src="v.cover"
+              :alt="v.title[locale]"
+              referrerpolicy="no-referrer"
+              loading="lazy"
+              class="w-full h-full object-cover"
+              @error="failedCovers.add(v.bvid)"
+            >
+            <span
+              v-if="!v.cover || failedCovers.has(v.bvid)"
+              class="absolute inset-0 m-auto w-6 h-6 rounded-full bg-white/90 flex items-center justify-center"
+            >
               <svg viewBox="0 0 24 24" class="w-3 h-3 text-brand translate-x-px" fill="currentColor" aria-hidden="true">
                 <path d="M8 5v14l11-7z" />
               </svg>

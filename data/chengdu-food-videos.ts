@@ -26,6 +26,7 @@ export const airportVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV15j411v7LS',
+        cover: 'https://i2.hdslb.com/bfs/archive/a51243f848d84eead8f0a373dccba5d452d41728.jpg',
         title: {
           en: 'Almost Missed My Flight Eating at Tianfu Airport — One More Bite!',
           zh: '差点没吃上成都天府机场！还好换登机口了！我还能再吃一口！',
@@ -42,6 +43,7 @@ export const airportVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1vD4y1f7dJ',
+        cover: 'https://i2.hdslb.com/bfs/archive/daa01fea4747f63cca0ecb9d56d365a1d452906a.jpg',
         title: {
           en: 'How to Eat a ¥10 Meal at Chengdu Tianfu Airport',
           zh: '第一次去成都天府机场怎么花10元吃一顿饭',
@@ -64,6 +66,7 @@ export const airportVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1SKFkzEEen',
+        cover: 'https://i0.hdslb.com/bfs/archive/3538ffaaeaac036ba3bf0fc8b6554da1f86eac50.jpg',
         title: {
           en: 'The \'Fly Restaurant\' Next to Tianfu Airport — Cheap, Huge Portions',
           zh: '成都天府机场旁"顶火苍蝇馆子"，隐藏的民间高手，便宜量足',
@@ -80,6 +83,7 @@ export const airportVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1St4y1c7ft',
+        cover: 'https://i0.hdslb.com/bfs/archive/3aaac2ea847604a0ea744a1550da1d6db1db59e3.jpg',
         title: {
           en: 'No More McDonald\'s: The Staff-Canteen Sichuan Kitchen by the Airport',
           zh: '在成都机场终于不用吃麦当当了，制服小姐姐的二食堂',
@@ -102,6 +106,7 @@ export const airportVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1pRNBeEEh4',
+        cover: 'https://i2.hdslb.com/bfs/archive/c3e5b8d8d722a5b42d374fcd927677c8a447ada4.jpg',
         title: { en: '12-Hour Layover: The Overnight-at-the-Airport Guide', zh: '转机12h，机场过夜指南！' },
         vloggerName: '小小酱臭美日记',
         duration: '4:30',
@@ -121,6 +126,7 @@ export const airportVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1xZ421H7mQ',
+        cover: 'https://i1.hdslb.com/bfs/archive/ce293aa398d822ea43bd8e5e130132225bfa40ac.jpg',
         title: { en: 'Chengdu Shuangliu Airport\'s Snack Street — Crayfish at ¥18 per 500g', zh: '成都双流机场的小吃街！18一斤的小龙虾！' },
         vloggerName: '吃货圆圈圈',
         duration: '8:00',
@@ -144,6 +150,7 @@ export const halalVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1knVw6CEkP',
+        cover: 'https://i0.hdslb.com/bfs/archive/7620b107ba8424b99726d4de8893893dbb06fa6c.jpg',
         title: { en: 'A Food Journey — A Chengdu Hui Restaurant', zh: '美食之旅——成都回民餐馆' },
         vloggerName: '王迅',
         duration: '4:59',
@@ -157,6 +164,7 @@ export const halalVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1zjUCB3EJv',
+        cover: 'https://i0.hdslb.com/bfs/archive/7c7d360d8c8c7004968e77063427de44c2f73dcb.jpg',
         title: {
           en: 'First Taste of Sichuan-Style Halal — The Boss Handed Me a Basin for Rice',
           zh: '【逛吃成都】第一次吃川味清真菜！老板给了我一个盆…',
@@ -173,6 +181,7 @@ export const halalVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV18qq8BFEiM',
+        cover: 'https://i0.hdslb.com/bfs/archive/4db906150510c5898b8123aa43d1fcca7640f1bb.jpg',
         title: { en: 'Found a Halal Restaurant in Chengdu — Coming Back', zh: '在成都发现了一家清真菜，下次还去' },
         vloggerName: '馋人老田',
         duration: '7:01',
@@ -192,6 +201,7 @@ export const halalVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV13KbW6tEHx',
+        cover: 'https://i0.hdslb.com/bfs/archive/75f732818232787e29b57ca7bd062a047cd134d0.jpg',
         title: { en: 'Lanzhou Beef Noodles — The Standard, at the Source', zh: '在兰州连连跺脚的「兰州牛肉面」' },
         vloggerName: '特别乌啦啦',
         duration: '6:13',
@@ -205,6 +215,7 @@ export const halalVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1zMAHeZE4X',
+        cover: 'https://i0.hdslb.com/bfs/archive/d980b72a986e2db7582888afbdc31b3f21ad31bb.jpg',
         title: { en: 'Jianyang Mutton Soup: Milk-White Broth + Fire-Blasted Liver & Kidney', zh: '【王刚探店】四大羊肉汤之一：简阳羊肉汤' },
         vloggerName: '餐饮研究员王刚',
         duration: '12:33',
@@ -228,6 +239,7 @@ export const versusVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV11Z3v6BEY5',
+        cover: 'https://i1.hdslb.com/bfs/archive/ff19f9d7528b93ffe2d1d956aac6967657a2256c.jpg',
         title: { en: 'A Decades-Old Chengdu Hotpot Institution — The Beef Multi-Tripe Is Legendary', zh: '在成都开了几十年的老牌火锅店，他家的千层肚夯爆了' },
         vloggerName: '密子君',
         duration: '10:01',
@@ -241,6 +253,7 @@ export const versusVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1J54y1f7Ys',
+        cover: 'https://i2.hdslb.com/bfs/archive/6934545791259b09c84054deadcb9edbeead5560.jpg',
         title: { en: 'Chengdu\'s No-Signboard Maocai, Open 4 Hours a Day — Neighbors Bring Their Own Pots', zh: '成都"油爆爆"辣冒菜，没招牌一天只开4小时，街坊端着锅来吃' },
         vloggerName: '肉肉大搜索',
         duration: '5:53',
@@ -254,6 +267,7 @@ export const versusVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1sJbW6UEpi',
+        cover: 'https://i0.hdslb.com/bfs/archive/9828c05f2f838afbfa0fd4afcebcb970a6f9d89b.jpg',
         title: { en: 'Chengdu Romance: Pork Trotter Soup & Chili-Oil Maocai', zh: '成都人的浪漫除了蹄花还有红油冒菜！' },
         vloggerName: '密子君',
         duration: '7:49',
@@ -273,6 +287,7 @@ export const versusVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1nu411M7xj',
+        cover: 'https://i1.hdslb.com/bfs/archive/c67642373b0b1e52c30d4179e36b1d86647098bb.jpg',
         title: { en: 'Chongqing\'s Must-Do Bomb-Shelter Hotpot — Eat, and Understand the City', zh: '重庆必打卡的防空洞火锅' },
         vloggerName: '老王在中国',
         duration: '11:19',
@@ -286,6 +301,7 @@ export const versusVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV12wYyzvEhU',
+        cover: 'https://i1.hdslb.com/bfs/archive/90f0e579db3ed4c1b34a407e7680eda50ff25844.jpg',
         title: { en: 'Chongqing Wanza Noodles with Big Chunks of Beef — Half a Kilo Each', zh: '重庆特色豌杂面+大块牛肉，一人一斤！' },
         vloggerName: '干饭三健客',
         duration: '6:22',
@@ -299,6 +315,7 @@ export const versusVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1nWc7e5EDc',
+        cover: 'https://i0.hdslb.com/bfs/archive/a54688d1681863f92a2b6de23f5a4ff7b6c4e58c.jpg',
         title: { en: 'Chongqing Hotpot, Slow-Told: An Elder\'s Lifetime with the Pot', zh: '重庆火锅"千呼万唤始出来"！听老辈子讲述他与火锅的一段奇缘' },
         vloggerName: '叔叔的临时生活安顿处',
         duration: '21:56',
@@ -322,6 +339,7 @@ export const realVoicesVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1RH4y1Q71r',
+        cover: 'https://i2.hdslb.com/bfs/archive/e24ad2b91e01f2f7589c5a0fc7ccba9323442366.jpg',
         title: { en: 'A Finnish Family demolishes 15 Sichuan Meals in 3 Days', zh: '芬兰特种兵一家三天在成都狂炫15顿四川美食！' },
         vloggerName: '小马逛吃',
         duration: '22:43',
@@ -335,6 +353,7 @@ export const realVoicesVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1S659zREUE',
+        cover: 'https://i0.hdslb.com/bfs/archive/e9117e8333a31e20515d0735ddd0039de44314af.jpg',
         title: { en: 'A British Family\'s First Time in Chengdu — None of Us Slept That Night', zh: '英国家人第一次去成都，这一晚我们无人入睡' },
         vloggerName: '小马逛吃',
         duration: '19:00',
@@ -348,6 +367,7 @@ export const realVoicesVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1WE421G7vt',
+        cover: 'https://i0.hdslb.com/bfs/archive/8b57c4a3bd2265e50baabc60ccd638dd128e4a66.jpg',
         title: { en: 'First Time in Chengdu: What Should You Eat? (Part 1)', zh: '第一次来成都吃点儿啥？好吃的不要太多吧！（上）' },
         vloggerName: '吃不胖的野妹儿',
         duration: '5:40',
@@ -367,6 +387,7 @@ export const realVoicesVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1K6XAYZEFh',
+        cover: 'https://i2.hdslb.com/bfs/archive/d4d414d4559b3233c8798aade93c5b8a5f76c478.jpg',
         title: { en: 'Dad from Jiangxi Takes On Chengdu\'s Spiciest Restaurant', zh: '江西老爸，挑战成都最辣餐厅！老爸：有点意思啊' },
         vloggerName: '小马逛吃',
         duration: '8:59',
@@ -380,6 +401,7 @@ export const realVoicesVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1Ui4y1U7LD',
+        cover: 'https://i2.hdslb.com/bfs/archive/181b797da8454d0414271b5b64abdf8db84f3cf4.jpg',
         title: { en: 'Chengdu\'s ¥15 Street Buffet: 20 Dishes, and 85-Year-Olds Eat Free', zh: '成都街边15元自助餐，20道菜，85岁老人吃饭不要钱' },
         vloggerName: '肉肉大搜索',
         duration: '6:12',
@@ -393,6 +415,7 @@ export const realVoicesVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1GbcMz8En9',
+        cover: 'https://i1.hdslb.com/bfs/archive/d0581430e57c0e7b7c14fa6b902938f66ef71d17.jpg',
         title: { en: 'A Baba Banquet in a Chengdu Village: No Menu, You Just Grab', zh: '在成都金牛区一个村里吃"成都坝坝宴"，吃饭全靠"抢"' },
         vloggerName: '好吃_fooD',
         duration: '10:10',
@@ -419,6 +442,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1WY4y1p77K',
+        cover: 'https://i1.hdslb.com/bfs/archive/fa003d2a88d3a7ae79a645a0fcdaeaa98a926917.jpg',
         title: { en: 'Chengdu\'s ¥1-per-Skewer Bobo Chicken Street Cart', zh: '成都"1元地摊钵钵鸡"，够麻够辣，端着碗围着摊吃' },
         vloggerName: '肉肉大搜索',
         duration: '6:00',
@@ -432,6 +456,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1eS4y1c7Gt',
+        cover: 'https://i2.hdslb.com/bfs/archive/d42992dba44580b2bae42c81e259f32f49d3433c.jpg',
         title: { en: 'The Boxed-Lunch Auntie: ¥16 to Eat Your Fill, Mixed in a Basin', zh: '成都街头盒饭大姐，十几年用大盆拌肉，16元就能吃的饱' },
         vloggerName: '肉肉大搜索',
         duration: '6:41',
@@ -445,6 +470,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1tg41187YK',
+        cover: 'https://i0.hdslb.com/bfs/archive/aa896423ebe22754e764b9f39abe0c3710f3bbbd.jpg',
         title: { en: '¥7 Pork Rice, ¥14 Twice-Cooked Pork: A 30-Year-Old Counter', zh: '成都7元肉扣饭，14元回锅肉满满的锅气，30多年老店边吃边扣' },
         vloggerName: '肉肉大搜索',
         duration: '5:05',
@@ -464,6 +490,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1fZ421H73B',
+        cover: 'https://i0.hdslb.com/bfs/archive/6caa5e86aff2795fcf460d95d2b3dfcf2a4af121.jpg',
         title: { en: 'Wang Gang Reviews a Fly Restaurant Selling Only 3 Dishes for 20+ Years', zh: '【王刚探店】成都苍蝇馆子，生意火爆，20多年来只卖"三样菜"' },
         vloggerName: '餐饮研究员王刚',
         duration: '14:05',
@@ -477,6 +504,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1ba411q7Pw',
+        cover: 'https://i2.hdslb.com/bfs/archive/fb14291c8c7d6e9dcdaaf735b8f7ffd44cd7f665.jpg',
         title: { en: 'A French Chef in Chengdu\'s Fly Restaurants: "I\'ve Become Fully Chinese-Stomached"', zh: '主厨广坦：大成都就像挖掘不尽的美食宝藏，苍蝇馆子撸串串，让我彻底变成中国胃' },
         vloggerName: '主厨广坦',
         duration: '5:12',
@@ -490,6 +518,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1pz4y1W79X',
+        cover: 'https://i2.hdslb.com/bfs/archive/d336726955a4cccd724867293ef99b2a8ec81989.jpg',
         title: { en: 'Honest Review: Chengdu\'s Viral Fly Restaurant (Full of Tourists Queuing?)', zh: '成都爆火的苍蝇馆味道怎么样？（不过好像都是游客在排队）' },
         vloggerName: '真探高文麒',
         duration: '4:07',
@@ -503,6 +532,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1pW4y197WK',
+        cover: 'https://i0.hdslb.com/bfs/archive/1924d2c906c80100d3ad6f4a829222df7232b01f.jpg',
         title: { en: 'A Korean First-Timer Tries Mao-Kaoya at a Fly Restaurant', zh: '成都的苍蝇馆子都这么好吃吗？韩国人第一次吃冒烤鸭' },
         vloggerName: 'Iam小方',
         duration: '11:30',
@@ -522,6 +552,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1e14y1i7pe',
+        cover: 'https://i1.hdslb.com/bfs/archive/ede4927e1652240474bf0a7f7d8911ae351e475d.jpg',
         title: { en: 'Chengdu\'s "Ceiling" Night Market: 11 Stalls in One Crawl', zh: '探秘成都夜市天花板！连吃11个小吃摊位！红油肥肠豆花+巨无霸肉串苕皮' },
         vloggerName: '羊羊羊PD',
         duration: '13:47',
@@ -535,6 +566,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1my4y1P71m',
+        cover: 'https://i1.hdslb.com/bfs/archive/b1c9900e98969556b6c8cff5fdca215fa130ea10.jpg',
         title: { en: 'Three Hours in Yulin Night Market, Snacks From a Few Yuan', zh: '成都极限三小时逛吃玉林夜市！低至几元钱的小吃美味又管饱' },
         vloggerName: '小果食',
         duration: '7:36',
@@ -554,6 +586,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1CTG2z7E5j',
+        cover: 'https://i0.hdslb.com/bfs/archive/ed239ae06f235d5ff6cb31b0de208e277b5580ec.jpg',
         title: { en: 'An Objective Review of Chengdu\'s Famous "Granny" Dan Hong Gao', zh: '【客观评价】成都蛋烘糕婆婆的蛋烘糕' },
         vloggerName: '山禾Yellow',
         duration: '6:19',
@@ -567,6 +600,7 @@ export const streetFoodVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1iz421U7Cq',
+        cover: 'https://i2.hdslb.com/bfs/archive/b73c2c6a64515e810589c43a1dc1851e47627f25.jpg',
         title: { en: 'A Family Food Crawl from Chengdu to Leshan: Dan Hong Gao Breakfast to Beef Dinner', zh: '带娃从成都逛吃到乐山：早餐蛋烘糕红油抄手和红糖凉虾' },
         vloggerName: '君在西安',
         duration: '6:56',
@@ -591,6 +625,7 @@ export const hotPotVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1Sp4y1g7Zr',
+        cover: 'https://i1.hdslb.com/bfs/archive/df4b61445ba4ed5316499ca35c931a01d212e6e0.jpg',
         title: { en: 'The Chengdu Hot Pot People Queue 3 Hours For — How Good Is It Really?', zh: '排队快三小时的成都火锅店到底有多好吃？' },
         vloggerName: '真探高文麒',
         duration: '4:51',
@@ -604,6 +639,7 @@ export const hotPotVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1aw411Q7ud',
+        cover: 'https://i1.hdslb.com/bfs/archive/0a3d549b6d91a0e767c73268ac873431cf62c6f7.jpg',
         title: { en: 'A Foreign Resident Tests His Chengdu Friends\' No.1 Hot Pot', zh: '成都朋友心中 TOP1 的火锅，好吃得不像样了' },
         vloggerName: '老王在中国',
         duration: '6:53',
@@ -623,6 +659,7 @@ export const hotPotVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV17rqrY2Ev5',
+        cover: 'https://i1.hdslb.com/bfs/archive/104fee43c97428d03f5902e6d547869260bb5c41.jpg',
         title: { en: 'The South-Gate Hot Pot I\'ve Eaten at 20+ Times', zh: '吃了不下20次的火锅店！我愿称为成都南门火锅之光' },
         vloggerName: '丹妮妮妮妮2098',
         duration: '10:01',
@@ -636,6 +673,7 @@ export const hotPotVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV16sNE6iEq3',
+        cover: 'https://i2.hdslb.com/bfs/archive/feec760c92fe880df2f745698ec868d3222c8552.jpg',
         title: { en: 'The Neighborhood Pot My Subscribers Won\'t Stop Recommending', zh: '粉丝推荐N次的社区火锅，必须翻牌' },
         vloggerName: '丹妮妮妮妮2098',
         duration: '12:56',
@@ -659,6 +697,7 @@ export const foodTourVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1im421x7Q8',
+        cover: 'https://i2.hdslb.com/bfs/archive/c0025ac30d720fc987ed107f51fb7fbe1cda0e23.jpg',
         title: { en: 'An Old-Chengdu Vlogger\'s Yulin Eating Day, Distilled', zh: '成都玉林一日游吃喝攻略，来自老成都up主的阶段性总结' },
         vloggerName: '馒头叔叔就是大馒头',
         duration: '8:27',
@@ -672,6 +711,7 @@ export const foodTourVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV1bzU2YrESN',
+        cover: 'https://i0.hdslb.com/bfs/archive/16336afc19b467618bbc8f920a982c5a95482fd1.jpg',
         title: { en: 'Chengdu Speed-Run Food Day: Eating Whenever, Wherever', zh: '成都极限逛吃一日游，这里太适合随地大小吃了' },
         vloggerName: '饭局的鱼',
         duration: '10:41',
@@ -691,6 +731,7 @@ export const foodTourVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1Zz9rBLEiL',
+        cover: 'https://i0.hdslb.com/bfs/archive/e0cf03ad7a72318a73f23601a657e59253412f4f.jpg',
         title: { en: '17 Legacy Chengdu Eateries, Mapped for Eating While Walking', zh: '最新成都17家资深老店美食攻略，最好的旅行就是边走边吃' },
         vloggerName: '许有有Kmi',
         duration: '11:30',
@@ -704,6 +745,7 @@ export const foodTourVideoGroups: FermentedVideoGroup[] = [
       },
       {
         bvid: 'BV11ELrzLEpc',
+        cover: 'https://i2.hdslb.com/bfs/archive/0e790ba5306ef2d07b7d6c24d6037ac5b712aca0.jpg',
         title: { en: 'The Reputation-Only Chengdu Guide: Old Shops, Zero Misses', zh: '只推口碑老店的成都保姆级旅游攻略' },
         vloggerName: '胖虎和小夫-',
         duration: '10:01',

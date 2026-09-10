@@ -90,6 +90,7 @@ useHead({
           :id="hikingSpotlight.bvid"
           :title="hikingSpotlight.title[locale]"
           :duration="hikingSpotlight.duration"
+          :cover="hikingSpotlight.cover"
           size="lg"
           auto
         />

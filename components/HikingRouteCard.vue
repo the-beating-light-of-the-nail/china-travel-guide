@@ -113,6 +113,7 @@ const tierStyle: Record<string, string> = {
                   :id="v.bvid"
                   :title="v.title[locale]"
                   :duration="v.duration"
+                  :cover="v.cover"
                 />
               </span>
               <span class="min-w-0 flex-1">

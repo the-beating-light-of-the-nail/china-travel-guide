@@ -37,6 +37,7 @@ const videoId = computed(() => {
         :id="videoId"
         :provider="vlog.platform"
         :title="vlog.title[locale]"
+        :cover="vlog.cover"
       >
       </BiliPlayer>
       <!-- 平台角标 -->

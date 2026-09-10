@@ -12,6 +12,7 @@ export const railVideoGroups: FermentedVideoGroup[] = [
     videos: [
       {
         bvid: 'BV1Ut421P77D',
+        cover: 'https://i1.hdslb.com/bfs/archive/3908a861ff545f197110f2bc46acbbd4ec13e1bd.jpg',
         title: { en: 'The Northwest\'s Flagship Train: 1,200 km to Beijing Without a Single Stop', zh: '西北第一火车！1200km一站直达北京！西安局王牌Z20次体验' },
         vloggerName: '小南微视角',
         duration: '8:14',
