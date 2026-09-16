@@ -1927,14 +1927,20 @@ const rawGuides: Omit<Guide, 'id'>[] = [
       zh: '签证、支付、APP、电话卡、交通……第一次去中国前你必须知道的一切，一篇文章全搞定。',
     },
     content: {
-      en: '<p>Planning your first trip to China can feel daunting. The language barrier, the different payment systems, the sheer size of the country — it\'s a lot. This guide breaks down everything you need to know before you go, in plain English.</p><h2>Visas & Entry</h2><p>Most travelers need a tourist visa (L visa) to visit China. Apply at your nearest Chinese embassy or consulate with your passport, a passport photo, your itinerary, and hotel bookings. Processing usually takes about a week, but give yourself more time just in case.</p><p>Good news: China now offers 144-hour visa-free transit in several major cities including Beijing, Shanghai, Guangzhou, and Chengdu. If you\'re just passing through for a few days, you might not need a visa at all — check the latest rules before you book.</p><h2>Payment & Apps You\'ll Need</h2><p>Cash is basically obsolete in China. Almost everything is paid for with your phone — Alipay and WeChat Pay are the two big ones. The good news is both now let you link international credit cards, so you don\'t need a Chinese bank account. Set them up before you arrive and you\'ll be ready to go.</p><p>Download WeChat before your trip — it\'s not just for messaging, it\'s how you pay for things, book restaurants, and even navigate. For maps, use Baidu Maps or Amap (Gaode) — Google Maps doesn\'t work reliably in China. A VPN is useful if you want to access Google, Instagram, or other blocked sites.</p><h2>Getting Around</h2><p>China\'s high-speed rail network is the largest in the world and an absolute joy to ride. Fast, clean, comfortable, and surprisingly affordable. Book tickets through Trip.com or the 12306 app (the official one — it\'s in Chinese but reliable).</p><p>Within cities, the metro is your best bet. Clean, cheap, and extensive in all major cities. For getting around when the metro doesn\'t reach, use DiDi — it\'s basically the Chinese Uber and it\'s much cheaper than regular taxis.</p><p>One last thing: get a local SIM card or an eSIM at the airport when you arrive. Data is cheap and having a working phone makes everything so much easier.</p>',
-      zh: '<p>第一次去中国旅行难免让人无从下手。本指南帮你理清最关键的事项。</p><h2>签证与入境</h2><p>大多数旅行者需要办理旅游签证（L签）。带上护照、照片、行程单和酒店预订单，到中国大使馆或领事馆办理。目前北京、上海等多个城市提供144小时过境免签政策。</p><h2>支付与APP</h2><p>中国几乎不用现金。出发前请注册好支付宝和微信支付，二者现已支持绑定国际信用卡。下载微信用于通讯，下载百度地图用于导航（Google服务需VPN）。</p><h2>交通出行</h2><p>中国高铁网络世界第一，乘坐体验极佳。可通过Trip.com或12306 App购票。城市内地铁干净、便宜、覆盖广。用滴滴打车也很方便实惠。</p>',
+      en: '<p>Planning your first trip to China can feel daunting. The language barrier, the different payment systems, the sheer size of the country — it\'s a lot. This guide breaks down everything you need to know before you go, in plain English.</p><h2>Visas & Entry</h2><p>Whether you need a tourist visa (L visa) at all depends on your passport. Since 2024, holders of ordinary passports from 50 countries — including the UK, Canada, Japan, South Korea, Australia and nearly all of Europe — can enter China visa-free for up to 30 days per trip. If your nationality isn\'t on that list, you apply for the L visa at a Chinese embassy or consulate with your passport and a photo; processing usually takes about a week, so give yourself margin.</p><p>Not on the 30-day list? There\'s still the 240-hour (10-day) visa-free transit, open to 57 nationalities including Americans — it now covers 24 provinces from Beijing and Shanghai to Xi\'an, Chengdu and even Zhangjiajie, as long as your tickets run through China to a third country or region (Hong Kong counts). Our 240-hour transit guide and visa-free country list walk through both routes in detail.</p><h2>Payment & Apps You\'ll Need</h2><p>Cash is basically obsolete in China. Almost everything is paid for with your phone — Alipay and WeChat Pay are the two big ones. The good news is both now let you link international credit cards, so you don\'t need a Chinese bank account. Set them up before you arrive and you\'ll be ready to go.</p><p>Download WeChat before your trip — it\'s not just for messaging, it\'s how you pay for things, book restaurants, and even navigate. For maps, use Baidu Maps or Amap (Gaode) — Google Maps doesn\'t work reliably in China. A VPN is useful if you want to access Google, Instagram, or other blocked sites.</p><h2>Getting Around</h2><p>China\'s high-speed rail network is the largest in the world and an absolute joy to ride. Fast, clean, comfortable, and surprisingly affordable. Book tickets through Trip.com or the 12306 app (the official one — it\'s in Chinese but reliable).</p><p>Within cities, the metro is your best bet. Clean, cheap, and extensive in all major cities. For getting around when the metro doesn\'t reach, use DiDi — it\'s basically the Chinese Uber and it\'s much cheaper than regular taxis.</p><p>One last thing: get a local SIM card or an eSIM at the airport when you arrive. Data is cheap and having a working phone makes everything so much easier.</p>',
+      zh: '<p>第一次去中国旅行难免让人无从下手。本指南帮你理清最关键的事项。</p><h2>签证与入境</h2><p>要不要办旅游签证（L签）取决于你的护照。2024 年以来，英国、加拿大、日本、韩国、澳大利亚及几乎全部欧洲国家等 50 国的普通护照持有人，每次入境可免签停留最多 30 天。不在名单内的国籍，可带护照和照片到中国使领馆办理 L 签，通常一周左右出签，请预留时间。</p><p>不在 30 天免签名单？还有面向 57 国国民的 240 小时（10 天）过境免签——美国护照也适用——现在覆盖北京、上海、西安、成都、张家界等 24 省的指定区域，前提是机票结构为「经中国前往第三国/地区」（香港也算）。细节见我们的过境免签攻略与免签国家名单。</p><h2>支付与APP</h2><p>中国几乎不用现金。出发前请注册好支付宝和微信支付，二者现已支持绑定国际信用卡。下载微信用于通讯，下载百度地图用于导航（Google服务需VPN）。</p><h2>交通出行</h2><p>中国高铁网络世界第一，乘坐体验极佳。可通过Trip.com或12306 App购票。城市内地铁干净、便宜、覆盖广。用滴滴打车也很方便实惠。</p>',
     },
     image: 'https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=800',
     readTime: { en: '12 min read', zh: '阅读 12 分钟' },
     views: { en: '45k reads', zh: '阅读 4.5w' },
     publishedAt: { en: '2 weeks ago', zh: '2周前' },
     featured: false,
+    relatedLinks: [
+      { to: '/guides/240-hour-visa-free-transit', label: { en: '240-Hour Visa-Free Transit', zh: '240小时过境免签' } },
+      { to: '/guides/china-visa-free-countries', label: { en: 'China Visa-Free Country List', zh: '中国免签国家名单' } },
+      { to: '/guides/do-us-uk-canada-citizens-need-china-visa', label: { en: 'Do US/UK/Canada Citizens Need a Visa?', zh: '美英加要签证吗' } },
+      { to: '/guides/best-time-to-visit-china', label: { en: 'Best Time to Visit China', zh: '最佳旅行时间' } },
+    ],
   },
   {
     slug: 'best-time-to-visit-china',
@@ -2597,6 +2603,198 @@ const rawGuides: Omit<Guide, 'id'>[] = [
       { to: '/guides/beijing-off-the-beaten-path', label: { en: 'Beijing Off the Beaten Path', zh: '北京小众路线' } },
       { to: '/guides/chengdu-food-guide', label: { en: 'The Chengdu Food Guide', zh: '成都美食全指南' } },
       { to: '/guides/first-trip-to-china-guide', label: { en: 'First Trip to China', zh: '首次来华全指南' } },
+    ],
+  },
+  {
+    slug: '240-hour-visa-free-transit',
+    title: {
+      en: 'China\'s 240-Hour Visa-Free Transit: The 2026 Rules, 57 Countries and How the 10-Day Clock Works',
+      zh: '中国240小时过境免签全攻略：57国名单、10天时钟与常见翻车点',
+    },
+    label: { en: 'Visa Guide', zh: '签证攻略' },
+    excerpt: {
+      en: 'Ten days in China with no visa application at all — if your tickets are structured right. The current 2026 rules: the 57 eligible nationalities, the 65 designated ports, when the clock starts, where you can and cannot go, and the booking mistakes that get travelers turned away at check-in.',
+      zh: '机票结构排对了，就能在中国免签停留整整 10 天、完全不用申请签证。2026 年现行规则：57 国名单、65 个指定口岸、时钟何时起算、能去哪不能去哪，以及让你在值机柜台就被拦下的订票错误。',
+    },
+    content: {
+      en: '<p>China\'s 240-hour visa-free transit is the closest thing to a visa on arrival that the country offers — except there\'s no application, no fee and no waiting. You qualify (or don\'t) at the border, based almost entirely on how your tickets are structured. Done right, it\'s ten full days in China — enough for Beijing, Xi\'an and Shanghai with a food stop in between — on a "layover". The policy was last expanded on August 20, 2026, when Kyrgyzstan and Vietnam joined the list, bringing it to 57 eligible nationalities and 65 designated ports. Here\'s exactly how it works, and where people get burned.</p><h2>The Short Version</h2><table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody><tr><td>Who</td><td>Ordinary-passport holders of 57 countries, incl. the US, UK, Canada, all of the EU, Russia, Japan, Korea, Australia and Brazil</td></tr><tr><td>How long</td><td>240 hours = 10 days, counted from midnight after you arrive</td></tr><tr><td>Application</td><td>None. No form, no fee — eligibility is decided at the border</td></tr><tr><td>The catch</td><td>You must be transiting: onward ticket to a third country or region, different from where you arrived from</td></tr><tr><td>Where</td><td>24 provincial regions incl. Beijing, Shanghai, Xi\'an, Chengdu, Zhangjiajie — Tibet is not covered</td></tr></tbody></table><h2>Who Qualifies: The 57 Countries</h2><p>Europe (40 countries): the entire EU plus the UK, Switzerland, Norway, Iceland, Russia, Ukraine, Serbia, Albania, Bosnia-Herzegovina, Montenegro, North Macedonia, Monaco and Belarus. Americas (6): the United States, Canada, Brazil, Mexico, Argentina and Chile. Oceania (2): Australia and New Zealand. Asia (9): Japan, South Korea, Singapore, Brunei, the UAE, Qatar, Uzbekistan, and — since August 20, 2026 — Kyrgyzstan and Vietnam. If your nationality isn\'t listed, check the National Immigration Administration\'s official transit page before booking; this list has grown five times since 2024, and most older guides online are stale.</p><h2>The Rule That Decides Everything: Your Onward Ticket</h2><p>The transit policy exists for people passing through China, so the border officer needs to see a through-journey: you arrived from Country A, and you\'re leaving for Country C — a different country or region than A. Booked as a round trip (New York → Beijing → New York), you don\'t qualify, full stop. Booked New York → Beijing → Seoul or London → Shanghai → Hong Kong, you do. Two details matter: the onward ticket needs a confirmed date and seat (a waitlisted or open ticket won\'t satisfy the officer), and the flight must actually depart China while your 240 hours are still valid.</p><p>Hong Kong and Macau count as separate regions, which is why the "in through Shanghai, out through Hong Kong" structure is the single most popular way to use this policy — you get the mainland for ten days and a Hong Kong finale, no visa anywhere.</p><h2>How the Clock Works: Midnight, Not Landing</h2><p>The 240 hours start at 00:00 on the day after you enter, not when your passport is stamped. Land at 9 PM on a Friday and your ten days run from Saturday 00:00 — effectively giving you the arrival evening free. The same rule runs the other way: land at 8 AM and you lose nothing either, the clock still starts at midnight. Where travelers get hurt is the exit: if your onward flight is on day eleven "because it\'s still within 240 hours from when I landed", you\'ve overstayed. Overstaying is fined at ¥500 per day under China\'s Exit-Entry Administration Law, and it shadows every future China visa or entry application. If a delay is about to blow your window, contact the local exit-entry administration before it lapses — a documented delay is a conversation, an undocumented overstay is a record.</p><h2>Where You Can Go: 24 Provinces, Moving Between Them Allowed</h2><p>Since December 2024 the old city-cluster cages are gone: the permitted area spans 24 provincial-level regions and you can cross between them freely. The ones travelers actually build trips around: Beijing–Tianjin–Hebei; Shanghai plus Jiangsu and Zhejiang (Hangzhou, Suzhou, Nanjing); Guangdong (Guangzhou, Shenzhen); Shaanxi (Xi\'an); Sichuan (Chengdu); Chongqing; Hunan (Zhangjiajie); Yunnan (Kunming, Dali, Lijiang); Guangxi (Guilin); Fujian (Xiamen); Hubei (Wuhan); Shandong (Qingdao, Jinan); Shanxi; Liaoning (Dalian, Shenyang); and Heilongjiang (Harbin). A Beijing → Xi\'an → Chengdu → Shanghai sweep is entirely legal on transit entry.</p><p>What\'s not covered: Tibet is not part of the transit areas — it requires a tour arrangement whatever passport you hold — and a handful of provinces sit outside the zone too. Build your route first, then check each overnight stop against the official list.</p><h2>65 Ports: Where You Enter and Leave</h2><p>You must arrive and depart through designated ports — 65 of them as of August 2026. The major airports: Beijing Capital and Daxing, Shanghai Pudong and Hongqiao, Guangzhou Baiyun, Shenzhen Bao\'an, Chengdu Tianfu, Chongqing Jiangbei, Xi\'an Xianyang, Kunming, Hangzhou, Xiamen, Wuhan, Changsha, Zhangjiajie, Harbin, Dalian, Qingdao, Tianjin and Nanjing. Crucially, some are not airports at all: the Hong Kong–Zhuhai–Macao Bridge, the West Kowloon high-speed rail station in Hong Kong, and several cruise and land ports count too — you can ride a train straight into your transit entry. You can enter through one port and exit through any other; nobody requires you to leave the way you came.</p><h2>Six Mistakes That Get People Denied</h2><p><strong>1. The round-trip ticket.</strong> The #1 reason for refusal at check-in. Your second flight must leave China for a third country or region — even a cheap Shanghai → Hong Kong hop resets the whole structure.</p><p><strong>2. No confirmed seat or date.</strong> Waitlisted, open-date or "flexible" onward tickets don\'t count. The officer wants to see when and where you\'re leaving.</p><p><strong>3. Booking nights outside the 24 regions.</strong> Tibet side-trips and certain provinces are simply not in the zone; a hotel booking there is evidence you plan to break the rules.</p><p><strong>4. Shaving the clock to the last hour.</strong> If your day-ten flight is delayed into day eleven, you\'re an overstayer through no plan of your own. Fly out on day eight or nine, or build an extra city into the front of the trip.</p><p><strong>5. Fighting the check-in agent.</strong> The first "border" is your airline\'s check-in counter — if they wrongly believe you need a visa, you don\'t fly. Don\'t argue policy from memory: show them the NIA policy page on your phone and ask for a supervisor. It works.</p><p><strong>6. Treating the onward ticket as decoration.</strong> Buying a throwaway ticket with no intention of flying it can pass at entry — and then any delay, rebooking or whim turns into an overstay record. If the ticket is fake-shaped, the trip is fake-shaped.</p><h2>Two Routes That Fit Inside Ten Days</h2><p>If history is the point: three days in Beijing (wall, Forbidden City, hutongs) → high-speed rail to Xi\'an for two (Terracotta Warriors, city wall, Muslim Quarter) → rail or flight to Chengdu for two (pandas, hot pot) → flight to Shanghai for two → out through Hong Kong. Ten days, four of China\'s best cities, one visa-free box ticked. If food is the point, invert it: Shanghai in, Hangzhou and Suzhou as day trips, Chengdu for three days straight off our food guide, out via Hong Kong with dim sum as the finale. Our Beijing–Xi\'an rail guide handles the middle leg down to the ticket class.</p>',
+      zh: '<p>中国的 240 小时过境免签，是现实中最接近「落地签」的政策——但它连申请都不需要：没有表格、没有费用，是否符合条件几乎完全取决于机票结构。排对了，这就是整整 10 天的中国行程，足够串起北京、西安、上海再加一站美食城市。政策最近一次扩容是 2026 年 8 月 20 日：吉尔吉斯斯坦和越南加入，达到 57 国、65 个指定口岸。下面讲清规则，以及翻车点。</p><h2>一分钟版本</h2><table><thead><tr><th>问题</th><th>答案</th></tr></thead><tbody><tr><td>谁适用</td><td>57 国普通护照持有人，含美国、英国、加拿大、全部欧盟、俄罗斯、日韩、澳新、巴西</td></tr><tr><td>停留多久</td><td>240 小时＝10 天，从入境次日凌晨起算</td></tr><tr><td>要申请吗</td><td>不用，边检当场判定</td></tr><tr><td>关键条件</td><td>必须「过境」：续程机票前往第三国/地区，且不同于出发地</td></tr><tr><td>能去哪</td><td>24 个省级区域（北京、上海、西安、成都、张家界等），不含西藏</td></tr></tbody></table><h2>57 国名单（2026年8月版）</h2><p>欧洲 40 国：全部欧盟成员国及英国、瑞士、挪威、冰岛、俄罗斯、乌克兰、塞尔维亚、阿尔巴尼亚、波黑、黑山、北马其顿、摩纳哥、白俄罗斯。美洲 6 国：美国、加拿大、巴西、墨西哥、阿根廷、智利。大洋洲 2 国：澳大利亚、新西兰。亚洲 9 国：日本、韩国、新加坡、文莱、阿联酋、卡塔尔、乌兹别克斯坦，以及 2026 年 8 月 20 日新加入的吉尔吉斯斯坦和越南。名单 2024 年以来已扩容五次，网上多数旧攻略已经过期；订票前以国家移民管理局官网为准。</p><h2>决定成败的规则：续程机票</h2><p>过境免签为「经中国中转」设计，边检要看到完整链路：从 A 国来、前往 C 国/地区（不同于 A）。往返机票（纽约→北京→纽约）直接不合格；纽约→北京→首尔、伦敦→上海→香港则成立。两个细节：续程机票必须有确定日期和座位（候补、open 票不行）；航班必须在 240 小时内实际起飞。</p><p>香港、澳门算独立地区——「上海进、香港出」因此成为最流行的用法：内地玩 10 天，香港收尾，全程免签。</p><h2>时钟怎么算：从次日凌晨开始</h2><p>240 小时从入境次日凌晨 00:00 起算，不是盖章那一刻。周五晚 9 点落地，十天从周六零点开始跑——落地当晚等于白送。反过来的坑在出境：以为「从落地算还在 240 小时内」而订第 11 天的机票，就是超期停留。按《出境入境管理法》每天罚 ¥500，并留记录影响以后签证。航班延误将导致超期时，先联系当地出入境管理部门说明——有据可查的延误是对话，没记录的超期是案底。</p><h2>能去哪：24 省，允许跨省</h2><p>2024 年 12 月起旧的「城市圈」限制取消：允许区域覆盖 24 个省级区域，可自由跨省移动。常用的：京津冀；上海＋江苏＋浙江（杭州、苏州、南京）；广东（广州、深圳）；陕西（西安）；四川（成都）；重庆；湖南（张家界）；云南（昆明、大理、丽江）；广西（桂林）；福建（厦门）；湖北（武汉）；山东（青岛、济南）；山西；辽宁（大连、沈阳）；黑龙江（哈尔滨）。北京→西安→成都→上海的一线走法完全合法。</p><p>不在范围内的：西藏不属于过境免签区域——无论哪国护照都需参团手续；另有少数省份在区域外。排好行程后，请对照官方清单核对每一个过夜城市。</p><h2>65 个口岸：从哪进、从哪出</h2><p>必须经指定口岸出入境（2026 年 8 月起共 65 个）。主要机场：北京首都/大兴、上海浦东/虹桥、广州白云、深圳宝安、成都天府、重庆江北、西安咸阳、昆明、杭州、厦门、武汉、长沙、张家界、哈尔滨、大连、青岛、天津、南京。关键的是——不全是机场：港珠澳大桥、香港西九龙高铁站和若干邮轮/陆路口岸都算，坐高铁从香港西九龙入境完全可行。口岸可以一进一出，不要求原路返回。</p><h2>六个常见翻车点</h2><p><strong>1. 往返机票。</strong>值机被拒的头号原因。第二段航程必须离开中国前往第三国/地区——哪怕一张便宜的上海→香港机票也能救回整个结构。</p><p><strong>2. 续程没有确定座位和日期。</strong>候补、open 期、无限改期的票不算数。</p><p><strong>3. 在 24 区域外订酒店。</strong>西藏延伸线和个别省份不在范围内，那里的订单等于告诉边检你打算违规。</p><p><strong>4. 卡着最后几小时出境。</strong>第 10 天的航班延误到第 11 天，你就成了超期者。第 8、9 天走，把富余量留给行程。</p><p><strong>5. 和值机柜台吵架。</strong>第一道「边检」是航司地服——如果他们误以为你需要签证，你上不了飞机。别凭记忆辩论，把移民局政策页面亮出来、要求找主管，通常有效。</p><p><strong>6. 把续程票当装饰。</strong>买一张根本不打算飞的票也许能过入境，但之后任何改签、延误、临时起意都会变成超期记录。票是假的样子，行程就是假的样子。</p><h2>两条装得进 10 天的路线</h2><p>历史线：北京三天（长城、故宫、胡同）→ 高铁去西安两天（兵马俑、城墙、回民街）→ 到成都两天（熊猫、火锅）→ 飞上海两天 → 香港出境。10 天四城，免签搞定。美食线倒过来走：上海进，杭州苏州当周边游，成都按美食指南连吃三天，香港出、饮茶收官。中间的京西高铁段，看我们的购票全攻略。</p>',
+    },
+    image: '/images/guides/240-hour-visa-free-transit.jpg',
+    readTime: { en: '9 min read', zh: '阅读 9 分钟' },
+    views: { en: '940 reads', zh: '阅读 940' },
+    publishedAt: { en: 'Just published', zh: '刚刚发布' },
+    featured: false,
+    faq: [
+      {
+        q: { en: 'Can I use visa-free transit on a round-trip ticket?', zh: '往返机票能用过境免签吗？' },
+        a: {
+          en: 'No. You must be transiting to a third country or region different from your departure country. A London → Shanghai → London round trip does not qualify; London → Shanghai → Hong Kong or → Tokyo does. If you must fly home to the country you arrived from, you need a visa instead.',
+          zh: '不能。必须经中国前往不同于出发地的第三国/地区。伦敦→上海→伦敦的往返不符合；伦敦→上海→香港或东京可以。若必须飞回出发国，需要办签证。',
+        },
+      },
+      {
+        q: { en: 'When does the 240-hour clock start?', zh: '240 小时从什么时候开始算？' },
+        a: {
+          en: 'At 00:00 on the day after you enter China — not when your passport is stamped. Landing late at night effectively gives you a free extra evening; the same rule means you should count carefully on the exit side and never book the eleventh day.',
+          zh: '入境次日凌晨 00:00 起，不是盖章时刻。深夜落地等于白赚一晚；同理出境侧要数清日子，第 11 天的航班就是超期。',
+        },
+      },
+      {
+        q: { en: 'Which countries are eligible in 2026?', zh: '2026 年哪些国家适用？' },
+        a: {
+          en: '57 nationalities as of August 20, 2026: all of the EU plus the UK, Switzerland, Norway, Russia and most of the Balkans; the US, Canada, Brazil, Mexico, Argentina and Chile; Australia and New Zealand; Japan, South Korea, Singapore, Brunei, the UAE, Qatar, Uzbekistan, Kyrgyzstan and Vietnam. The National Immigration Administration publishes the authoritative list.',
+          zh: '截至 2026 年 8 月 20 日共 57 国：全部欧盟及英国、瑞士、挪威、俄罗斯和多数巴尔干国家；美加巴墨阿智六国；澳新；日韩、新加坡、文莱、阿联酋、卡塔尔、乌兹别克斯坦、吉尔吉斯斯坦、越南。权威名单以国家移民管理局发布为准。',
+        },
+      },
+      {
+        q: { en: 'Can I enter at one port and leave from another?', zh: '入境和出境可以用不同口岸吗？' },
+        a: {
+          en: 'Yes — enter through any of the 65 designated ports and exit through any other. Entering at Beijing Capital and leaving by high-speed train at Hong Kong West Kowloon, or across the Hong Kong–Zhuhai–Macao Bridge, is completely routine.',
+          zh: '可以——65 个指定口岸任选进出。北京首都机场进、香港西九龙高铁出，或走港珠澳大桥出，都是常规操作。',
+        },
+      },
+      {
+        q: { en: 'What happens if I overstay the 240 hours?', zh: '超过 240 小时会怎样？' },
+        a: {
+          en: 'Fines of ¥500 per day under the Exit-Entry Administration Law, possible short detention in serious cases, and an overstay record that complicates every future Chinese visa or entry. If a flight delay is pushing you past the limit, contact the local exit-entry administration before it lapses and keep your delay proof.',
+          zh: '按《出境入境管理法》每日罚 ¥500，情节重可短期拘留，并留下影响今后签证的记录。若航班延误将导致超期，请在到期前联系当地出入境管理部门并保留延误证明。',
+        },
+      },
+    ],
+    relatedLinks: [
+      { to: '/guides/china-visa-free-countries', label: { en: 'China Visa-Free Country List', zh: '中国免签国家名单' } },
+      { to: '/guides/do-us-uk-canada-citizens-need-china-visa', label: { en: 'Do US/UK/Canada Citizens Need a Visa?', zh: '美英加要签证吗' } },
+      { to: '/guides/beijing-to-xian-train-guide', label: { en: 'Beijing to Xi\'an by Train', zh: '京西高铁攻略' } },
+      { to: '/guides/xian-3-day-classic-route', label: { en: 'Xi\'an 3-Day Itinerary', zh: '西安三日经典路线' } },
+    ],
+  },
+  {
+    slug: 'china-visa-free-countries',
+    title: {
+      en: 'China Visa-Free Countries 2026: The Full List — 30-Day Entry, 240-Hour Transit and Hainan, Explained Separately',
+      zh: '中国免签国家名单2026：30天免签、过境免签与海南免签分开讲',
+    },
+    label: { en: 'Visa Guide', zh: '签证攻略' },
+    excerpt: {
+      en: '"Can I enter China without a visa?" has three different answers that most lists mash into one: 50 nationalities get true 30-day visa-free entry, 57 get the 10-day transit, 59 can do Hainan island only. Each list, each clock, and who still needs a visa — current to September 2026.',
+      zh: '「去中国免签吗」其实有三个不同答案：50 国可 30 天真正免签入境，57 国享 10 天过境免签，59 国仅海南岛免签。三张清单、三种计时、以及仍需签证的国家——更新至 2026 年 9 月。',
+    },
+    content: {
+      en: '<p>"Can I enter China without a visa?" is really three questions wearing one coat, and most guides answer the wrong one. There\'s genuine 30-day visa-free entry for 50 nationalities. There\'s the 240-hour transit for 57. There\'s Hainan island for 59. They have different lists, different clocks, different catches — and the lists have changed five-plus times since 2024, in quiet announcements like the February 17, 2026 addition of the UK and Canada. Here are all three, current as of September 2026, plus who\'s left needing a visa.</p><h2>List 1: True Visa-Free Entry — 50 Countries, 30 Days</h2><p>This is the real thing: no application, no fee, just book and fly. Ordinary-passport holders of 50 countries may enter for tourism, business visits, family visits, exchange or transit, staying up to 30 days per entry. The clock starts at 00:00 the day after arrival — effectively 30 days plus your landing day.</p><p>Europe (35): Andorra, Austria, Belgium, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Luxembourg, Malta, Monaco, Montenegro, Netherlands, North Macedonia, Norway, Poland, Portugal, Romania, Russia, Slovakia, Slovenia, Spain, Sweden, Switzerland, United Kingdom. Asia (7): Bahrain, Brunei, Japan, Kuwait, Oman, Saudi Arabia, South Korea. Oceania (2): Australia, New Zealand. Americas (6): Argentina, Brazil, Canada, Chile, Peru, Uruguay.</p><p>Recent arrivals worth knowing: Japan and South Korea joined in November 2024, the Gulf states through 2025, and the UK and Canada on February 17, 2026 — the single biggest change of the year, and most English-language guides still haven\'t caught it. The scheme is officially announced through December 31, 2026, and has been routinely extended since 2024 — but if you\'re booking far into 2027, check the status first.</p><h2>List 2: Mutual Visa-Free Agreements</h2><p>Separate from the unilateral list, China runs mutual visa-free treaties that are permanent rather than trial: Thailand and Singapore (30 days each), Malaysia (30 days, currently announced through end of 2026), Georgia and Kazakhstan (30 days), the UAE and Qatar (30 days), Serbia and Belarus (30 days), Armenia, Ecuador (90 days), and a set of island states including the Maldives, Mauritius, Seychelles, Fiji, Tonga, the Bahamas and Barbados. If your country is here, the 30-day-style rules apply with no expiry drama.</p><h2>List 3: The 240-Hour Transit — 57 Countries, 10 Days</h2><p>The transit policy isn\'t "visa-free entry" — you must be continuing to a third country or region — but for 57 nationalities including the United States, it\'s the practical answer for trips up to ten days, across 24 provinces. The onward-ticket structure and the midnight clock are strict; we keep the full rules in our 240-hour transit guide.</p><h2>List 4: Hainan Only — 59 Countries, 30 Days</h2><p>China\'s southernmost island runs its own visa-free scheme: 59 nationalities — including the US, UK, Canada and most of Europe — may enter Hainan visa-free for up to 30 days, arriving and departing through the island\'s own ports (Haikou and Sanya airports, ferries, cruise calls). For Americans whose China plans are beach-shaped, this is the loophole: no visa, just stay on the island. Combine it with a mainland trip and you\'re back to needing the transit structure or a visa.</p><h2>Who Still Needs a Visa</h2><p>The headline case is the United States — not on the 30-day list; only transiting or Hainan give Americans a visa-free path, and the details are in our US/UK/Canada guide. Beyond that: Mexico, India, most of Africa, and much of the rest of Asia and the Americas. One boundary applies to everyone: none of these schemes allow employment or study. "Business" means meetings, fairs and factory visits — not paid work. Working on visa-free entry is the fastest way to turn a 30-day stay into a deportation record.</p><h2>Three Clocks, One Cheat-Sheet</h2><table><thead><tr><th>Scheme</th><th>Countries</th><th>Stay</th><th>Best for</th></tr></thead><tbody><tr><td>30-day entry</td><td>50 (UK, Canada, EU, Japan, Korea…)</td><td>30 days per entry</td><td>Trips up to a month, anywhere in China</td></tr><tr><td>Mutual treaties</td><td>Thailand, Singapore, Malaysia, UAE…</td><td>30 days (90 in Ecuador)</td><td>Same as above, permanent terms</td></tr><tr><td>240-hour transit</td><td>57 (incl. the US)</td><td>10 days, 24 provinces</td><td>Americans; A→China→C routing</td></tr><tr><td>Hainan</td><td>59 (incl. the US)</td><td>30 days, island only</td><td>Beach trips without a visa</td></tr></tbody></table><p>Whatever your list, the practical rules are shared: passport valid six months beyond entry with blank pages, a new 30-day clock on each entry, and Hong Kong or Macau as the pressure valve — exiting to either ends your stay, and re-entering the mainland starts a fresh one. That move is legal, common, and only gets awkward if you chain it weekly.</p>',
+      zh: '<p>「去中国要签证吗」其实是三个问题：50 国可 30 天免签入境；57 国享 240 小时过境免签；59 国仅限海南岛免签。三套名单、三种计时、不同的坑——而且 2024 年以来已调整五次以上，最近一次是 2026 年 2 月 17 日英国和加拿大加入。以下三张清单更新至 2026 年 9 月，外加仍需签证的国家。</p><h2>清单一：真正免签入境——50 国 30 天</h2><p>这是完整意义的免签：不申请、不缴费，订票就走。50 国普通护照持有人可因旅游、商务、探亲、交流或过境入境，每次停留最多 30 天，从入境次日凌晨起算——等于落地当天白送。</p><p>欧洲 35 国：安道尔、奥地利、比利时、保加利亚、克罗地亚、塞浦路斯、丹麦、爱沙尼亚、芬兰、法国、德国、希腊、匈牙利、冰岛、爱尔兰、意大利、拉脱维亚、列支敦士登、卢森堡、马耳他、摩纳哥、黑山、荷兰、北马其顿、挪威、波兰、葡萄牙、罗马尼亚、俄罗斯、斯洛伐克、斯洛文尼亚、西班牙、瑞典、瑞士、英国。亚洲 7 国：巴林、文莱、日本、科威特、阿曼、沙特、韩国。大洋洲 2 国：澳大利亚、新西兰。美洲 6 国：阿根廷、巴西、加拿大、智利、秘鲁、乌拉圭。</p><p>值得记住的扩容节点：日韩 2024 年 11 月加入，海湾国家 2025 年陆续加入，英国和加拿大 2026 年 2 月 17 日加入——这是今年最大的变化，多数英文攻略还没写进去。政策目前明确执行至 2026 年 12 月 31 日，2024 年以来例行延长；但订 2027 年的行程前请先确认状态。</p><h2>清单二：互免签证协议</h2><p>与单方面名单并行的是互免条约，属长期安排而非试行：泰国、新加坡（各 30 天），马来西亚（30 天，目前公布至 2026 年底），格鲁吉亚、哈萨克斯坦（30 天），阿联酋、卡塔尔（30 天），塞尔维亚、白俄罗斯（30 天），亚美尼亚、厄瓜多尔（90 天），以及马尔代夫、毛里求斯、塞舌尔、斐济、汤加、巴哈马、巴巴多斯等岛国。在名单内的国家按 30 天规则走，没有到期悬念。</p><h2>清单三：240 小时过境免签——57 国 10 天</h2><p>过境免签不是「免签入境」——你必须续程前往第三国/地区——但对包括美国在内的 57 国国民，它是 10 天内行程的现实答案，覆盖 24 省。续程机票结构和次日凌晨起算的时钟卡得很严，完整规则见过境免签攻略。</p><h2>清单四：仅限海南——59 国 30 天</h2><p>海南自成体系：59 国国民（含美国、英国、加拿大和绝大多数欧洲国家）可免签进入海南岛停留最多 30 天，经岛内口岸（海口、三亚机场及轮渡、邮轮）出入。如果美国游客的中国计划就是海边度假，这就是那扇窗：不用签证，只须待在岛上。要结合内地行程，就回到过境结构或签证。</p><h2>谁仍需签证</h2><p>头号案例是美国：不在 30 天名单内，只有过境免签和海南两条免签路径，细节见美英加专页。此外：墨西哥、印度、非洲大部分国家，以及亚洲和美洲更多国家。一个对所有人成立的边界：这些通道都不允许工作或学习——「商务」指会议、展会、看厂，不是有偿劳动。免签入境打工，是把 30 天变成遣返记录的最快方式。</p><h2>三张时钟速查</h2><table><thead><tr><th>通道</th><th>国家</th><th>停留</th><th>适合</th></tr></thead><tbody><tr><td>30 天入境免签</td><td>50 国（英加欧日韩等）</td><td>每次 30 天</td><td>一个月内的行程，全国任意</td></tr><tr><td>互免条约</td><td>泰新马阿等</td><td>30 天（厄瓜多尔 90）</td><td>同上，长期有效</td></tr><tr><td>240 小时过境</td><td>57 国（含美国）</td><td>10 天 24 省</td><td>美国人；A→中国→C 结构</td></tr><tr><td>海南免签</td><td>59 国（含美国）</td><td>30 天仅岛内</td><td>免签海滩假期</td></tr></tbody></table><p>无论走哪张名单，实务规则相通：护照有效期 6 个月以上并留空白页；每次入境都是新的 30 天时钟；港澳是泄压阀——出去即结束当次停留，再入内地重新起算，合法且常见，只有高频往返才可能被问。</p>',
+    },
+    image: '/images/guides/china-visa-free-countries.jpg',
+    readTime: { en: '8 min read', zh: '阅读 8 分钟' },
+    views: { en: '860 reads', zh: '阅读 860' },
+    publishedAt: { en: 'Just published', zh: '刚刚发布' },
+    featured: false,
+    faq: [
+      {
+        q: { en: 'Is the US on China\'s visa-free list?', zh: '美国在中国免签名单里吗？' },
+        a: {
+          en: 'No — the US is not on the 30-day visa-free list. Americans have two visa-free paths: the 240-hour transit (10 days across 24 provinces, requires an onward ticket to a third country or region) and Hainan-only entry (30 days, island only). For ordinary trips, a visa is still required.',
+          zh: '不在。美国不适用 30 天免签入境，但有两条免签路径：240 小时过境免签（10 天 24 省，需续程第三国/地区机票）和仅限海南的免签（30 天，只限岛内）。常规行程仍需签证。',
+        },
+      },
+      {
+        q: { en: 'How is the 30-day stay counted?', zh: '30 天怎么计算？' },
+        a: {
+          en: 'From 00:00 on the day after you enter — landing day is effectively extra. You must exit by the end of the window, and each new entry restarts a fresh 30 days.',
+          zh: '从入境次日凌晨 00:00 起算，落地当天等于额外赠送。须在窗口期内出境，每次入境重新计 30 天。',
+        },
+      },
+      {
+        q: { en: 'Does going to Hong Kong or Macau reset my stay?', zh: '去香港或澳门能重置停留吗？' },
+        a: {
+          en: 'Yes. Hong Kong and Macau are separate immigration regions, so exiting into either ends your mainland stay, and re-entering the mainland starts a new clock. It\'s legal and common; only rapid back-to-back same-day turnarounds attract questions.',
+          zh: '能。港澳是独立移民管辖区，出境即结束当次内地停留，再入境重新起算。合法常见，只有高频同日往返可能被盘问。',
+        },
+      },
+      {
+        q: { en: 'Can I work in China on visa-free entry?', zh: '免签入境能在中国工作吗？' },
+        a: {
+          en: 'No. All visa-free schemes cover tourism, business visits, family visits, exchange and transit only. Employment, journalism and study all require the appropriate visa arranged before travel.',
+          zh: '不能。所有免签通道仅限旅游、商务访问、探亲、交流和过境。工作、报道、留学都须提前办对应签证。',
+        },
+      },
+      {
+        q: { en: 'My country isn\'t on any list — what now?', zh: '我的国家不在任何名单上怎么办？' },
+        a: {
+          en: 'Check the 24-hour direct transit (open to all nationalities at open ports), or apply for a tourist L visa at a Chinese embassy or visa center — standard processing is about four working days. Hainan and cruise group policies cover a few more cases.',
+          zh: '查 24 小时直接过境（对所有国籍开放），或到中国使领馆/签证中心办 L 签——标准流程约 4 个工作日。海南免签和邮轮团队政策另覆盖少数情形。',
+        },
+      },
+    ],
+    relatedLinks: [
+      { to: '/guides/240-hour-visa-free-transit', label: { en: '240-Hour Visa-Free Transit', zh: '240小时过境免签' } },
+      { to: '/guides/do-us-uk-canada-citizens-need-china-visa', label: { en: 'Do US/UK/Canada Citizens Need a Visa?', zh: '美英加要签证吗' } },
+      { to: '/guides/first-trip-to-china-guide', label: { en: 'First Trip to China', zh: '首次来华全指南' } },
+      { to: '/guides/best-time-to-visit-china', label: { en: 'Best Time to Visit China', zh: '最佳旅行时间' } },
+    ],
+  },
+  {
+    slug: 'do-us-uk-canada-citizens-need-china-visa',
+    title: {
+      en: 'Do US, UK and Canadian Citizens Need a Visa for China? (2026: Two of the Three Answers Changed)',
+      zh: '美国、英国、加拿大公民去中国要签证吗？2026：三个答案已不一样',
+    },
+    label: { en: 'Visa Guide', zh: '签证攻略' },
+    excerpt: {
+      en: 'Short answers first: Americans — yes, still a visa. Brits and Canadians — no, since February 17, 2026 both get 30-day visa-free entry. The three current rules, what an L visa costs an American, and the ten-day loophole all three nationalities share.',
+      zh: '先给短答案：美国——仍要签证；英国、加拿大——2026 年 2 月 17 日起 30 天免签。三套现行规则、美国 L 签的价格、以及三国护照都有的 10 天免签通道。',
+    },
+    content: {
+      en: '<p>Three nationalities, one question, and as of 2026 three different answers. The United States: yes, you still need a visa for an ordinary trip. The United Kingdom and Canada: no — both were added to China\'s 30-day visa-free entry list on February 17, 2026, and most guides on page one of search results still haven\'t updated. If you\'ve read that "all three need visas," you\'ve read something seven months out of date. Here\'s the current picture, checked against the National Immigration Administration\'s list in September 2026.</p><h2>United States: Yes — Unless You\'re Transiting or Going to Hainan</h2><p>For a normal trip — flying in, traveling the mainland, flying home — Americans need a tourist (L) visa. The practical details: apply at a Chinese embassy, consulate or CVASC visa center; the fee is a flat $140 set by reciprocity, the same whether the visa is single-entry or multiple; and tourist applications are typically issued as ten-year, multiple-entry visas, so one application covers a decade of trips. Standard processing runs about four business days; build in buffer around Chinese and American holidays. Document requirements have loosened — the form, passport and photo are the core, and proof of hotels and flights is no longer routinely demanded — but exact asks drift by jurisdiction, so check your specific embassy\'s page the week you apply.</p><p>Two visa-free escapes, both real: the 240-hour transit — the US is on the 57-country list, so an A→China→C ticket structure buys ten days across 24 provinces — and Hainan-only trips, where Americans get 30 days on the island. A 5-day Shenzhen-only visa on arrival at certain Hong Kong land borders has historically existed too; its status has wobbled since the reopening, so treat it as a bonus, never a plan.</p><h2>United Kingdom & Canada: No — Since February 17, 2026</h2><p>The biggest quiet change of the year: both countries joined China\'s unilateral 30-day visa-free scheme on the same day. Ordinary-passport holders may enter for tourism, business visits, family visits or exchange, staying up to 30 days per entry, counted from 00:00 the day after arrival. No application, no fee. The scheme is announced through December 31, 2026 and has been routinely extended since 2024 — check status if booking into 2027. Brits and Canadians now need a visa only for work, study, journalism or stays beyond the pattern; the old application process still exists for those, at the same embassy counters as before.</p><h2>All Three Side by Side</h2><table><thead><tr><th></th><th>US</th><th>UK</th><th>Canada</th></tr></thead><tbody><tr><td>30-day visa-free entry</td><td>No</td><td>Yes (Feb 2026)</td><td>Yes (Feb 2026)</td></tr><tr><td>240-hour transit</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Hainan 30 days</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Typical L visa</td><td>$140, 10-year multi</td><td>Only for work/study</td><td>Only for work/study</td></tr></tbody></table><h2>What All Three Share: The Ten-Day Loophole</h2><p>All three nationalities sit on the 57-country transit list, which makes the 240-hour rule the great equalizer: any American, Brit or Canadian can spend ten days in Beijing, Xi\'an, Chengdu and Shanghai — visa-free — provided the tickets run through China to a third country or region. Hong Kong is the popular third region: fly home from there and the whole mainland trip needs no visa for any of the three passports. The strict parts are the midnight clock, the confirmed onward seat and staying inside the 24 permitted provinces; the full mechanics are in our transit guide.</p><h2>Edge Cases People Actually Ask About</h2><p><strong>Green card or permanent residence elsewhere:</strong> irrelevant — eligibility follows the passport you hold, not where you live. A Canadian permanent resident traveling on an Indian passport is an Indian traveler to Chinese immigration.</p><p><strong>Dual citizens and former Chinese nationals:</strong> China does not recognize dual citizenship. Enter on your foreign passport and you\'re processed as a foreigner — visa-free entry included — but officers may ask about a former Chinese passport; carrying proof it was canceled smooths the conversation. Ethnic Chinese with no Chinese nationality history have no extra step.</p><p><strong>Visa on arrival:</strong> effectively doesn\'t exist for tourism in mainland China. The exceptions are narrow group schemes (cruise arrivals, some border arrangements) — don\'t build a trip on one.</p><p><strong>Already have a valid 10-year visa?</strong> Use it — it beats every scheme here: multiple entries, no onward-ticket gymnastics, no province cage.</p>',
+      zh: '<p>三个国籍、一个问题，2026 年起有三个不同答案。美国：常规行程仍然要签证。英国、加拿大：不用了——两国于 2026 年 2 月 17 日同时加入中国 30 天免签入境名单，而搜索结果第一页的多数攻略还没更新。如果你读到「三国都需要签证」，那是一条过期七个月的信息。以下为 2026 年 9 月对照移民管理局名单核实的现行情况。</p><h2>美国：要——除非过境或只去海南</h2><p>常规行程（飞进内地、游玩、飞回家）需要旅游签证（L 签）。实操细节：在中国使领馆或签证中心申请；费用按对等原则固定为 140 美元，单次与多次同价；旅游签通常按十年多次签发，一次申请管十年出行。标准出签约 4 个工作日，中美节假日前后留余量。材料要求已放宽——表格、护照、照片是核心，酒店机票证明不再例行索要——但各管辖区要求有浮动，申请当周再核对使馆页面。</p><p>两条真实存在的免签通道：240 小时过境免签——美国在 57 国名单内，A→中国→C 的机票结构可换 10 天 24 省行程；以及仅限海南——美国护照可在岛内免签 30 天。香港部分陆路口岸曾有 5 天深圳特区落地签，状态时开时停，当作彩蛋，别当计划。</p><h2>英国与加拿大：不用了——2026 年 2 月 17 日起</h2><p>今年最安静的大变化：两国同日加入单方面 30 天免签计划。普通护照持有人可因旅游、商务、探亲、交流入境，每次最多 30 天，次日凌晨起算。不申请、不缴费。政策公布执行至 2026 年 12 月 31 日，2024 年以来例行延长——订 2027 年行程先确认。英加公民只有在工作、学习、报道或超长停留时才需要签证，流程与从前相同。</p><h2>三国对照表</h2><table><thead><tr><th></th><th>美国</th><th>英国</th><th>加拿大</th></tr></thead><tbody><tr><td>30 天免签入境</td><td>否</td><td>是（2026年2月）</td><td>是（2026年2月）</td></tr><tr><td>240 小时过境免签</td><td>是</td><td>是</td><td>是</td></tr><tr><td>海南 30 天</td><td>是</td><td>是</td><td>是</td></tr><tr><td>L 签典型成本</td><td>140 美元十年多次</td><td>仅工作/学习需要</td><td>仅工作/学习需要</td></tr></tbody></table><h2>三国共有的 10 天通道</h2><p>三国都在 57 国过境名单上，240 小时规则因此成为最大公约数：任何美英加护照，只要机票结构是经中国前往第三国/地区，就能免签在北京、西安、成都、上海玩满 10 天。香港是最常用的第三地——从香港飞回家，整段内地行程三国护照都免签。严格项是次日凌晨的时钟、续程确定座位和 24 省范围，完整机制见过境免签攻略。</p><h2>真实高频追问</h2><p><strong>有美国绿卡/他国永居：</strong>不重要——资格看护照不看居住地。持印度护照的加拿大永居居民，在中国边检眼里就是印度旅客。</p><p><strong>双国籍与前中国公民：</strong>中国不承认双国籍。持外国护照入境按外国人处理——含免签入境——但边检可能询问旧中国护照；带好注销证明会让对话顺畅。无中国国籍历史的华裔旅客没有额外步骤。</p><p><strong>落地签：</strong>内地旅游基本不存在。例外仅限窄口径团队通道（邮轮入境、个别边境安排）——别把行程押在上面。</p><p><strong>手里有有效的十年签？</strong>直接用——它优于上述一切：多次入境、不用续程票技巧、没有省份限制。</p>',
+    },
+    image: '/images/guides/do-us-uk-canada-citizens-need-china-visa.jpg',
+    readTime: { en: '7 min read', zh: '阅读 7 分钟' },
+    views: { en: '1.1k reads', zh: '阅读 1100' },
+    publishedAt: { en: 'Just published', zh: '刚刚发布' },
+    featured: false,
+    faq: [
+      {
+        q: { en: 'Do US citizens need a visa for China in 2026?', zh: '2026 年美国公民去中国要签证吗？' },
+        a: {
+          en: 'Yes, for ordinary trips. The exceptions: the 240-hour visa-free transit (the US is on the 57-country list — ten days across 24 provinces with an onward ticket to a third country or region) and Hainan-only trips (30 days on the island). Otherwise, get an L visa: $140 flat, typically issued as a ten-year multiple-entry.',
+          zh: '常规行程需要。例外：240 小时过境免签（美国在 57 国名单内，持续程第三国/地区机票可 10 天 24 省）和仅限海南（岛内 30 天）。其余情况办 L 签：140 美元，通常按十年多次签发。',
+        },
+      },
+      {
+        q: { en: 'Can UK citizens travel to China without a visa now?', zh: '英国公民现在能免签去中国吗？' },
+        a: {
+          en: 'Yes — since February 17, 2026, UK ordinary-passport holders get 30-day visa-free entry per trip for tourism, business visits, family and exchange. The scheme is announced through end of 2026; work and study still require visas.',
+          zh: '能。2026 年 2 月 17 日起，英国普通护照持有人每次可 30 天免签入境（旅游、商务、探亲、交流）。政策公布至 2026 年底；工作与留学仍需签证。',
+        },
+      },
+      {
+        q: { en: 'How much is a China visa for Americans?', zh: '美国人的中国签证多少钱？' },
+        a: {
+          en: 'A flat $140 regardless of entry count — set by US–China reciprocity — and tourist visas are typically issued as ten-year multiple-entry, so one application covers a decade of trips. Standard processing takes about four business days.',
+          zh: '统一 140 美元，单次多次同价（中美对等安排），旅游签通常按十年多次签发，一次申请管十年。标准出签约 4 个工作日。',
+        },
+      },
+      {
+        q: { en: 'Can Canadians use the 240-hour visa-free transit?', zh: '加拿大人能用 240 小时过境免签吗？' },
+        a: {
+          en: 'Yes — Canada is on the 57-country transit list, so with a confirmed onward ticket to a third country or region, Canadians get up to 10 days across the 24 permitted provinces without a visa. Most Canadians will simply use 30-day visa-free entry instead.',
+          zh: '能。加拿大在 57 国过境名单内，持续程第三国/地区的确定机票，可在 24 省 10 天免签。不过多数加拿大人直接走 30 天免签入境即可。',
+        },
+      },
+      {
+        q: { en: 'Does a green card or permanent residency change anything?', zh: '绿卡或他国永居有影响吗？' },
+        a: {
+          en: 'No. Eligibility follows the nationality of the passport you travel on, not your residence. A US green card held by, say, a Mexican-passport traveler adds or removes no China visa option.',
+          zh: '没有。资格取决于所持护照国籍，与居住地无关。持墨西哥护照的人就算有美国绿卡，中国的签证选项也不增不减。',
+        },
+      },
+    ],
+    relatedLinks: [
+      { to: '/guides/240-hour-visa-free-transit', label: { en: '240-Hour Visa-Free Transit', zh: '240小时过境免签' } },
+      { to: '/guides/china-visa-free-countries', label: { en: 'China Visa-Free Country List', zh: '中国免签国家名单' } },
+      { to: '/guides/first-trip-to-china-guide', label: { en: 'First Trip to China', zh: '首次来华全指南' } },
+      { to: '/guides/beijing-to-xian-train-guide', label: { en: 'Beijing to Xi\'an by Train', zh: '京西高铁攻略' } },
     ],
   },
 ]

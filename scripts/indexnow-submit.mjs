@@ -18,7 +18,10 @@ const LOCALES = ['en', 'zh', 'ko', 'ja', 'th', 'de', 'fr', 'es', 'it']
 
 // 默认提交清单：按「新上线路径 × 全语言」笛卡尔积生成（改成需要的路径再跑）
 const DEFAULT_PAGE_PATHS = [
-  '/guides/chengdu-food-guide',
+  '/guides/240-hour-visa-free-transit',
+  '/guides/china-visa-free-countries',
+  '/guides/do-us-uk-canada-citizens-need-china-visa',
+  '/guides/first-trip-to-china-guide', // 本批顺带更新：签证口径 144→240 重写
 ]
 
 function defaultUrls() {
