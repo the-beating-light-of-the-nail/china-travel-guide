@@ -97,8 +97,11 @@ export default defineNuxtConfig({
   },
 
   // 站点配置（供 sitemap 模块使用）
+  // trailingSlash: true —— Vercel 静态目录输出（en/index.html 形态）会强制 /en 301 到 /en/，
+  // vercel.json 的 trailingSlash:false 对此不生效（已实测），因此全站信号统一改为带尾斜杠
   site: {
     url: 'https://chinatravel.world',
+    trailingSlash: true,
   },
 
   // 国际化（i18n）配置
@@ -109,6 +112,10 @@ export default defineNuxtConfig({
   // 开启 SEO，自动注入 hreflang 与 og:locale 等标签
   // lazy：语言包按需分包加载，避免 9 个语言全量打进首屏
   // ---------------------------------------------------------------
+  // ---------------------------------------------------------------
+  // trailingSlash: 与 site.trailingSlash 保持一致 —— 本地化路由与 hreflang
+  // alternate 链接统一带尾斜杠，匹配线上实际服务形态（/en/ 200，/en 301）
+  // ---------------------------------------------------------------
   i18n: {
     strategy: 'prefix',
     defaultLocale: 'en',
@@ -118,6 +125,7 @@ export default defineNuxtConfig({
     differentDomains: false,
     detectBrowserLanguage: false,
     baseUrl: 'https://chinatravel.world',
+    trailingSlash: true,
   },
 
   // 应用级 head 配置（默认 SEO，各页面会按语言覆盖）
@@ -177,10 +185,10 @@ gtag('config', 'G-5V6YWGXS3Y');`,
   },
 
   // 路由级规则
-  // prefix 策略下根路径无默认页面，静态部署时将 `/` 重定向到默认语言 `/en`
+  // prefix 策略下根路径无默认页面，静态部署时将 `/` 重定向到默认语言 `/en/`
   // （兜底：Vercel 等平台会读取此规则；静态根 index.html 由 public/ 提供 meta 跳转）
   routeRules: {
-    '/': { redirect: '/en' },
+    '/': { redirect: '/en/' },
   },
 
   // 静态预渲染配置（SSG）

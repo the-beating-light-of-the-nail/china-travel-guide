@@ -42,10 +42,10 @@ const localePath = useLocalePath()
         {{ guide.excerpt[locale] }}
       </p>
 
-      <!-- 元信息 -->
+      <!-- 元信息（真实首发日期 + 阅读时长） -->
       <div class="flex justify-between text-xs text-ink-muted">
-        <span>📖 {{ guide.views[locale] }}</span>
-        <span>⏱️ {{ guide.publishedAt[locale] }}</span>
+        <span>📅 {{ formatPublishDate(guide.publishedISO, locale) }}</span>
+        <span>⏱️ {{ guide.readTime[locale] }}</span>
       </div>
     </div>
   </NuxtLink>

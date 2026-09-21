@@ -119,8 +119,8 @@ export interface Guide {
   image: string
   label: L
   readTime: L
-  views: L
-  publishedAt: L
+  /** 真实首发日期（git 首次提交日），JSON-LD datePublished 与页面展示共用 */
+  publishedISO: string
   featured: boolean
   /** 可选：正文后的分组视频架（B 站封面卡片 + 外链，见 data/fermented-videos.ts） */
   videos?: FermentedVideoGroup[]
@@ -1739,6 +1739,7 @@ const rawGalleries: Record<string, string[]> = {
 const rawGuides: Omit<Guide, 'id'>[] = [
   {
     slug: 'xian-3-day-classic-route',
+    publishedISO: '2026-07-03',
     title: {
       en: 'Xi\'an 3-Day Itinerary: Terracotta Warriors, City Walls & Street Food (+ 2 & 4-Day Variants)',
       zh: '西安三日经典路线：兵马俑+城墙+回民街全攻略',
@@ -1754,8 +1755,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=800',
     readTime: { en: '8 min read', zh: '阅读 8 分钟' },
-    views: { en: '23k reads', zh: '阅读 2.3w' },
-    publishedAt: { en: '3 days ago', zh: '3天前' },
     featured: true,
     faq: [
       {
@@ -1796,6 +1795,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'beijing-off-the-beaten-path',
+    publishedISO: '2026-07-03',
     title: {
       en: 'Beyond the Postcards: 5 Days of Real Beijing',
       zh: '北京深度游：避开人潮的小众玩法清单',
@@ -1811,8 +1811,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: 'https://images.unsplash.com/photo-1584646098378-0874589d76b1?w=800',
     readTime: { en: '10 min read', zh: '阅读 10 分钟' },
-    views: { en: '18k reads', zh: '阅读 1.8w' },
-    publishedAt: { en: '1 week ago', zh: '1周前' },
     featured: true,
     relatedLinks: [
       { to: '/guides/beijing-to-xian-train-guide', label: { en: 'Beijing to Xi\'an by Train', zh: '北京到西安火车全攻略' } },
@@ -1823,6 +1821,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'chengdu-food-guide',
+    publishedISO: '2026-07-03',
     title: {
       en: 'The Chengdu Food Guide: From Street Stalls to Time-Honored Classics',
       zh: '成都美食全指南：从街边摊到老字号一网打尽',
@@ -1838,8 +1837,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/cities/chengdu/chengdu_p03_13.jpeg',
     readTime: { en: '10 min read', zh: '阅读 10 分钟' },
-    views: { en: '33k reads', zh: '阅读 3.3w' },
-    publishedAt: { en: 'Updated today', zh: '今日更新' },
     featured: true,
     videos: realVoicesVideoGroups,
     faq: [
@@ -1896,6 +1893,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'china-dumpling-guide',
+    publishedISO: '2026-09-06',
     title: {
       en: 'The Dumpling Lover\'s Guide to China: 15 Wrappers, Five Families, One Long Lunch',
       zh: '中国饺子全指南：15 张皮、五大流派、一场漫长的午宴',
@@ -1911,12 +1909,11 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/dumplings/guide-cover.jpg',
     readTime: { en: '9 min read', zh: '阅读 9 分钟' },
-    views: { en: '1.2k reads', zh: '阅读 1200' },
-    publishedAt: { en: 'today', zh: '今天' },
     featured: false,
   },
   {
     slug: 'first-trip-to-china-guide',
+    publishedISO: '2026-07-03',
     title: {
       en: 'First Trip to China: The Complete Planning Guide',
       zh: '第一次去中国怎么玩：新手超完全攻略',
@@ -1932,8 +1929,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: 'https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=800',
     readTime: { en: '12 min read', zh: '阅读 12 分钟' },
-    views: { en: '45k reads', zh: '阅读 4.5w' },
-    publishedAt: { en: '2 weeks ago', zh: '2周前' },
     featured: false,
     relatedLinks: [
       { to: '/guides/240-hour-visa-free-transit', label: { en: '240-Hour Visa-Free Transit', zh: '240小时过境免签' } },
@@ -1944,6 +1939,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'best-time-to-visit-china',
+    publishedISO: '2026-07-03',
     title: {
       en: 'When to Visit China: A Season-by-Season Guide',
       zh: '什么时候去中国最好：四季旅行指南',
@@ -1959,12 +1955,11 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/cities/beijing/beijing_p09_26.jpeg',
     readTime: { en: '6 min read', zh: '阅读 6 分钟' },
-    views: { en: '15k reads', zh: '阅读 1.5w' },
-    publishedAt: { en: '3 weeks ago', zh: '3周前' },
     featured: false,
   },
   {
     slug: 'what-to-buy-in-china',
+    publishedISO: '2026-09-06',
     title: {
       en: 'What to Buy in China: What\'s Actually Cheaper (and What\'s Not)',
       zh: '在中国买什么最值：真实价差清单与避坑指南',
@@ -1980,12 +1975,11 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/guides/what-to-buy-in-china.jpg',
     readTime: { en: '11 min read', zh: '阅读 11 分钟' },
-    views: { en: '12k reads', zh: '阅读 1.2w' },
-    publishedAt: { en: '2 days ago', zh: '2天前' },
     featured: true,
   },
   {
     slug: 'china-tax-refund-guide',
+    publishedISO: '2026-09-06',
     title: {
       en: 'China Departure Tax Refund: The Step-by-Step Guide',
       zh: '中国离境退税全攻略：步骤、易错点与即买即退',
@@ -2001,12 +1995,11 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/guides/china-tax-refund-guide.jpg',
     readTime: { en: '7 min read', zh: '阅读 7 分钟' },
-    views: { en: '6.4k reads', zh: '阅读 6.4k' },
-    publishedAt: { en: '1 day ago', zh: '1天前' },
     featured: false,
   },
   {
     slug: 'taobao-jd-for-tourists',
+    publishedISO: '2026-09-06',
     title: {
       en: 'Taobao & JD for Tourists: Shop Online in China Like a Local',
       zh: '淘宝京东游客购物指南：注册、验货、退货一次讲清',
@@ -2022,12 +2015,11 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/guides/taobao-jd-for-tourists.jpg',
     readTime: { en: '8 min read', zh: '阅读 8 分钟' },
-    views: { en: '7.8k reads', zh: '阅读 7800' },
-    publishedAt: { en: '2 days ago', zh: '2天前' },
     featured: false,
   },
   {
     slug: 'tiger-leaping-gorge-trek-guide',
+    publishedISO: '2026-09-06',
     title: {
       en: 'Tiger Leaping Gorge High Trail: The Complete 2-Day Trek Guide',
       zh: '虎跳峡高路徒步完全攻略：两天走完世界十大经典线路',
@@ -2043,12 +2035,11 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/guides/tiger-leaping-gorge-trek-guide.jpg',
     readTime: { en: '9 min read', zh: '阅读 9 分钟' },
-    views: { en: '6.2k reads', zh: '阅读 6200' },
-    publishedAt: { en: '1 day ago', zh: '1天前' },
     featured: true,
   },
   {
     slug: 'china-trekking-permits-guide',
+    publishedISO: '2026-09-06',
     title: {
       en: 'Trekking Permits & Rules in China: What Foreigners Can and Cannot Hike',
       zh: '外国人在中国徒步的许可与规则：能走什么、不能走什么',
@@ -2064,12 +2055,11 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/guides/china-trekking-permits-guide.jpg',
     readTime: { en: '10 min read', zh: '阅读 10 分钟' },
-    views: { en: '4.9k reads', zh: '阅读 4900' },
-    publishedAt: { en: '1 day ago', zh: '1天前' },
     featured: false,
   },
   {
     slug: 'altitude-sickness-trekking-china',
+    publishedISO: '2026-09-06',
     title: {
       en: 'Altitude Sickness on China Treks: The Plain-English Guide',
       zh: '在中国徒步如何应对高反：说人话的完整指南',
@@ -2085,12 +2075,11 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/guides/altitude-sickness-trekking-china.jpg',
     readTime: { en: '9 min read', zh: '阅读 9 分钟' },
-    views: { en: '3.8k reads', zh: '阅读 3800' },
-    publishedAt: { en: '1 day ago', zh: '1天前' },
     featured: false,
   },
   {
     slug: 'kimchi-sauerkraut-suancai',
+    publishedISO: '2026-09-06',
     title: {
       en: 'Kimchi vs Sauerkraut vs Suancai: The Fermented Cabbage Atlas of China',
       zh: '韩国泡菜、德国酸菜、中国酸菜：一颗白菜的发酵版图',
@@ -2106,8 +2095,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/guides/suancai-vs-sauerkraut.jpg',
     readTime: { en: '12 min read', zh: '阅读 12 分钟' },
-    views: { en: '1.2k reads', zh: '阅读 1200' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     videos: fermentedVideoGroups,
     faq: [
@@ -2157,6 +2144,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'chengdu-airport-food-guide',
+    publishedISO: '2026-09-09',
     title: {
       en: 'Food at Chengdu Tianfu Airport (TFU): What to Eat, Real Prices & Layover Survival',
       zh: '成都天府机场美食指南：吃什么、真实价格与转机过夜攻略',
@@ -2172,8 +2160,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/dumplings/guide-cover.jpg',
     readTime: { en: '9 min read', zh: '阅读 9 分钟' },
-    views: { en: '2.4k reads', zh: '阅读 2400' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     videos: airportVideoGroups,
     faq: [
@@ -2229,6 +2215,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'halal-food-in-chengdu',
+    publishedISO: '2026-09-09',
     title: {
       en: 'Halal Food in Chengdu, China: A Practical Guide for Muslim Travelers (+ Phrase Card)',
       zh: '成都清真美食指南：穆斯林游客实用攻略（含点餐短语卡）',
@@ -2244,8 +2231,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/dumplings/baozi.jpg',
     readTime: { en: '8 min read', zh: '阅读 8 分钟' },
-    views: { en: '1.9k reads', zh: '阅读 1900' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     videos: halalVideoGroups,
     faq: [
@@ -2294,6 +2279,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'chengdu-vs-chongqing-food',
+    publishedISO: '2026-09-09',
     title: {
       en: 'Chengdu vs Chongqing Food: The Real Differences (Broth, Spice, Scene & Which City to Pick)',
       zh: '成都 vs 重庆美食终极对比：锅底、辣度、场景与选城指南',
@@ -2309,8 +2295,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/dumplings/chaoshou.jpg',
     readTime: { en: '8 min read', zh: '阅读 8 分钟' },
-    views: { en: '3.1k reads', zh: '阅读 3100' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     videos: versusVideoGroups,
     faq: [
@@ -2359,6 +2343,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'chengdu-street-food',
+    publishedISO: '2026-09-09',
     title: {
       en: 'Chengdu Street Food Guide: Stalls, Fly Restaurants & Night Markets (What Locals Actually Eat)',
       zh: '成都街头小吃攻略：路边摊、苍蝇馆子与夜市，本地人真正在吃什么',
@@ -2374,8 +2359,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/dumplings/zhong-dumplings.jpg',
     readTime: { en: '9 min read', zh: '阅读 9 分钟' },
-    views: { en: '2.1k reads', zh: '阅读 2100' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     videos: streetFoodVideoGroups,
     faq: [
@@ -2426,6 +2409,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'chengdu-hot-pot-guide',
+    publishedISO: '2026-09-09',
     title: {
       en: 'Chengdu Hot Pot Guide: Clear Oil vs Beef Tallow, Queue Culture & Your First Pot',
       zh: '成都火锅指南：清油vs牛油、排队文化与第一锅生存手册',
@@ -2441,8 +2425,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: 'https://images.unsplash.com/photo-1555126634-323283e090fa?w=800',
     readTime: { en: '9 min read', zh: '阅读 9 分钟' },
-    views: { en: '1.8k reads', zh: '阅读 1800' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     videos: hotPotVideoGroups,
     faq: [
@@ -2491,6 +2473,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'chengdu-food-tour',
+    publishedISO: '2026-09-09',
     title: {
       en: 'Chengdu Food Tour: Three Self-Guided Routes (Yulin, Old Town & the Night Markets) — DIY or Booked?',
       zh: '成都美食一日游：玉林/老城/夜市三条自走路线，要不要报团？',
@@ -2506,8 +2489,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/dumplings/guotie.jpg',
     readTime: { en: '8 min read', zh: '阅读 8 分钟' },
-    views: { en: '1.5k reads', zh: '阅读 1500' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     videos: foodTourVideoGroups,
     faq: [
@@ -2549,6 +2530,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'beijing-to-xian-train-guide',
+    publishedISO: '2026-09-09',
     title: {
       en: 'Beijing to Xi\'an by Train: High-Speed Rail vs the Overnight Sleeper (Times, Prices & How to Book)',
       zh: '北京到西安怎么走：高铁vs夕发朝至卧铺（时长、票价与购票全攻略）',
@@ -2564,8 +2546,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/cities/xian/xian_p09_27.jpeg',
     readTime: { en: '7 min read', zh: '阅读 7 分钟' },
-    views: { en: '1.2k reads', zh: '阅读 1200' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     videos: railVideoGroups,
     faq: [
@@ -2607,6 +2587,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: '240-hour-visa-free-transit',
+    publishedISO: '2026-09-17',
     title: {
       en: 'China\'s 240-Hour Visa-Free Transit: The 2026 Rules, 57 Countries and How the 10-Day Clock Works',
       zh: '中国240小时过境免签全攻略：57国名单、10天时钟与常见翻车点',
@@ -2622,8 +2603,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/guides/240-hour-visa-free-transit.jpg',
     readTime: { en: '9 min read', zh: '阅读 9 分钟' },
-    views: { en: '940 reads', zh: '阅读 940' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     faq: [
       {
@@ -2671,6 +2650,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'china-visa-free-countries',
+    publishedISO: '2026-09-17',
     title: {
       en: 'China Visa-Free Countries 2026: The Full List — 30-Day Entry, 240-Hour Transit and Hainan, Explained Separately',
       zh: '中国免签国家名单2026：30天免签、过境免签与海南免签分开讲',
@@ -2686,8 +2666,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/guides/china-visa-free-countries.jpg',
     readTime: { en: '8 min read', zh: '阅读 8 分钟' },
-    views: { en: '860 reads', zh: '阅读 860' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     faq: [
       {
@@ -2735,6 +2713,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
   },
   {
     slug: 'do-us-uk-canada-citizens-need-china-visa',
+    publishedISO: '2026-09-17',
     title: {
       en: 'Do US, UK and Canadian Citizens Need a Visa for China? (2026: Two of the Three Answers Changed)',
       zh: '美国、英国、加拿大公民去中国要签证吗？2026：三个答案已不一样',
@@ -2750,8 +2729,6 @@ const rawGuides: Omit<Guide, 'id'>[] = [
     },
     image: '/images/guides/do-us-uk-canada-citizens-need-china-visa.jpg',
     readTime: { en: '7 min read', zh: '阅读 7 分钟' },
-    views: { en: '1.1k reads', zh: '阅读 1100' },
-    publishedAt: { en: 'Just published', zh: '刚刚发布' },
     featured: false,
     faq: [
       {

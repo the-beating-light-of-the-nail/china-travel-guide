@@ -103,7 +103,8 @@
     "partnersSectionTitle": "Socios locales",
     "partnersSectionSubtitle": "Guías, chóferes y servicios verificados en {name}",
     "relatedTitle": "Más destinos",
-    "readOriginal": "Leer la guía completa →"
+    "readOriginal": "Leer la guía completa →",
+    "breadcrumb": "Miga de pan"
   },
   "regions": {
     "Southwest China": "Suroeste de China",
@@ -340,5 +341,17 @@
     "noResults": "Ningún dumpling coincide — prueba a quitar un filtro",
     "loadMore": "Cargar más",
     "deepDive": "Guías a fondo"
+  },
+  "citySections": {
+    "overview": "De un vistazo",
+    "attractions": "Imprescindibles",
+    "foods": "Sabores locales",
+    "itinerary": "Itinerario recomendado",
+    "tips": "Consejos de viaje",
+    "vlogs": "Vlogs imprescindibles",
+    "guides": "Guías seleccionadas",
+    "photos": "Momentos urbanos",
+    "services": "Socios locales",
+    "more": "Más destinos"
   }
 }

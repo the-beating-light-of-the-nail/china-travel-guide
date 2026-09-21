@@ -71,14 +71,13 @@ const i18nHead = useLocaleHead()
 useHead({
   title: `${t('shopping.pageTitle')} | ${t('brand.full')}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
-  link: [...(i18nHead.value.link || [])],
   meta: [
     { name: 'description', content: t('shopping.pageSubtitle') },
     { property: 'og:title', content: t('shopping.pageTitle') },
     { property: 'og:description', content: t('shopping.pageSubtitle') },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: ogLocale(locale.value) },
-    { property: 'og:image', content: `${pub.siteUrl}${allItems[0]?.image || ''}` },
+    { property: 'og:image', content: shareImageUrl(allItems[0]?.image || '/images/guides/what-to-buy-in-china.jpg', pub.siteUrl) },
   ],
   script: [
     {
@@ -88,7 +87,7 @@ useHead({
         '@type': 'CollectionPage',
         name: t('shopping.pageTitle'),
         description: t('shopping.pageSubtitle'),
-        url: `${pub.siteUrl}/${locale.value}/shopping`,
+        url: `${pub.siteUrl}/${locale.value}/shopping/`,
         inLanguage: isoLocale(locale.value),
       }),
     },

@@ -103,7 +103,8 @@
     "partnersSectionTitle": "現地パートナー",
     "partnersSectionSubtitle": "{name}の認定ガイド・ドライバー・サービス",
     "relatedTitle": "他の目的地",
-    "readOriginal": "全文を読む →"
+    "readOriginal": "全文を読む →",
+    "breadcrumb": "パンくずリスト"
   },
   "regions": {
     "Southwest China": "中国南西部",
@@ -340,5 +341,17 @@
     "noResults": "該当する餃子がありません — フィルターを外してみてください",
     "loadMore": "もっと見る",
     "deepDive": "詳細ガイド"
+  },
+  "citySections": {
+    "overview": "概要",
+    "attractions": "見どころ",
+    "foods": "ご当地グルメ",
+    "itinerary": "おすすめ旅程",
+    "tips": "旅行のヒント",
+    "vlogs": "必見ブイログ",
+    "guides": "厳選ガイド",
+    "photos": "街の瞬間",
+    "services": "地元パートナー",
+    "more": "他の目的地"
   }
 }

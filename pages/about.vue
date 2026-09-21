@@ -19,13 +19,14 @@ const i18nHead = useLocaleHead()
 useHead({
   title: `${t('about.title')} | ${t('brand.full')}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
-  link: [...(i18nHead.value.link || [])],
   meta: [
     { name: 'description', content: t('about.subtitle') },
     { property: 'og:title', content: t('about.title') },
     { property: 'og:description', content: t('about.subtitle') },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: ogLocale(locale.value) },
+    // 与页首英雄区同图，保证分享卡片与落地页视觉一致
+    { property: 'og:image', content: shareImageUrl('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1200', pub.siteUrl) },
   ],
   script: [
     // 组织结构化数据 JSON-LD
@@ -35,7 +36,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'AboutPage',
         name: t('about.title'),
-        url: `${pub.siteUrl}/${locale.value}/about`,
+        url: `${pub.siteUrl}/${locale.value}/about/`,
         inLanguage: isoLocale(locale.value),
         mainEntity: {
           '@type': 'Organization',

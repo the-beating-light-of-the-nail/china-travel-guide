@@ -103,7 +103,8 @@
     "partnersSectionTitle": "本地合作伙伴",
     "partnersSectionSubtitle": "{name}认证向导、司机与本地服务",
     "relatedTitle": "更多目的地",
-    "readOriginal": "阅读全文 →"
+    "readOriginal": "阅读全文 →",
+    "breadcrumb": "面包屑导航"
   },
   "regions": {
     "Southwest China": "西南地区",
@@ -340,5 +341,17 @@
     "noResults": "没有匹配的饺子——试试清除筛选",
     "loadMore": "加载更多",
     "deepDive": "深度指南"
+  },
+  "citySections": {
+    "overview": "城市印象",
+    "attractions": "必游景点",
+    "foods": "地道美食",
+    "itinerary": "推荐行程",
+    "tips": "出行贴士",
+    "vlogs": "必看视频",
+    "guides": "精选攻略导航",
+    "photos": "城市瞬间",
+    "services": "本地合作伙伴",
+    "more": "更多目的地"
   }
 }

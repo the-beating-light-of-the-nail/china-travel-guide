@@ -58,30 +58,23 @@ const remainingVideoGroups = computed(() => {
   return (g.value.videos || []).filter((grp) => !inlined.has(grp.id))
 })
 
-// 文章发布日期（用于 JSON-LD）
-const datePublished = computed(() => {
-  const d = new Date()
-  d.setDate(d.getDate() - 14)
-  return d.toISOString()
-})
-
 // SEO 元信息（含 hreflang）
 const i18nHead = useLocaleHead()
+const ogImage = shareImageUrl(g.value.image, pub.siteUrl)
 useHead({
   title: `${g.value.title[locale.value]} | China Travel Guide`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
-  link: [...(i18nHead.value.link || [])],
   meta: [
     { name: 'description', content: g.value.excerpt[locale.value] },
     { property: 'og:title', content: g.value.title[locale.value] },
     { property: 'og:description', content: g.value.excerpt[locale.value] },
     { property: 'og:type', content: 'article' },
-    { property: 'og:image', content: g.value.image },
+    { property: 'og:image', content: ogImage },
     { property: 'article:author', content: 'China Travel Guide' },
     { property: 'og:locale', content: ogLocale(locale.value) },
   ],
   script: [
-    // 文章结构化数据 JSON-LD
+    // 文章结构化数据 JSON-LD（datePublished 用数据层真实首发日期）
     {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
@@ -89,7 +82,7 @@ useHead({
         '@type': 'Article',
         headline: g.value.title[locale.value],
         description: g.value.excerpt[locale.value],
-        image: g.value.image,
+        image: ogImage,
         author: {
           '@type': 'Organization',
           name: 'With My Eyes',
@@ -98,11 +91,11 @@ useHead({
           '@type': 'Organization',
           name: 'With My Eyes',
         },
-        datePublished: datePublished.value,
+        datePublished: g.value.publishedISO,
         inLanguage: isoLocale(locale.value),
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `${pub.siteUrl}/${locale.value}/guides/${g.value.slug}`,
+          '@id': `${pub.siteUrl}/${locale.value}/guides/${g.value.slug}/`,
         },
       }),
     },
@@ -124,6 +117,19 @@ useHead({
           }),
         }]
       : []),
+    // 面包屑结构化数据（与页头可见面包屑一致）
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: t('city.home'), item: `${pub.siteUrl}/${locale.value}/` },
+          { '@type': 'ListItem', position: 2, name: t('nav.guides'), item: `${pub.siteUrl}/${locale.value}/guides/` },
+          { '@type': 'ListItem', position: 3, name: g.value.title[locale.value] },
+        ],
+      }),
+    },
   ],
 })
 </script>
@@ -135,9 +141,20 @@ useHead({
       <img :src="g.image" :alt="g.title[locale]" class="absolute inset-0 w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/35" />
       <div class="relative max-w-3xl mx-auto px-4 pb-12 text-white w-full">
-        <NuxtLink :to="localePath('/guides')" class="text-sky-300 hover:text-white text-sm mb-3 inline-block">
-          {{ t('guide.backToGuides') }}
-        </NuxtLink>
+        <!-- 面包屑（Home / Guides / 当前攻略） -->
+        <nav :aria-label="t('city.breadcrumb')">
+          <ol class="list-none flex flex-wrap items-center text-[13px] mb-3">
+            <li>
+              <NuxtLink :to="localePath('/')" class="text-sky-300 hover:text-white transition-colors">{{ t('city.home') }}</NuxtLink>
+              <span class="mx-1.5 opacity-60">/</span>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/guides/')" class="text-sky-300 hover:text-white transition-colors">{{ t('nav.guides') }}</NuxtLink>
+              <span class="mx-1.5 opacity-60">/</span>
+            </li>
+            <li class="text-white/80">{{ g.title[locale] }}</li>
+          </ol>
+        </nav>
         <span class="inline-block bg-brand text-white px-3 py-1 rounded text-xs mb-4">
           {{ g.label[locale] }}
         </span>
@@ -145,9 +162,8 @@ useHead({
           {{ g.title[locale] }}
         </h1>
         <div class="flex gap-4 text-sm opacity-90">
-          <span>📖 {{ g.views[locale] }}</span>
           <span>⏱️ {{ g.readTime[locale] }}</span>
-          <span>📅 {{ g.publishedAt[locale] }}</span>
+          <span>📅 {{ formatPublishDate(g.publishedISO, locale) }}</span>
         </div>
       </div>
     </header>

@@ -103,7 +103,8 @@
     "partnersSectionTitle": "Lokale Partner",
     "partnersSectionSubtitle": "Verifizierte Guides, Fahrer & Services in {name}",
     "relatedTitle": "Weitere Ziele",
-    "readOriginal": "Ganzen Guide lesen →"
+    "readOriginal": "Ganzen Guide lesen →",
+    "breadcrumb": "Breadcrumb-Navigation"
   },
   "regions": {
     "Southwest China": "Südwestchina",
@@ -340,5 +341,17 @@
     "noResults": "Keine Teigtaschen gefunden — Filter zurücksetzen",
     "loadMore": "Mehr laden",
     "deepDive": "Vertiefungs-Guides"
+  },
+  "citySections": {
+    "overview": "Im Überblick",
+    "attractions": "Sehenswürdigkeiten",
+    "foods": "Lokale Spezialitäten",
+    "itinerary": "Reiseroute",
+    "tips": "Reisetipps",
+    "vlogs": "Must-See-Vlogs",
+    "guides": "Kuratierte Guides",
+    "photos": "Stadtmomente",
+    "services": "Lokale Partner",
+    "more": "Weitere Ziele"
   }
 }

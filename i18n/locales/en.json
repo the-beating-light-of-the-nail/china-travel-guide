@@ -103,7 +103,8 @@
     "partnersSectionTitle": "Local Partners",
     "partnersSectionSubtitle": "Verified guides, drivers & services in {name}",
     "relatedTitle": "More Destinations",
-    "readOriginal": "Read Full Guide →"
+    "readOriginal": "Read Full Guide →",
+    "breadcrumb": "Breadcrumb"
   },
   "regions": {
     "Southwest China": "Southwest China",
@@ -340,5 +341,17 @@
     "noResults": "No dumplings match — try clearing a filter",
     "loadMore": "Load more",
     "deepDive": "Deep-dive guides"
+  },
+  "citySections": {
+    "overview": "At a Glance",
+    "attractions": "Attractions",
+    "foods": "Local Flavors",
+    "itinerary": "Itinerary",
+    "tips": "Travel Tips",
+    "vlogs": "Must-Watch Vlogs",
+    "guides": "Curated Guides",
+    "photos": "Moments",
+    "services": "Local Partners",
+    "more": "More Destinations"
   }
 }

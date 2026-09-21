@@ -46,13 +46,13 @@ const i18nHead = useLocaleHead()
 useHead({
   title: `${t('guidesHub.pageTitle')} | ${t('brand.full')}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
-  link: [...(i18nHead.value.link || [])],
   meta: [
     { name: 'description', content: t('guidesHub.pageSubtitle') },
     { property: 'og:title', content: t('guidesHub.pageTitle') },
     { property: 'og:description', content: t('guidesHub.pageSubtitle') },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: ogLocale(locale.value) },
+    { property: 'og:image', content: shareImageUrl('/images/guides/tiger-leaping-gorge-trek-guide.jpg', pub.siteUrl) },
   ],
   script: [
     {
@@ -62,7 +62,7 @@ useHead({
         '@type': 'CollectionPage',
         name: t('guidesHub.pageTitle'),
         description: t('guidesHub.pageSubtitle'),
-        url: `${pub.siteUrl}/${locale.value}/guides`,
+        url: `${pub.siteUrl}/${locale.value}/guides/`,
         inLanguage: isoLocale(locale.value),
       }),
     },
@@ -84,6 +84,7 @@ useHead({
         v-model="keyword"
         type="text"
         :placeholder="t('guidesHub.searchPlaceholder')"
+        :aria-label="t('guidesHub.searchPlaceholder')"
         class="input w-full px-5 py-3 text-sm"
       >
     </div>

@@ -103,7 +103,8 @@
     "partnersSectionTitle": "พาร์ตเนอร์ท้องถิ่น",
     "partnersSectionSubtitle": "ไกด์ คนขับ และบริการผ่านการตรวจสอบใน{name}",
     "relatedTitle": "จุดหมายอื่น ๆ",
-    "readOriginal": "อ่านฉบับเต็ม →"
+    "readOriginal": "อ่านฉบับเต็ม →",
+    "breadcrumb": "เส้นทางนำทาง"
   },
   "regions": {
     "Southwest China": "ภาคตะวันตกเฉียงใต้ของจีน",
@@ -340,5 +341,17 @@
     "noResults": "ไม่มีเกี๊ยวที่ตรงเงื่อนไข — ลองล้างตัวกรอง",
     "loadMore": "ดูเพิ่ม",
     "deepDive": "คู่มือเชิงลึก"
+  },
+  "citySections": {
+    "overview": "ภาพรวม",
+    "attractions": "สถานที่ต้องไป",
+    "foods": "อาหารท้องถิ่น",
+    "itinerary": "แผนเดินทางแนะนำ",
+    "tips": "เคล็ดลับเดินทาง",
+    "vlogs": "วล็อกที่ต้องดู",
+    "guides": "คู่มือคัดสรร",
+    "photos": "ช่วงเวลาของเมือง",
+    "services": "พาร์ตเนอร์ท้องถิ่น",
+    "more": "จุดหมายเพิ่มเติม"
   }
 }

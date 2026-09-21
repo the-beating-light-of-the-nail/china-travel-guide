@@ -103,7 +103,8 @@
     "partnersSectionTitle": "Partner locali",
     "partnersSectionSubtitle": "Guide, autisti e servizi verificati a {name}",
     "relatedTitle": "Altre destinazioni",
-    "readOriginal": "Leggi la guida completa →"
+    "readOriginal": "Leggi la guida completa →",
+    "breadcrumb": "Percorso di navigazione"
   },
   "regions": {
     "Southwest China": "Sudovest della Cina",
@@ -340,5 +341,17 @@
     "noResults": "Nessun raviolo corrisponde — prova a rimuovere un filtro",
     "loadMore": "Carica altri",
     "deepDive": "Guide approfondite"
+  },
+  "citySections": {
+    "overview": "In breve",
+    "attractions": "Imperdibili",
+    "foods": "Sapori locali",
+    "itinerary": "Itinerario consigliato",
+    "tips": "Consigli di viaggio",
+    "vlogs": "Vlog da non perdere",
+    "guides": "Guide selezionate",
+    "photos": "Momenti in città",
+    "services": "Partner locali",
+    "more": "Altre mete"
   }
 }

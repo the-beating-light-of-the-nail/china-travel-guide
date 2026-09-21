@@ -85,6 +85,7 @@ function isActive(to: string) {
           v-model="searchKeyword"
           type="text"
           :placeholder="t('search.placeholder')"
+          :aria-label="t('search.placeholder')"
           class="border-none bg-transparent outline-none w-[170px] text-sm text-ink placeholder-slate-400"
           @keyup.enter="handleSearch"
         >

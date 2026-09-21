@@ -56,13 +56,13 @@ const i18nHead = useLocaleHead()
 useHead({
   title: `${t('services.pageTitle')} | ${t('brand.full')}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
-  link: [...(i18nHead.value.link || [])],
   meta: [
     { name: 'description', content: t('services.pageSubtitle') },
     { property: 'og:title', content: t('services.pageTitle') },
     { property: 'og:description', content: t('services.pageSubtitle') },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: ogLocale(locale.value) },
+    { property: 'og:image', content: shareImageUrl('/images/cities/guizhou/fanjingshan_2.jpg', pub.siteUrl) },
   ],
   script: [
     {
@@ -72,7 +72,7 @@ useHead({
         '@type': 'ItemList',
         name: t('services.pageTitle'),
         description: t('services.pageSubtitle'),
-        url: `${pub.siteUrl}/${locale.value}/services`,
+        url: `${pub.siteUrl}/${locale.value}/services/`,
         inLanguage: isoLocale(locale.value),
       }),
     },

@@ -54,16 +54,16 @@ const tabs = [
 
 // SEO 元信息（含 hreflang）
 const i18nHead = useLocaleHead()
+const ogImage = shareImageUrl(c.value.heroImage, pub.siteUrl)
 useHead({
   title: `${c.value.name[locale.value]} | ${c.value.tagline[locale.value]}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
-  link: [...(i18nHead.value.link || [])],
   meta: [
     { name: 'description', content: c.value.description[locale.value] },
     { property: 'og:title', content: `${c.value.name[locale.value]} Travel Guide` },
     { property: 'og:description', content: c.value.description[locale.value] },
     { property: 'og:type', content: 'article' },
-    { property: 'og:image', content: c.value.heroImage },
+    { property: 'og:image', content: ogImage },
     { property: 'og:locale', content: ogLocale(locale.value) },
   ],
   script: [
@@ -75,12 +75,25 @@ useHead({
         '@type': 'TouristDestination',
         name: c.value.name[locale.value],
         description: c.value.description[locale.value],
-        image: c.value.heroImage,
-        url: `${pub.siteUrl}/${locale.value}/cities/${c.value.slug}`,
+        image: ogImage,
+        url: `${pub.siteUrl}/${locale.value}/cities/${c.value.slug}/`,
         containedInPlace: {
           '@type': 'Country',
           name: 'China',
         },
+      }),
+    },
+    // 面包屑结构化数据（与页顶可见面包屑一致）
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: t('city.home'), item: `${pub.siteUrl}/${locale.value}/` },
+          { '@type': 'ListItem', position: 2, name: t('nav.destinations'), item: `${pub.siteUrl}/${locale.value}/#destinations` },
+          { '@type': 'ListItem', position: 3, name: c.value.name[locale.value], item: `${pub.siteUrl}/${locale.value}/cities/${c.value.slug}/` },
+        ],
       }),
     },
   ],
@@ -89,14 +102,23 @@ useHead({
 
 <template>
   <div v-if="city">
-    <!-- 面包屑 -->
-    <div class="py-4 px-4 sm:px-[5%] border-b border-slate-200 text-[13px] text-ink-muted">
-      <NuxtLink :to="localePath('/')" class="text-brand hover:text-brand-dark">{{ t('city.home') }}</NuxtLink>
-      <span> / </span>
-      <NuxtLink :to="localePath('/#destinations')" class="hover:text-brand transition-colors">{{ t('nav.destinations') }}</NuxtLink>
-      <span> / </span>
-      <span class="text-ink">{{ c.name[locale] }}</span>
-    </div>
+    <!-- 面包屑（Home / Destinations / 当前城市） -->
+    <nav
+      :aria-label="t('city.breadcrumb')"
+      class="py-4 px-4 sm:px-[5%] border-b border-slate-200 text-[13px] text-ink-muted"
+    >
+      <ol class="list-none flex flex-wrap items-center">
+        <li>
+          <NuxtLink :to="localePath('/')" class="text-brand hover:text-brand-dark">{{ t('city.home') }}</NuxtLink>
+          <span class="mx-1">/</span>
+        </li>
+        <li>
+          <NuxtLink :to="localePath('/#destinations')" class="hover:text-brand transition-colors">{{ t('nav.destinations') }}</NuxtLink>
+          <span class="mx-1">/</span>
+        </li>
+        <li class="text-ink" aria-current="page">{{ c.name[locale] }}</li>
+      </ol>
+    </nav>
 
     <!-- 城市英雄区 -->
     <section
@@ -141,8 +163,7 @@ useHead({
     <!-- ===== 总览 ===== -->
     <section id="overview" class="py-[70px] px-4 sm:px-[5%] scroll-mt-[130px]">
       <GuideSection
-        zh="城市印象"
-        en="At a Glance"
+        section-key="overview"
         :subtitle="c.tagline[locale]"
       />
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
@@ -165,8 +186,7 @@ useHead({
       <!-- 必游景点 -->
       <div class="mt-[70px]">
         <GuideSection
-          zh="必游景点"
-          en="Attractions"
+          section-key="attractions"
           :subtitle="t('city.attractionsSubtitle', { name: c.name[locale] })"
         />
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -182,8 +202,7 @@ useHead({
     <!-- 地道美食 -->
     <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200">
       <GuideSection
-        zh="地道美食"
-        en="Local Flavors"
+        section-key="foods"
         :subtitle="t('city.cuisineSubtitle', { name: c.name[locale] })"
       />
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -198,8 +217,7 @@ useHead({
     <!-- 推荐行程 -->
     <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200">
       <GuideSection
-        zh="推荐行程"
-        en="Itinerary"
+        section-key="itinerary"
         :subtitle="t('city.itinerarySubtitle', { name: c.name[locale] })"
       />
       <div class="max-w-[900px] mx-auto">
@@ -214,8 +232,7 @@ useHead({
     <!-- 出行贴士 -->
     <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200">
       <GuideSection
-        zh="出行贴士"
-        en="Travel Tips"
+        section-key="tips"
         :subtitle="t('city.tipsSubtitle')"
       />
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -230,8 +247,7 @@ useHead({
     <!-- ===== Vlogs ===== -->
     <section id="vlogs" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200 scroll-mt-[130px]">
       <GuideSection
-        zh="必看视频"
-        en="Must-Watch Vlogs"
+        section-key="vlogs"
         :subtitle="t('city.vlogsSectionSubtitle', { name: c.name[locale] })"
       />
       <div v-if="cityVlogs.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -257,8 +273,7 @@ useHead({
     <!-- ===== 攻略导航（手风琴） ===== -->
     <section id="guides" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200 scroll-mt-[130px]">
       <GuideSection
-        zh="精选攻略导航"
-        en="Curated Guides"
+        section-key="guides"
         :subtitle="t('city.guidesSectionSubtitle', { name: c.name[locale] })"
       />
       <div v-if="cityGuides.length" class="max-w-[900px] mx-auto space-y-3">
@@ -322,8 +337,7 @@ useHead({
     <!-- ===== 图片 ===== -->
     <section id="photos" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200 scroll-mt-[130px]">
       <GuideSection
-        zh="城市瞬间"
-        en="Moments"
+        section-key="photos"
         :subtitle="t('city.photosSectionTitle', { name: c.name[locale] })"
       />
       <div v-if="cityPhotos.length" class="masonry">
@@ -362,8 +376,7 @@ useHead({
     <!-- ===== 本地服务 ===== -->
     <section id="services" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200 scroll-mt-[130px]">
       <GuideSection
-        zh="本地合作伙伴"
-        en="Local Partners"
+        section-key="services"
         :subtitle="t('city.partnersSectionSubtitle', { name: c.name[locale] })"
       />
       <div v-if="cityServices.length" class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-[1100px] mx-auto">
@@ -389,8 +402,7 @@ useHead({
     <!-- 相关目的地 -->
     <section class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200">
       <GuideSection
-        zh="更多目的地"
-        en="More Destinations"
+        section-key="more"
         :subtitle="regionName"
       />
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

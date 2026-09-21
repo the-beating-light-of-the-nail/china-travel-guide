@@ -88,14 +88,13 @@ const i18nHead = useLocaleHead()
 useHead({
   title: `${t('vlogs.pageTitle')} | ${t('brand.full')}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
-  link: [...(i18nHead.value.link || [])],
   meta: [
     { name: 'description', content: t('vlogs.pageSubtitle') },
     { property: 'og:title', content: t('vlogs.pageTitle') },
     { property: 'og:description', content: t('vlogs.pageSubtitle') },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: ogLocale(locale.value) },
-    { property: 'og:image', content: `${pub.siteUrl}/images/dumplings/guide-cover.jpg` },
+    { property: 'og:image', content: shareImageUrl('/images/hiking/wusun-trail.jpg', pub.siteUrl) },
   ],
   script: [
     {
@@ -105,7 +104,7 @@ useHead({
         '@type': 'CollectionPage',
         name: t('vlogs.pageTitle'),
         description: t('vlogs.pageSubtitle'),
-        url: `${pub.siteUrl}/${locale.value}/vlogs`,
+        url: `${pub.siteUrl}/${locale.value}/vlogs/`,
         inLanguage: isoLocale(locale.value),
       }),
     },

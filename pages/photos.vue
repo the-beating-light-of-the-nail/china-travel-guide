@@ -82,14 +82,13 @@ const i18nHead = useLocaleHead()
 useHead({
   title: `${t('photos.pageTitle')} | ${t('brand.full')}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
-  link: [...(i18nHead.value.link || [])],
   meta: [
     { name: 'description', content: t('photos.pageSubtitle') },
     { property: 'og:title', content: t('photos.pageTitle') },
     { property: 'og:description', content: t('photos.pageSubtitle') },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: ogLocale(locale.value) },
-    { property: 'og:image', content: `${pub.siteUrl}${allPhotos[0]?.image || ''}` },
+    { property: 'og:image', content: shareImageUrl(allPhotos[0]?.image || '/images/guides/tiger-leaping-gorge-trek-guide.jpg', pub.siteUrl) },
   ],
   script: [
     {
@@ -99,7 +98,7 @@ useHead({
         '@type': 'ImageGallery',
         name: t('photos.pageTitle'),
         description: t('photos.pageSubtitle'),
-        url: `${pub.siteUrl}/${locale.value}/photos`,
+        url: `${pub.siteUrl}/${locale.value}/photos/`,
         inLanguage: isoLocale(locale.value),
       }),
     },

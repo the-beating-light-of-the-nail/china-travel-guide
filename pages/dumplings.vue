@@ -71,14 +71,13 @@ const i18nHead = useLocaleHead()
 useHead({
   title: `${t('dumplings.pageTitle')} | ${t('brand.full')}`,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
-  link: [...(i18nHead.value.link || [])],
   meta: [
     { name: 'description', content: t('dumplings.pageSubtitle') },
     { property: 'og:title', content: t('dumplings.pageTitle') },
     { property: 'og:description', content: t('dumplings.pageSubtitle') },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: ogLocale(locale.value) },
-    { property: 'og:image', content: `${pub.siteUrl}${allItems[0]?.image || ''}` },
+    { property: 'og:image', content: shareImageUrl(allItems[0]?.image || '/images/dumplings/guide-cover.jpg', pub.siteUrl) },
   ],
   script: [
     {
@@ -88,7 +87,7 @@ useHead({
         '@type': 'CollectionPage',
         name: t('dumplings.pageTitle'),
         description: t('dumplings.pageSubtitle'),
-        url: `${pub.siteUrl}/${locale.value}/dumplings`,
+        url: `${pub.siteUrl}/${locale.value}/dumplings/`,
         inLanguage: isoLocale(locale.value),
       }),
     },

@@ -103,7 +103,8 @@
     "partnersSectionTitle": "현지 파트너",
     "partnersSectionSubtitle": "{name}의 인증 가이드·기사·서비스",
     "relatedTitle": "다른 여행지",
-    "readOriginal": "전문 읽기 →"
+    "readOriginal": "전문 읽기 →",
+    "breadcrumb": "브레드크럼"
   },
   "regions": {
     "Southwest China": "중국 서남부",
@@ -340,5 +341,17 @@
     "noResults": "조건에 맞는 만두가 없어요 — 필터를 초기화해 보세요",
     "loadMore": "더 보기",
     "deepDive": "심화 가이드"
+  },
+  "citySections": {
+    "overview": "한눈에 보기",
+    "attractions": "필수 관광지",
+    "foods": "현지 미식",
+    "itinerary": "추천 일정",
+    "tips": "여행 팁",
+    "vlogs": "필수 시청 브이로그",
+    "guides": "엄선 가이드",
+    "photos": "도시의 순간",
+    "services": "로컬 파트너",
+    "more": "더 많은 여행지"
   }
 }

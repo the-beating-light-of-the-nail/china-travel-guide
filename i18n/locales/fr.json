@@ -103,7 +103,8 @@
     "partnersSectionTitle": "Partenaires locaux",
     "partnersSectionSubtitle": "Guides, chauffeurs et services vérifiés à {name}",
     "relatedTitle": "Autres destinations",
-    "readOriginal": "Lire le guide complet →"
+    "readOriginal": "Lire le guide complet →",
+    "breadcrumb": "Fil d'Ariane"
   },
   "regions": {
     "Southwest China": "Sud-Ouest de la Chine",
@@ -340,5 +341,17 @@
     "noResults": "Aucun ravioli ne correspond — essayez de retirer un filtre",
     "loadMore": "Voir plus",
     "deepDive": "Guides approfondis"
+  },
+  "citySections": {
+    "overview": "En bref",
+    "attractions": "Incontournables",
+    "foods": "Saveurs locales",
+    "itinerary": "Itinéraire conseillé",
+    "tips": "Conseils pratiques",
+    "vlogs": "Vlogs à voir",
+    "guides": "Guides sélectionnés",
+    "photos": "Instants urbains",
+    "services": "Partenaires locaux",
+    "more": "Plus de destinations"
   }
 }

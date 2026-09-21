@@ -55,7 +55,7 @@ const currentYear = new Date().getFullYear()
 
       <!-- 目的地 -->
       <div>
-        <h4 class="text-white mb-4 text-base font-medium">{{ t('footer.topDestinations') }}</h4>
+        <h3 class="text-white mb-4 text-base font-medium">{{ t('footer.topDestinations') }}</h3>
         <ul class="list-none space-y-2.5">
           <li v-for="dest in destinations" :key="dest.slug">
             <NuxtLink
@@ -70,7 +70,7 @@ const currentYear = new Date().getFullYear()
 
       <!-- 探索栏目 -->
       <div>
-        <h4 class="text-white mb-4 text-base font-medium">{{ t('footer.explore') }}</h4>
+        <h3 class="text-white mb-4 text-base font-medium">{{ t('footer.explore') }}</h3>
         <ul class="list-none space-y-2.5">
           <li v-for="link in exploreLinks" :key="link.key">
             <NuxtLink
@@ -85,7 +85,7 @@ const currentYear = new Date().getFullYear()
 
       <!-- 关于我们 -->
       <div>
-        <h4 class="text-white mb-4 text-base font-medium">{{ t('footer.aboutUs') }}</h4>
+        <h3 class="text-white mb-4 text-base font-medium">{{ t('footer.aboutUs') }}</h3>
         <ul class="list-none space-y-2.5">
           <li v-for="key in aboutLinkKeys" :key="key">
             <NuxtLink

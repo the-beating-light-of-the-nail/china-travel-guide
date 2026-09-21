@@ -37,7 +37,6 @@ const i18nHead = useLocaleHead()
 useHead({
   title: t('home.seoTitle'),
   htmlAttrs: { lang: i18nHead.value.htmlAttrs?.lang },
-  link: [...(i18nHead.value.link || [])],
   meta: [
     {
       name: 'description',
@@ -49,7 +48,7 @@ useHead({
       content: t('home.seoOgDescription'),
     },
     { property: 'og:type', content: 'website' },
-    { property: 'og:image', content: heroImage },
+    { property: 'og:image', content: shareImageUrl(heroImage, pub.siteUrl) },
     { property: 'og:locale', content: i18nHead.value.meta?.find((m: any) => m.property === 'og:locale')?.content || (ogLocale(locale.value)) },
   ],
   // 网站结构化数据 JSON-LD
@@ -92,6 +91,7 @@ useHead({
           v-model="heroSearch"
           type="text"
           :placeholder="t('search.heroPlaceholder')"
+          :aria-label="t('search.heroPlaceholder')"
           class="flex-1 border-none outline-none bg-transparent px-6 py-3 text-[15px] rounded-full text-ink placeholder-slate-400"
           @keyup.enter="handleHeroSearch"
         >
