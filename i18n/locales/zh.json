@@ -205,6 +205,8 @@
   "guide": {
     "backToGuides": "← 返回攻略导航",
     "moreGuides": "更多攻略",
+    "liveTitle": "正在直播：官方 24/7 信号",
+    "liveNote": "点击封面即可播放，由官方 YouTube 播放器加载，免费且无需账号。",
     "faqTitle": "常见问题",
     "videosTitle": "眼见为实：B 站精选",
     "videosNote": "以下视频均来自 B 站，新窗口打开，无需登录即可观看。",

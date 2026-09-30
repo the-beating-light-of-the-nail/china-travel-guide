@@ -205,6 +205,8 @@
   "guide": {
     "backToGuides": "← ガイド一覧へ",
     "moreGuides": "他のガイド",
+    "liveTitle": "ライブ配信中：公式24時間ストリーム",
+    "liveNote": "公式YouTubeプレーヤーで再生。サムネイルをクリックして視聴開始。無料、アカウント不要。",
     "faqTitle": "よくある質問",
     "videosTitle": "その目で確かめる：ビリビリ動画",
     "videosNote": "動画はすべて中国の YouTube「ビリビリ（Bilibili）」で新しいタブに開きます。ログイン不要です。",

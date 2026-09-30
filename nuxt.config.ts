@@ -51,6 +51,7 @@ const prerenderPages = [
   '/guides/chengdu-airport-food-guide',
   '/guides/halal-food-in-chengdu',
   '/guides/chengdu-vs-chongqing-food',
+  '/guides/china-live-cams',
 ]
 
 export default defineNuxtConfig({

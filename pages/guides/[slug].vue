@@ -174,6 +174,15 @@ useHead({
       <p class="text-lg text-ink-body leading-relaxed mb-8 pb-8 border-b border-slate-200 italic">
         {{ g.excerpt[locale] }}
       </p>
+
+      <!-- 官方直播架（guide 携带 liveCams 时渲染：点击加载官方 YouTube 播放器） -->
+      <section v-if="g.liveCams?.length" class="mb-10">
+        <h2 class="text-2xl font-bold text-ink mb-1">🔴 {{ t('guide.liveTitle') }}</h2>
+        <p class="text-xs text-ink-muted mb-4">{{ t('guide.liveNote') }}</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <LiveCamCard v-for="cam in g.liveCams" :key="cam.videoId" :cam="cam" />
+        </div>
+      </section>
       <!-- 正文内容（HTML 富文本，按当前语言取；[[videos:<组id>]] 标记处内联渲染视频组） -->
       <div class="prose-content max-w-none">
         <template v-for="(seg, i) in contentSegments" :key="i">

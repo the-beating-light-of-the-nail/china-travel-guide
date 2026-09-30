@@ -16,6 +16,8 @@ import { fermentedVideoGroups } from './fermented-videos'
 import type { FermentedVideoGroup } from './fermented-videos'
 import { airportVideoGroups, halalVideoGroups, versusVideoGroups, realVoicesVideoGroups, streetFoodVideoGroups, hotPotVideoGroups, foodTourVideoGroups } from './chengdu-food-videos'
 import { railVideoGroups } from './beijing-xian-videos'
+import { chinaLiveCams } from './live-cams'
+import type { LiveCamEntry } from './live-cams'
 
 // 向后兼容：hub-data.ts 等仍从此处导入 L 类型
 export type { L } from './localize'
@@ -124,6 +126,8 @@ export interface Guide {
   featured: boolean
   /** 可选：正文后的分组视频架（B 站封面卡片 + 外链，见 data/fermented-videos.ts） */
   videos?: FermentedVideoGroup[]
+  /** 可选：摘要下方的官方直播架（YouTube 官方播放器点击加载，见 data/live-cams.ts） */
+  liveCams?: LiveCamEntry[]
   /** 可选：FAQ 折叠面板（同时注入 FAQPage 结构化数据） */
   faq?: GuideFaq[]
   /** 可选：尾部互链 chips */
@@ -1889,6 +1893,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
       { to: '/guides/halal-food-in-chengdu', label: { en: 'Halal Food in Chengdu', zh: '成都清真美食指南' } },
       { to: '/guides/chengdu-airport-food-guide', label: { en: 'Chengdu Airport Food Guide', zh: '天府机场美食指南' } },
       { to: '/guides/kimchi-sauerkraut-suancai', label: { en: 'The Fermented Cabbage Atlas', zh: '发酵白菜版图' } },
+      { to: '/guides/china-live-cams', label: { en: 'China Live Cams', zh: '中国实时直播' } },
     ],
   },
   {
@@ -1935,6 +1940,7 @@ const rawGuides: Omit<Guide, 'id'>[] = [
       { to: '/guides/china-visa-free-countries', label: { en: 'China Visa-Free Country List', zh: '中国免签国家名单' } },
       { to: '/guides/do-us-uk-canada-citizens-need-china-visa', label: { en: 'Do US/UK/Canada Citizens Need a Visa?', zh: '美英加要签证吗' } },
       { to: '/guides/best-time-to-visit-china', label: { en: 'Best Time to Visit China', zh: '最佳旅行时间' } },
+      { to: '/guides/china-live-cams', label: { en: 'China Live Cams', zh: '中国实时直播' } },
     ],
   },
   {
@@ -2772,6 +2778,70 @@ const rawGuides: Omit<Guide, 'id'>[] = [
       { to: '/guides/china-visa-free-countries', label: { en: 'China Visa-Free Country List', zh: '中国免签国家名单' } },
       { to: '/guides/first-trip-to-china-guide', label: { en: 'First Trip to China', zh: '首次来华全指南' } },
       { to: '/guides/beijing-to-xian-train-guide', label: { en: 'Beijing to Xi\'an by Train', zh: '京西高铁攻略' } },
+    ],
+  },
+  {
+    slug: 'china-live-cams',
+    publishedISO: '2026-10-01',
+    title: {
+      en: 'China Live Cams: 24/7 Panda Cam & Official Scenic Slow-TV Streams',
+      zh: '中国实时直播摄像头：官方 24/7 熊猫直播与景区慢直播观看指南',
+    },
+    label: { en: 'Live Cams', zh: '实时直播' },
+    excerpt: {
+      en: 'Four official 24/7 streams that play anywhere — the Chengdu panda base\'s 28 cameras, He Hua\'s cub enclosure, CGTN\'s rolling scenic feed — plus the mainland-only CCTV slow-TV directory, why those links go dark abroad, and how to use every camera as a trip tool once you land.',
+      zh: '四路全球随处可看的官方 24/7 直播——成都熊猫基地 28 机位、花花所在的幼崽围栏、CGTN 景观慢直播；外加央视「直播中国」大陆限定慢直播目录：哪些值得看、海外为何打不开、落地后怎么用它们做行程决策。',
+    },
+    content: {
+      en: '<p>Before the drone montages and the edited reels, there is the unedited feed. This page keeps China\'s official live cameras in one place: four 24/7 streams that open on any phone anywhere, plus the mainland-only CCTV slow-TV directory most guides list without explaining — including why those links go dark outside China, and how to use the cameras as trip tools once you\'ve arrived.</p><h2>The Four Streams You Can Watch Anywhere</h2><p>Every stream above runs in its channel\'s official YouTube player — free, no account, and no different in Kansas than in Kathmandu. The two panda cams come from iPanda, CCTV\'s dedicated panda channel; the two landscape feeds from CGTN, China\'s international English broadcaster. They run 24/7 and never geo-block.</p><p>Pandas keep surprisingly regular hours: most active around the morning feed and again in late afternoon, asleep through the middle of the day. The morning window in your timezone:</p><table><thead><tr><th>Chengdu (Beijing time)</th><th>UTC</th><th>New York</th><th>London</th><th>Sydney</th></tr></thead><tbody><tr><td>08:30–10:30</td><td>00:30–02:30</td><td>8:30–10:30 pm (prev. day)</td><td>1:30–3:30 am</td><td>10:30 am–12:30 pm</td></tr></tbody></table><p>Offsets shown are for the daylight-saving season; shift the New York and Sydney columns by an hour in winter.</p><h2>Who You Are Watching</h2><p>The Chengdu stream comes from iPanda\'s 28-camera network across five zones of the Chengdu Research Base of Giant Panda Breeding — the same base every Chengdu itinerary sends you to at opening time. What a live cam shows that photos never do: how much of panda life is eating, lying down, and eating while lying down.</p><p>The cub enclosure stars He Hua ("Hua Hua"), the base\'s genuine superstar since she was born in 2020 — famous for being round, unhurried, and endlessly photographed, with a physical queue to match. The cam is an honest preview: if her pace on screen hypnotizes you, the in-person queue is worth it; if not, you just saved a morning.</p><p>CGTN\'s 24/7 Travel Experience is a rolling slow-TV feed of scenic locations across the country, and the Mount Siguniang cam points at the 6,248-m Yaomei peak in western Sichuan — serious trekking country within reach of Chengdu, and at its photogenic best in early-morning light.</p><h2>The Mainland-Only Directory: CCTV\'s Slow-TV Network</h2><p>CCTV runs a platform called Live China (livechina.cctv.com) with dozens of 24/7 scenic cameras. These are the picks worth a traveler\'s time:</p><table><thead><tr><th>Camera</th><th>What you see</th><th>Why travelers check it</th></tr></thead><tbody><tr><td><a href="https://livechina.cctv.com/LIVE3181.html">Gubei Water Town</a> (Beijing)</td><td>Restored water town at the foot of the Simatai Great Wall, lit up at night</td><td>Decide if the evening visit is worth the ticket</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE2768.html">Huanghuacheng Water Great Wall</a> (Beijing)</td><td>The wall crumbling into a reservoir</td><td>Preview a quieter wall than Badaling or Mutianyu</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE3193.html">Leshan "Sleeping Buddha"</a> (Sichuan)</td><td>Hill-ridge silhouette reclining across the river from the 71-m Giant Buddha</td><td>See the river perspective before you boat or climb</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE4228.html">Wuliangshan Cherry Valley</a> (Yunnan)</td><td>Winter cherry blossom in the tea hills, blooming late Nov–Dec</td><td>Time a winter Yunnan loop around the bloom</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE3402.html">Jianshui Old Town</a> (Yunnan)</td><td>Ming-era town and the seventeen-arch Double Dragon Bridge</td><td>Atmosphere check for the Kunming–Jianshui detour</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE3170.html">Jiqiao Bridge</a> (Harbin)</td><td>A century-old rail bridge in China\'s snow city</td><td>Check the snow before ice-festival day trips</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE4261.html">Dai village</a> (Xishuangbanna)</td><td>Daily life in a thousand-year Dai village</td><td>Real village texture before the staged Dai-garden shows</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE5048.html">Futian Mangroves</a> (Shenzhen)</td><td>Protected wetland on the Shenzhen–Hong Kong border</td><td>Birders: migrants pass through roughly Oct–Apr</td></tr></tbody></table><p>One catch, verified by us in October 2026: the directory page opens fine worldwide, but every camera page we tested from nine countries — the US, Austria, Switzerland, Israel and others — redirected to an error page. CCTV\'s streaming rights and CDN distribution cover mainland China only. It is not your Wi-Fi. Inside China, on any ordinary hotel or phone connection, they simply play.</p><h2>Once You Are in China: Cameras as Trip Tools</h2><p>The smarter use of official cameras is mid-trip decision-making, and scenic areas run feeds exactly for that. Jiuzhaigou\'s official WeChat account has a "Cloud Jiuzhaigou" section with live views and real-time temperatures from inside the valley — the difference between picking the right and wrong of your two permitted days. Mount Emei\'s scenic account streams the Golden Summit, which runs its own weather system; check it before committing to the pre-dawn summit push. Mount Tai keeps live cameras on its official website for the same reason — the summit sunrise is a weather bet.</p><p>Public scenic cameras are mainstream enough in China that Nanjing\'s made national news for the opposite of surveillance anxiety: visitors discovered they could pull souvenir photos of themselves from the scenic-area cameras. A camera public enough to photobomb you is public enough to check before you go.</p><p>If you are choosing between two mornings at Jiuzhaigou, or wondering whether the Golden Summit is inside a cloud, these feeds beat any weather app — they show the actual thing.</p><h2>Why Not Just Use a Webcam Aggregator?</h2><p>Aggregator sites do list China cameras, but their links rot quietly: streams pulled from third parties go dead without anyone noticing, quality is often a smudged 480p, and sourcing is unclear. The feeds on this page are broadcast-grade, maintained by the institutions that own the cameras, and distributed worldwide through YouTube. For city skylines, an aggregator is fine; for pandas and slow TV, go to the official channel.</p>',
+      zh: '<p>在无人机大片和剪辑好的短视频之前，还有一样东西：未经剪辑的实时画面。这个页面把中国的官方直播摄像头收在一处——四路在任何地方都能打开的 24/7 官方直播，加上一份多数攻略只罗列、不解释的大陆限定慢直播目录：哪些值得看、为什么在海外打不开、以及到了中国之后怎么拿它们做行程决策。</p><h2>四路随时随地都能看的官方直播</h2><p>上方四路全部走频道方的官方 YouTube 播放器——免费、无需账号、全球同速。两路熊猫来自熊猫频道 iPanda（央视网旗下），两路景观来自 CGTN（中国国际电视台），24/7 不间断，不做地区限制。</p><p>熊猫的作息比想象中规律：清晨喂食前后和傍晚前最活跃，正午基本在睡。清晨活跃时段对应各地时间如下：</p><table><thead><tr><th>成都（北京时间）</th><th>UTC</th><th>纽约</th><th>伦敦</th><th>悉尼</th></tr></thead><tbody><tr><td>08:30–10:30</td><td>00:30–02:30</td><td>前一天 20:30–22:30</td><td>1:30–3:30</td><td>10:30–12:30</td></tr></tbody></table><p>表内为夏令时口径；冬令时期间纽约、悉尼两列相应顺延一小时。</p><h2>镜头里都是谁</h2><p>成都基地这路来自熊猫频道覆盖五大区域的 28 个机位，画面就是成都大熊猫繁育研究基地——每个成都行程都会在开园时间把你送去的那个基地。直播能看到照片永远给不了的东西：熊猫的一天有多少时间在吃、躺着，以及躺着吃。</p><p>幼崽围栏的主角是「花花」——基地 2020 年出生的顶流，出了名的圆、慢、稳，看她的队排得比景点还长。这路直播是最好的行前预演：如果她在屏幕里就把你萌住，现场排队值得；如果没有，你就省下了一个上午。</p><p>CGTN 的「24/7 中国旅行慢直播」是轮播式全国景观信号；四姑娘山机位对准川西 6,248 米的幺妹峰——从成都可达的徒步胜地，清晨光线最好。</p><h2>大陆限定目录：央视「直播中国」慢直播网</h2><p>央视的「直播中国」平台（livechina.cctv.com）接入了全国几十路 24/7 景区摄像头，以下是旅行视角值得看的几路：</p><table><thead><tr><th>摄像头</th><th>画面</th><th>旅行者看它做什么</th></tr></thead><tbody><tr><td><a href="https://livechina.cctv.com/LIVE3181.html">古北水镇</a>（北京）</td><td>司马台长城脚下的水镇，夜景亮灯</td><td>判断夜游值不值票价</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE2768.html">黄花城水长城</a>（北京）</td><td>长城没入水库的画面</td><td>预览比八达岭、慕田峪安静的长城</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE3193.html">乐山「睡佛」</a>（四川）</td><td>隔江山体轮廓卧佛，对面即 71 米大佛</td><td>坐船或登山前先看江面视角</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE4228.html">无量山樱花谷</a>（云南）</td><td>茶山间的冬樱花，11 月底至 12 月盛开</td><td>把冬季云南环线卡在花期</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE3402.html">建水古城</a>（云南）</td><td>明代古城与十七孔双龙桥</td><td>昆明—建水绕行前看看氛围</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE3170.html">霁虹桥</a>（哈尔滨）</td><td>冰雪之城的百年铁路桥</td><td>冰雪大世界行程前看雪况</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE4261.html">傣族古寨</a>（西双版纳）</td><td>千年傣寨的日常</td><td>在傣族园表演之外看看真村寨</td></tr><tr><td><a href="https://livechina.cctv.com/LIVE5048.html">福田红树林</a>（深圳）</td><td>深港边界湿地保护区</td><td>观鸟：候鸟约 10 月至次年 4 月经过</td></tr></tbody></table><p>一个我们自己验证过（2026 年 10 月）的事实：目录页全球都能打开，但从九个国家（美国、奥地利、瑞士、以色列等）点进任何一路摄像头，都会被重定向到错误页——央视的流媒体版权与 CDN 分发只覆盖中国大陆。这不是你的网络问题。人在大陆、用普通酒店 Wi-Fi 或手机流量，这些页面就是正常播放的。</p><h2>到了中国之后：把摄像头当行程工具</h2><p>官方摄像头更聪明的用法是行程中的临场决策，景区自己也为此开了直播。九寨沟管理局公众号的「云游九寨」有谷内实时画面和实时气温——在仅有的两天入园日里挑对那一天，靠它最直接。峨眉山景区公众号有金顶实时直播——金顶自成一套天气系统，凌晨冲顶前先看一眼。泰山景区官网也挂着登山沿线的实时画面，山顶日出本质上是一场天气赌局。</p><p>景区公共摄像头在中国大陆已经是日常，南京的景区监控甚至上过新闻——不是因为隐私焦虑，而是游客发现可以从景区摄像头里把自己「捞」出来当纪念照。能在镜头里拍到你的人，也自然能在出发前被你查一查。</p><p>在九寨沟的两个早晨之间犹豫，或者纠结金顶是不是藏在云里时，这些实时画面比任何天气 App 都可靠——它们显示的就是事物本身。</p><h2>为什么不用现成的摄像头聚合站？</h2><p>聚合站确实收录中国摄像头，但链接烂得悄无声息：第三方搬运的流没人维护、画质常常糊成 480p、来源也不清。本页的信号是广电级画质、由摄像头的主人们自己维护、经 YouTube 全球分发。看城市天际线，聚合站够用；看熊猫和慢直播，直接去官方频道。</p>',
+    },
+    liveCams: chinaLiveCams,
+    image: '/images/guides/china-live-cams.jpg',
+    readTime: { en: '6 min read', zh: '阅读 6 分钟' },
+    featured: false,
+    faq: [
+      {
+        q: { en: 'Can I watch the Chengdu panda live cam for free?', zh: '成都熊猫直播是免费的吗？' },
+        a: {
+          en: 'Yes. The streams on this page are the official iPanda and CGTN YouTube channels — free, no account, no geo-block. The Chengdu base itself doesn\'t run an overseas-facing stream; iPanda, CCTV\'s panda channel, is the official camera network on site.',
+          zh: '是。本页信号全部来自熊猫频道 iPanda 与 CGTN 的官方 YouTube 频道——免费、无需账号、无地区限制。成都基地自身没有面向海外的直播，基地内的官方摄像头网络就是熊猫频道。',
+        },
+      },
+      {
+        q: { en: 'Why won\'t CCTV\'s live stream pages open outside China?', zh: '为什么央视的直播页在海外打不开？' },
+        a: {
+          en: 'Rights and CDN distribution cover mainland China only. We tested from nine countries in October 2026: the directory page opens fine, while every camera page redirects to an error page. Inside China they play normally on any ordinary connection; outside it, the official alternative is iPanda and CGTN on YouTube.',
+          zh: '央视的流媒体版权与 CDN 分发只覆盖中国大陆。我们 2026 年 10 月从九个国家实测：目录页正常打开，摄像头页一律跳转错误页。人在大陆任何普通网络下都能正常看；海外看官方内容的替代通道就是 iPanda 与 CGTN 的 YouTube 频道。',
+        },
+      },
+      {
+        q: { en: 'What\'s the best time of day to watch the panda cam?', zh: '熊猫直播什么时间看最好？' },
+        a: {
+          en: 'Around the morning feed — roughly 08:30–10:30 Beijing time (00:30–02:30 UTC) — and again in late afternoon. Midday is nap time. If your timezone makes that painful, don\'t force it: on the cub cam, someone is usually munching at any hour.',
+          zh: '北京时间上午约 8:30–10:30（UTC 0:30–2:30）与傍晚前最活跃，正午多在睡觉。时区不合适不必勉强：幼崽围栏里几乎任何时段都有熊猫在啃东西。',
+        },
+      },
+      {
+        q: { en: 'Are these live streams legal to watch and embed?', zh: '观看和嵌入这些直播合法吗？' },
+        a: {
+          en: 'Yes — they play through the channels\' own official YouTube players. We don\'t re-host or relay any raw stream; the mainland-only CCTV pages are listed as plain links, never embedded.',
+          zh: '合法——全部通过频道方自己的官方 YouTube 播放器播放。我们不转存、不转推任何原始流；大陆限定的央视页面只以普通链接列出，不做嵌入。',
+        },
+      },
+      {
+        q: { en: 'Can live cams actually help plan a China trip?', zh: '直播对规划中国行程真有用吗？' },
+        a: {
+          en: 'Yes. Golden Summit weather, snow in Harbin, cherry-bloom timing at Wuliangshan (late November into December) and panda activity are all visible before you go. Treat the cams as a free scouting tool: what you see is what you\'ll get.',
+          zh: '有用。金顶天气、哈尔滨雪况、无量山樱花花期（11 月底至 12 月）、熊猫活跃度，都是出发前就能直接看到的事实。把摄像头当免费的侦察工具：你看到的就是你将得到的。',
+        },
+      },
+    ],
+    relatedLinks: [
+      { to: '/guides/chengdu-food-guide', label: { en: 'Chengdu Food Guide', zh: '成都美食全指南' } },
+      { to: '/guides/first-trip-to-china-guide', label: { en: 'First Trip to China', zh: '首次来华全指南' } },
+      { to: '/guides/best-time-to-visit-china', label: { en: 'Best Time to Visit China', zh: '最佳旅行时间' } },
+      { to: '/guides/taobao-jd-for-tourists', label: { en: 'Taobao & JD for Tourists', zh: '淘宝京东购物指南' } },
     ],
   },
 ]
