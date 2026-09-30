@@ -48,6 +48,10 @@ const contentSegments = computed<ContentSegment[]>(() => {
 const inlineVideoGroupFor = (seg: ContentSegment) =>
   seg.type === 'videos' ? videoGroupById.value.get(seg.id) : undefined
 
+// 直播架分组:全球可看(YouTube 官方流)与大陆限定(央视官方页外链)
+const globalCams = computed(() => (g.value.liveCams || []).filter(c => !c.mainlandOnly))
+const mainlandCams = computed(() => (g.value.liveCams || []).filter(c => c.mainlandOnly))
+
 // 尾部兜底组 = 未被内联标记引用的组
 const remainingVideoGroups = computed(() => {
   const inlined = new Set(
@@ -175,12 +179,19 @@ useHead({
         {{ g.excerpt[locale] }}
       </p>
 
-      <!-- 官方直播架（guide 携带 liveCams 时渲染：点击加载官方 YouTube 播放器） -->
-      <section v-if="g.liveCams?.length" class="mb-10">
+      <!-- 官方直播架（guide 携带 liveCams 时渲染：YouTube 流点击加载；大陆限定流外链央视官方页） -->
+      <section v-if="globalCams.length" class="mb-10">
         <h2 class="text-2xl font-bold text-ink mb-1">🔴 {{ t('guide.liveTitle') }}</h2>
         <p class="text-xs text-ink-muted mb-4">{{ t('guide.liveNote') }}</p>
         <div class="grid sm:grid-cols-2 gap-4">
-          <LiveCamCard v-for="cam in g.liveCams" :key="cam.videoId" :cam="cam" />
+          <LiveCamCard v-for="cam in globalCams" :key="cam.videoId" :cam="cam" />
+        </div>
+      </section>
+      <section v-if="mainlandCams.length" class="mb-10">
+        <h2 class="text-2xl font-bold text-ink mb-1">🛰️ {{ t('guide.liveMainlandTitle') }}</h2>
+        <p class="text-xs text-ink-muted mb-4">{{ t('guide.liveMainlandNote') }}</p>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <LiveCamCard v-for="cam in mainlandCams" :key="cam.externalUrl" :cam="cam" />
         </div>
       </section>
       <!-- 正文内容（HTML 富文本，按当前语言取；[[videos:<组id>]] 标记处内联渲染视频组） -->

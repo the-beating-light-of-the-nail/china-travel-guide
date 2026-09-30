@@ -1,28 +1,37 @@
-// china-live-cams 直播页(data/travel-data.ts 的 china-live-cams guide)嵌入层直播流数据
+// china-live-cams 直播页(data/travel-data.ts 的 china-live-cams guide)直播流数据
 // ---------------------------------------------------------------
-// 嵌入层只收「官方频道 YouTube 24/7 流」——海外可看、嵌入合规、地址最稳。
+// 两种卡:
+//  ① YouTube 官方 24/7 流(videoId)——海外可看、嵌入合规、全球分发;
+//  ② 大陆限定官方流(mainlandOnly + externalUrl)——点击在央视官方页打开,
+//     海外 302(2026-10-01 九国实测),页面已如实标注「需大陆网络」。
 // videoId 与封面为 2026-10-01 快照(oEmbed 存活验证通过)。YouTube 直播链接会
 // 轮换失效,巡查规则(与投稿/状态巡查同节奏,记台账):
 //   curl -s "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D<id>&format=json"
 // 返回 401/404 即流已停,去 @iPandaChannel / @cgtn 的 streams 页取最新直播 ID,
 // 并同步重下封面:hqdefault.jpg → public/images/live-cams/<id>.jpg(>10KB 为有效)。
-// 目录层(livechina.cctv.com 大陆限定慢直播)写在 guide 正文的表格里,不在此维护。
+// 大陆限定流的 LIVE 编号来自直播中国在列名单(2026-10-01),失效时去
+// livechina.cctv.com 首页核对最新编号。
 // ---------------------------------------------------------------
 import type { L } from './localize'
 
 export interface LiveCamEntry {
-  /** YouTube 直播 videoId(官方频道,全球可看) */
-  videoId: string
-  /** 本地封面快照 public/images/live-cams/<videoId>.jpg */
-  cover: string
+  /** YouTube 直播 videoId(官方频道,全球可看)——与 externalUrl 二选一 */
+  videoId?: string
+  /** 大陆限定流的官方页入口(mainlandOnly 时点击外链打开) */
+  externalUrl?: string
+  /** 本地封面快照 public/images/live-cams/<videoId>.jpg(无则样式占位) */
+  cover?: string
+  /** 大陆限定流:需大陆网络,海外 302 */
+  mainlandOnly?: boolean
   title: L
   /** 归属频道/机构(含 official 标注) */
   source: L
-  /** 一句话看点 + 最佳观看时段(北京时间) */
+  /** 一句话看点 + 最佳观看时段/旅行决策价值 */
   note: L
 }
 
-export const chinaLiveCams: LiveCamEntry[] = [
+/** ① 全球可看:官方 YouTube 24/7 流 */
+export const globalLiveCams: LiveCamEntry[] = [
   {
     videoId: 'gnEuhfyZPPQ',
     cover: '/images/live-cams/gnEuhfyZPPQ.jpg',
@@ -64,3 +73,90 @@ export const chinaLiveCams: LiveCamEntry[] = [
     },
   },
 ]
+
+/** ② 大陆限定:央视「直播中国」官方慢直播(海外 302,卡片为官方页外链) */
+export const mainlandLiveCams: LiveCamEntry[] = [
+  {
+    mainlandOnly: true,
+    externalUrl: 'https://livechina.cctv.com/LIVE3181.html',
+    title: { en: 'Gubei Water Town (Beijing)', zh: '古北水镇(北京)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'A restored water town at the foot of the Simatai Great Wall, lit up at night — check whether the evening visit is worth the ticket before you go.',
+      zh: '司马台长城脚下的水镇,夜景亮灯。出发前先看看夜游值不值票价。',
+    },
+  },
+  {
+    mainlandOnly: true,
+    externalUrl: 'https://livechina.cctv.com/LIVE2768.html',
+    title: { en: 'Huanghuacheng Water Great Wall (Beijing)', zh: '黄花城水长城(北京)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'The wall crumbling into a reservoir — a preview of a far quieter wall than Badaling or Mutianyu.',
+      zh: '长城没入水库的画面——比八达岭、慕田峪安静得多的长城段的实地预览。',
+    },
+  },
+  {
+    mainlandOnly: true,
+    externalUrl: 'https://livechina.cctv.com/LIVE3193.html',
+    title: { en: 'Leshan "Sleeping Buddha" (Sichuan)', zh: '乐山「睡佛」(四川)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'The hill-ridge silhouette reclining across the river from the 71-m Giant Buddha — see the river perspective before you boat or climb.',
+      zh: '隔江山体轮廓卧佛,对面即 71 米乐山大佛。坐船或登山前先看江面视角。',
+    },
+  },
+  {
+    mainlandOnly: true,
+    externalUrl: 'https://livechina.cctv.com/LIVE4228.html',
+    title: { en: 'Wuliangshan Cherry Valley (Yunnan)', zh: '无量山樱花谷(云南)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'Winter cherry blossom in the tea hills, blooming late November into December — time a winter Yunnan loop around it.',
+      zh: '茶山间的冬樱花,11 月底至 12 月盛开——冬季云南环线可卡着花期安排。',
+    },
+  },
+  {
+    mainlandOnly: true,
+    externalUrl: 'https://livechina.cctv.com/LIVE3402.html',
+    title: { en: 'Jianshui Old Town (Yunnan)', zh: '建水古城(云南)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'Ming-era town and the seventeen-arch Double Dragon Bridge — an atmosphere check for the Kunming–Jianshui detour.',
+      zh: '明代古城与十七孔双龙桥——昆明—建水绕行前的氛围预览。',
+    },
+  },
+  {
+    mainlandOnly: true,
+    externalUrl: 'https://livechina.cctv.com/LIVE3170.html',
+    title: { en: 'Jiqiao Bridge (Harbin)', zh: '霁虹桥(哈尔滨)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'A century-old rail bridge in China\'s snow city — check the snow before ice-festival day trips.',
+      zh: '冰雪之城的百年铁路桥——冰雪大世界行程前先看雪况。',
+    },
+  },
+  {
+    mainlandOnly: true,
+    externalUrl: 'https://livechina.cctv.com/LIVE4261.html',
+    title: { en: 'Dai Village (Xishuangbanna)', zh: '傣族古寨(西双版纳)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'Daily life in a thousand-year Dai village — real village texture before the staged Dai-garden shows.',
+      zh: '千年傣寨的日常——在傣族园表演之外,看看真实村寨的样子。',
+    },
+  },
+  {
+    mainlandOnly: true,
+    externalUrl: 'https://livechina.cctv.com/LIVE5048.html',
+    title: { en: 'Futian Mangroves (Shenzhen)', zh: '福田红树林(深圳)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'Protected wetland on the Shenzhen–Hong Kong border; birders, migrants pass through roughly October to April.',
+      zh: '深港边界湿地保护区。观鸟人注意:候鸟约 10 月至次年 4 月经过。',
+    },
+  },
+]
+
+/** guide 引用的合并数组([slug].vue 按 mainlandOnly 分两组渲染) */
+export const chinaLiveCams: LiveCamEntry[] = [...globalLiveCams, ...mainlandLiveCams]
