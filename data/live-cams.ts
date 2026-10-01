@@ -2,8 +2,10 @@
 // ---------------------------------------------------------------
 // 两种卡:
 //  ① YouTube 官方 24/7 流(videoId)——海外可看、嵌入合规、全球分发;
-//  ② 大陆限定官方流(mainlandOnly + externalUrl)——点击在央视官方页打开,
-//     海外 302(2026-10-01 九国实测),页面已如实标注「需大陆网络」。
+//  ② 官方页外链卡(externalUrl)——央视「直播中国」与景区官网入口。
+//     直播中国页面全球可载入(2026-10-01 九国 check-host 验证),视频流由大陆
+//     CDN 分发,海外播放可能受限;景区官网(泰山/峨眉山/九寨沟)海外实测
+//     TLS 握手失败,仅大陆可访问(mainlandOnly 徽标)。泰山/峨眉山仅 http 可达。
 // videoId 与封面为 2026-10-01 快照(oEmbed 存活验证通过)。YouTube 直播链接会
 // 轮换失效,巡查规则(与投稿/状态巡查同节奏,记台账):
 //   curl -s "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D<id>&format=json"
@@ -88,8 +90,7 @@ export const globalLiveCams: LiveCamEntry[] = [
 /** ② 大陆限定:央视「直播中国」官方慢直播(海外 302,卡片为官方页外链) */
 export const mainlandLiveCams: LiveCamEntry[] = [
   {
-    mainlandOnly: true,
-    externalUrl: 'https://livechina.cctv.com/LIVE3181.html',
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE3181.html',
     title: { en: 'Gubei Water Town (Beijing)', zh: '古北水镇(北京)' },
     source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
     note: {
@@ -98,8 +99,7 @@ export const mainlandLiveCams: LiveCamEntry[] = [
     },
   },
   {
-    mainlandOnly: true,
-    externalUrl: 'https://livechina.cctv.com/LIVE2768.html',
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE2768.html',
     title: { en: 'Huanghuacheng Water Great Wall (Beijing)', zh: '黄花城水长城(北京)' },
     source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
     note: {
@@ -108,8 +108,7 @@ export const mainlandLiveCams: LiveCamEntry[] = [
     },
   },
   {
-    mainlandOnly: true,
-    externalUrl: 'https://livechina.cctv.com/LIVE3193.html',
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE3193.html',
     title: { en: 'Leshan "Sleeping Buddha" (Sichuan)', zh: '乐山「睡佛」(四川)' },
     source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
     note: {
@@ -118,8 +117,7 @@ export const mainlandLiveCams: LiveCamEntry[] = [
     },
   },
   {
-    mainlandOnly: true,
-    externalUrl: 'https://livechina.cctv.com/LIVE4228.html',
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE4228.html',
     title: { en: 'Wuliangshan Cherry Valley (Yunnan)', zh: '无量山樱花谷(云南)' },
     source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
     note: {
@@ -128,8 +126,7 @@ export const mainlandLiveCams: LiveCamEntry[] = [
     },
   },
   {
-    mainlandOnly: true,
-    externalUrl: 'https://livechina.cctv.com/LIVE3402.html',
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE3402.html',
     title: { en: 'Jianshui Old Town (Yunnan)', zh: '建水古城(云南)' },
     source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
     note: {
@@ -138,8 +135,7 @@ export const mainlandLiveCams: LiveCamEntry[] = [
     },
   },
   {
-    mainlandOnly: true,
-    externalUrl: 'https://livechina.cctv.com/LIVE3170.html',
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE3170.html',
     title: { en: 'Jiqiao Bridge (Harbin)', zh: '霁虹桥(哈尔滨)' },
     source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
     note: {
@@ -148,8 +144,7 @@ export const mainlandLiveCams: LiveCamEntry[] = [
     },
   },
   {
-    mainlandOnly: true,
-    externalUrl: 'https://livechina.cctv.com/LIVE4261.html',
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE4261.html',
     title: { en: 'Dai Village (Xishuangbanna)', zh: '傣族古寨(西双版纳)' },
     source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
     note: {
@@ -158,8 +153,7 @@ export const mainlandLiveCams: LiveCamEntry[] = [
     },
   },
   {
-    mainlandOnly: true,
-    externalUrl: 'https://livechina.cctv.com/LIVE5048.html',
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE5048.html',
     title: { en: 'Futian Mangroves (Shenzhen)', zh: '福田红树林(深圳)' },
     source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
     note: {
@@ -174,7 +168,7 @@ export const scenicLiveCams: LiveCamEntry[] = [
   {
     mainlandOnly: true,
     scenicArea: true,
-    externalUrl: 'https://www.mount-tai.com.cn/',
+    externalUrl: 'http://www.mount-tai.com.cn/',
     title: { en: 'Mount Tai Slow-TV ("Smart Taishan")', zh: '泰山「智慧泰山」慢直播' },
     source: { en: 'Mount Tai scenic area · self-run', zh: '泰山景区 · 自运营' },
     note: {
@@ -196,7 +190,7 @@ export const scenicLiveCams: LiveCamEntry[] = [
   {
     mainlandOnly: true,
     scenicArea: true,
-    externalUrl: 'https://www.ems517.com/',
+    externalUrl: 'http://www.ems517.com/',
     title: { en: 'Golden Summit Live', zh: '峨眉山「云端金顶」' },
     source: { en: 'Mount Emei scenic area · self-run', zh: '峨眉山景区 · 自运营' },
     note: {
