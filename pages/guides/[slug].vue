@@ -48,9 +48,10 @@ const contentSegments = computed<ContentSegment[]>(() => {
 const inlineVideoGroupFor = (seg: ContentSegment) =>
   seg.type === 'videos' ? videoGroupById.value.get(seg.id) : undefined
 
-// 直播架分组:全球可看(YouTube 官方流)与大陆限定(央视官方页外链)
+// 直播架分组:全球可看(YouTube 官方流)/ 央视大陆限定(官方页外链)/ 景区自运营
 const globalCams = computed(() => (g.value.liveCams || []).filter(c => !c.mainlandOnly))
-const mainlandCams = computed(() => (g.value.liveCams || []).filter(c => c.mainlandOnly))
+const mainlandCams = computed(() => (g.value.liveCams || []).filter(c => c.mainlandOnly && !c.scenicArea))
+const scenicCams = computed(() => (g.value.liveCams || []).filter(c => !!c.scenicArea))
 
 // 尾部兜底组 = 未被内联标记引用的组
 const remainingVideoGroups = computed(() => {
@@ -192,6 +193,13 @@ useHead({
         <p class="text-xs text-ink-muted mb-4">{{ t('guide.liveMainlandNote') }}</p>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           <LiveCamCard v-for="cam in mainlandCams" :key="cam.externalUrl" :cam="cam" />
+        </div>
+      </section>
+      <section v-if="scenicCams.length" class="mb-10">
+        <h2 class="text-2xl font-bold text-ink mb-1">🏞️ {{ t('guide.liveScenicTitle') }}</h2>
+        <p class="text-xs text-ink-muted mb-4">{{ t('guide.liveScenicNote') }}</p>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <LiveCamCard v-for="cam in scenicCams" :key="cam.externalUrl" :cam="cam" />
         </div>
       </section>
       <!-- 正文内容（HTML 富文本，按当前语言取；[[videos:<组id>]] 标记处内联渲染视频组） -->

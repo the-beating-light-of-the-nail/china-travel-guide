@@ -209,6 +209,8 @@
     "liveNote": "公式YouTubeプレーヤーで再生。サムネイルをクリックして視聴開始。無料、アカウント不要。",
     "liveMainlandTitle": "中国大陸限定：CCTV公式スローテレビ",
     "liveMainlandNote": "カードをクリックするとCCTV公式ページが開き、中国大陸の回線が必要です。大陸内ではそのまま再生され、海外では大陸出口のVPNが必要です。",
+    "liveScenicTitle": "景勝地が自ら運営するライブ",
+    "liveScenicNote": "景勝地が直接運営するライブ入口です。各カードに記載の公式サイトまたはWeChat公式アカウントから開けます（中国大陸の回線が必要）。",
     "mainlandBadge": "大陸回線",
     "faqTitle": "よくある質問",
     "videosTitle": "その目で確かめる：ビリビリ動画",

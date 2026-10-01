@@ -19,6 +19,8 @@ export interface LiveCamEntry {
   videoId?: string
   /** 大陆限定流的官方页入口(mainlandOnly 时点击外链打开) */
   externalUrl?: string
+  /** 景区自运营(区别于央视渠道;仍属大陆限定,渲染为第三组) */
+  scenicArea?: boolean
   /** 本地封面快照 public/images/live-cams/<videoId>.jpg(无则样式占位) */
   cover?: string
   /** 大陆限定流:需大陆网络,海外 302 */
@@ -70,6 +72,15 @@ export const globalLiveCams: LiveCamEntry[] = [
     note: {
       en: 'The snow peaks of Siguniangshan National Park in western Sichuan — its highest, Yaomei, stands 6,248 m. Best light early morning; the range is also a serious trekking destination reachable from Chengdu.',
       zh: '川西四姑娘山国家公园的雪山实景,最高峰幺妹峰海拔 6,248 米。清晨光线最好;这里也是从成都出发的徒步胜地。',
+    },
+  },
+  {
+    videoId: 'lCdLh_n1cI0',
+    title: { en: 'Zhangjiajie: Six Wonders Pavilion Live', zh: '张家界六奇阁直播' },
+    source: { en: 'CGTN · official', zh: 'CGTN(中国国际电视台)· 官方' },
+    note: {
+      en: 'Live view from the Six Wonders Pavilion inside Zhangjiajie National Forest Park — the sandstone pillars that inspired Avatar\'s floating peaks. CGTN numbers these streams by "episode," so the link rotates: if it has ended, the current one sits on CGTN\'s live tab.',
+      zh: '张家界国家森林公园六奇阁机位——《阿凡达》悬浮山原型的砂岩石柱群。CGTN 的这类流按「集」轮换,链接失效时去 CGTN 直播页取当前一路。',
     },
   },
 ]
@@ -158,5 +169,42 @@ export const mainlandLiveCams: LiveCamEntry[] = [
   },
 ]
 
-/** guide 引用的合并数组([slug].vue 按 mainlandOnly 分两组渲染) */
-export const chinaLiveCams: LiveCamEntry[] = [...globalLiveCams, ...mainlandLiveCams]
+/** ③ 景区自运营:官网/公众号入口(景区官方自己的直播,非央视渠道) */
+export const scenicLiveCams: LiveCamEntry[] = [
+  {
+    mainlandOnly: true,
+    scenicArea: true,
+    externalUrl: 'https://www.mount-tai.com.cn/',
+    title: { en: 'Mount Tai Slow-TV ("Smart Taishan")', zh: '泰山「智慧泰山」慢直播' },
+    source: { en: 'Mount Tai scenic area · self-run', zh: '泰山景区 · 自运营' },
+    note: {
+      en: 'Eight HD points run by the mountain itself — sunrise, sea of clouds, rime ice, sunset. The summit sunrise is a weather bet; check before the pre-dawn climb. Entrance: the official site\'s live section.',
+      zh: '景区自建的 8 处高清点位:日出、云海、雾凇、落日。山顶日出是一场天气赌局,凌晨登山前先看一眼。入口:官网「直播泰山」栏目。',
+    },
+  },
+  {
+    mainlandOnly: true,
+    scenicArea: true,
+    externalUrl: 'https://www.jiuzhai.com/',
+    title: { en: 'Cloud Jiuzhaigou', zh: '九寨沟「云游九寨」' },
+    source: { en: 'Jiuzhaigou administration · self-run', zh: '九寨沟管理局 · 自运营' },
+    note: {
+      en: 'Live views plus real-time temperatures from inside the valley — the difference between picking the right and wrong of your permitted days. WeChat account 九寨沟管理局 → menu 云游九寨, or the official site.',
+      zh: '谷内实时画面与实时气温——在仅有的两个入园日里挑对那一天最直接的依据。微信公众号「九寨沟管理局」→ 菜单「云游九寨」,或官网入口。',
+    },
+  },
+  {
+    mainlandOnly: true,
+    scenicArea: true,
+    externalUrl: 'https://www.ems517.com/',
+    title: { en: 'Golden Summit Live', zh: '峨眉山「云端金顶」' },
+    source: { en: 'Mount Emei scenic area · self-run', zh: '峨眉山景区 · 自运营' },
+    note: {
+      en: 'The Golden Summit runs its own weather system — check the live summit view before committing to the pre-dawn push. WeChat account 峨眉山景区, or the official travel site.',
+      zh: '金顶自成一套天气系统——凌晨冲顶前先看金顶实时画面。微信公众号「峨眉山景区」,或官网入口。',
+    },
+  },
+]
+
+/** guide 引用的合并数组([slug].vue 按 mainlandOnly/scenicArea 分三组渲染) */
+export const chinaLiveCams: LiveCamEntry[] = [...globalLiveCams, ...mainlandLiveCams, ...scenicLiveCams]
