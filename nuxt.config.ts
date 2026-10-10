@@ -187,12 +187,11 @@ gtag('config', 'G-5V6YWGXS3Y');`,
   },
 
   // 路由级规则
-  // prefix 策略下根路径无默认页面：`/` 由 Nitro 运行时 301 到默认语言 `/en/`
-  // （生产为 serverless，这是运行时真 301；字符形式默认 302，必须显式 statusCode: 301）
-  // 注意：`/` 不要加进下方 prerender.routes，否则预渲染会生成 meta-refresh stub 抢在 301 前面
-  routeRules: {
-    '/': { redirect: { to: '/en/', statusCode: 301 } },
-  },
+  // 注意：`/` 的重定向不能写在这里——Nitro 构建时会把 routeRules redirect 物化成
+  // meta-refresh stub HTML 放进静态产物，而 Vercel 路由中文件系统优先于 redirect 规则，
+  // stub 会永远抢在运行时 301 前面（2026-10-10 部署实测）。根路径由 server/routes/index.ts
+  // 以运行时 301 处理，该路径无静态文件，必然落到 server。
+  routeRules: {},
 
   // 静态预渲染配置（SSG）
   // 配合 nuxt generate，在构建时把所有页面预渲染为静态 HTML
@@ -201,7 +200,7 @@ gtag('config', 'G-5V6YWGXS3Y');`,
     prerender: {
       crawlLinks: true,
       // 显式声明需要预渲染的路由，确保所有语言的所有城市与攻略页面都被生成
-      // （不含 `/`：根路径走 routeRules 运行时 301，见上方 routeRules 注释）
+      // （不含 `/`：根路径走运行时 301，见下方 hooks 说明）
       routes: [
         ...i18nLocales.flatMap(l => prerenderPages.map(p => `/${l.code}${p}`)),
         '/robots.txt',
@@ -211,6 +210,18 @@ gtag('config', 'G-5V6YWGXS3Y');`,
       ],
       // 忽略构建期间的非致命错误（例如 sitemap 间接产生的告警）
       failOnError: false,
+    },
+  },
+
+  // 根路径预渲染排除（在模块注入之后执行，兜底清干净）
+  // @nuxtjs/i18n 在 strategy: prefix 下会把 `/` 注入 prerender.routes，SSR 对 `/` 返回的
+  // 重定向会被 Nitro 物化成 meta-refresh stub 静态文件，在 Vercel 上（文件系统优先）抢在
+  // server/routes/index.ts 的运行时 301 前面。注意 ignore 不能写 '/'（路由匹配器语义
+  // 会按前缀匹配把全部路由灭掉，2026-10-10 实测），必须锚定正则。
+  hooks: {
+    'nitro:build:before'(nitro) {
+      nitro.options.prerender.routes = nitro.options.prerender.routes.filter(r => r !== '/')
+      nitro.options.prerender.ignore.push(/^\/$/)
     },
   },
 
