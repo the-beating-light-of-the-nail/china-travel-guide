@@ -98,8 +98,9 @@ export default defineNuxtConfig({
   },
 
   // 站点配置（供 sitemap 模块使用）
-  // trailingSlash: true —— Vercel 静态目录输出（en/index.html 形态）会强制 /en 301 到 /en/，
-  // vercel.json 的 trailingSlash:false 对此不生效（已实测），因此全站信号统一改为带尾斜杠
+  // trailingSlash: true —— 生产为 Vercel serverless 部署（Nitro 运行时按 Accept 协商 404 可证），
+  // vercel.json 的路由配置（trailingSlash/cleanUrls/redirects）对它不生效（2026-09/10 两轮实测），
+  // 尾斜杠 301 由 i18n.trailingSlash 驱动 Nitro 完成，因此全站信号统一带尾斜杠
   site: {
     url: 'https://chinatravel.world',
     trailingSlash: true,
@@ -186,10 +187,11 @@ gtag('config', 'G-5V6YWGXS3Y');`,
   },
 
   // 路由级规则
-  // prefix 策略下根路径无默认页面，静态部署时将 `/` 重定向到默认语言 `/en/`
-  // （兜底：Vercel 等平台会读取此规则；静态根 index.html 由 public/ 提供 meta 跳转）
+  // prefix 策略下根路径无默认页面：`/` 由 Nitro 运行时 301 到默认语言 `/en/`
+  // （生产为 serverless，这是运行时真 301；字符形式默认 302，必须显式 statusCode: 301）
+  // 注意：`/` 不要加进下方 prerender.routes，否则预渲染会生成 meta-refresh stub 抢在 301 前面
   routeRules: {
-    '/': { redirect: '/en/' },
+    '/': { redirect: { to: '/en/', statusCode: 301 } },
   },
 
   // 静态预渲染配置（SSG）
@@ -199,8 +201,8 @@ gtag('config', 'G-5V6YWGXS3Y');`,
     prerender: {
       crawlLinks: true,
       // 显式声明需要预渲染的路由，确保所有语言的所有城市与攻略页面都被生成
+      // （不含 `/`：根路径走 routeRules 运行时 301，见上方 routeRules 注释）
       routes: [
-        '/',
         ...i18nLocales.flatMap(l => prerenderPages.map(p => `/${l.code}${p}`)),
         '/robots.txt',
         '/sitemap.xml',

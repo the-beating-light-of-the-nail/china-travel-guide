@@ -5,7 +5,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate && node scripts/check-trailing-slash.mjs",
+    "check:links": "node scripts/check-trailing-slash.mjs",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "og:images": "py scripts/gen-og-images.py"

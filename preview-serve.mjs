@@ -29,6 +29,11 @@ const MIME = {
 createServer(async (req, res) => {
   try {
     let urlPath = decodeURIComponent(new URL(req.url, 'http://localhost').pathname)
+    // 根路径与生产一致：302 到默认语言（生产为 Nitro routeRules 301，本地预览用 302 等效模拟）
+    if (urlPath === '/') {
+      res.writeHead(302, { Location: '/en/' }).end()
+      return
+    }
     if (urlPath.endsWith('/')) urlPath += 'index.html'
     // 防目录穿越
     const filePath = normalize(join(ROOT, urlPath))
