@@ -177,11 +177,12 @@ gtag('config', 'G-5V6YWGXS3Y');`,
 })(window, document, "clarity", "script", "ybt0nnb490");`,
           tagPosition: 'head',
         },
+        // 【广告下线】2026-11-15 收益太低，全站广告暂时下线（先把用户做起来）；恢复时取消下方注释重新部署。
         // 广告展示脚本（CPM 广告网络）
-        {
-          src: 'https://pl30745593.effectivecpmnetwork.com/25/a4/4a/25a44a68bd636adeeef5dcc144a01c8f.js',
-          tagPosition: 'head',
-        },
+        // {
+        //   src: 'https://pl30745593.effectivecpmnetwork.com/25/a4/4a/25a44a68bd636adeeef5dcc144a01c8f.js',
+        //   tagPosition: 'head',
+        // },
       ],
     },
   },
