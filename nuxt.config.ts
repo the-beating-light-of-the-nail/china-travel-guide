@@ -53,6 +53,7 @@ const prerenderPages = [
   '/guides/chengdu-vs-chongqing-food',
   '/guides/china-live-cams',
   '/tools/china-trip-cost-calculator',
+  '/tools/uniqlo-price-comparison',
 ]
 
 export default defineNuxtConfig({

@@ -57,6 +57,13 @@ const deepDiveGuides = deepDiveSlugs
   .map(slug => getGuideBySlug(slug))
   .filter((g): g is NonNullable<typeof g> => Boolean(g))
 
+// 侧边栏实用工具（购物意图的工具页互链；en/zh/ja 全量，其余语种回退英文）
+const toolLinksTitle = { en: 'Price Tools', zh: '实用比价工具', ja: '価格チェックツール' }
+const toolLinks = [
+  { to: '/tools/uniqlo-price-comparison', label: { en: 'Is Uniqlo Cheaper in China?', zh: '优衣库中国比价', ja: 'ユニクロ中国価格比較' } },
+  { to: '/tools/china-trip-cost-calculator', label: { en: 'China Trip Cost Calculator', zh: '中国旅行物价对比器', ja: '中国旅行費用計算ツール' } },
+]
+
 // 筛选变化时重置分页
 watch([category, citySlug, keyword, taxRefundOnly], () => {
   visibleCount.value = PAGE_SIZE
@@ -184,6 +191,20 @@ useHead({
                     {{ guide.readTime[locale] }}
                   </span>
                 </span>
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 实用比价工具（互链成簇：uniqlo 比价页 ↔ 本页） -->
+        <div class="pt-6 border-t border-slate-200">
+          <h3 class="text-base font-semibold text-ink mb-4">
+            🧮 {{ toolLinksTitle[locale] || toolLinksTitle.en }}
+          </h3>
+          <ul class="list-none space-y-3">
+            <li v-for="tool in toolLinks" :key="tool.to">
+              <NuxtLink :to="localePath(tool.to)" class="block text-[13px] text-ink-body hover:text-brand transition-colors">
+                {{ tool.label[locale] || tool.label.en }}
               </NuxtLink>
             </li>
           </ul>

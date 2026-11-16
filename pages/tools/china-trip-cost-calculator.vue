@@ -27,6 +27,10 @@ const related = [
     label: { en: 'Chengdu Street Food Guide', zh: '成都街头小吃攻略', ja: '成都屋台グルメガイド' },
   },
   { to: '/shopping', label: { en: 'Shopping Directory', zh: '购物清单', ja: 'ショッピング一覧' } },
+  {
+    to: '/tools/uniqlo-price-comparison',
+    label: { en: 'Is Uniqlo Cheaper in China?', zh: '优衣库中国比价', ja: 'ユニクロ中国価格比較' },
+  },
 ]
 
 useHead({
