@@ -52,6 +52,7 @@ const prerenderPages = [
   '/guides/halal-food-in-chengdu',
   '/guides/chengdu-vs-chongqing-food',
   '/guides/china-live-cams',
+  '/tools/china-trip-cost-calculator',
 ]
 
 export default defineNuxtConfig({

@@ -24,6 +24,7 @@ function cityName(slug: string) {
 const exploreLinks = [
   { key: 'vlogs', to: '/vlogs' },
   { key: 'guides', to: '/guides' },
+  { key: 'tools', to: '/tools/china-trip-cost-calculator' },
   { key: 'hiking', to: '/hiking' },
   { key: 'shopping', to: '/shopping' },
   { key: 'dumplings', to: '/dumplings' },
