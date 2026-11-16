@@ -15,8 +15,16 @@
 // livechina 首页卡片 data-echo 图或 LIVE 页内 scene/live/pic 图(og:image 是
 // 平台分类默认图,勿用);景区卡封面从官网取(下载后务必肉眼验图,泰山管委会
 // 首页第一张竟是二维码广告图)。峨眉山官网是 SPA 无图可抓,封面待补。
-// 大陆限定流的 LIVE 编号来自直播中国在列名单(2026-10-01),失效时去
-// livechina.cctv.com 首页核对最新编号。
+// 大陆限定流的 LIVE 编号来自直播中国在列名单(2026-10-01 首发收录 8 路;
+// 2026-11-16 扩容 +5 路: 乾陵/安顺廊桥/云南驿/景迈山/嵊泗渔港,同日核对
+// 首 8 路全部仍可开)。央视卡巡查三条(与 YouTube 巡查同节奏):
+//   ① 逐路 curl LIVE 页,302 跳 cntv.cn/error.html 即死链——「首页在列」
+//      ≠「页面活着」,2026-11-16 实例: LIVE4366 林芝错高民宿在列但已 302,勿收;
+//   ② 封面勿用首页 data-echo 邻近配对(卡片密集会错配,2026-11-16 实例:
+//      4239 被错配成朱雀山秋景),以 LIVE 页内 scene/live/pic 或 photoworkspace
+//      独有图为准(多页共享的 e36ce803* 是平台默认图,photoAlbum 2017/2020
+//      旧图是模板素材,均弃),下载后肉眼验图;
+//   ③ 失效时去 livechina.cctv.com 首页核对最新在列名单。
 // ---------------------------------------------------------------
 import type { L } from './localize'
 
@@ -172,6 +180,56 @@ export const mainlandLiveCams: LiveCamEntry[] = [
     note: {
       en: 'Protected wetland on the Shenzhen–Hong Kong border; birders, migrants pass through roughly October to April.',
       zh: '深港边界湿地保护区。观鸟人注意:候鸟约 10 月至次年 4 月经过。',
+    },
+  },
+  {
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE4873.html',
+    cover: '/images/live-cams/livechina-LIVE4873.jpg',
+    title: { en: 'Qianling Mausoleum (Xi\'an area)', zh: '咸阳乾陵(西安周边)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'The joint tomb of Tang Emperor Gaozong and Wu Zetian, China\'s only empress, about 80 km west of Xi\'an — a live weather-and-crowd check before giving the Terracotta Army day a second act.',
+      zh: '唐高宗与武则天的合葬乾陵,西安以西约 80 公里——想给兵马俑一日游加个「第二场」之前,先看司马道的天气和人流。',
+    },
+  },
+  {
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE3199.html',
+    cover: '/images/live-cams/livechina-LIVE3199.jpg',
+    title: { en: 'Anshun Bridge Nightscape (Chengdu)', zh: '成都安顺廊桥' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'The lit-up covered bridge over the Jin River, next to the Jiuyanqiao bar strip — tune in after dark to decide whether Chengdu\'s riverside night deserves an evening of your trip.',
+      zh: '锦江上亮灯的廊桥,挨着九眼桥酒吧街——天黑后再看,帮你判断要不要把成都的一晚交给江边夜色。',
+    },
+  },
+  {
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE4186.html',
+    cover: '/images/live-cams/livechina-LIVE4186.jpg',
+    title: { en: 'Yunnanyi, a Tea-Horse Road Post Town (Dali)', zh: '大理云南驿茶马古道(云南)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'A real caravan staging post on the old Tea-Horse Road, reachable by rail via Xiangyun — the same trade history as Dali old town without the crowd tide.',
+      zh: '茶马古道上真实存在过的马帮驿站,火车到祥云即达——和大理古城同一段商路史,但没有人潮。',
+    },
+  },
+  {
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE4239.html',
+    cover: '/images/live-cams/livechina-LIVE4239.jpg',
+    title: { en: 'Jingmai Mountain Tea Forests (Pu\'er, Yunnan)', zh: '普洱景迈山古茶林(云南)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'The ancient tea forests listed by UNESCO in 2023. Morning mist over the canopy is the signature view — a free preview of the clouds before the long ride in from Pu\'er or Xishuangbanna.',
+      zh: '2023 年列入世界遗产的古茶林。晨雾漫过茶蓬是标志画面——从普洱或版纳长途进山前,先隔着屏幕确认云海在线。',
+    },
+  },
+  {
+    externalUrl: 'https://livechina.cctv.com/live_zb/LIVE4338.html',
+    cover: '/images/live-cams/livechina-LIVE4338.jpg',
+    title: { en: 'Shengsi Islands Fishing Harbor (Zhoushan)', zh: '舟山嵊泗中心渔港(浙江)' },
+    source: { en: 'CCTV Live China · official', zh: '央视「直播中国」· 官方' },
+    note: {
+      en: 'The working harbor of the Shengsi islands — the Shanghai weekend ferry escape. A read on sea state and weather before you book the boat.',
+      zh: '嵊泗列岛的中心渔港——上海周末跳岛的目的地。订船票前先看一眼海况与天气。',
     },
   },
 ]
