@@ -264,6 +264,38 @@ export const uniqloUi = fillLocaleFallbacks({
   },
   rateLimited: { en: 'Too many lookups — wait a minute and try again.', zh: '查询太频繁，一分钟后再试。', ja: '検索が多すぎます。1分ほど待って再試行を。' },
   lookupFailed: { en: 'Live lookup failed — try again in a moment.', zh: '实时查询失败，稍后再试。', ja: '取得に失敗しました。しばらくしてから再試行してください。' },
+  // ---- 实时结果区（UI 参考用户提供的优化版模板：基准国=你的所在地）----
+  baseLabel: { en: '📍 My location:', zh: '📍 我的所在地:', ja: '📍 お住まい:' },
+  sortOn: { en: 'Sorted by cheapest', zh: '已按低价排序', ja: '安い順に表示中' },
+  sortOff: { en: 'Sort by cheapest', zh: '按低价排序', ja: '安い順に並べ替え' },
+  regionHeadTip: { en: '(click ★ to set as your location)', zh: '(点击 ★ 设为比价基准)', ja: '(★で基準に設定)' },
+  priceHeadTpl: { en: 'In {cur} / local', zh: '折合 {cur} / 当地原价', ja: '{cur}換算 / 現地価格' },
+  diffHeadTpl: { en: 'vs {base}', zh: '相比{base}差价', ja: '{base}との差額' },
+  baseBadge: { en: '📍 Your price', zh: '📍 基准价格', ja: '📍 基準価格' },
+  baseSub: { en: 'Your location', zh: '你的所在地', ja: 'お住まい' },
+  cheapestTag: { en: '🔥 World\'s lowest', zh: '🔥 全球最低', ja: '🔥 世界最安' },
+  localWord: { en: 'local', zh: '当地', ja: '現地' },
+  saveTpl: { en: 'Save {v}', zh: '省 {v}', ja: '{v} お得' },
+  costTpl: { en: '+{v}', zh: '贵 {v}', ja: '+{v}' },
+  saveSubTpl: { en: '{p}% cheaper', zh: '便宜 {p}% · 约 {d}折', ja: '{p}%安い' },
+  costSubTpl: { en: '+{p}% pricier', zh: '+{p}% 更贵', ja: '+{p}%高い' },
+  insightCheaperTpl: {
+    en: 'Compared with {base} ({basePrice}), buying in {cheap} is the best deal — save {save} ({pctOff}% off) per item!',
+    zh: '相比{base}（{basePrice}），去{cheap}买最划算，单件立省 {save}（约{d}折）！',
+    ja: '{base}（{basePrice}）より、{cheap}での購入が最もお得。1着あたり {save} 節約（{pctOff}%引き）！',
+  },
+  insightCountTpl: {
+    en: '{n} markets are cheaper than {base}',
+    zh: '全球共 {n} 个地区比{base}便宜',
+    ja: '{base}より安い市場は {n} 市場',
+  },
+  insightLowestTpl: {
+    en: '🎉 {base} ({price}) is already the world\'s lowest price — no need to shop abroad.',
+    zh: '🎉 {base}（{price}）目前已经是全球最低价，无需海淘代购！',
+    ja: '🎉 {base}（{price}）はすでに世界最安値。海外で買う必要はありません！',
+  },
+  legendCheaper: { en: 'Green = cheaper than your location', zh: '绿色 = 比你所在国便宜', ja: '緑＝お住まいより安い' },
+  legendPricier: { en: 'Red = pricier than your location', zh: '红色 = 比你所在国更贵', ja: '赤＝お住まいより高い' },
 })
 
 /** 页面文案 */

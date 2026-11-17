@@ -58,7 +58,7 @@ function fmtDisplay(cnyValue: number) {
 
 const entryCny = (e?: UniqloRegionEntry) => (e ? e.price / (UNIQLO_FX.perCny as Record<string, number>)[e.currency] : undefined)
 
-// ===== 实时查价层 =====
+// ===== 实时查价层（UI 参考用户提供的优化版模板：基准国=你的所在地，差价以用户视角「省/贵」表述）=====
 interface LiveResult {
   code: string
   fetchedAt: string
@@ -70,6 +70,10 @@ const query = ref('')
 const loading = ref(false)
 const errorKey = ref<'' | 'invalidCode' | 'noResults' | 'rateLimited' | 'lookupFailed'>('')
 const live = ref<LiveResult | null>(null)
+
+/** 基准国（默认=语种对应的本国市场；该市场无此码时退回中国）与排序 */
+const liveBase = ref<UniqloRegionId>('cn')
+const liveSortCheapest = ref(true)
 
 async function lookup() {
   errorKey.value = ''
@@ -84,6 +88,9 @@ async function lookup() {
       body: { q: query.value.trim(), locale: locale.value },
     })
     live.value = res
+    const dh = (UNIQLO_DEFAULT_HOME[locale.value] || 'us') as UniqloRegionId
+    liveBase.value = res.regions[dh] ? dh : 'cn'
+    liveSortCheapest.value = true
   } catch (e: any) {
     if (e?.statusCode === 429) errorKey.value = 'rateLimited'
     else if (e?.statusCode === 404) errorKey.value = 'noResults'
@@ -100,36 +107,107 @@ function backToSnapshot() {
   query.value = ''
 }
 
-/** 实时结果表行：市场 → 该区价格 + 对中国价差 */
-const liveRows = computed(() => {
+interface LiveMarket {
+  id: UniqloRegionId
+  flag: string
+  name: string
+  store: string
+  entry: UniqloRegionEntry
+  cny: number
+  order: number
+}
+
+/** 有价市场（CNY 折算，快照汇率） */
+const liveMarkets = computed<LiveMarket[]>(() => {
   if (!live.value) return []
-  const cnCny = entryCny(live.value.regions.cn as UniqloRegionEntry | undefined)
-  return UNIQLO_REGIONS.map((r) => {
-    const entry = live.value!.regions[r.id]
-    const cny = entryCny((entry || undefined) as UniqloRegionEntry | undefined)
-    return {
-      region: r,
-      entry: entry || null,
-      vsPct: cnCny !== undefined && cny !== undefined ? ((cnCny - cny) / cny) * 100 : undefined,
-    }
+  return UNIQLO_REGIONS.flatMap((r, i) => {
+    const e = live.value!.regions[r.id]
+    const cny = e ? entryCny(e as UniqloRegionEntry) : undefined
+    if (!e || cny === undefined) return []
+    return [{
+      id: r.id,
+      flag: r.flag,
+      name: r.name[locale.value] || r.name.en,
+      store: r.store,
+      entry: e as UniqloRegionEntry,
+      cny,
+      order: i,
+    }]
   })
 })
+
+const liveBaseMarket = computed(() => liveMarkets.value.find(m => m.id === liveBase.value) || liveMarkets.value[0])
+const liveCheapest = computed(() => liveMarkets.value.reduce((a, b) => (b.cny < a.cny ? b : a), liveMarkets.value[0]))
+const liveCheaperCount = computed(() => (liveBaseMarket.value ? liveMarkets.value.filter(m => m.cny < liveBaseMarket.value.cny - 0.05).length : 0))
+
+/** 行序：基准国置顶，其余按低价或默认顺序 */
+const liveRows = computed<LiveMarket[]>(() => {
+  const base = liveBaseMarket.value
+  const rest = liveMarkets.value.filter(m => m.id !== base?.id)
+  rest.sort((a, b) => (liveSortCheapest.value ? a.cny - b.cny : a.order - b.order))
+  return base ? [base, ...rest] : rest
+})
+
+function liveDiff(m: LiveMarket) {
+  const base = liveBaseMarket.value
+  if (!base) return null
+  const diff = m.cny - base.cny
+  const abs = Math.abs(diff)
+  return {
+    kind: (abs < 0.05 ? 'same' : diff < 0 ? 'cheaper' : 'pricier') as 'same' | 'cheaper' | 'pricier',
+    save: fmtDisplay(abs),
+    pct: Math.round((abs / base.cny) * 100),
+    discountZh: (m.cny / base.cny * 10).toFixed(1),
+    pctOff: Math.round((1 - m.cny / base.cny) * 100),
+  }
+}
+
+/** 简易模板填充：'省 {v}' + {v: x} */
+function tpl(key: keyof typeof uniqloUi, map: Record<string, string | number>) {
+  let s = uniqloUi[key][locale.value] || uniqloUi[key].en
+  for (const [k, v] of Object.entries(map)) s = s.replaceAll(`{${k}}`, String(v))
+  return s
+}
+
+const insight = computed(() => {
+  const base = liveBaseMarket.value
+  const cheap = liveCheapest.value
+  if (!base || !cheap || !liveMarkets.value.length) return null
+  if (base.id === cheap.id || base.cny - cheap.cny < 0.05) {
+    return {
+      type: 'lowest' as const,
+      main: tpl('insightLowestTpl', { base: `${base.flag} ${base.name}`, price: fmtDisplay(base.cny) }),
+    }
+  }
+  return {
+    type: 'cheaper' as const,
+    cheapName: `${cheap.flag} ${cheap.name}`,
+    cheap,
+    main: tpl('insightCheaperTpl', {
+      base: `${base.flag} ${base.name}`,
+      basePrice: fmtDisplay(base.cny),
+      cheap: `${cheap.flag} ${cheap.name}`,
+      save: fmtDisplay(base.cny - cheap.cny),
+      pctOff: Math.round((1 - cheap.cny / base.cny) * 100),
+      d: (cheap.cny / base.cny * 10).toFixed(1),
+    }),
+    count: tpl('insightCountTpl', { n: liveCheaperCount.value, base: base.name }),
+  }
+})
+
+function rowBg(m: LiveMarket) {
+  if (liveBaseMarket.value && m.id === liveBaseMarket.value.id) return 'bg-brand-tint/40 hover:bg-brand-tint/70 transition-colors'
+  if (liveCheapest.value && m.id === liveCheapest.value.id) return 'bg-emerald-50/25 hover:bg-emerald-50/50 transition-colors'
+  return 'bg-white hover:bg-slate-50 transition-colors'
+}
 
 const liveTitle = computed(() => {
   if (!live.value) return ''
   const cn = live.value.regions.cn as UniqloRegionEntry | undefined
-  const first = Object.values(live.value.regions).find(v => v) as UniqloRegionEntry | undefined
+  const base = liveBaseMarket.value
+  const first = base?.entry || (Object.values(live.value.regions).find(v => v) as UniqloRegionEntry | undefined)
   return (cn || first)?.title || `#${live.value.code}`
 })
-
-/** 实时结果 vs 中国 徽章（方向：中国相对该市场） */
-function liveBadge(vsPct: number | undefined) {
-  const v = vsPct === undefined ? 0 : Math.round(Math.abs(vsPct))
-  if (vsPct === undefined) return { text: ui('notSold'), cls: 'bg-slate-100 text-slate-400' }
-  if (vsPct <= -10) return { text: `${v}% ${ui('cheaper')}`, cls: 'bg-emerald-100 text-emerald-800' }
-  if (vsPct >= 10) return { text: `+${v}% ${ui('pricier')}`, cls: 'bg-rose-100 text-rose-800' }
-  return { text: ui('similar'), cls: 'bg-slate-100 text-slate-600' }
-}
 
 const liveTime = computed(() => {
   if (!live.value) return ''
@@ -217,65 +295,148 @@ function badge(r: Row) {
       <p v-if="errorKey" class="mt-2 text-sm text-rose-600">{{ ui(errorKey) }}</p>
     </div>
 
-    <!-- 实时结果模式：全市场单码对比 -->
+    <!-- 实时结果模式（UI 参考用户提供的优化版模板：基准国=你的所在地，省/贵一眼看懂） -->
     <template v-if="live">
-      <div class="p-4 md:p-6 border-b border-slate-200 bg-emerald-50/40">
-        <div class="flex flex-wrap items-center gap-2 justify-between">
-          <div class="min-w-0">
-            <div class="flex items-center gap-2 flex-wrap">
-              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800">{{ ui('liveBadge') }}</span>
-              <span class="font-semibold text-ink text-sm">{{ liveTitle }}</span>
-              <span class="text-xs text-slate-400">#{{ live.code }} · {{ liveTime }}<span v-if="live.cached"> · cache</span></span>
-            </div>
+      <!-- 1. 商品信息与控制栏 -->
+      <div class="p-4 sm:p-6 border-b border-slate-100 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 lg:gap-4">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3 min-w-0">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse" />{{ ui('liveBadge') }}
+          </span>
+          <h2 class="text-lg sm:text-xl font-bold text-ink truncate">{{ liveTitle }}</h2>
+          <span class="text-xs sm:text-sm text-slate-400 whitespace-nowrap">#{{ live.code }} · {{ liveTime }}<span v-if="live.cached"> · cache</span></span>
+        </div>
+        <div class="flex flex-wrap items-center gap-2.5 text-sm">
+          <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5">
+            <span class="text-xs text-slate-500 mr-1.5 whitespace-nowrap">{{ ui('baseLabel') }}</span>
+            <select v-model="liveBase" class="bg-transparent font-semibold text-ink text-xs sm:text-sm focus:outline-none cursor-pointer">
+              <option v-for="m in liveMarkets" :key="m.id" :value="m.id">{{ m.flag }} {{ m.name }}</option>
+            </select>
           </div>
-          <div class="flex items-center gap-2 shrink-0">
-            <select
-              v-model="currencyCode"
-              aria-label="currency"
-              class="rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-xs font-medium text-ink focus:outline-none focus:ring-2 focus:ring-brand"
-            >
+          <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5">
+            <span class="text-xs text-slate-500 mr-1.5 whitespace-nowrap">{{ ui('currency') }}</span>
+            <select v-model="currencyCode" class="bg-transparent font-semibold text-ink text-xs sm:text-sm focus:outline-none cursor-pointer">
               <option v-for="c in UNIQLO_CURRENCIES" :key="c.code" :value="c.code">{{ c.code }} ({{ c.symbol }})</option>
             </select>
-            <button class="text-xs font-medium text-brand hover:underline" @click="backToSnapshot">{{ ui('backToSnapshot') }}</button>
+          </div>
+          <button
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs sm:text-sm font-medium transition-colors cursor-pointer"
+            :class="liveSortCheapest ? 'border-brand/30 bg-brand-tint text-brand' : 'border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100'"
+            @click="liveSortCheapest = !liveSortCheapest"
+          >
+            {{ liveSortCheapest ? ui('sortOn') : ui('sortOff') }}
+          </button>
+          <button class="text-xs sm:text-sm text-brand hover:underline font-medium whitespace-nowrap" @click="backToSnapshot">
+            {{ ui('backToSnapshot') }}
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. 智能比价结论横幅 -->
+      <div
+        v-if="insight"
+        class="bg-gradient-to-r from-emerald-50/90 via-teal-50/60 to-blue-50/50 border-b border-emerald-100/80 px-4 sm:px-6 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5"
+      >
+        <div class="flex items-start sm:items-center gap-2 text-xs sm:text-sm" :class="insight.type === 'lowest' ? 'text-emerald-900' : 'text-slate-700'">
+          <span class="text-base">{{ insight.type === 'lowest' ? '🎉' : '💡' }}</span>
+          <span>
+            <template v-if="insight.type === 'cheaper'">
+              {{ insight.main.split(insight.cheapName)[0] }}<span class="inline-flex items-center font-bold text-emerald-700 bg-emerald-100/80 px-1.5 py-0.5 rounded mx-0.5">{{ insight.cheapName }}</span>{{ insight.main.split(insight.cheapName)[1] }}
+            </template>
+            <template v-else>{{ insight.main }}</template>
+          </span>
+        </div>
+        <div v-if="insight.type === 'cheaper'" class="text-xs text-slate-500 shrink-0">{{ insight.count }}</div>
+      </div>
+
+      <!-- 3. 列表表头 -->
+      <div class="grid grid-cols-12 items-center px-4 sm:px-6 py-3 bg-slate-50/80 border-b border-slate-100 text-xs font-medium text-slate-500">
+        <div class="col-span-6 pr-2 flex items-center gap-1">
+          <span>{{ ui('regionCol') }}</span>
+          <span class="hidden sm:inline text-slate-400 font-normal">{{ ui('regionHeadTip') }}</span>
+        </div>
+        <div class="col-span-3 text-right whitespace-nowrap">{{ tpl('priceHeadTpl', { cur: currency.code }) }}</div>
+        <div class="col-span-3 text-right whitespace-nowrap">
+          {{ liveBaseMarket ? tpl('diffHeadTpl', { base: liveBaseMarket.name }) : '' }}
+        </div>
+      </div>
+
+      <!-- 4. 市场比价列表（基准国置顶，★ 可切换，折算价为主视觉） -->
+      <div class="divide-y divide-slate-100">
+        <div v-for="m in liveRows" :key="m.id" class="grid grid-cols-12 items-center px-4 sm:px-6 py-4" :class="rowBg(m)">
+          <div class="col-span-6 pr-2 min-w-0">
+            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded uppercase">{{ m.id }}</span>
+              <span class="text-sm sm:text-base font-bold text-ink">{{ m.flag }} {{ m.name }}</span>
+              <button
+                :title="ui('baseLabel')"
+                class="text-sm transition-transform hover:scale-125 focus:outline-none cursor-pointer"
+                :class="liveBaseMarket && m.id === liveBaseMarket.id ? 'text-brand' : 'text-slate-300 hover:text-amber-400'"
+                @click="liveBase = m.id"
+              >★</button>
+              <span
+                v-if="liveCheapest && m.id === liveCheapest.id"
+                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-500 text-white"
+              >{{ ui('cheapestTag') }}</span>
+            </div>
+            <div class="text-xs text-slate-400 truncate mt-1">
+              <a :href="m.entry.url" target="_blank" rel="noopener" class="hover:text-brand hover:underline transition-colors">
+                {{ m.store }} · {{ m.entry.title }}
+              </a>
+            </div>
+          </div>
+          <div class="col-span-3 text-right">
+            <div class="text-sm sm:text-base font-bold" :class="liveCheapest && m.id === liveCheapest.id && liveBaseMarket && m.id !== liveBaseMarket.id ? 'text-emerald-700' : 'text-ink'">
+              ≈ {{ fmtDisplay(m.cny) }}
+            </div>
+            <div class="text-xs text-brand/80 font-medium mt-0.5">
+              {{ ui('localWord') }} {{ m.entry.currency === 'CNY' ? '¥' : '' }}{{ fmtLocal(m.entry) }}{{ m.entry.currency === 'CNY' ? '' : ' ' + m.entry.currency }}<span v-if="m.entry.originPrice && m.entry.originPrice > m.entry.price" class="ml-1 text-slate-400 line-through">{{ m.entry.originPrice }}</span>
+            </div>
+          </div>
+          <div class="col-span-3 pl-2 flex justify-end items-center text-right">
+            <template v-if="liveBaseMarket && m.id === liveBaseMarket.id">
+              <div class="inline-flex flex-col items-end">
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-brand-tint text-brand border border-brand/20">
+                  {{ ui('baseBadge') }}
+                </span>
+                <span class="text-[11px] text-slate-400 mt-0.5">{{ ui('baseSub') }}</span>
+              </div>
+            </template>
+            <template v-else-if="liveDiff(m) && liveDiff(m)!.kind === 'cheaper'">
+              <div class="inline-flex flex-col items-end">
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs sm:text-sm font-bold bg-emerald-100 text-emerald-700 border border-emerald-200/60">
+                  {{ tpl('saveTpl', { v: liveDiff(m)!.save }) }}
+                </span>
+                <span class="text-[11px] font-medium text-emerald-600 mt-0.5">
+                  {{ tpl('saveSubTpl', { p: liveDiff(m)!.pct, d: liveDiff(m)!.discountZh }) }}
+                </span>
+              </div>
+            </template>
+            <template v-else-if="liveDiff(m) && liveDiff(m)!.kind === 'pricier'">
+              <div class="inline-flex flex-col items-end">
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs sm:text-sm font-semibold bg-rose-50 text-rose-600 border border-rose-200/60">
+                  {{ tpl('costTpl', { v: liveDiff(m)!.save }) }}
+                </span>
+                <span class="text-[11px] font-medium text-rose-400 mt-0.5">
+                  {{ tpl('costSubTpl', { p: liveDiff(m)!.pct }) }}
+                </span>
+              </div>
+            </template>
+            <template v-else>
+              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">{{ ui('similar') }}</span>
+            </template>
           </div>
         </div>
       </div>
 
-      <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse text-sm">
-          <thead>
-            <tr class="bg-slate-50 border-b border-slate-200 text-xs font-semibold text-ink-muted uppercase tracking-wider">
-              <th class="py-3 px-4 md:px-5">{{ ui('regionCol') }}</th>
-              <th class="py-3 px-3 text-right whitespace-nowrap">{{ ui('chinaCol') }} / {{ ui('currency') }}</th>
-              <th class="py-3 px-4 md:px-5 text-right">{{ ui('vsChina') }}</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-100">
-            <tr v-for="r in liveRows" :key="r.region.id" :class="r.region.isChina ? 'bg-brand-tint/40' : ''">
-              <td class="py-3 px-4 md:px-5">
-                <div class="font-semibold text-ink">{{ r.region.flag }} {{ r.region.name[locale] }}<span v-if="r.region.isChina" class="ml-2 text-[11px] font-bold text-brand">★</span></div>
-                <div class="text-xs text-slate-400 mt-0.5">{{ r.region.store }}<span v-if="r.entry?.title"> · {{ r.entry.title.slice(0, 40) }}</span></div>
-              </td>
-              <td class="py-3 px-3 text-right whitespace-nowrap">
-                <a v-if="r.entry" :href="r.entry.url" target="_blank" rel="noopener" class="font-bold text-brand hover:underline">
-                  {{ r.region.currency === 'CNY' ? '¥' : '' }}{{ fmtLocal(r.entry) }} {{ r.region.currency === 'CNY' ? '' : r.entry.currency }}<span v-if="r.entry.originPrice && r.entry.originPrice > r.entry.price" class="ml-1 text-xs text-slate-400 line-through">{{ r.entry.originPrice }}</span>
-                </a>
-                <span v-else class="text-slate-300">—</span>
-                <div v-if="r.entry" class="text-[11px] text-slate-400 mt-0.5">≈ {{ fmtDisplay(entryCny(r.entry)!) }}</div>
-              </td>
-              <td class="py-3 px-4 md:px-5 text-right whitespace-nowrap">
-                <span v-if="!r.region.isChina" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold" :class="liveBadge(r.vsPct).cls">
-                  {{ liveBadge(r.vsPct).text }}
-                </span>
-                <span v-else class="text-xs font-semibold text-brand">{{ ui('chinaCol') }}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- 5. 底部图例与免责声明 -->
+      <div class="px-4 sm:px-6 py-4 bg-slate-50/60 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-slate-400">
+        <div class="max-w-2xl">{{ ui('liveNote') }}</div>
+        <div class="flex items-center gap-3 shrink-0">
+          <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500" /> {{ ui('legendCheaper') }}</span>
+          <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-rose-500" /> {{ ui('legendPricier') }}</span>
+        </div>
       </div>
-
-      <!-- 实时口径与免责声明 -->
-      <p class="bg-slate-50 px-4 md:px-5 py-3 border-t border-slate-200 text-xs text-ink-muted">{{ ui('liveNote') }}</p>
     </template>
 
     <!-- 快照模式（默认；SSG 直出，SEO 基座） -->
