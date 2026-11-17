@@ -97,6 +97,11 @@ export default defineNuxtConfig({
       siteUrl: 'https://chinatravel.world',
       siteName: 'With My Eyes',
     },
+    // 优衣库实时查询日志（Supabase PostgREST，仅服务端 server route 使用）。
+    // 生产值经 Vercel 环境变量注入：NUXT_SUPABASE_URL / NUXT_SUPABASE_SECRET_KEY
+    // （缺省时查询功能正常，仅日志写入被跳过）。
+    supabaseUrl: '',
+    supabaseSecretKey: '',
   },
 
   // 站点配置（供 sitemap 模块使用）

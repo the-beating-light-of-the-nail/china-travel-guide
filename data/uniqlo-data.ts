@@ -238,6 +238,32 @@ export const uniqloUi = fillLocaleFallbacks({
     zh: '再算上约 11% 离境退税，中国实付价更低',
     ja: '出国税還付（約11%）を加えると中国の実質価格はさらに下がります',
   },
+  // ---- 实时查价（/api/uniqlo-lookup 服务端代理）----
+  lookupLabel: { en: 'Live price check — any item', zh: '实时查价——任意单品', ja: 'リアルタイム検索——任意アイテム' },
+  lookupPlaceholder: {
+    en: 'Item code from the tag (e.g. 486600) or official store link',
+    zh: '吊牌上的商品番号（如 486600）或官网商品链接',
+    ja: 'タグの品番（例: 486600）または公式ストアのリンク',
+  },
+  lookupBtn: { en: 'Check live prices', zh: '实时查价', ja: '検索' },
+  looking: { en: 'Checking 10 official stores…', zh: '正在查询 10 地官网…', ja: '10市場の公式ストアを確認中…' },
+  liveBadge: { en: 'Live', zh: '实时', ja: 'ライブ' },
+  backToSnapshot: { en: '← Back to the classic picks', zh: '← 返回常青款快照', ja: '← 定番スナップショットに戻る' },
+  regionCol: { en: 'Market', zh: '市场', ja: '市場' },
+  vsChina: { en: 'China is…', zh: '中国价…', ja: '中国は…' },
+  liveNote: {
+    en: 'Fetched from official Uniqlo stores just now (cached 10 min). Unofficial tool, not affiliated with UNIQLO / Fast Retailing — click any price to verify on the official store.',
+    zh: '价格取自各国优衣库官网实时查询（缓存 10 分钟）。非官方工具，与 UNIQLO / 迅销无关——点击任意价格可到官网核对。',
+    ja: '各国ユニクロ公式ストアからリアルタイム取得（10分キャッシュ）。非公式ツールで、UNIQLO／ファーストリテイリングとは無関係です。価格クリックで公式ストアで確認できます。',
+  },
+  invalidCode: { en: 'Enter a 6-digit item code or an official store link.', zh: '请输入 6 位商品番号或官网商品链接。', ja: '6桁の品番または公式ストアのリンクを入力してください。' },
+  noResults: {
+    en: 'No official store carries this code — check the 6 digits on the item tag.',
+    zh: '各官网均无此码——请核对吊牌上的 6 位商品番号。',
+    ja: 'どの公式ストアにも見つかりません。タグの6桁品番を確認してください。',
+  },
+  rateLimited: { en: 'Too many lookups — wait a minute and try again.', zh: '查询太频繁，一分钟后再试。', ja: '検索が多すぎます。1分ほど待って再試行を。' },
+  lookupFailed: { en: 'Live lookup failed — try again in a moment.', zh: '实时查询失败，稍后再试。', ja: '取得に失敗しました。しばらくしてから再試行してください。' },
 })
 
 /** 页面文案 */
@@ -258,9 +284,9 @@ export const uniqloPageCopy = fillLocaleFallbacks({
     ja: 'ユニクロは中国で安い？',
   },
   intro: {
-    en: 'Yes — if you are coming from Europe or North America. We pulled the official store price of the same six evergreen items (same global product code) in ten markets on the same day: Uniqlo Mainland China runs roughly 25–35% cheaper than the eurozone, the UK and the US. But honesty first: Japan is often cheaper than China, and Hong Kong beats the mainland on most items too. Pick your home market below and see your own numbers.',
-    zh: '如果你从欧美来——是的，明显便宜。我们在同一天拉取了六款全球同品番常青款在十个市场的官网在售价：中国大陆比欧元区、英国、美国便宜约 25–35%。但也要诚实告诉你：不少款日本比中国更便宜，香港多数款也低于大陆。选你的本国市场，看属于你的数字。',
-    ja: '欧米から来るなら——はい、明らかに安いです。同日に、世界共通品番の定番6アイテムの公式ストア価格を10市場で取得しました。中国本土はユーロ圏・英国・米国より約25〜35%安い。ただし正直に言うと、日本の方が安いアイテムも多く、香港も大半で本土より安い。下からお住まいの市場を選んで、自分の数字を確認してください。',
+    en: 'Yes — if you are coming from Europe or North America. We pulled the official store price of the same six evergreen items (same global product code) in ten markets on the same day: Uniqlo Mainland China runs roughly 25–35% cheaper than the eurozone, the UK and the US. But honesty first: Japan is often cheaper than China, and Hong Kong beats the mainland on most items too. And it\'s a live tool: type any item code from the tag above for real-time prices from all ten official stores.',
+    zh: '如果你从欧美来——是的，明显便宜。我们在同一天拉取了六款全球同品番常青款在十个市场的官网在售价：中国大陆比欧元区、英国、美国便宜约 25–35%。但也要诚实告诉你：不少款日本比中国更便宜，香港多数款也低于大陆。这也是个实时工具：在上方输入吊牌上的任意商品番号，即可查询十地官网实时价格。',
+    ja: '欧米から来るなら——はい、明らかに安いです。同日に、世界共通品番の定番6アイテムの公式ストア価格を10市場で取得しました。中国本土はユーロ圏・英国・米国より約25〜35%安い。ただし正直に言うと、日本の方が安いアイテムも多く、香港も大半で本土より安い。さらにリアルタイムツールでもあります。上の欄にタグの品番を入力すると、10市場の公式ストア価格をその場で確認できます。',
   },
   faqTitle: { en: 'Uniqlo in China — Quick Answers', zh: '中国买优衣库速答', ja: '中国のユニクロQ&A' },
   sourceNote: {
