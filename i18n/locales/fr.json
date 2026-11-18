@@ -89,6 +89,7 @@
     "statKeywords": "Mots-clés",
     "statHeritage": "Patrimoine",
     "tabOverview": "Aperçu",
+    "tabHeritage": "Héritage",
     "tabVlogs": "Vlogs",
     "tabGuides": "Guides",
     "tabPhotos": "Photos",
@@ -360,6 +361,19 @@
     "guides": "Guides sélectionnés",
     "photos": "Instants urbains",
     "services": "Partenaires locaux",
-    "more": "Plus de destinations"
+    "more": "Plus de destinations",
+    "heritage": "À travers les dynasties"
+  },
+  "heritage": {
+    "sectionSubtitle": "Comment treize dynasties ont façonné la ville d'aujourd'hui — choisissez une dynastie, puis trouvez ses traces sur la carte.",
+    "timelineHint": "Touchez une carte de dynastie pour filtrer la carte",
+    "filterAll": "Toutes les époques",
+    "mapLoading": "Chargement de la carte…",
+    "mapFallback": "Carte indisponible — voir la frise chronologique ci-dessus.",
+    "popupDetails": "Détails dans « En bref » ↓",
+    "creditLabel": "Crédits open source :",
+    "readGuides": "Plus de guides de Xi'an :",
+    "scrollLeft": "Défiler à gauche",
+    "scrollRight": "Défiler à droite"
   }
 }

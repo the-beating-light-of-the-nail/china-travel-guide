@@ -7,8 +7,9 @@ const { t, locale } = useI18n()
 const localePath = useLocalePath()
 
 // 静态数据：按 slug 查询城市详情与聚合内容（构建时注入，无需运行时数据库）
-import { getCityBySlug, getCities } from '~/data/travel-data'
+import { getCityBySlug, getCities, getGuides } from '~/data/travel-data'
 import { getVlogsByCity, getExternalGuidesByCity, getPhotosByCity, getServicesByCity } from '~/data/hub-data'
+import { xianHeritageSpots, xianDynastyPeriods } from '~/data/xian-heritage'
 const city = getCityBySlug(slug)
 
 // 城市不存在则 404
@@ -26,6 +27,16 @@ const cityServices = computed(() => getServicesByCity(slug))
 
 // 相关目的地（其他城市，最多 3 个）
 const relatedCities = computed(() => getCities().filter(cty => cty.slug !== slug).slice(0, 3))
+
+// 文脉层（朝代时间轴 + 文脉地图）：目前仅西安有数据，其他城市不渲染该 section
+const heritage = slug === 'xian' ? { spots: xianHeritageSpots, periods: xianDynastyPeriods } : null
+const heritageEra = ref<string | null>(null)
+// 时间轴选中朝代 → 过滤地图（仅当该朝代有地图标记；隋/五代宋元等纯展示时期不改变地图）
+function onTimelineSelect(key: string | null) {
+  heritageEra.value = key && heritage?.spots.some(s => s.era === key) ? key : null
+}
+// 站内西安攻略入口（补齐 hub → 站内 guide 的互链缺口）
+const cityOwnGuides = computed(() => getGuides().filter(g => g.slug.startsWith('xian')))
 
 // 城市标签列表（按当前语言解析）
 const cityTags = computed(() => {
@@ -46,6 +57,7 @@ const regionName = computed(() => t(`regions.${c.value.region.en}`, c.value.regi
 // 标签导航配置
 const tabs = [
   { key: 'tabOverview', hash: '#overview' },
+  { key: 'tabHeritage', hash: '#heritage' },
   { key: 'tabVlogs', hash: '#vlogs' },
   { key: 'tabGuides', hash: '#guides' },
   { key: 'tabPhotos', hash: '#photos' },
@@ -196,6 +208,45 @@ useHead({
             :attraction="attraction"
           />
         </div>
+      </div>
+    </section>
+
+    <!-- ===== 文脉：朝代时间轴 + 古城地图（仅有数据的城市渲染） ===== -->
+    <section v-if="heritage" id="heritage" class="py-[70px] px-4 sm:px-[5%] border-t border-slate-200 scroll-mt-[130px]">
+      <GuideSection
+        section-key="heritage"
+        :subtitle="t('heritage.sectionSubtitle')"
+      />
+      <DynastyTimeline :periods="heritage.periods" @select="onTimelineSelect" />
+      <div class="mt-10">
+        <HeritageMap v-model:era="heritageEra" :spots="heritage.spots" />
+      </div>
+      <!-- 开源致谢 + 站内西安攻略入口（补 hub → 站内 guide 互链缺口） -->
+      <div class="mt-8 pt-5 border-t border-slate-100 flex flex-wrap items-center gap-x-8 gap-y-3 text-[13px] text-ink-muted">
+        <span>
+          {{ t('heritage.creditLabel') }}
+          <a
+            href="https://github.com/Mako800/xian-cultural-map"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-brand hover:underline"
+          >Mako800/xian-cultural-map</a> (MIT · map data & site notes)
+          · <a
+            href="https://github.com/DeanChensj/jiangshan-map"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-brand hover:underline"
+          >DeanChensj/jiangshan-map</a>
+        </span>
+        <span v-if="cityOwnGuides.length" class="flex items-center gap-2 flex-wrap">
+          <span>{{ t('heritage.readGuides') }}</span>
+          <NuxtLink
+            v-for="g in cityOwnGuides"
+            :key="g.slug"
+            :to="localePath(`/guides/${g.slug}`)"
+            class="px-3 py-1 rounded-full bg-brand-tint text-brand text-xs font-medium hover:bg-brand hover:text-white transition-colors"
+          >{{ g.title[locale] }}</NuxtLink>
+        </span>
       </div>
     </section>
 

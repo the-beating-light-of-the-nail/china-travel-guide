@@ -89,6 +89,7 @@
     "statKeywords": "Parole chiave",
     "statHeritage": "Eredità",
     "tabOverview": "Panoramica",
+    "tabHeritage": "Patrimonio",
     "tabVlogs": "Vlog",
     "tabGuides": "Guide",
     "tabPhotos": "Foto",
@@ -360,6 +361,19 @@
     "guides": "Guide selezionate",
     "photos": "Momenti in città",
     "services": "Partner locali",
-    "more": "Altre mete"
+    "more": "Altre mete",
+    "heritage": "Attraverso le dinastie"
+  },
+  "heritage": {
+    "sectionSubtitle": "Come tredici dinastie hanno plasmato la città che vedi oggi: scegline una e trovane le tracce sulla mappa.",
+    "timelineHint": "Tocca una carta della dinastia per filtrare la mappa",
+    "filterAll": "Tutte le epoche",
+    "mapLoading": "Caricamento della mappa…",
+    "mapFallback": "Mappa non disponibile — vedi la cronologia qui sopra.",
+    "popupDetails": "Dettagli in «In breve» ↓",
+    "creditLabel": "Crediti open source:",
+    "readGuides": "Altre guide di Xi'an:",
+    "scrollLeft": "Scorri a sinistra",
+    "scrollRight": "Scorri a destra"
   }
 }

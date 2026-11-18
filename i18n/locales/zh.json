@@ -89,6 +89,7 @@
     "statKeywords": "关键词",
     "statHeritage": "城市底蕴",
     "tabOverview": "总览",
+    "tabHeritage": "文脉",
     "tabVlogs": "视频",
     "tabGuides": "攻略",
     "tabPhotos": "图片",
@@ -360,6 +361,19 @@
     "guides": "精选攻略导航",
     "photos": "城市瞬间",
     "services": "本地合作伙伴",
-    "more": "更多目的地"
+    "more": "更多目的地",
+    "heritage": "千年文脉"
+  },
+  "heritage": {
+    "sectionSubtitle": "十三个王朝如何塑造你眼前的西安——点一个朝代，再到地图上找到它的遗存。",
+    "timelineHint": "点击朝代卡片可筛选下方地图",
+    "filterAll": "全部朝代",
+    "mapLoading": "地图加载中…",
+    "mapFallback": "地图暂不可用——各点说明见上方时间轴。",
+    "popupDetails": "查看「城市印象」详细介绍 ↓",
+    "creditLabel": "开源致谢：",
+    "readGuides": "更多西安攻略：",
+    "scrollLeft": "向左滑动",
+    "scrollRight": "向右滑动"
   }
 }

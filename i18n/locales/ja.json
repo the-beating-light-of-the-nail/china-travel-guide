@@ -89,6 +89,7 @@
     "statKeywords": "キーワード",
     "statHeritage": "街の底力",
     "tabOverview": "概要",
+    "tabHeritage": "文化遺産",
     "tabVlogs": "動画",
     "tabGuides": "ガイド",
     "tabPhotos": "写真",
@@ -360,6 +361,19 @@
     "guides": "厳選ガイド",
     "photos": "街の瞬間",
     "services": "地元パートナー",
-    "more": "他の目的地"
+    "more": "他の目的地",
+    "heritage": "王朝の時代をたどって"
+  },
+  "heritage": {
+    "sectionSubtitle": "13の王朝が今日の西安をどう形づくったか — 王朝を選び、地図でその遺構を探してみてください。",
+    "timelineHint": "王朝カードをタップすると地図が絞り込まれます",
+    "filterAll": "すべての時代",
+    "mapLoading": "地図を読み込み中…",
+    "mapFallback": "地図を表示できません — 上の年表をご覧ください。",
+    "popupDetails": "詳細は「概要」セクションで ↓",
+    "creditLabel": "オープンソース・クレジット：",
+    "readGuides": "西安ガイドをもっと：",
+    "scrollLeft": "左へスクロール",
+    "scrollRight": "右へスクロール"
   }
 }

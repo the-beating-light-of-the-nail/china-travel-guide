@@ -89,6 +89,7 @@
     "statKeywords": "키워드",
     "statHeritage": "도시 저력",
     "tabOverview": "개요",
+    "tabHeritage": "문화유산",
     "tabVlogs": "영상",
     "tabGuides": "가이드",
     "tabPhotos": "사진",
@@ -360,6 +361,19 @@
     "guides": "엄선 가이드",
     "photos": "도시의 순간",
     "services": "로컬 파트너",
-    "more": "더 많은 여행지"
+    "more": "더 많은 여행지",
+    "heritage": "왕조의 시간을 지나"
+  },
+  "heritage": {
+    "sectionSubtitle": "13개 왕조가 오늘날 시안을 어떻게 빚었는지 — 왕조를 고르고 지도에서 그 흔적을 찾아보세요.",
+    "timelineHint": "왕조 카드를 누르면 지도가 필터링됩니다",
+    "filterAll": "전체 시대",
+    "mapLoading": "지도를 불러오는 중…",
+    "mapFallback": "지도를 사용할 수 없습니다 — 위 연표를 참고하세요.",
+    "popupDetails": "상세 정보 보기 ↓",
+    "creditLabel": "오픈소스 크레딧:",
+    "readGuides": "시안 가이드 더 보기:",
+    "scrollLeft": "왼쪽으로 스크롤",
+    "scrollRight": "오른쪽으로 스크롤"
   }
 }

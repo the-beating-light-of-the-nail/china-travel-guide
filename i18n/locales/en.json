@@ -89,6 +89,7 @@
     "statKeywords": "Keywords",
     "statHeritage": "Heritage",
     "tabOverview": "Overview",
+    "tabHeritage": "Heritage",
     "tabVlogs": "Vlogs",
     "tabGuides": "Guides",
     "tabPhotos": "Photos",
@@ -360,6 +361,19 @@
     "guides": "Curated Guides",
     "photos": "Moments",
     "services": "Local Partners",
-    "more": "More Destinations"
+    "more": "More Destinations",
+    "heritage": "Through the Dynasties"
+  },
+  "heritage": {
+    "sectionSubtitle": "How thirteen dynasties shaped the city you see today — pick a dynasty, then find its survivors on the map.",
+    "timelineHint": "Tap a dynasty card to filter the map",
+    "filterAll": "All eras",
+    "mapLoading": "Loading map…",
+    "mapFallback": "Map unavailable — see the timeline above for each site.",
+    "popupDetails": "Details in At a Glance ↓",
+    "creditLabel": "Open-source credits:",
+    "readGuides": "More Xi'an guides:",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right"
   }
 }
