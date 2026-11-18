@@ -3,8 +3,11 @@
 // sectionKey：i18n key（citySections.*），主标题按当前语言本地化（9 种语言完整覆盖）；
 //             次标题固定展示英文（英文页展示中文）。
 // 未传 sectionKey 时回退旧 zh/en 双语 props（历史调用兼容）。
-import enTitles from '~/i18n/locales/en.json'
-import zhTitles from '~/i18n/locales/zh.json'
+// ⚠️ 勿直接 import locale JSON：@nuxtjs/i18n 会把 langDir 下的 JSON 编译成 intlify
+// message AST，直接读键拿到的是 AST 对象，会渲染成 {"t":0,"b":{...}} 泄漏到页面。
+// 用 ?raw 取原始文本 + JSON.parse 绕过编译层（2026-11-18 修复）。
+import enTitlesRaw from '~/i18n/locales/en.json?raw'
+import zhTitlesRaw from '~/i18n/locales/zh.json?raw'
 
 const props = defineProps<{
   sectionKey?: string
@@ -13,8 +16,8 @@ const props = defineProps<{
   subtitle?: string
 }>()
 
-const enMap = (enTitles as { citySections: Record<string, string> }).citySections
-const zhMap = (zhTitles as { citySections: Record<string, string> }).citySections
+const enMap = (JSON.parse(enTitlesRaw) as { citySections: Record<string, string> }).citySections
+const zhMap = (JSON.parse(zhTitlesRaw) as { citySections: Record<string, string> }).citySections
 
 const { t, locale } = useI18n()
 // 主标题：sectionKey 走 i18n 全语言本地化；否则旧双语逻辑
